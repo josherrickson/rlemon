@@ -1,0 +1,2 @@
+PKG_LIBS = -Ilemon_minFlowAlgs 
+PKG_CXXFLAGS = -Ilemon_minFlowAlgs

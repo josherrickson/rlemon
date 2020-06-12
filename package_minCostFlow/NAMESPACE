@@ -1,0 +1,3 @@
+useDynLib(minCostFlow, .registration=TRUE)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
