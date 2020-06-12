@@ -4,6 +4,8 @@ package-minCostFlow.rmd contains a simple example on how to compile the C++ prog
 
 min_cost_flow.cpp is a C++ program using the LEMON library to calcute the minimum cost flow of a graph. This program serves for timing purposes. In order to run the algorithm on any of the tests use the command ./minFlow followed by the size of the test. For example, to run the small  test with 34 nodes, use the command './minFlow smallTest'. In order to time the algorithm use 'time ./minFlow smallTest'.
 
+minCostFlow_package is a directory containing all files necessary to build the package.
+
 The Lemon folder contains all necessary files to use the network simplex module of the LEMON library. 
 
 documention.xlsx contains the names of each file used from the LEMON library. 
