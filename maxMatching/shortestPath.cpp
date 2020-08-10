@@ -20,8 +20,41 @@ using EdgeMap = ListGraph::EdgeMap<ValueType>;
 template<typename ValueType>
 using NodeMap = ListGraph::NodeMap<ValueType>;
 
+auto MaximumWeightMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights,  int numNodes) {
+  ListGraph g;
+  vector<Node> nodes;
+  EdgeMap<Cost> dists(g);
+  for(int i = 0; i < numNodes; ++i){
+      Node n = g.addNode();
+      nodes.push_back(n);
+  }
 
-auto MinimumCardinalityMatchingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+
+
+  
+  vector<Edge> arcs;
+
+
+  int NUM_ARCS = arcSources.size();
+
+  for(int i = 0; i < NUM_ARCS; ++i) {
+      Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+      dists[a] = arcWeights[i];
+      arcs.push_back(a);
+  }
+  auto test = MaxWeightedMatching<ListGraph, EdgeMap<Cost>>(g, dists);
+  std::vector<std::pair<int,int>> matching_arcs;
+  test.run();
+  for(int i = 0; i < NUM_ARCS; i++) {
+      if(test.matching(arcs[i])){
+              matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+      }    
+  }
+  std::cout << test.matchingSize() << std::endl;
+  return matching_arcs;
+}
+
+auto MaximumCardinalityMatchingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
   // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -66,8 +99,9 @@ int main()
    vector<int> path_elements;
 
    // Runs the algorithm,
-   auto output = MinimumCardinalityMatchingRunner(arc_src, arc_targ, 9);
+   auto output = MaximumWeightMatchingRunner(arc_src, arc_targ, arc_costs, 9);
 
+   
    for(int i = 0; i < output.size(); i++) {
        std::cout << output[i].first << " " << output[i].second << std::endl;
    }
