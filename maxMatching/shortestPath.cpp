@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
-#include "lemon/karp_mmc.h"
+#include "lemon/matching.h"
+#include "lemon/list_graph.h"
 
 typedef int Value;
 
@@ -9,51 +10,48 @@ using namespace std;
 
 using Cost = int;
 
-using Graph = ListDigraph;
+using Graph = ListGraph;
 using Node = Graph::Node;
-using Arc = Graph::Arc;
+using Edge = Graph::Edge;
 
 template<typename ValueType>
-using ArcMap = ListDigraph::ArcMap<ValueType>;
+using EdgeMap = ListGraph::EdgeMap<ValueType>;
 
 template<typename ValueType>
-using NodeMap = ListDigraph::NodeMap<ValueType>;
+using NodeMap = ListGraph::NodeMap<ValueType>;
 
 
-auto MinimumMeanCycleRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes) {
+auto MinimumCardinalityMatchingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
   // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
-  ListDigraph g;
+  ListGraph g;
   vector<Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       Node n = g.addNode();
       nodes.push_back(n);
   }
-  ArcMap<Cost> costs(g);
   NodeMap<Cost> dists(g);
 
-  vector<Arc> arcs;
+  vector<Edge> arcs;
 
   int NUM_ARCS = arcSources.size();
 
   for(int i = 0; i < NUM_ARCS; ++i) {
-      Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+      Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
       arcs.push_back(a);
-      costs[arcs[i]] = arcDistances[i];
   }
-
-  Path<ListDigraph> finale;
-  
-  KarpMmc<ListDigraph>(g,costs).cycle(finale).run();
-  std::vector<int> distances;
-  std::vector<int> path_nodes;
-  for(int i = 0; i < finale.length(); i++) {
-      distances.push_back(costs[finale.nth(i)]);
-      path_nodes.push_back(g.id(g.source(finale.nth(i))));
+  ListGraph::EdgeMap<int> map(g);
+  auto test = MaxMatching<ListGraph>(g);
+  test.run();
+  std::vector<std::pair<int,int>> matching_arcs;
+  for(int i = 0; i < NUM_ARCS; i++) {
+      if(test.matching(arcs[i])){
+              matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+      }    
   }
-  return std::tuple<std::vector<int>, std::vector<int>>{distances, path_nodes};
+  return matching_arcs;
 }
 
 int main()
@@ -68,25 +66,10 @@ int main()
    vector<int> path_elements;
 
    // Runs the algorithm,
-   auto output = MinimumMeanCycleRunner(arc_src, arc_targ, arc_costs, 9);
-   std::cout << "For the given graph, the following is the minimum mean cost cycle" << std::endl;
-   distances = std::get<0>(output);
-   path_elements = std::get<1>(output);
-   // Printing nonsense. For R-impl, return as Rcpp::List instead.
-   for(int i = 0; i < distances.size(); i++) {
-       if(i != distances.size() -1){
-       std::cout << path_elements[i] << " <- ";
+   auto output = MinimumCardinalityMatchingRunner(arc_src, arc_targ, 9);
+
+   for(int i = 0; i < output.size(); i++) {
+       std::cout << output[i].first << " " << output[i].second << std::endl;
    }
-       else{
-           std::cout << path_elements[i];
-       }
-   }
-   std::cout << std::endl;
-   std::cout << "This has the following mean cost cycle length:" << std::endl;
-   double mean_cost_cycle = 0;
-   for(int i = 0; i < distances.size(); i++) {
-       mean_cost_cycle += float(distances[i]);
-   }
-   std::cout << mean_cost_cycle / distances.size() << std::endl;
-   
+  
 }
