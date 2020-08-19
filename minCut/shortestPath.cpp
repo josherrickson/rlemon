@@ -20,8 +20,28 @@ using EdgeMap = ListGraph::EdgeMap<ValueType>;
 template<typename ValueType>
 using NodeMap = ListGraph::NodeMap<ValueType>;
 
+auto HaoOrlinRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+    ListGraph g;
+    vector<Node> nodes;
+    EdgeMap<Cost> dists(g);
+    for(int i = 0; i < numNodes; ++i) {
+        Node n = g.addNode();
+        nodes.push_back(n);
+    }
 
-auto MaximumWeightPerfectMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+    vector<Edge> arcs;
+    int NUM_ARCS = arcSources.size();
+
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+        dists[a] = arcWeights[i];
+        arcs.push_back(a);
+    }
+    GomoryHu<ListGraph, EdgeMap<Cost>> alg(g, dists);
+    alg.run();
+} 
+
+auto GomoryHuTreeRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
     ListGraph g;
     vector<Node> nodes;
     EdgeMap<Cost> dists(g);
@@ -72,6 +92,6 @@ int main()
     vector<int> path_elements;
 
     // Runs the algorithm,
-    auto output = MaximumWeightPerfectMatchingRunner(arc_src, arc_targ, arc_costs,  8);
+    auto output = GomoryHuTreeRunner(arc_src, arc_targ, arc_costs,  8);
 
 }
