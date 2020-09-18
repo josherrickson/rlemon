@@ -400,18 +400,3 @@ auto FindBiEdgeConnectedComponents(vector<int> arcSources, vector<int> arcTarget
     return components;
 }
 
-int main()
-{
-    // Example Usage - Example taken from EecsforGeeks
-    vector<int> arc_src{ 0, 0, 0, 1, 1, 2, 2, 3, 4, 4, 6, 7};
-    vector<int> arc_targ{1, 3, 5, 2, 4, 6, 3, 7, 5, 6, 7, 5};
-    vector<int> arc_costs{10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-
-    // Output vectors - used to get the information from minimum mean cycle
-    vector<int> distances;
-    vector<int> path_elements;
-
-    // Runs the algorithm,
-    std::cout << IsConnected(arc_src, arc_targ, 8) << std::endl;
-
- }

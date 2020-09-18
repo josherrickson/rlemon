@@ -1,0 +1,80 @@
+
+R version 4.0.1 (2020-06-06) -- "See Things Now"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "test"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('test')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("rcpp_hello_world")
+> ### * rcpp_hello_world
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: rcpp_hello_world
+> ### Title: Simple function using Rcpp
+> ### Aliases: rcpp_hello_world
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D rcpp_hello_world()
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("test-package")
+> ### * test-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: test-package
+> ### Title: A short title line describing what the package does
+> ### Aliases: test-package test
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+>   ## Not run: 
+> ##D      ## Optional simple examples of the most important functions
+> ##D      ## These can be in \dontrun{} and \donttest{} blocks.   
+> ##D   
+> ## End(Not run)
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.122 0.011 0.138 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
