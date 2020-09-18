@@ -1,0 +1,54 @@
+---
+title: "lemon-minCostFlow"
+author: "Aditya Tewari (adityate 55937112)"
+date: "June 7, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load program
+```{r}
+library(Rcpp)
+sourceCpp("min_cost_flow.rcpp.cpp")
+```
+
+Load data
+```{r}
+node_supplies = read.csv("smallTest/nodedemand.csv")
+arc_src = read.csv("smallTest/startnodes.csv")
+arc_targ = read.csv("smallTest/endnodes.csv")
+arc_costs = read.csv("smallTest/arccosts.csv")
+arc_capacities = read.csv("smallTest/arccapacity.csv")
+```
+
+Convert data to vectors
+```{r}
+node_supplies = c(node_supplies$x)
+arc_src = c(arc_src$x)
+arc_targ = c(arc_targ$x)
+arc_costs = c(arc_costs$x)
+arc_capacities = c(arc_capacities$x)
+```
+
+Run function
+```{r}
+outflow = minFlow(node_supplies, arc_src, arc_targ, arc_costs, arc_capacities)
+outflow
+```
+
+```{r}
+Rcpp.package.skeleton("minCostFlow", example_code = FALSE,
+                      cpp_files = c("min_cost_flow.rcpp.cpp"))
+```
+
+```{r}
+library(tools)
+package_native_routine_registration_skeleton("minCostFlow")
+```
+
+```{r}
+install.packages("minCostFlow_1.0.tar.gz", repos = NULL, type = "source")
+```
