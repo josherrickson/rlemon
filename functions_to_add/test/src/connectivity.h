@@ -174,6 +174,24 @@ auto IsLoopFree(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return loopFree(g);
 }
 
+auto IsParallelFree(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One vector, arcDistances, which assigns for each arc an associated distance
+    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
+    // Returns: A boolean stating if the graph has no loop arcs/edges. 
+    ListGraph g;
+    vector<ListGraph::Node> nodes;
+    for(int i = 0; i < numNodes; ++i){
+        ListGraph::Node n = g.addNode();
+        nodes.push_back(n);
+    }
+    int NUM_ARCS = arcSources.size();
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    }
+    return parallelFree(g);
+}
+
 
 auto CountBiEdgeConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
