@@ -6,7 +6,7 @@
 using namespace lemon;
 using namespace std;
 
-// TODO: Add TopologicalSort, CheckedTopologicalSort, Bipartite Partitions, loopfree, parallelfree,  simpleGraph, and eulerian
+// TODO: Add TopologicalSort, CheckedTopologicalSort, Bipartite Partitions, simpleGraph, and eulerian
 
 auto IsConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -178,7 +178,7 @@ auto IsParallelFree(vector<int> arcSources, vector<int> arcTargets, int numNodes
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           One vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if the graph has no loop arcs/edges. 
+    // Returns: A boolean stating if the graph has no parallel arcs/edges. 
     ListGraph g;
     vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -190,6 +190,24 @@ auto IsParallelFree(vector<int> arcSources, vector<int> arcTargets, int numNodes
         g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
     }
     return parallelFree(g);
+}
+
+auto IsSimpleGraph(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One vector, arcDistances, which assigns for each arc an associated distance
+    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
+    // Returns: A boolean stating if the graph is simple, i.e. it has no loop arcs/edges or parallel arcs/edges
+    ListGraph g;
+    vector<ListGraph::Node> nodes;
+    for(int i = 0; i < numNodes; ++i){
+        ListGraph::Node n = g.addNode();
+        nodes.push_back(n);
+    }
+    int NUM_ARCS = arcSources.size();
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    }
+    return simpleGraph(g);
 }
 
 
