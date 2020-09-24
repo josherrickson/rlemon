@@ -211,6 +211,24 @@ auto IsSimpleGraph(vector<int> arcSources, vector<int> arcTargets, int numNodes)
 }
 
 
+auto IsEulerian(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One vector, arcDistances, which assigns for each arc an associated distance
+    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
+    // Returns: A boolean stating if the graph is simple, i.e. it has an eulerian cycle
+    ListGraph g;
+    vector<ListGraph::Node> nodes;
+    for(int i = 0; i < numNodes; ++i){
+        ListGraph::Node n = g.addNode();
+        nodes.push_back(n);
+    }
+    int NUM_ARCS = arcSources.size();
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    }
+    return eulerian(g);
+}
+
 auto CountBiEdgeConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           One vector, arcDistances, which assigns for each arc an associated distance
