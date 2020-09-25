@@ -6,7 +6,31 @@
 using namespace lemon;
 using namespace std;
 
-// TODO: Add TopologicalSort, CheckedTopologicalSort, Bipartite Partitions, simpleGraph, and eulerian
+// TODO: Add TopologicalSort, CheckedTopologicalSort, Bipartite Partitions
+
+auto getTopologicalSort(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One vector, arcDistances, which assigns for each arc an associated distance
+    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
+    // Returns: A vector of length numNodes, containing the index of vertex i in the ordering at location i.
+    ListDigraph g;
+    vector<ListDigraph::Node> nodes;
+    for(int i = 0; i < numNodes; ++i){
+        ListDigraph::Node n = g.addNode();
+        nodes.push_back(n);
+    }
+    int NUM_ARCS = arcSources.size();
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    }
+    ListDigraph::NodeMap<int> nodeOrder(g);
+    topologicalSort(g, nodeOrder);
+    vector<int> order;
+    for(int i = 0; i < numNodes; ++i){
+        order.push_back(nodeOrder[nodes[i]]);
+    }
+    return order;
+}
 
 auto IsConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -30,7 +54,7 @@ auto IsAcyclic(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           One vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a connected graph or not
+    // Returns: A boolean stating if we have an acyclic graph
     ListGraph g;
     vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -142,7 +166,7 @@ auto IsBiEdgeConnected(vector<int> arcSources, vector<int> arcTargets, int numNo
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           One vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a bi-node connected graph or not
+    // Returns: A boolean stating if we have a bi-edge connected graph or not
     ListGraph g;
     vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
