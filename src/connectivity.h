@@ -10,9 +10,32 @@ using namespace std;
 // TODO: Add Bipartite Partitions
 
 
+auto getBipartitePartitions(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
+    // Returns: A tuple containing both a vector of length numNodes, containing the partition for each node, and if the graph is bipartite.
+    ListGraph g;
+    vector<ListGraph::Node> nodes;
+    for(int i = 0; i < numNodes; ++i){
+        ListGraph::Node n = g.addNode();
+        nodes.push_back(n);
+    }
+    int NUM_ARCS = arcSources.size();
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    }
+    ListGraph::NodeMap<int> nodePartition(g);
+    bool isBipartite = bipartitePartitions(g, nodePartition);
+    vector<int> out_partitions;
+    if(isBipartite){
+    for(int i = 0; i < numNodes; ++i){
+        out_partitions.push_back(nodePartition[nodes[i]]);
+    }}
+    return std::make_tuple(isBipartite, out_partitions);
+}
+
 auto getAndcheckTopologicalSort(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A tuple containing both a vector of length numNodes, containing the index of vertex i in the ordering at location i, and if the graph is a dag.
         ListDigraph g;
