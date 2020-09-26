@@ -81,17 +81,3 @@ auto GomoryHuTreeRunner(vector<int> arcSources, vector<int> arcTargets, vector<i
 
     return std::make_tuple(predecessors, predEdgeWeights, rootDistances);
 }
-int main()
-{
-    vector<int> arc_src{ 0, 0, 0, 1, 1, 2, 2, 3, 4, 4, 6, 7};
-    vector<int> arc_targ{1, 3, 5, 2, 4, 6, 3, 7, 5, 6, 7, 5};
-    vector<int> arc_costs{10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-
-    // Output vectors - used to get the information from minimum mean cycle
-    vector<int> distances;
-    vector<int> path_elements;
-
-    // Runs the algorithm,
-    auto output = GomoryHuTreeRunner(arc_src, arc_targ, arc_costs,  8);
-
-}

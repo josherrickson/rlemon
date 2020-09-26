@@ -130,39 +130,3 @@ auto HartmannOrlinMmcRunner(vector<int> arcSources, vector<int> arcTargets, vect
   }
   return std::tuple<std::vector<int>, std::vector<int>>{distances, path_nodes};
 }
-
-
-int main()
-{
-    // Example Usage - Example taken from EecsforGeeks
-   vector<int> arc_src{0,0,1,2,3,3};
-   vector<int> arc_targ{1,2,2,3,0,1};
-   vector<int> arc_costs{10,1,3,2,8,0};
-   
-   // Output vectors - used to get the information from minimum mean cycle
-   vector<int> distances;
-   vector<int> path_elements;
-
-   // Runs the algorithm,
-   auto output = KarpMmcRunner(arc_src, arc_targ, arc_costs, 9);
-   std::cout << "For the given graph, the following is the minimum mean cost cycle" << std::endl;
-   distances = std::get<0>(output);
-   path_elements = std::get<1>(output);
-   // Printing nonsense. For R-impl, return as Rcpp::List instead.
-   for(int i = 0; i < distances.size(); i++) {
-       if(i != distances.size() -1){
-       std::cout << path_elements[i] << " <- ";
-   }
-       else{
-           std::cout << path_elements[i];
-       }
-   }
-   std::cout << std::endl;
-   std::cout << "This has the following mean cost cycle length:" << std::endl;
-   double mean_cost_cycle = 0;
-   for(int i = 0; i < distances.size(); i++) {
-       mean_cost_cycle += float(distances[i]);
-   }
-   std::cout << mean_cost_cycle / distances.size() << std::endl;
-   
-}

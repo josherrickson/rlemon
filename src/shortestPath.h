@@ -130,19 +130,3 @@ auto BellmanFordRunner(vector<int> arcSources, vector<int> arcTargets, vector<in
   }
   return std::make_tuple(distances, predecessors);
 }
-
-int main()
-{
-    // Example Usage - Works with g++ shortestPath.cpp && ./a.out
-   vector<int> arc_src{0, 0, 1, 1, 1, 2, 2, 3, 3,4,4,4,5,5,6};
-   vector<int> arc_targ{1, 2, 2, 3, 4, 3, 6, 4, 6,6,7,5,7,8,7};
-   vector<int> arc_costs{5, 2, 2, 3, 7, 3, 9, 2, 6,5,7,8,3,4,2};
-   auto output = DijkstraRunner(arc_src, arc_targ, arc_costs, 9, 0);
-
-   for(int i = 0; i < std::get<0>(output).size(); i++){
-       std::cout << std::get<1>(output)[i] << std::endl;
-   }
-   
-
-    return 1;
-}

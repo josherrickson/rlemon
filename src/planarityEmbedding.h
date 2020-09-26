@@ -137,27 +137,3 @@ auto PlanarDrawingRunner(vector<int> arcSources, vector<int> arcTargets, int num
     return output;
 }
 
-int main()
-{
-    // Example Usage - Example taken from EecsforGeeks
-    vector<int> arc_src{0,0,0,1,1,2,2,3,4,4,6,7};
-    vector<int> arc_targ{1,5,3,2,4,6,3,7,5,6,7,5};
-
-    // Output vectors - used to get the information from minimum mean cycle
-    vector<int> distances;
-    vector<int> path_elements;
-
-    // Runs the algorithm,
-    auto output = PlanarColoringRunner(arc_src, arc_targ, 8);
-
-    if(std::get<0>(output)){
-        std::cout << "This graph is planar, with the following embedding:" << std::endl;
-        for(int i = 0; i < std::get<1>(output).size(); i++) {
-            std::cout << "Node " << i  << " has color " << std::get<1>(output)[i] << std::endl;
-        }
-    }
-    else{
-        std::cout << "This graph is not planar" << std::endl;
-    }
-
-}
