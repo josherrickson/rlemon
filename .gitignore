@@ -42,3 +42,5 @@ vignettes/*.pdf
 # R package: bookdown caching files
 /*_files/
 
+main.cpp
+a.out
