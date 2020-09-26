@@ -1,12 +1,40 @@
 #include <vector>
 #include <iostream>
+#include <tuple>
 #include "lemon/list_graph.h"
 #include "lemon/connectivity.h"
 #include "lemon/euler.h"
 using namespace lemon;
 using namespace std;
 
-// TODO: Add TopologicalSort, CheckedTopologicalSort, Bipartite Partitions
+// TODO: Add Bipartite Partitions
+
+
+auto getAndcheckTopologicalSort(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One vector, arcDistances, which assigns for each arc an associated distance
+    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
+    // Returns: A tuple containing both a vector of length numNodes, containing the index of vertex i in the ordering at location i, and if the graph is a dag.
+        ListDigraph g;
+    vector<ListDigraph::Node> nodes;
+    for(int i = 0; i < numNodes; ++i){
+        ListDigraph::Node n = g.addNode();
+        nodes.push_back(n);
+    }
+    int NUM_ARCS = arcSources.size();
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    }
+    ListDigraph::NodeMap<int> nodeOrder(g);
+    bool isDAG = checkedTopologicalSort(g, nodeOrder);
+    vector<int> order;
+    if(isDAG){
+    for(int i = 0; i < numNodes; ++i){
+        order.push_back(nodeOrder[nodes[i]]);
+    }}
+    return std::make_tuple(isDAG, order);
+}
+
 
 auto getTopologicalSort(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
