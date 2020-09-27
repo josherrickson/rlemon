@@ -64,6 +64,7 @@ auto GreedyTSPRunner(vector<int> arcSources, vector<int> arcTargets, vector<int>
 
   return runner.tourCost();
 }
+
 /*
 auto InsertionTSPRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -92,6 +93,8 @@ auto InsertionTSPRunner(vector<int> arcSources, vector<int> arcTargets, vector<i
   return runner.tourCost();
 }
 */
+
+
 auto NearestNeighborTSPRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One vector, arcDistances, which assigns for each arc an associated distance
