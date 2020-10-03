@@ -4,12 +4,14 @@
 #include "lemon/list_graph.h"
 #include "lemon/connectivity.h"
 #include "lemon/euler.h"
+#include <Rcpp.h>
 using namespace lemon;
 
 // TODO: Add Bipartite Partitions
 
 
-auto getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+// [[Rcpp::export]]
+List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A std::tuple containing both a std::vector of length numNodes, containing the partition for each node, and if the graph is bipartite.
@@ -30,10 +32,12 @@ auto getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTar
     for(int i = 0; i < numNodes; ++i){
         out_partitions.push_back(nodePartition[nodes[i]]);
     }}
-    return std::make_tuple(isBipartite, out_partitions);
+    return List::create(isBipartite, out_partitions);
 }
 
-auto getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+
+// [[Rcpp::export]]
+List getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A std::tuple containing both a std::vector of length numNodes, containing the index of vertex i in the ordering at location i, and if the graph is a dag.
@@ -54,7 +58,7 @@ auto getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> ar
     for(int i = 0; i < numNodes; ++i){
         order.push_back(nodeOrder[nodes[i]]);
     }}
-    return std::make_tuple(isDAG, order);
+    return List::create(isDAG, order);
 }
 
 // [[Rcpp::export]]

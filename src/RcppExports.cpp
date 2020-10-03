@@ -5,6 +5,19 @@
 
 using namespace Rcpp;
 
+// getBipartitePartitions
+List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _test_getBipartitePartitions(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(getBipartitePartitions(arcSources, arcTargets, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 // getTopologicalSort
 std::vector<int> getTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _test_getTopologicalSort(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
@@ -319,6 +332,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_test_getBipartitePartitions", (DL_FUNC) &_test_getBipartitePartitions, 3},
     {"_test_getTopologicalSort", (DL_FUNC) &_test_getTopologicalSort, 3},
     {"_test_IsConnected", (DL_FUNC) &_test_IsConnected, 3},
     {"_test_IsAcyclic", (DL_FUNC) &_test_IsAcyclic, 3},
