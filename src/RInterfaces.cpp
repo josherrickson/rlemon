@@ -1,4 +1,5 @@
 #include "connectivity.h"
+#include "max_matching.h"
 #include <Rcpp.h>
 #include <tuple>
 using namespace Rcpp;

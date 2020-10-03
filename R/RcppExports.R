@@ -5,6 +5,10 @@ getBipartitePartitions <- function(arcSources, arcTargets, numNodes) {
     .Call(`_test_getBipartitePartitions`, arcSources, arcTargets, numNodes)
 }
 
+getAndcheckTopologicalSort <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_test_getAndcheckTopologicalSort`, arcSources, arcTargets, numNodes)
+}
+
 getTopologicalSort <- function(arcSources, arcTargets, numNodes) {
     .Call(`_test_getTopologicalSort`, arcSources, arcTargets, numNodes)
 }
@@ -99,5 +103,29 @@ FindConnectedComponents <- function(arcSources, arcTargets, numNodes) {
 
 FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
     .Call(`_test_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
+}
+
+MaximumWeightPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
+    .Call(`_test_MaximumWeightPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+}
+
+MaximumWeightFractionalPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
+    .Call(`_test_MaximumWeightFractionalPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+}
+
+MaximumWeightFractionalMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
+    .Call(`_test_MaximumWeightFractionalMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+}
+
+MaximumWeightMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
+    .Call(`_test_MaximumWeightMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+}
+
+MaximumCardinalityMatchingRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_test_MaximumCardinalityMatchingRunner`, arcSources, arcTargets, numNodes)
+}
+
+MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_test_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 

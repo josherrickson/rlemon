@@ -6,7 +6,7 @@
 using namespace Rcpp;
 
 // getBipartitePartitions
-List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+Rcpp::List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _test_getBipartitePartitions(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -15,6 +15,19 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
     rcpp_result_gen = Rcpp::wrap(getBipartitePartitions(arcSources, arcTargets, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// getAndcheckTopologicalSort
+Rcpp::List getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _test_getAndcheckTopologicalSort(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(getAndcheckTopologicalSort(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -330,9 +343,92 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// MaximumWeightPerfectMatchingRunner
+Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
+RcppExport SEXP _test_MaximumWeightPerfectMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcWeights(arcWeightsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MaximumWeightPerfectMatchingRunner(arcSources, arcTargets, arcWeights, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MaximumWeightFractionalPerfectMatchingRunner
+Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
+RcppExport SEXP _test_MaximumWeightFractionalPerfectMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcWeights(arcWeightsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MaximumWeightFractionalPerfectMatchingRunner(arcSources, arcTargets, arcWeights, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MaximumWeightFractionalMatchingRunner
+Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
+RcppExport SEXP _test_MaximumWeightFractionalMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcWeights(arcWeightsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MaximumWeightFractionalMatchingRunner(arcSources, arcTargets, arcWeights, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MaximumWeightMatchingRunner
+Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
+RcppExport SEXP _test_MaximumWeightMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcWeights(arcWeightsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MaximumWeightMatchingRunner(arcSources, arcTargets, arcWeights, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MaximumCardinalityMatchingRunner
+std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _test_MaximumCardinalityMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MaximumCardinalityMatchingRunner(arcSources, arcTargets, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MaximumCardinalityFractionalMatchingRunner
+std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _test_MaximumCardinalityFractionalMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MaximumCardinalityFractionalMatchingRunner(arcSources, arcTargets, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_test_getBipartitePartitions", (DL_FUNC) &_test_getBipartitePartitions, 3},
+    {"_test_getAndcheckTopologicalSort", (DL_FUNC) &_test_getAndcheckTopologicalSort, 3},
     {"_test_getTopologicalSort", (DL_FUNC) &_test_getTopologicalSort, 3},
     {"_test_IsConnected", (DL_FUNC) &_test_IsConnected, 3},
     {"_test_IsAcyclic", (DL_FUNC) &_test_IsAcyclic, 3},
@@ -357,6 +453,12 @@ static const R_CallMethodDef CallEntries[] = {
     {"_test_FindBiNodeConnectedNodes", (DL_FUNC) &_test_FindBiNodeConnectedNodes, 3},
     {"_test_FindConnectedComponents", (DL_FUNC) &_test_FindConnectedComponents, 3},
     {"_test_FindBiEdgeConnectedComponents", (DL_FUNC) &_test_FindBiEdgeConnectedComponents, 3},
+    {"_test_MaximumWeightPerfectMatchingRunner", (DL_FUNC) &_test_MaximumWeightPerfectMatchingRunner, 4},
+    {"_test_MaximumWeightFractionalPerfectMatchingRunner", (DL_FUNC) &_test_MaximumWeightFractionalPerfectMatchingRunner, 4},
+    {"_test_MaximumWeightFractionalMatchingRunner", (DL_FUNC) &_test_MaximumWeightFractionalMatchingRunner, 4},
+    {"_test_MaximumWeightMatchingRunner", (DL_FUNC) &_test_MaximumWeightMatchingRunner, 4},
+    {"_test_MaximumCardinalityMatchingRunner", (DL_FUNC) &_test_MaximumCardinalityMatchingRunner, 3},
+    {"_test_MaximumCardinalityFractionalMatchingRunner", (DL_FUNC) &_test_MaximumCardinalityFractionalMatchingRunner, 3},
     {NULL, NULL, 0}
 };
 
