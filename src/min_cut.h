@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include "lemon/gomory_hu.h"
 #include "lemon/list_graph.h"
@@ -20,16 +20,16 @@ using EdgeMap = ListGraph::EdgeMap<ValueType>;
 template<typename ValueType>
 using NodeMap = ListGraph::NodeMap<ValueType>;
 
-auto HaoOrlinRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+auto HaoOrlinRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i) {
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
     int NUM_ARCS = arcSources.size();
 
     for(int i = 0; i < NUM_ARCS; ++i) {
@@ -41,16 +41,16 @@ auto HaoOrlinRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> 
     alg.run();
 } 
 
-auto GomoryHuTreeRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+auto GomoryHuTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i) {
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
     int NUM_ARCS = arcSources.size();
 
     for(int i = 0; i < NUM_ARCS; ++i) {

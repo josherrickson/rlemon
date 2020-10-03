@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include "lemon/bellman_ford.h"
 #include "lemon/list_graph.h"
@@ -24,14 +24,14 @@ using ArcMap = ListDigraph::ArcMap<ValueType>;
 template<typename ValueType>
 using NodeMap = ListDigraph::NodeMap<ValueType>;
 
-auto SuurballeRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes, int startnode, int endnode, int numberOfArcs) {
-  // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-  //           One vector, arcDistances, which assigns for each arc an associated distance
+auto SuurballeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int startnode, int endnode, int numberOfArcs) {
+  // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+  //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-  // Returns: Two vectors. The first refers to the distances from each node to the startnode, while the second refers to the predecessors that form the shortest distance tree. 
+  // Returns: Two std::vectors. The first refers to the distances from each node to the startnode, while the second refers to the predecessors that form the shortest distance tree. 
   // Note: Invalid predecessors are indicated with "-1", and all nodes are 0-indexed
   ListDigraph g;
-  vector<Node> nodes;
+  std::vector<Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       Node n = g.addNode();
       nodes.push_back(n);
@@ -39,7 +39,7 @@ auto SuurballeRunner(vector<int> arcSources, vector<int> arcTargets, vector<int>
   ArcMap<Cost> costs(g);
   NodeMap<Cost> dists(g);
 
-  vector<Arc> arcs;
+  std::vector<Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
@@ -55,14 +55,14 @@ auto SuurballeRunner(vector<int> arcSources, vector<int> arcTargets, vector<int>
    
 }
  
-auto DijkstraRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes, int startnode) {
-  // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-  //           One vector, arcDistances, which assigns for each arc an associated distance
+auto DijkstraRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int startnode) {
+  // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+  //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-  // Returns: Two vectors. The first refers to the distances from each node to the startnode, while the second refers to the predecessors that form the shortest distance tree. 
+  // Returns: Two std::vectors. The first refers to the distances from each node to the startnode, while the second refers to the predecessors that form the shortest distance tree. 
   // Note: Invalid predecessors are indicated with "-1", and all nodes are 0-indexed
   ListDigraph g;
-  vector<Node> nodes;
+  std::vector<Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       Node n = g.addNode();
       nodes.push_back(n);
@@ -70,7 +70,7 @@ auto DijkstraRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> 
   ArcMap<Cost> costs(g);
   NodeMap<Cost> dists(g);
 
-  vector<Arc> arcs;
+  std::vector<Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
@@ -83,8 +83,8 @@ auto DijkstraRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> 
   
   Dijkstra< ListDigraph, DigraphExtender<ListDigraphBase>::ArcMap<int> > bf(g,costs);
   bf.run(nodes[startnode]);
-  vector<int> distances;
-  vector<int> predecessors;
+  std::vector<int> distances;
+  std::vector<int> predecessors;
   for(int i = 0; i < numNodes; i++) {
       distances.push_back(bf.dist(nodes[i]));
       predecessors.push_back(g.id(bf.predNode(nodes[i])));
@@ -94,14 +94,14 @@ auto DijkstraRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> 
 
 
 
-auto BellmanFordRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes, int startnode) {
-  // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-  //           One vector, arcDistances, which assigns for each arc an associated distance
+auto BellmanFordRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int startnode) {
+  // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+  //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-  // Returns: Two vectors. The first refers to the distances from each node to the startnode, while the second refers to the predecessors that form the shortest distance tree. 
+  // Returns: Two std::vectors. The first refers to the distances from each node to the startnode, while the second refers to the predecessors that form the shortest distance tree. 
   // Note: Invalid predecessors are indicated with "-1", and all nodes are 0-indexed
   ListDigraph g;
-  vector<Node> nodes;
+  std::vector<Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       Node n = g.addNode();
       nodes.push_back(n);
@@ -109,7 +109,7 @@ auto BellmanFordRunner(vector<int> arcSources, vector<int> arcTargets, vector<in
   ArcMap<Cost> costs(g);
   NodeMap<Cost> dists(g);
 
-  vector<Arc> arcs;
+  std::vector<Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
@@ -122,8 +122,8 @@ auto BellmanFordRunner(vector<int> arcSources, vector<int> arcTargets, vector<in
   
   BellmanFord< ListDigraph, DigraphExtender<ListDigraphBase>::ArcMap<int> > bf = BellmanFord<ListDigraph, DigraphExtender<ListDigraphBase>::ArcMap<int> > (g,costs);
   bf.run(nodes[startnode]);
-  vector<int> distances;
-  vector<int> predecessors;
+  std::vector<int> distances;
+  std::vector<int> predecessors;
   for(int i = 0; i < numNodes; i++) {
       distances.push_back(bf.dist(nodes[i]));
       predecessors.push_back(g.id(bf.predNode(nodes[i])));

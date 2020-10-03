@@ -5,17 +5,16 @@
 #include "lemon/connectivity.h"
 #include "lemon/euler.h"
 using namespace lemon;
-using namespace std;
 
 // TODO: Add Bipartite Partitions
 
 
-auto getBipartitePartitions(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+auto getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A tuple containing both a vector of length numNodes, containing the partition for each node, and if the graph is bipartite.
+    // Returns: A std::tuple containing both a std::vector of length numNodes, containing the partition for each node, and if the graph is bipartite.
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -26,7 +25,7 @@ auto getBipartitePartitions(vector<int> arcSources, vector<int> arcTargets, int 
     }
     ListGraph::NodeMap<int> nodePartition(g);
     bool isBipartite = bipartitePartitions(g, nodePartition);
-    vector<int> out_partitions;
+    std::vector<int> out_partitions;
     if(isBipartite){
     for(int i = 0; i < numNodes; ++i){
         out_partitions.push_back(nodePartition[nodes[i]]);
@@ -34,12 +33,12 @@ auto getBipartitePartitions(vector<int> arcSources, vector<int> arcTargets, int 
     return std::make_tuple(isBipartite, out_partitions);
 }
 
-auto getAndcheckTopologicalSort(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+auto getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A tuple containing both a vector of length numNodes, containing the index of vertex i in the ordering at location i, and if the graph is a dag.
+    // Returns: A std::tuple containing both a std::vector of length numNodes, containing the index of vertex i in the ordering at location i, and if the graph is a dag.
         ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -50,7 +49,7 @@ auto getAndcheckTopologicalSort(vector<int> arcSources, vector<int> arcTargets, 
     }
     ListDigraph::NodeMap<int> nodeOrder(g);
     bool isDAG = checkedTopologicalSort(g, nodeOrder);
-    vector<int> order;
+    std::vector<int> order;
     if(isDAG){
     for(int i = 0; i < numNodes; ++i){
         order.push_back(nodeOrder[nodes[i]]);
@@ -58,14 +57,14 @@ auto getAndcheckTopologicalSort(vector<int> arcSources, vector<int> arcTargets, 
     return std::make_tuple(isDAG, order);
 }
 
-
-auto getTopologicalSort(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+std::vector<int> getTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A vector of length numNodes, containing the index of vertex i in the ordering at location i.
+    // Returns: A std::vector of length numNodes, containing the index of vertex i in the ordering at location i.
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -76,20 +75,21 @@ auto getTopologicalSort(vector<int> arcSources, vector<int> arcTargets, int numN
     }
     ListDigraph::NodeMap<int> nodeOrder(g);
     topologicalSort(g, nodeOrder);
-    vector<int> order;
+    std::vector<int> order;
     for(int i = 0; i < numNodes; ++i){
         order.push_back(nodeOrder[nodes[i]]);
     }
     return order;
 }
 
-auto IsConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a connected graph or not
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -101,13 +101,14 @@ auto IsConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return connected(g);
 }
 
-auto IsAcyclic(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsAcyclic(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have an acyclic graph
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -119,14 +120,14 @@ auto IsAcyclic(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return acyclic(g);
 }
 
-
-auto IsTree(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsTree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a tree 
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -138,13 +139,14 @@ auto IsTree(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return tree(g);
 }
 
-auto IsBipartite(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsBipartite(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a bipartite graph or not
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -156,14 +158,14 @@ auto IsBipartite(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return bipartite(g);
 }
 
-
-auto IsStronglyConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsStronglyConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a strongly connected digraph or not.
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -175,13 +177,14 @@ auto IsStronglyConnected(vector<int> arcSources, vector<int> arcTargets, int num
     return stronglyConnected(g);
 }
 
-auto IsDAG(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsDAG(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a DAG, or a Directed Acyclic Graph, or not.
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -193,14 +196,14 @@ auto IsDAG(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return dag(g);
 }
 
-
-auto IsBiNodeConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsBiNodeConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a bi-node connected graph or not
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -212,14 +215,14 @@ auto IsBiNodeConnected(vector<int> arcSources, vector<int> arcTargets, int numNo
     return biNodeConnected(g);
 }
 
-
-auto IsBiEdgeConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsBiEdgeConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a bi-edge connected graph or not
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -231,13 +234,14 @@ auto IsBiEdgeConnected(vector<int> arcSources, vector<int> arcTargets, int numNo
     return biEdgeConnected(g);
 }
 
-auto IsLoopFree(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsLoopFree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if the graph has no loop arcs/edges. 
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -249,13 +253,14 @@ auto IsLoopFree(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return loopFree(g);
 }
 
-auto IsParallelFree(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsParallelFree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if the graph has no parallel arcs/edges. 
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -267,13 +272,14 @@ auto IsParallelFree(vector<int> arcSources, vector<int> arcTargets, int numNodes
     return parallelFree(g);
 }
 
-auto IsSimpleGraph(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsSimpleGraph(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if the graph is simple, i.e. it has no loop arcs/edges or parallel arcs/edges
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -285,14 +291,14 @@ auto IsSimpleGraph(vector<int> arcSources, vector<int> arcTargets, int numNodes)
     return simpleGraph(g);
 }
 
-
-auto IsEulerian(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int IsEulerian(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if the graph is simple, i.e. it has an eulerian cycle
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -304,13 +310,15 @@ auto IsEulerian(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
     return eulerian(g);
 }
 
-auto CountBiEdgeConnected(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+
+// [[Rcpp::export]]
+int CountBiEdgeConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: A boolean stating if we have a bi-node connected graph or not
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -322,13 +330,14 @@ auto CountBiEdgeConnected(vector<int> arcSources, vector<int> arcTargets, int nu
     return countBiEdgeConnectedComponents(g);
 }
 
-auto CountConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int CountConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: An integer stating the number of connected components of this graph
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -340,14 +349,14 @@ auto CountConnectedComponents(vector<int> arcSources, vector<int> arcTargets, in
     return countConnectedComponents(g);
 }
 
-
-auto CountBiNodeConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int CountBiNodeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: An integer stating the number of bi-node connected components of this graph
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -359,14 +368,14 @@ auto CountBiNodeConnectedComponents(vector<int> arcSources, vector<int> arcTarge
     return countBiNodeConnectedComponents(g);
 }
 
-
-auto CountStronglyConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+int CountStronglyConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
     // Returns: An integer stating the number of strongly connected components of this directed graph
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -378,10 +387,11 @@ auto CountStronglyConnectedComponents(vector<int> arcSources, vector<int> arcTar
     return countStronglyConnectedComponents(g);
 }
 
-auto FindStronglyConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Returns: A vector containing the component number of each node
+// [[Rcpp::export]]
+std::vector<int> FindStronglyConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Returns: A std::vector containing the component number of each node
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -400,10 +410,11 @@ auto FindStronglyConnectedComponents(vector<int> arcSources, vector<int> arcTarg
     return components;
 }
 
-auto FindStronglyConnectedCutArcs(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Returns: Two vectors containing the source and destination of the cut arcs
+// [[Rcpp::export]]
+std::vector<std::vector<int>> FindStronglyConnectedCutArcs(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Returns: Two std::vectors containing the source and destination of the cut arcs
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -417,8 +428,8 @@ auto FindStronglyConnectedCutArcs(vector<int> arcSources, vector<int> arcTargets
     ListDigraph::ArcMap<int> ComponentMap(g);
     
     stronglyConnectedCutArcs(g, ComponentMap);
-    vector<int> arc_sources;
-    vector<int> arc_destinations;
+    std::vector<int> arc_sources;
+    std::vector<int> arc_destinations;
     for(int i = 0; i < NUM_ARCS; i++) {
         if(ComponentMap[arcs[i]]) {
             arc_sources.push_back(g.id(g.source(arcs[i])));
@@ -426,13 +437,18 @@ auto FindStronglyConnectedCutArcs(vector<int> arcSources, vector<int> arcTargets
         }
     }
     
-    return std::make_tuple(arc_sources, arc_destinations);
+    std::vector<std::vector<int>> output;
+    output.push_back(arc_sources);
+    output.push_back(arc_destinations);
+    return output;
 }
 
-auto FindBiEdgeConnectedCutEdges(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Returns: Two vectors containing the source and destination of the cut arcs
+
+// [[Rcpp::export]]
+std::vector<std::vector<int>> FindBiEdgeConnectedCutEdges(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Returns: Two std::vectors containing the source and destination of the cut arcs
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -446,22 +462,25 @@ auto FindBiEdgeConnectedCutEdges(vector<int> arcSources, vector<int> arcTargets,
     ListGraph::EdgeMap<int> ComponentMap(g);
     
     biEdgeConnectedCutEdges(g, ComponentMap);
-    vector<int> arc_sources;
-    vector<int> arc_destinations;
+    std::vector<int> arc_sources;
+    std::vector<int> arc_destinations;
     for(int i = 0; i < NUM_ARCS; i++) {
         if(ComponentMap[arcs[i]]) {
             arc_sources.push_back(g.id(g.u(arcs[i])));
             arc_destinations.push_back(g.id(g.v(arcs[i])));
         }
     }
-    
-    return std::make_tuple(arc_sources, arc_destinations);
+    std::vector<std::vector<int>> output;
+    output.push_back(arc_sources);
+    output.push_back(arc_destinations);
+    return output;
 }
 
 
-auto FindBiNodeConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+// [[Rcpp::export]]
+std::vector<int> FindBiNodeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -474,16 +493,18 @@ auto FindBiNodeConnectedComponents(vector<int> arcSources, vector<int> arcTarget
     }
     ListGraph::EdgeMap<int> ComponentMap(g);
     biNodeConnectedComponents(g, ComponentMap);
-    vector<int> component_number;
+    std::vector<int> component_number;
     for(int i = 0; i < NUM_ARCS; i++) {
         component_number.push_back(ComponentMap[arcs[i]]);
     }
     return component_number;
 }
 
-auto FindBiNodeConnectedNodes(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+
+// [[Rcpp::export]]
+std::vector<int> FindBiNodeConnectedNodes(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -505,10 +526,12 @@ auto FindBiNodeConnectedNodes(vector<int> arcSources, vector<int> arcTargets, in
     return CutNodes;
 }
 
-auto FindConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Returns: A vector containing the component number of each node
+
+// [[Rcpp::export]]
+std::vector<int> FindConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Returns: A std::vector containing the component number of each node
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);
@@ -527,9 +550,11 @@ auto FindConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int
     return components;
 }
 
-auto FindBiEdgeConnectedComponents(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+
+// [[Rcpp::export]]
+std::vector<int> FindBiEdgeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     ListGraph g;
-    vector<ListGraph::Node> nodes;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListGraph::Node n = g.addNode();
         nodes.push_back(n);

@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include "lemon/matching.h"
 #include "lemon/list_graph.h"
@@ -22,16 +22,16 @@ template<typename ValueType>
 using NodeMap = ListGraph::NodeMap<ValueType>;
 
 
-auto MaximumWeightPerfectMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+auto MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i) {
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
     int NUM_ARCS = arcSources.size();
 
     for(int i = 0; i < NUM_ARCS; ++i) {
@@ -51,16 +51,16 @@ auto MaximumWeightPerfectMatchingRunner(vector<int> arcSources, vector<int> arcT
     return matching_arcs;
 }
 
-auto MaximumWeightFractionalPerfectMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+auto MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i) {
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
     int NUM_ARCS = arcSources.size();
 
     for(int i = 0; i < NUM_ARCS; ++i) {
@@ -83,9 +83,9 @@ auto MaximumWeightFractionalPerfectMatchingRunner(vector<int> arcSources, vector
 
 
 
-auto MaximumWeightFractionalMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights,  int numNodes) {
+auto MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
@@ -95,7 +95,7 @@ auto MaximumWeightFractionalMatchingRunner(vector<int> arcSources, vector<int> a
 
 
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
 
     int NUM_ARCS = arcSources.size();
@@ -118,9 +118,9 @@ auto MaximumWeightFractionalMatchingRunner(vector<int> arcSources, vector<int> a
 }
 
 
-auto MaximumWeightMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights,  int numNodes) {
+auto MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
@@ -130,7 +130,7 @@ auto MaximumWeightMatchingRunner(vector<int> arcSources, vector<int> arcTargets,
 
 
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
 
     int NUM_ARCS = arcSources.size();
@@ -152,20 +152,20 @@ auto MaximumWeightMatchingRunner(vector<int> arcSources, vector<int> arcTargets,
     return matching_arcs;
 }
 
-auto MaximumCardinalityMatchingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+auto MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
+    // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
         nodes.push_back(n);
     }
     NodeMap<Cost> dists(g);
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 
@@ -185,20 +185,20 @@ auto MaximumCardinalityMatchingRunner(vector<int> arcSources, vector<int> arcTar
     return matching_arcs;
 }
 
-auto MaximumCardinalityFractionalMatchingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+auto MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
+    // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
         nodes.push_back(n);
     }
     NodeMap<Cost> dists(g);
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 

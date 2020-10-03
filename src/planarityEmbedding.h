@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include "lemon/planarity.h"
 
@@ -22,9 +22,9 @@ using NodeMap = Graph::NodeMap<ValueType>;
 
 // TODO : Add PlanarEmbedding algorithm. It returns strange outputs for its inputs, and needs more understanding of the underlying objects.
 
-bool PlanarCheckingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     Graph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
         nodes.push_back(n);
@@ -32,7 +32,7 @@ bool PlanarCheckingRunner(vector<int> arcSources, vector<int> arcTargets, int nu
     EdgeMap<Cost> costs(g);
     NodeMap<Cost> dists(g);
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 
@@ -47,20 +47,20 @@ bool PlanarCheckingRunner(vector<int> arcSources, vector<int> arcTargets, int nu
 
 }
 
-auto PlanarColoringRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes, bool useFiveAlg = true) {
+auto PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, bool useFiveAlg = true) {
     // Requires: arcSources and arcTargets, which define the graph's edges via the index of the source and target node, respectively. 
     // The nodes are 0 indexed, where 0 refers to the first node. 
     // numNodes refers to the number of nodes in the possibly unconnected graph. 
     // useFiveAlg refers to the choice of algorithm used to coloring the graph. Setting this to false uses a linear time algorithm which can 
     // give out six colors instead.
     Graph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 
@@ -93,19 +93,19 @@ auto PlanarColoringRunner(vector<int> arcSources, vector<int> arcTargets, int nu
 }
 
 
-auto PlanarDrawingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+auto PlanarDrawingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A pair of vectors, which return the integers necessary to embed the graph onto a grid, where each edge is a straight line.
+    // Returns: A pair of std::vectors, which return the integers necessary to embed the graph onto a grid, where each edge is a straight line.
     Graph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 

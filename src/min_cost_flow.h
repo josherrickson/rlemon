@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 
 #include <lemon/cost_scaling.h>
 using namespace std;
@@ -18,15 +18,15 @@ std::vector<int> minFlow(std::vector<int> node_supplies, std::vector<int> arc_sr
 }
 */
 
-auto CapacityScalingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, vector<int> arcSupplies, int numNodes) {
+auto CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> arcSupplies, int numNodes) {
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
     
-    vector<ListDigraph::Arc> arcs;
+    std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
     ListDigraph::ArcMap<int> dists(g);
