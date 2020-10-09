@@ -1,15 +1,15 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
-#include <tuple>
+#include <std::tuple>
 
 using namespace lemon;
 using namespace std;
 
 #include <lemon/grosso_locatelli_pullan_mc.h>
 
-auto GrossoLocatelliPullanMcRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
+auto GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
   ListGraph g;
-  vector<ListGraph::Node> nodes;
+  std::vector<ListGraph::Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       ListGraph::Node n = g.addNode();
       nodes.push_back(n);

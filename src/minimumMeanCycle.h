@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 #include <iostream>
 #include "lemon/karp_mmc.h"
 #include "lemon/hartmann_orlin_mmc.h"
@@ -21,13 +21,13 @@ using ArcMap = ListDigraph::ArcMap<ValueType>;
 template<typename ValueType>
 using NodeMap = ListDigraph::NodeMap<ValueType>;
 
-auto HowardMmcRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes) {
-  // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-  //           One vector, arcDistances, which assigns for each arc an associated distance
+auto HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
+  // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+  //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-  // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
+  // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
   ListDigraph g;
-  vector<Node> nodes;
+  std::vector<Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       Node n = g.addNode();
       nodes.push_back(n);
@@ -35,7 +35,7 @@ auto HowardMmcRunner(vector<int> arcSources, vector<int> arcTargets, vector<int>
   ArcMap<Cost> costs(g);
   NodeMap<Cost> dists(g);
 
-  vector<Arc> arcs;
+  std::vector<Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
@@ -58,13 +58,13 @@ auto HowardMmcRunner(vector<int> arcSources, vector<int> arcTargets, vector<int>
 }
 
 
-auto KarpMmcRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes) {
-  // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-  //           One vector, arcDistances, which assigns for each arc an associated distance
+auto KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
+  // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+  //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-  // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
+  // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
   ListDigraph g;
-  vector<Node> nodes;
+  std::vector<Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       Node n = g.addNode();
       nodes.push_back(n);
@@ -72,7 +72,7 @@ auto KarpMmcRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> a
   ArcMap<Cost> costs(g);
   NodeMap<Cost> dists(g);
 
-  vector<Arc> arcs;
+  std::vector<Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
@@ -95,13 +95,13 @@ auto KarpMmcRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> a
 }
 
 
-auto HartmannOrlinMmcRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, int numNodes) {
-  // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-  //           One vector, arcDistances, which assigns for each arc an associated distance
+auto HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
+  // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+  //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-  // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
+  // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
   ListDigraph g;
-  vector<Node> nodes;
+  std::vector<Node> nodes;
   for(int i = 0; i < numNodes; ++i){
       Node n = g.addNode();
       nodes.push_back(n);
@@ -109,7 +109,7 @@ auto HartmannOrlinMmcRunner(vector<int> arcSources, vector<int> arcTargets, vect
   ArcMap<Cost> costs(g);
   NodeMap<Cost> dists(g);
 
-  vector<Arc> arcs;
+  std::vector<Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 

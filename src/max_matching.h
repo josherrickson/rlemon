@@ -3,6 +3,7 @@
 #include "lemon/matching.h"
 #include "lemon/list_graph.h"
 #include "lemon/fractional_matching.h"
+#include <Rcpp.h>
 
 typedef int Value;
 
@@ -22,16 +23,17 @@ template<typename ValueType>
 using NodeMap = ListGraph::NodeMap<ValueType>;
 
 
-auto MaximumWeightPerfectMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i) {
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
     int NUM_ARCS = arcSources.size();
 
     for(int i = 0; i < NUM_ARCS; ++i) {
@@ -40,27 +42,30 @@ auto MaximumWeightPerfectMatchingRunner(vector<int> arcSources, vector<int> arcT
         arcs.push_back(a);
     }
     auto test = MaxWeightedPerfectMatching<ListGraph, EdgeMap<Cost>>(g, dists);
-    std::vector<std::pair<int,int>> matching_arcs;
+    std::vector<std::vector<int>> arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
-            matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+            std::vector<int> arc;
+            arc.push_back(g.id(g.u(arcs[i])));
+            arc.push_back(g.id(g.v(arcs[i])));
+            arcs_out.push_back(arc);
         }    
     }
-    std::cout << test.matchingWeight() << std::endl;
-    return matching_arcs;
+    return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
-auto MaximumWeightFractionalPerfectMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i) {
         Node n = g.addNode();
         nodes.push_back(n);
     }
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
     int NUM_ARCS = arcSources.size();
 
     for(int i = 0; i < NUM_ARCS; ++i) {
@@ -69,34 +74,31 @@ auto MaximumWeightFractionalPerfectMatchingRunner(vector<int> arcSources, vector
         arcs.push_back(a);
     }
     auto test = MaxWeightedPerfectFractionalMatching<ListGraph, EdgeMap<Cost>>(g, dists);
-    std::vector<std::pair<int,int>> matching_arcs;
+    std::vector<std::vector<int>> arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
-            matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+            std::vector<int> arc;
+            arc.push_back(g.id(g.u(arcs[i])));
+            arc.push_back(g.id(g.v(arcs[i])));
+            arcs_out.push_back(arc);
         }    
     }
-    std::cout << test.matchingWeight() << std::endl;
-    return matching_arcs;
+    return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
 
 
-
-auto MaximumWeightFractionalMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights,  int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
         nodes.push_back(n);
     }
-
-
-
-
-    vector<Edge> arcs;
-
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 
@@ -106,21 +108,23 @@ auto MaximumWeightFractionalMatchingRunner(vector<int> arcSources, vector<int> a
         arcs.push_back(a);
     }
     auto test = MaxWeightedFractionalMatching<ListGraph, EdgeMap<Cost>>(g, dists);
-    std::vector<std::pair<int,int>> matching_arcs;
+    std::vector<std::vector<int>> arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
-            matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+            std::vector<int> arc;
+            arc.push_back(g.id(g.u(arcs[i])));
+            arc.push_back(g.id(g.v(arcs[i])));
+            arcs_out.push_back(arc);
         }    
     }
-    std::cout << test.matchingSize() << std::endl;
-    return matching_arcs;
+    return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
-
-auto MaximumWeightMatchingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcWeights,  int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     EdgeMap<Cost> dists(g);
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
@@ -130,7 +134,7 @@ auto MaximumWeightMatchingRunner(vector<int> arcSources, vector<int> arcTargets,
 
 
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
 
     int NUM_ARCS = arcSources.size();
@@ -140,32 +144,35 @@ auto MaximumWeightMatchingRunner(vector<int> arcSources, vector<int> arcTargets,
         dists[a] = arcWeights[i];
         arcs.push_back(a);
     }
-    auto test = MaxWeightedMatching<ListGraph, EdgeMap<Cost>>(g, dists);
-    std::vector<std::pair<int,int>> matching_arcs;
+    auto test = MaxWeightedMatching<ListGraph>(g,dists);
+    std::vector<std::vector<int>> arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
-            matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+            std::vector<int> arc;
+            arc.push_back(g.id(g.u(arcs[i])));
+            arc.push_back(g.id(g.v(arcs[i])));
+            arcs_out.push_back(arc);
         }    
     }
-    std::cout << test.matchingSize() << std::endl;
-    return matching_arcs;
+    return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
-auto MaximumCardinalityMatchingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
+    // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
         nodes.push_back(n);
     }
     NodeMap<Cost> dists(g);
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 
@@ -176,29 +183,33 @@ auto MaximumCardinalityMatchingRunner(vector<int> arcSources, vector<int> arcTar
     ListGraph::EdgeMap<int> map(g);
     auto test = MaxMatching<ListGraph>(g);
     test.run();
-    std::vector<std::pair<int,int>> matching_arcs;
+    std::vector<std::vector<int>> arcs_out;
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
-            matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+            std::vector<int> arc;
+            arc.push_back(g.id(g.u(arcs[i])));
+            arc.push_back(g.id(g.v(arcs[i])));
+            arcs_out.push_back(arc);
         }    
     }
-    return matching_arcs;
+    return arcs_out;
 }
 
-auto MaximumCardinalityFractionalMatchingRunner(vector<int> arcSources, vector<int> arcTargets, int numNodes) {
-    // Requires: Two vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One vector, arcDistances, which assigns for each arc an associated distance
+// [[Rcpp::export]]
+std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
+    //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: One vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
+    // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
     ListGraph g;
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         Node n = g.addNode();
         nodes.push_back(n);
     }
     NodeMap<Cost> dists(g);
 
-    vector<Edge> arcs;
+    std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 
@@ -209,13 +220,16 @@ auto MaximumCardinalityFractionalMatchingRunner(vector<int> arcSources, vector<i
     ListGraph::EdgeMap<int> map(g);
     auto test = MaxFractionalMatching<ListGraph>(g);
     test.run();
-    std::vector<std::pair<int,int>> matching_arcs;
+    std::vector<std::vector<int>> arcs_out;
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
-            matching_arcs.push_back(std::pair<int,int>(g.id(g.u(arcs[i])), g.id(g.v(arcs[i]))));
+            std::vector<int> arc;
+            arc.push_back(g.id(g.u(arcs[i])));
+            arc.push_back(g.id(g.v(arcs[i])));
+            arcs_out.push_back(arc);
         }    
     }
-    return matching_arcs;
+    return arcs_out;
 }
 
 

@@ -1,4 +1,4 @@
-#include <vector>
+#include <std::vector>
 #include "kruskal.h"
 #include "list_graph.h"
 
@@ -19,7 +19,7 @@ int main()
 {
     Graph g;
 
-    vector<Node> nodes;
+    std::vector<Node> nodes;
     for(int i = 0; i < 9; ++i)
     {
         Node n = g.addNode();
@@ -28,11 +28,11 @@ int main()
 
     ArcMap<bool> output(g);
     ArcMap<Cost> costs(g);
-    vector<Arc> arcs;
+    std::vector<Arc> arcs;
 
-    vector<int> arc_src{1, 1, 2, 2, 2, 3, 3, 4, 4,5,5,5,6,6,7};
-    vector<int> arc_targ{2, 3, 3, 4, 5, 4, 7, 5, 7,7,8,6,8,9,8};
-    vector<int> arc_costs{5, 2, 2, 3, 7, 3, 9, 2, 6,5,7,8,3,4,2};
+    std::vector<int> arc_src{1, 1, 2, 2, 2, 3, 3, 4, 4,5,5,5,6,6,7};
+    std::vector<int> arc_targ{2, 3, 3, 4, 5, 4, 7, 5, 7,7,8,6,8,9,8};
+    std::vector<int> arc_costs{5, 2, 2, 3, 7, 3, 9, 2, 6,5,7,8,3,4,2};
     int NUM_ARCS = arc_src.size();
 
     for(int i = 0; i < NUM_ARCS; ++i)
