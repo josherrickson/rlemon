@@ -10,42 +10,97 @@ GrossoLocatelliPullanMcRunner <- function(arcSources, arcTargets, numNodes) {
 #' @param arcSources A vector of integers containing the source vertices of the edges
 #' @param arcTargets A vector of integers containing the destination verctices of the edges
 #' @param numNodes The number of nodes in the graph.
+#' @return An R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
 getBipartitePartitions <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_getBipartitePartitions`, arcSources, arcTargets, numNodes)
 }
 
+#' Gets the topological sort on a list of graphs
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return An R List containing (1) A boolean stating if the graph is a dag, and (2) an std::vector of length numNodes, containing the index of vertex i in the ordering at location i
 getAndcheckTopologicalSort <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_getAndcheckTopologicalSort`, arcSources, arcTargets, numNodes)
 }
 
+#' Gets the topological sort on a list of graphs
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return An R Numeric Vector of length numNodes, containing the index of vertex i in the ordering at location i.
 getTopologicalSort <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_getTopologicalSort`, arcSources, arcTargets, numNodes)
 }
 
+#' Checks if a graph is connected
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return  A boolean stating if we have a connected graph or not
 IsConnected <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsConnected`, arcSources, arcTargets, numNodes)
 }
 
+#' Checks if a graph is acyclic
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return  A boolean stating if we have a connected graph or not
 IsAcyclic <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsAcyclic`, arcSources, arcTargets, numNodes)
 }
 
+#' Checks if a graph is a tree
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return  A boolean stating if we have a tree
 IsTree <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsTree`, arcSources, arcTargets, numNodes)
 }
 
+#' Checks if a graph is bipartite
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return  A boolean stating if we have a bipartite graph or not
 IsBipartite <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsBipartite`, arcSources, arcTargets, numNodes)
 }
 
+#' Checks if a graph is strongly connected
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return  A boolean stating if we have a strongly connected graph or not
 IsStronglyConnected <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsStronglyConnected`, arcSources, arcTargets, numNodes)
 }
 
+#' Checks if a graph is a DAG
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return  A boolean stating if we have a DAG or not
 IsDAG <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsDAG`, arcSources, arcTargets, numNodes)
 }
 
+#' Checks if a graph is bi-connected
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
+#' @return  A boolean stating if we have a bi-connected graph or not
 IsBiNodeConnected <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsBiNodeConnected`, arcSources, arcTargets, numNodes)
 }

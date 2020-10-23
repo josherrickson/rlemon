@@ -13,6 +13,9 @@ getBipartitePartitions(arcSources, arcTargets, numNodes)
 
 \item{numNodes}{The number of nodes in the graph.}
 }
+\value{
+An R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
+}
 \description{
 Acquires bipartite partitions
 }

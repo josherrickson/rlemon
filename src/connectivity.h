@@ -12,11 +12,9 @@ using namespace lemon;
 //' @param arcSources A vector of integers containing the source vertices of the edges
 //' @param arcTargets A vector of integers containing the destination verctices of the edges
 //' @param numNodes The number of nodes in the graph.
+//' @return An R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
 // [[Rcpp::export]]
 Rcpp::List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A std::tuple containing both a std::vector of length numNodes, containing the partition for each node, and if the graph is bipartite.
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -37,13 +35,15 @@ Rcpp::List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> 
     return Rcpp::List::create(isBipartite, out_partitions);
 }
 
-
+//' Gets the topological sort on a list of graphs
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return An R List containing (1) A boolean stating if the graph is a dag, and (2) an std::vector of length numNodes, containing the index of vertex i in the ordering at location i
 // [[Rcpp::export]]
 Rcpp::List getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A std::tuple containing both a std::vector of length numNodes, containing the index of vertex i in the ordering at location i, and if the graph is a dag.
-        ListDigraph g;
+    ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
         ListDigraph::Node n = g.addNode();
@@ -63,12 +63,15 @@ Rcpp::List getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<i
     return Rcpp::List::create(isDAG, order);
 }
 
+
+//' Gets the topological sort on a list of graphs
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return An R Numeric Vector of length numNodes, containing the index of vertex i in the ordering at location i.
 // [[Rcpp::export]]
 std::vector<int> getTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A std::vector of length numNodes, containing the index of vertex i in the ordering at location i.
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -88,12 +91,15 @@ std::vector<int> getTopologicalSort(std::vector<int> arcSources, std::vector<int
     return order;
 }
 
+
+//' Checks if a graph is connected
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return  A boolean stating if we have a connected graph or not
 // [[Rcpp::export]]
 int IsConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a connected graph or not
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -107,12 +113,14 @@ int IsConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int nu
     return connected(g);
 }
 
+//' Checks if a graph is acyclic
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return  A boolean stating if we have a connected graph or not
 // [[Rcpp::export]]
 int IsAcyclic(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have an acyclic graph
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -126,12 +134,14 @@ int IsAcyclic(std::vector<int> arcSources, std::vector<int> arcTargets, int numN
     return acyclic(g);
 }
 
+//' Checks if a graph is a tree
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return  A boolean stating if we have a tree
 // [[Rcpp::export]]
 int IsTree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a tree 
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -145,12 +155,15 @@ int IsTree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNode
     return tree(g);
 }
 
+
+//' Checks if a graph is bipartite
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return  A boolean stating if we have a bipartite graph or not
 // [[Rcpp::export]]
 int IsBipartite(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a bipartite graph or not
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -164,12 +177,14 @@ int IsBipartite(std::vector<int> arcSources, std::vector<int> arcTargets, int nu
     return bipartite(g);
 }
 
+//' Checks if a graph is strongly connected
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return  A boolean stating if we have a strongly connected graph or not
 // [[Rcpp::export]]
 int IsStronglyConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a strongly connected digraph or not.
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -183,12 +198,14 @@ int IsStronglyConnected(std::vector<int> arcSources, std::vector<int> arcTargets
     return stronglyConnected(g);
 }
 
+//' Checks if a graph is a DAG
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return  A boolean stating if we have a DAG or not
 // [[Rcpp::export]]
 int IsDAG(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a DAG, or a Directed Acyclic Graph, or not.
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
@@ -202,12 +219,14 @@ int IsDAG(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes
     return dag(g);
 }
 
+//' Checks if a graph is bi-connected
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
+//' @return  A boolean stating if we have a bi-connected graph or not
 // [[Rcpp::export]]
 int IsBiNodeConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
-    //           One std::vector, arcDistances, which assigns for each arc an associated distance
-    //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-    // Returns: A boolean stating if we have a bi-node connected graph or not
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
