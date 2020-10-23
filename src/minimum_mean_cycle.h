@@ -1,46 +1,37 @@
-#include <std::vector>
+#include <vector>
 #include <iostream>
 #include "lemon/karp_mmc.h"
 #include "lemon/hartmann_orlin_mmc.h"
 #include "lemon/howard_mmc.h"
+#include <Rcpp.h>
 
-typedef int Value;
 
 using namespace lemon;
 using namespace std;
 
-using Cost = int;
 
-using Graph = ListDigraph;
-using Node = Graph::Node;
-using Arc = Graph::Arc;
 
-template<typename ValueType>
-using ArcMap = ListDigraph::ArcMap<ValueType>;
-
-template<typename ValueType>
-using NodeMap = ListDigraph::NodeMap<ValueType>;
-
-auto HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
   ListDigraph g;
-  std::vector<Node> nodes;
+  std::vector<ListDigraph::Node> nodes;
   for(int i = 0; i < numNodes; ++i){
-      Node n = g.addNode();
+      ListDigraph::Node n = g.addNode();
       nodes.push_back(n);
   }
-  ArcMap<Cost> costs(g);
-  NodeMap<Cost> dists(g);
+  ListDigraph::ArcMap<int> costs(g);
+  ListDigraph::NodeMap<int> dists(g);
 
-  std::vector<Arc> arcs;
+  std::vector<ListDigraph::Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
   for(int i = 0; i < NUM_ARCS; ++i) {
-      Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+      ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
       arcs.push_back(a);
       costs[arcs[i]] = arcDistances[i];
   }
@@ -54,30 +45,30 @@ auto HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, s
       distances.push_back(costs[finale.nth(i)]);
       path_nodes.push_back(g.id(g.source(finale.nth(i))));
   }
-  return std::tuple<std::vector<int>, std::vector<int>>{distances, path_nodes};
+  return Rcpp::List::create(distances, path_nodes);
 }
 
-
-auto KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
   ListDigraph g;
-  std::vector<Node> nodes;
+  std::vector<ListDigraph::Node> nodes;
   for(int i = 0; i < numNodes; ++i){
-      Node n = g.addNode();
+      ListDigraph::Node n = g.addNode();
       nodes.push_back(n);
   }
-  ArcMap<Cost> costs(g);
-  NodeMap<Cost> dists(g);
+  ListDigraph::ArcMap<int> costs(g);
+  ListDigraph::NodeMap<int> dists(g);
 
-  std::vector<Arc> arcs;
+  std::vector<ListDigraph::Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
   for(int i = 0; i < NUM_ARCS; ++i) {
-      Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+      ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
       arcs.push_back(a);
       costs[arcs[i]] = arcDistances[i];
   }
@@ -91,30 +82,30 @@ auto KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std
       distances.push_back(costs[finale.nth(i)]);
       path_nodes.push_back(g.id(g.source(finale.nth(i))));
   }
-  return std::tuple<std::vector<int>, std::vector<int>>{distances, path_nodes};
+  return Rcpp::List::create(distances, path_nodes);
 }
 
-
-auto HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
   ListDigraph g;
-  std::vector<Node> nodes;
+  std::vector<ListDigraph::Node> nodes;
   for(int i = 0; i < numNodes; ++i){
-      Node n = g.addNode();
+      ListDigraph::Node n = g.addNode();
       nodes.push_back(n);
   }
-  ArcMap<Cost> costs(g);
-  NodeMap<Cost> dists(g);
+  ListDigraph::ArcMap<int> costs(g);
+  ListDigraph::NodeMap<int> dists(g);
 
-  std::vector<Arc> arcs;
+  std::vector<ListDigraph::Arc> arcs;
 
   int NUM_ARCS = arcSources.size();
 
   for(int i = 0; i < NUM_ARCS; ++i) {
-      Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+      ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
       arcs.push_back(a);
       costs[arcs[i]] = arcDistances[i];
   }
@@ -128,5 +119,5 @@ auto HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTar
       distances.push_back(costs[finale.nth(i)]);
       path_nodes.push_back(g.id(g.source(finale.nth(i))));
   }
-  return std::tuple<std::vector<int>, std::vector<int>>{distances, path_nodes};
+  return Rcpp::List::create(distances, path_nodes);
 }

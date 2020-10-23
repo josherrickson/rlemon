@@ -145,6 +145,18 @@ NetworkSimplexRunner <- function(arcSources, arcTargets, arcDistances, nodeSuppl
     .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
+HowardMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
+    .Call(`_rlemon_HowardMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
+}
+
+KarpMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
+    .Call(`_rlemon_KarpMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
+}
+
+HartmannOrlinMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
+    .Call(`_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
+}
+
 PlanarCheckingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_PlanarCheckingRunner`, arcSources, arcTargets, numNodes)
 }

@@ -485,6 +485,48 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// HowardMmcRunner
+Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
+RcppExport SEXP _rlemon_HowardMmcRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(HowardMmcRunner(arcSources, arcTargets, arcDistances, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// KarpMmcRunner
+Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
+RcppExport SEXP _rlemon_KarpMmcRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(KarpMmcRunner(arcSources, arcTargets, arcDistances, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// HartmannOrlinMmcRunner
+Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
+RcppExport SEXP _rlemon_HartmannOrlinMmcRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(HartmannOrlinMmcRunner(arcSources, arcTargets, arcDistances, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 // PlanarCheckingRunner
 bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _rlemon_PlanarCheckingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
@@ -623,6 +665,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_CapacityScalingRunner", (DL_FUNC) &_rlemon_CapacityScalingRunner, 5},
     {"_rlemon_CostScalingRunner", (DL_FUNC) &_rlemon_CostScalingRunner, 5},
     {"_rlemon_NetworkSimplexRunner", (DL_FUNC) &_rlemon_NetworkSimplexRunner, 5},
+    {"_rlemon_HowardMmcRunner", (DL_FUNC) &_rlemon_HowardMmcRunner, 4},
+    {"_rlemon_KarpMmcRunner", (DL_FUNC) &_rlemon_KarpMmcRunner, 4},
+    {"_rlemon_HartmannOrlinMmcRunner", (DL_FUNC) &_rlemon_HartmannOrlinMmcRunner, 4},
     {"_rlemon_PlanarCheckingRunner", (DL_FUNC) &_rlemon_PlanarCheckingRunner, 3},
     {"_rlemon_PlanarColoringRunner", (DL_FUNC) &_rlemon_PlanarColoringRunner, 4},
     {"_rlemon_PlanarDrawingRunner", (DL_FUNC) &_rlemon_PlanarDrawingRunner, 3},

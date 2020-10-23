@@ -8,38 +8,26 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
-using Cost = int;
-
-using Graph = ListGraph;
-using Node = Graph::Node;
-using Edge = Graph::Edge;
-
-template<typename ValueType>
-using EdgeMap = Graph::EdgeMap<ValueType>;
-
-template<typename ValueType>
-using NodeMap = Graph::NodeMap<ValueType>;
-
 
 // TODO : Add PlanarEmbedding algorithm. It returns strange outputs for its inputs, and needs more understanding of the underlying objects.
 
 // [[Rcpp::export]]
 bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
-    Graph g;
-    std::vector<Node> nodes;
+    ListGraph g;
+    std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){
-        Node n = g.addNode();
+        ListGraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-    EdgeMap<Cost> costs(g);
-    NodeMap<Cost> dists(g);
+    ListGraph::EdgeMap<Cost> costs(g);
+    ListGraph::NodeMap<Cost> dists(g);
 
     std::vector<Edge> arcs;
 
     int NUM_ARCS = arcSources.size();
 
     for(int i = 0; i < NUM_ARCS; ++i) {
-        Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+        ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
         arcs.push_back(a);
     }
 

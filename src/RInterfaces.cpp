@@ -3,6 +3,7 @@
 #include "min_cost_flow.h"
 #include "planarityEmbedding.h"
 #include "travelling_salesman.h"
+#include "minimum_mean_cycle.h"
 #include <Rcpp.h>
 #include <tuple>
 using namespace Rcpp;
