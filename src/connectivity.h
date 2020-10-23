@@ -7,7 +7,11 @@
 #include <Rcpp.h>
 using namespace lemon;
 
-
+//' Acquires bipartite partitions
+//' 
+//' @param arcSources A vector of integers containing the source vertices of the edges
+//' @param arcTargets A vector of integers containing the destination verctices of the edges
+//' @param numNodes The number of nodes in the graph.
 // [[Rcpp::export]]
 Rcpp::List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph

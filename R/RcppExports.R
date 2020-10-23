@@ -5,6 +5,11 @@ GrossoLocatelliPullanMcRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_GrossoLocatelliPullanMcRunner`, arcSources, arcTargets, numNodes)
 }
 
+#' Acquires bipartite partitions
+#' 
+#' @param arcSources A vector of integers containing the source vertices of the edges
+#' @param arcTargets A vector of integers containing the destination verctices of the edges
+#' @param numNodes The number of nodes in the graph.
 getBipartitePartitions <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_getBipartitePartitions`, arcSources, arcTargets, numNodes)
 }
