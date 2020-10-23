@@ -2,146 +2,174 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 getBipartitePartitions <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_getBipartitePartitions`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_getBipartitePartitions`, arcSources, arcTargets, numNodes)
 }
 
 getAndcheckTopologicalSort <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_getAndcheckTopologicalSort`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_getAndcheckTopologicalSort`, arcSources, arcTargets, numNodes)
 }
 
 getTopologicalSort <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_getTopologicalSort`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_getTopologicalSort`, arcSources, arcTargets, numNodes)
 }
 
 IsConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsConnected`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsConnected`, arcSources, arcTargets, numNodes)
 }
 
 IsAcyclic <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsAcyclic`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsAcyclic`, arcSources, arcTargets, numNodes)
 }
 
 IsTree <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsTree`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsTree`, arcSources, arcTargets, numNodes)
 }
 
 IsBipartite <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsBipartite`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsBipartite`, arcSources, arcTargets, numNodes)
 }
 
 IsStronglyConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsStronglyConnected`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsStronglyConnected`, arcSources, arcTargets, numNodes)
 }
 
 IsDAG <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsDAG`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsDAG`, arcSources, arcTargets, numNodes)
 }
 
 IsBiNodeConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsBiNodeConnected`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsBiNodeConnected`, arcSources, arcTargets, numNodes)
 }
 
 IsBiEdgeConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsBiEdgeConnected`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsBiEdgeConnected`, arcSources, arcTargets, numNodes)
 }
 
 IsLoopFree <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsLoopFree`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsLoopFree`, arcSources, arcTargets, numNodes)
 }
 
 IsParallelFree <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsParallelFree`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsParallelFree`, arcSources, arcTargets, numNodes)
 }
 
 IsSimpleGraph <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsSimpleGraph`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsSimpleGraph`, arcSources, arcTargets, numNodes)
 }
 
 IsEulerian <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_IsEulerian`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_IsEulerian`, arcSources, arcTargets, numNodes)
 }
 
 CountBiEdgeConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_CountBiEdgeConnected`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_CountBiEdgeConnected`, arcSources, arcTargets, numNodes)
 }
 
 CountConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_CountConnectedComponents`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_CountConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
 CountBiNodeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_CountBiNodeConnectedComponents`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_CountBiNodeConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
 CountStronglyConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_CountStronglyConnectedComponents`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_CountStronglyConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
 FindStronglyConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_FindStronglyConnectedComponents`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_FindStronglyConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
 FindStronglyConnectedCutArcs <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_FindStronglyConnectedCutArcs`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_FindStronglyConnectedCutArcs`, arcSources, arcTargets, numNodes)
 }
 
 FindBiEdgeConnectedCutEdges <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_FindBiEdgeConnectedCutEdges`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_FindBiEdgeConnectedCutEdges`, arcSources, arcTargets, numNodes)
 }
 
 FindBiNodeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_FindBiNodeConnectedComponents`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_FindBiNodeConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
 FindBiNodeConnectedNodes <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_FindBiNodeConnectedNodes`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_FindBiNodeConnectedNodes`, arcSources, arcTargets, numNodes)
 }
 
 FindConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_FindConnectedComponents`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_FindConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
 FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
 MaximumWeightPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
-    .Call(`_test_MaximumWeightPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+    .Call(`_rlemon_MaximumWeightPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 MaximumWeightFractionalPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
-    .Call(`_test_MaximumWeightFractionalPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+    .Call(`_rlemon_MaximumWeightFractionalPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 MaximumWeightFractionalMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
-    .Call(`_test_MaximumWeightFractionalMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+    .Call(`_rlemon_MaximumWeightFractionalMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 MaximumWeightMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
-    .Call(`_test_MaximumWeightMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
+    .Call(`_rlemon_MaximumWeightMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 MaximumCardinalityMatchingRunner <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_MaximumCardinalityMatchingRunner`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_MaximumCardinalityMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
 MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_test_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
+    .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
 CycleCancellingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_test_CycleCancellingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+    .Call(`_rlemon_CycleCancellingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
 CapacityScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_test_CapacityScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+    .Call(`_rlemon_CapacityScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
 CostScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_test_CostScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+    .Call(`_rlemon_CostScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
 NetworkSimplexRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_test_NetworkSimplexRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+    .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+}
+
+PlanarCheckingRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_PlanarCheckingRunner`, arcSources, arcTargets, numNodes)
+}
+
+PlanarColoringRunner <- function(arcSources, arcTargets, numNodes, useFiveAlg = TRUE) {
+    .Call(`_rlemon_PlanarColoringRunner`, arcSources, arcTargets, numNodes, useFiveAlg)
+}
+
+PlanarDrawingRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_PlanarDrawingRunner`, arcSources, arcTargets, numNodes)
+}
+
+ChristofidesRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
+    .Call(`_rlemon_ChristofidesRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
+}
+
+GreedyTSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
+    .Call(`_rlemon_GreedyTSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
+}
+
+NearestNeighborTSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
+    .Call(`_rlemon_NearestNeighborTSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
+}
+
+Opt2TSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
+    .Call(`_rlemon_Opt2TSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }
 

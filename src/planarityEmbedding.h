@@ -1,6 +1,7 @@
-#include <std::vector>
+#include <vector>
 #include <iostream>
 #include "lemon/planarity.h"
+#include <Rcpp.h>
 
 typedef int Value;
 
@@ -22,6 +23,7 @@ using NodeMap = Graph::NodeMap<ValueType>;
 
 // TODO : Add PlanarEmbedding algorithm. It returns strange outputs for its inputs, and needs more understanding of the underlying objects.
 
+// [[Rcpp::export]]
 bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     Graph g;
     std::vector<Node> nodes;
@@ -47,7 +49,8 @@ bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTarge
 
 }
 
-auto PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, bool useFiveAlg = true) {
+// [[Rcpp::export]]
+Rcpp::List PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, bool useFiveAlg = true) {
     // Requires: arcSources and arcTargets, which define the graph's edges via the index of the source and target node, respectively. 
     // The nodes are 0 indexed, where 0 refers to the first node. 
     // numNodes refers to the number of nodes in the possibly unconnected graph. 
@@ -88,12 +91,11 @@ auto PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> arcTarge
         }
     }
 
-    auto output = std::make_tuple(isPlanar, colors);
-    return output;
+    return  Rcpp::List::create(isPlanar, colors);
 }
 
-
-auto PlanarDrawingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -133,7 +135,6 @@ auto PlanarDrawingRunner(std::vector<int> arcSources, std::vector<int> arcTarget
         }
     }
 
-    auto output = std::make_tuple(isPlanar, x_coords, y_coords);
-    return output;
+    return Rcpp::List::create(isPlanar, x_coords, y_coords);
 }
 

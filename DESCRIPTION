@@ -1,9 +1,9 @@
-Package: test
+Package: rlemon
 Type: Package
-Title: What the Package Does in One 'Title Case' Line
+Title: Interfaces from LEMON to R
 Version: 1.0
 Date: 2020-09-18
-Author: Your Name
+Author: Arav Agarwal, Aditya Tewari
 Maintainer: Your Name <your@email.com>
 Description: One paragraph description of what the package does as one
         or more full sentences.

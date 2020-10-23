@@ -1,6 +1,8 @@
 #include "connectivity.h"
 #include "max_matching.h"
 #include "min_cost_flow.h"
+#include "planarityEmbedding.h"
+#include "travelling_salesman.h"
 #include <Rcpp.h>
 #include <tuple>
 using namespace Rcpp;
