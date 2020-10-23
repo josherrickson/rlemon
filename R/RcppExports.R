@@ -129,3 +129,19 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
     .Call(`_test_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
+CycleCancellingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
+    .Call(`_test_CycleCancellingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+}
+
+CapacityScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
+    .Call(`_test_CapacityScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+}
+
+CostScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
+    .Call(`_test_CostScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+}
+
+NetworkSimplexRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
+    .Call(`_test_NetworkSimplexRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+}
+

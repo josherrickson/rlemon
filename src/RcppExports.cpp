@@ -425,6 +425,66 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// CycleCancellingRunner
+Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _test_CycleCancellingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(CycleCancellingRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// CapacityScalingRunner
+Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _test_CapacityScalingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(CapacityScalingRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// CostScalingRunner
+Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _test_CostScalingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(CostScalingRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// NetworkSimplexRunner
+Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _test_NetworkSimplexRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(NetworkSimplexRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_test_getBipartitePartitions", (DL_FUNC) &_test_getBipartitePartitions, 3},
@@ -459,6 +519,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_test_MaximumWeightMatchingRunner", (DL_FUNC) &_test_MaximumWeightMatchingRunner, 4},
     {"_test_MaximumCardinalityMatchingRunner", (DL_FUNC) &_test_MaximumCardinalityMatchingRunner, 3},
     {"_test_MaximumCardinalityFractionalMatchingRunner", (DL_FUNC) &_test_MaximumCardinalityFractionalMatchingRunner, 3},
+    {"_test_CycleCancellingRunner", (DL_FUNC) &_test_CycleCancellingRunner, 5},
+    {"_test_CapacityScalingRunner", (DL_FUNC) &_test_CapacityScalingRunner, 5},
+    {"_test_CostScalingRunner", (DL_FUNC) &_test_CostScalingRunner, 5},
+    {"_test_NetworkSimplexRunner", (DL_FUNC) &_test_NetworkSimplexRunner, 5},
     {NULL, NULL, 0}
 };
 

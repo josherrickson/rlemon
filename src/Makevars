@@ -1,1 +1,1 @@
-PKG_CPPFLAGS = -std=c++14
+PKG_CPPFLAGS = -std=c++14 -I../inst

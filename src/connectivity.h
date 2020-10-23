@@ -2,8 +2,8 @@
 #include <iostream>
 #include <tuple>
 #include "lemon/list_graph.h"
-#include "lemon/connectivity.h"
-#include "lemon/euler.h"
+#include <lemon/connectivity.h>
+#include <lemon/euler.h>
 #include <Rcpp.h>
 using namespace lemon;
 

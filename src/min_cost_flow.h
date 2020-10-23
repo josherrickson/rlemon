@@ -1,29 +1,24 @@
-<<<<<<< HEAD
 #include <vector>
 #include <tuple>
 #include <lemon/network_simplex.h>
-=======
-#include <std::vector>
-
->>>>>>> 9a5bc8998c3930efb165de38253b0ce55fe73942
 #include <lemon/cost_scaling.h>
 #include <lemon/capacity_scaling.h>
 #include <lemon/cycle_canceling.h>
 #include "lemon/list_graph.h"
-
-using namespace std;
+#include <Rcpp.h>
 
 using namespace lemon;
 
-auto CycleCancellingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, vector<int> nodeSupplies, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
     
-    vector<ListDigraph::Arc> arcs;
+    std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
     ListDigraph::ArcMap<int> dists(g);
@@ -58,19 +53,19 @@ auto CycleCancellingRunner(vector<int> arcSources, vector<int> arcTargets, vecto
     }
 
 
-    return std::make_tuple(arcFlows, nodePots, runner.totalCost());
+    return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
 
-
-auto CapacityScalingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, vector<int> nodeSupplies, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
     
-    vector<ListDigraph::Arc> arcs;
+    std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
     ListDigraph::ArcMap<int> dists(g);
@@ -105,14 +100,11 @@ auto CapacityScalingRunner(vector<int> arcSources, vector<int> arcTargets, vecto
     }
 
 
-    return std::make_tuple(arcFlows, nodePots, runner.totalCost());
+    return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
 
-<<<<<<< HEAD
-auto CostScalingRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, vector<int> nodeSupplies, int numNodes) {
-=======
-auto CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> arcSupplies, int numNodes) {
->>>>>>> 9a5bc8998c3930efb165de38253b0ce55fe73942
+// [[Rcpp::export]]
+Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
@@ -155,18 +147,20 @@ auto CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTarg
     }
 
 
-    return std::make_tuple(arcFlows, nodePots, runner.totalCost());
+    return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
 
-auto NetworkSimplexRunner(vector<int> arcSources, vector<int> arcTargets, vector<int> arcDistances, vector<int> nodeSupplies, int numNodes) {
+
+// [[Rcpp::export]]
+Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
-    vector<ListDigraph::Node> nodes;
+    std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
     
-    vector<ListDigraph::Arc> arcs;
+    std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
     ListDigraph::ArcMap<int> dists(g);
@@ -201,5 +195,5 @@ auto NetworkSimplexRunner(vector<int> arcSources, vector<int> arcTargets, vector
     }
 
 
-    return std::make_tuple(arcFlows, nodePots, runner.totalCost());
+    return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
