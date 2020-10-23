@@ -4,6 +4,7 @@
 #include "planarityEmbedding.h"
 #include "travelling_salesman.h"
 #include "minimum_mean_cycle.h"
+#include "approximation.h"
 #include <Rcpp.h>
 #include <tuple>
 using namespace Rcpp;

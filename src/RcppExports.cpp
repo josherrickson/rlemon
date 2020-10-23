@@ -5,6 +5,19 @@
 
 using namespace Rcpp;
 
+// GrossoLocatelliPullanMcRunner
+Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_GrossoLocatelliPullanMcRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(GrossoLocatelliPullanMcRunner(arcSources, arcTargets, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 // getBipartitePartitions
 Rcpp::List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _rlemon_getBipartitePartitions(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
@@ -597,6 +610,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// InsertionTSPRunner
+Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight);
+RcppExport SEXP _rlemon_InsertionTSPRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP, SEXP defaultEdgeWeightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type defaultEdgeWeight(defaultEdgeWeightSEXP);
+    rcpp_result_gen = Rcpp::wrap(InsertionTSPRunner(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight));
+    return rcpp_result_gen;
+END_RCPP
+}
 // NearestNeighborTSPRunner
 Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight);
 RcppExport SEXP _rlemon_NearestNeighborTSPRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP, SEXP defaultEdgeWeightSEXP) {
@@ -629,6 +657,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_rlemon_GrossoLocatelliPullanMcRunner", (DL_FUNC) &_rlemon_GrossoLocatelliPullanMcRunner, 3},
     {"_rlemon_getBipartitePartitions", (DL_FUNC) &_rlemon_getBipartitePartitions, 3},
     {"_rlemon_getAndcheckTopologicalSort", (DL_FUNC) &_rlemon_getAndcheckTopologicalSort, 3},
     {"_rlemon_getTopologicalSort", (DL_FUNC) &_rlemon_getTopologicalSort, 3},
@@ -673,6 +702,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_PlanarDrawingRunner", (DL_FUNC) &_rlemon_PlanarDrawingRunner, 3},
     {"_rlemon_ChristofidesRunner", (DL_FUNC) &_rlemon_ChristofidesRunner, 5},
     {"_rlemon_GreedyTSPRunner", (DL_FUNC) &_rlemon_GreedyTSPRunner, 5},
+    {"_rlemon_InsertionTSPRunner", (DL_FUNC) &_rlemon_InsertionTSPRunner, 5},
     {"_rlemon_NearestNeighborTSPRunner", (DL_FUNC) &_rlemon_NearestNeighborTSPRunner, 5},
     {"_rlemon_Opt2TSPRunner", (DL_FUNC) &_rlemon_Opt2TSPRunner, 5},
     {NULL, NULL, 0}

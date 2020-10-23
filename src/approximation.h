@@ -1,13 +1,13 @@
-#include <std::vector>
+#include <vector>
 #include <iostream>
-#include <std::tuple>
 
 using namespace lemon;
 using namespace std;
-
+#include <Rcpp.h>
 #include <lemon/grosso_locatelli_pullan_mc.h>
 
-auto GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+// [[Rcpp::export]]
+Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for(int i = 0; i < numNodes; ++i){
@@ -19,14 +19,14 @@ auto GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int>
   int NUM_ARCS = arcSources.size();
 
   for(int i = 0; i < NUM_ARCS; ++i) {
-      Arc a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+      ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
   }
 
-  GrossoLocatelliPullanMc runner(g);
+  GrossoLocatelliPullanMc<ListGraph> runner(g);
   runner.run();
 
   int cliqueSize = runner.cliqueSize();
-  ListGraph::NodeMap<int> clique_members;
+  ListGraph::NodeMap<int> clique_members(g);
   runner.cliqueMap(clique_members);
   std::vector<int> cliqueMembers;
   for(int i = 0; i < numNodes; i++) {
@@ -35,5 +35,5 @@ auto GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int>
       }
   }
 
-  return std::make_tuple(cliqueSize, cliqueMembers);
+  return Rcpp::List::create(cliqueSize, cliqueMembers);
 }

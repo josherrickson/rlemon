@@ -70,8 +70,8 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   return Rcpp::List::create(tour,runner.tourCost());
 }
 
-/*
-auto InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
+// [[Rcpp::export]]
+Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -91,13 +91,14 @@ auto InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets
   InsertionTsp<FullGraph::EdgeMap<int>> runner(g,costs);
   runner.run();
 
+  std::vector<int> tour;
   for(int i = 0; i < NUM_ARCS; ++i) {
-      std::cout << g.id(runner.tourNodes()[i]) << std::endl;
+      tour.push_back(g.id(runner.tourNodes()[i]));
   }
 
-  return runner.tourCost();
+  return Rcpp::List::create(tour,runner.tourCost());
 }
-*/
+
 
 
 // [[Rcpp::export]]
