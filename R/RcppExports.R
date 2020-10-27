@@ -204,6 +204,7 @@ FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
 
 #' @export
 #' @rdname lemon-functions
+#' @param arcWeights arc weights
 MaximumWeightPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
@@ -240,6 +241,9 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
 
 #' @export
 #' @rdname lemon-functions
+#' @param arcDistances arc distances
+#' @param nodeSupplies node supplies
+#' @param numNodes node nodes
 CycleCancellingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
     .Call(`_rlemon_CycleCancellingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
@@ -288,6 +292,7 @@ PlanarCheckingRunner <- function(arcSources, arcTargets, numNodes) {
 
 #' @export
 #' @rdname lemon-functions
+#' @param useFiveAlg use five alg
 PlanarColoringRunner <- function(arcSources, arcTargets, numNodes, useFiveAlg = TRUE) {
     .Call(`_rlemon_PlanarColoringRunner`, arcSources, arcTargets, numNodes, useFiveAlg)
 }
@@ -300,6 +305,7 @@ PlanarDrawingRunner <- function(arcSources, arcTargets, numNodes) {
 
 #' @export
 #' @rdname lemon-functions
+#' @param defaultEdgeWeight default edge weight
 ChristofidesRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
     .Call(`_rlemon_ChristofidesRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }

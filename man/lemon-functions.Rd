@@ -215,7 +215,17 @@ Opt2TSPRunner(
 
 \item{arcTargets}{A vector of integers containing the destination verctices of the edges}
 
-\item{numNodes}{The number of nodes in the graph.}
+\item{numNodes}{node nodes}
+
+\item{arcWeights}{arc weights}
+
+\item{arcDistances}{arc distances}
+
+\item{nodeSupplies}{node supplies}
+
+\item{useFiveAlg}{use five alg}
+
+\item{defaultEdgeWeight}{default edge weight}
 }
 \value{
 An R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
