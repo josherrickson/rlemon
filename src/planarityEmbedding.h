@@ -11,6 +11,7 @@ using namespace std;
 
 // TODO : Add PlanarEmbedding algorithm. It returns strange outputs for its inputs, and needs more understanding of the underlying objects.
 
+//' @export
 // [[Rcpp::export]]
 bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     ListGraph g;
@@ -37,12 +38,13 @@ bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTarge
 
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, bool useFiveAlg = true) {
-    // Requires: arcSources and arcTargets, which define the graph's edges via the index of the source and target node, respectively. 
-    // The nodes are 0 indexed, where 0 refers to the first node. 
-    // numNodes refers to the number of nodes in the possibly unconnected graph. 
-    // useFiveAlg refers to the choice of algorithm used to coloring the graph. Setting this to false uses a linear time algorithm which can 
+    // Requires: arcSources and arcTargets, which define the graph's edges via the index of the source and target node, respectively.
+    // The nodes are 0 indexed, where 0 refers to the first node.
+    // numNodes refers to the number of nodes in the possibly unconnected graph.
+    // useFiveAlg refers to the choice of algorithm used to coloring the graph. Setting this to false uses a linear time algorithm which can
     // give out six colors instead.
     Graph g;
     std::vector<Node> nodes;
@@ -82,6 +84,7 @@ Rcpp::List PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> ar
     return  Rcpp::List::create(isPlanar, colors);
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -125,4 +128,3 @@ Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources, std::vector<int> arc
 
     return Rcpp::List::create(isPlanar, x_coords, y_coords);
 }
-

@@ -6,6 +6,7 @@ using namespace std;
 #include <Rcpp.h>
 #include <lemon/grosso_locatelli_pullan_mc.h>
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
   ListGraph g;

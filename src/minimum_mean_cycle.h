@@ -11,6 +11,7 @@ using namespace std;
 
 
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -37,7 +38,7 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   }
 
   Path<ListDigraph> finale;
-  
+
   HowardMmc<ListDigraph>(g,costs).cycle(finale).run();
   std::vector<int> distances;
   std::vector<int> path_nodes;
@@ -48,6 +49,7 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   return Rcpp::List::create(distances, path_nodes);
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -74,7 +76,7 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarget
   }
 
   Path<ListDigraph> finale;
-  
+
   KarpMmc<ListDigraph>(g,costs).cycle(finale).run();
   std::vector<int> distances;
   std::vector<int> path_nodes;
@@ -85,6 +87,7 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarget
   return Rcpp::List::create(distances, path_nodes);
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -111,7 +114,7 @@ Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> 
   }
 
   Path<ListDigraph> finale;
-  
+
   HartmannOrlinMmc<ListDigraph>(g,costs).cycle(finale).run();
   std::vector<int> distances;
   std::vector<int> path_nodes;

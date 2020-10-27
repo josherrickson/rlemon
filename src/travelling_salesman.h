@@ -12,6 +12,7 @@ using namespace lemon;
 using namespace std;
 
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -29,7 +30,7 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcT
       costs[g.arc(g(arcSources[i]),g(arcTargets[i]))] = arcDistances[i];
   }
 
-  
+
   ChristofidesTsp<FullGraph::EdgeMap<int>> runner(g,costs);
   runner.run();
 
@@ -41,13 +42,14 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcT
   return Rcpp::List::create(tour,runner.tourCost());
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
-  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n. 
+  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n.
   FullGraph g(numNodes);
 
   FullGraph::EdgeMap<int> costs(g,defaultEdgeWeight);
@@ -58,7 +60,7 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTarg
       costs[g.arc(g(arcSources[i]),g(arcTargets[i]))] = arcDistances[i];
   }
 
-  
+
   GreedyTsp<FullGraph::EdgeMap<int>> runner(g,costs);
   runner.run();
 
@@ -70,13 +72,14 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   return Rcpp::List::create(tour,runner.tourCost());
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
-  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n. 
+  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n.
   FullGraph g(numNodes);
 
   FullGraph::EdgeMap<int> costs(g,defaultEdgeWeight);
@@ -87,7 +90,7 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcT
       costs[g.arc(g(arcSources[i]),g(arcTargets[i]))] = arcDistances[i];
   }
 
-  
+
   InsertionTsp<FullGraph::EdgeMap<int>> runner(g,costs);
   runner.run();
 
@@ -101,13 +104,14 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcT
 
 
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
-  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n. 
+  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n.
   FullGraph g(numNodes);
 
   FullGraph::EdgeMap<int> costs(g,defaultEdgeWeight);
@@ -118,7 +122,7 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int
       costs[g.arc(g(arcSources[i]),g(arcTargets[i]))] = arcDistances[i];
   }
 
-  
+
   NearestNeighborTsp<FullGraph::EdgeMap<int>> runner(g,costs);
   runner.run();
 
@@ -130,13 +134,14 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int
   return Rcpp::List::create(tour,runner.tourCost());
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List Opt2TSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
   // Returns: One std::vector, which contains the minimum distances from the start node to each of the nodes, with "-1" used as a placeholder to indicates the target and source and disjoint
-  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n. 
+  // ATTENTION: TSP implemented using fullgraph, so remember that we can't test this for large n.
   FullGraph g(numNodes);
 
   FullGraph::EdgeMap<int> costs(g,defaultEdgeWeight);
@@ -147,7 +152,7 @@ Rcpp::List Opt2TSPRunner(std::vector<int> arcSources, std::vector<int> arcTarget
       costs[g.arc(g(arcSources[i]),g(arcTargets[i]))] = arcDistances[i];
   }
 
-  
+
   Opt2Tsp<FullGraph::EdgeMap<int>> runner(g,costs);
   runner.run();
 

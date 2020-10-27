@@ -23,6 +23,7 @@ template<typename ValueType>
 using NodeMap = ListGraph::NodeMap<ValueType>;
 
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
@@ -50,11 +51,12 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::
             arc.push_back(g.id(g.u(arcs[i])));
             arc.push_back(g.id(g.v(arcs[i])));
             arcs_out.push_back(arc);
-        }    
+        }
     }
     return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
@@ -82,13 +84,14 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSour
             arc.push_back(g.id(g.u(arcs[i])));
             arc.push_back(g.id(g.v(arcs[i])));
             arcs_out.push_back(arc);
-        }    
+        }
     }
     return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
 
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
@@ -116,11 +119,12 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, st
             arc.push_back(g.id(g.u(arcs[i])));
             arc.push_back(g.id(g.v(arcs[i])));
             arcs_out.push_back(arc);
-        }    
+        }
     }
     return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
@@ -153,11 +157,12 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<
             arc.push_back(g.id(g.u(arcs[i])));
             arc.push_back(g.id(g.v(arcs[i])));
             arcs_out.push_back(arc);
-        }    
+        }
     }
     return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
+//' @export
 // [[Rcpp::export]]
 std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -190,11 +195,12 @@ std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> 
             arc.push_back(g.id(g.u(arcs[i])));
             arc.push_back(g.id(g.v(arcs[i])));
             arcs_out.push_back(arc);
-        }    
+        }
     }
     return arcs_out;
 }
 
+//' @export
 // [[Rcpp::export]]
 std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -227,9 +233,7 @@ std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::ve
             arc.push_back(g.id(g.u(arcs[i])));
             arc.push_back(g.id(g.v(arcs[i])));
             arcs_out.push_back(arc);
-        }    
+        }
     }
     return arcs_out;
 }
-
-

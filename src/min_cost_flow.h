@@ -9,6 +9,7 @@
 
 using namespace lemon;
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -17,7 +18,7 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> a
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-    
+
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
@@ -56,6 +57,7 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> a
     return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -64,7 +66,7 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> a
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-    
+
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
@@ -103,6 +105,7 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> a
     return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -111,7 +114,7 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTa
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-    
+
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
@@ -151,6 +154,7 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTa
 }
 
 
+//' @export
 // [[Rcpp::export]]
 Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -159,7 +163,7 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> ar
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-    
+
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
