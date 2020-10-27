@@ -41,3 +41,5 @@ vignettes/*.pdf
 
 main.cpp
 a.out
+*.so
+*.o
