@@ -11,7 +11,18 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
+//' Travelling Salesman Algorithms on Full Graphs
+//' @name TSP-Algorithms
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances, a vector corresponding to the distances of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @param defaultEdgeWeight, the default edge weight if an edge is not-specified (default value 999999)
+//' @return a List with 1) the list of tour vertices, and 2) the total tour cost
+//> NULL
 
+//' @rdname TSP-Algorithms
+//' @description `ChristofidesRunner` runs the Christofides Heuristic
 //' @export
 // [[Rcpp::export]]
 Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
@@ -42,6 +53,8 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcT
   return Rcpp::List::create(tour,runner.tourCost());
 }
 
+//' @rdname TSP-Algorithms
+//' @description `GreedyTSPRunner` runs the Greedy Heuristic
 //' @export
 // [[Rcpp::export]]
 Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
@@ -72,6 +85,8 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   return Rcpp::List::create(tour,runner.tourCost());
 }
 
+//' @rdname TSP-Algorithms
+//' @description `InsertionTSPRunner` runs the Insertion Heuristic
 //' @export
 // [[Rcpp::export]]
 Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
@@ -103,7 +118,8 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcT
 }
 
 
-
+//' @rdname TSP-Algorithms
+//' @description `NearestNeighborTSPRunner` runs the Nearest-Neighbor Heuristic
 //' @export
 // [[Rcpp::export]]
 Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
@@ -134,6 +150,8 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int
   return Rcpp::List::create(tour,runner.tourCost());
 }
 
+//' @rdname TSP-Algorithms
+//' @description `Opt2TSPRunner` runs a 2-OPT heuristic
 //' @export
 // [[Rcpp::export]]
 Rcpp::List Opt2TSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {

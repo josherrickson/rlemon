@@ -6,6 +6,17 @@ using namespace std;
 #include <Rcpp.h>
 #include <lemon/grosso_locatelli_pullan_mc.h>
 
+
+//' Approximation Algorithms
+//' @name Approximation-Algorithms
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @return a List with 1) the clique size, and 2) the members of the clique
+//> NULL
+
+//' @rdname Approximation-Algorithms
+//' @description `GrossoLocatelliPullanMcRunner` runs the Grosso, Locatelli, and Pullan for solving the maximum clique problem 
 //' @export
 // [[Rcpp::export]]
 Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {

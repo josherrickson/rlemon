@@ -3,7 +3,7 @@
 export(CapacityScalingRunner)
 export(ChristofidesRunner)
 export(CostScalingRunner)
-export(CountBiEdgeConnected)
+export(CountBiEdgeConnectedComponents)
 export(CountBiNodeConnectedComponents)
 export(CountConnectedComponents)
 export(CountStronglyConnectedComponents)

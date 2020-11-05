@@ -213,16 +213,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// CountBiEdgeConnected
-int CountBiEdgeConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_CountBiEdgeConnected(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// CountBiEdgeConnectedComponents
+int CountBiEdgeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_CountBiEdgeConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CountBiEdgeConnected(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CountBiEdgeConnectedComponents(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -279,7 +279,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // FindStronglyConnectedCutArcs
-std::vector<std::vector<int>> FindStronglyConnectedCutArcs(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+Rcpp::List FindStronglyConnectedCutArcs(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _rlemon_FindStronglyConnectedCutArcs(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -292,7 +292,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // FindBiEdgeConnectedCutEdges
-std::vector<std::vector<int>> FindBiEdgeConnectedCutEdges(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+Rcpp::List FindBiEdgeConnectedCutEdges(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _rlemon_FindBiEdgeConnectedCutEdges(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -673,7 +673,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_IsParallelFree", (DL_FUNC) &_rlemon_IsParallelFree, 3},
     {"_rlemon_IsSimpleGraph", (DL_FUNC) &_rlemon_IsSimpleGraph, 3},
     {"_rlemon_IsEulerian", (DL_FUNC) &_rlemon_IsEulerian, 3},
-    {"_rlemon_CountBiEdgeConnected", (DL_FUNC) &_rlemon_CountBiEdgeConnected, 3},
+    {"_rlemon_CountBiEdgeConnectedComponents", (DL_FUNC) &_rlemon_CountBiEdgeConnectedComponents, 3},
     {"_rlemon_CountConnectedComponents", (DL_FUNC) &_rlemon_CountConnectedComponents, 3},
     {"_rlemon_CountBiNodeConnectedComponents", (DL_FUNC) &_rlemon_CountBiNodeConnectedComponents, 3},
     {"_rlemon_CountStronglyConnectedComponents", (DL_FUNC) &_rlemon_CountStronglyConnectedComponents, 3},

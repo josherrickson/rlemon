@@ -11,6 +11,17 @@ using namespace std;
 
 // TODO : Add PlanarEmbedding algorithm. It returns strange outputs for its inputs, and needs more understanding of the underlying objects.
 
+//' Planar Embedding Algorithms
+//' @name Planar-Embedding-Algorithms
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @return assorted values, depending on the function
+//> NULL
+
+
+//' @rdname Planar-Embedding-Algorithms
+//' @description `PlanarCheckingRunner` returns a bool stating if a graph is planar or not.
 //' @export
 // [[Rcpp::export]]
 bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
@@ -38,6 +49,9 @@ bool PlanarCheckingRunner(std::vector<int> arcSources, std::vector<int> arcTarge
 
 }
 
+//' @rdname Planar-Embedding-Algorithms
+//' @description `PlanarColoringRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the colors of each node, represented as integers
+//' @param useFiveAlg, a boolean that asks if you want to 5-color a graph. If false, runs a faster 6-coloring algorithm instead.
 //' @export
 // [[Rcpp::export]]
 Rcpp::List PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, bool useFiveAlg = true) {
@@ -84,6 +98,9 @@ Rcpp::List PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> ar
     return  Rcpp::List::create(isPlanar, colors);
 }
 
+
+//' @rdname Planar-Embedding-Algorithms
+//' @description `PlanarCheckingRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
 //' @export
 // [[Rcpp::export]]
 Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
