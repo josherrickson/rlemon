@@ -226,21 +226,40 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
     .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
+#' Min Flow
+#'
+#' @name Mininimum Cost Flow Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the capacities of nodes of a graph's edges
+#' @param nodeSupplies, a vector corresponding to the supplies of each node
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
+NULL
+
+#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow. 
 #' @export
 CycleCancellingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
     .Call(`_rlemon_CycleCancellingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
+#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow. 
 #' @export
 CapacityScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
     .Call(`_rlemon_CapacityScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
+#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow. 
 #' @export
 CostScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
     .Call(`_rlemon_CostScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
+#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow. 
 #' @export
 NetworkSimplexRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
     .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
