@@ -196,38 +196,58 @@ FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
+#' Maximum Matching Algorithms
+#' @name Maximum-Matching-Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcWeights, a vector corresponding to the weights of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a NumericVector of Numeric Vector of (node, node) pairs
+NULL
+
+#' @rdname Maximum-Matching-Algorithms
+#' @description `MaximumWeightPerfectMatchingRunner` solves the Maximum-Weight Perfect Matching Problem
 #' @export
 MaximumWeightPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
+#' @rdname Maximum-Matching-Algorithms
+#' @description `MaximumWeightFractionalPerfectMatchingRunner` solves the Maximum-Weight Fractional Perfect Matching Problem 
 #' @export
 MaximumWeightFractionalPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightFractionalPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
+#' @rdname Maximum-Matching-Algorithms
+#' @description `MaximumWeightFractionalMatchingRunner` solves the Maximum-Weight Fractional Matching Problem
 #' @export
 MaximumWeightFractionalMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightFractionalMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
+#' @rdname Maximum-Matching-Algorithms
+#' @description `MaximumWeightMatchingRunner` solves the Maximum-Weight Matching Problem
 #' @export
 MaximumWeightMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
+#' @rdname Maximum-Matching-Algorithms
+#' @description `MaximumCardinalityMatchingRunner` solves the Maximum Cardinality Matching Problem
 #' @export
 MaximumCardinalityMatchingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_MaximumCardinalityMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
+#' @rdname Maximum-Matching-Algorithms
+#' @description `MaximumCardinalityFractionalMatchingRunner` solves the Maximum-Cardinality Fractional Matching Problem
 #' @export
 MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
-#' Min Flow
-#'
+#' Minimum Cost Flow Algorithms
 #' @name Mininimum Cost Flow Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
@@ -265,16 +285,31 @@ NetworkSimplexRunner <- function(arcSources, arcTargets, arcDistances, nodeSuppl
     .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
 }
 
+#' Minimum Mean-Cycle Algorithms
+#' @name Maximum-Mean-Cycle-Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC cycle, and 2) the nodes in the MMC cycle.   
+NULL
+
+#' @rdname Maximum-Mean-Cycle-Algorithms
+#' @description `HowardMmcRunner` runs Howard's policy iteration algorithm.
 #' @export
 HowardMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_HowardMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
+#' @rdname Maximum-Mean-Cycle-Algorithms
+#' @description `KarpMmcRunner` runs Karp's algorithm.
 #' @export
 KarpMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_KarpMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
+#' @rdname Maximum-Mean-Cycle-Algorithms
+#' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm algorithm.
 #' @export
 HartmannOrlinMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)

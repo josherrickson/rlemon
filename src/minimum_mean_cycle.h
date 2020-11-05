@@ -9,8 +9,17 @@
 using namespace lemon;
 using namespace std;
 
+//' Minimum Mean-Cycle Algorithms
+//' @name Maximum-Mean-Cycle-Algorithms
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances, a vector corresponding to the distances of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC cycle, and 2) the nodes in the MMC cycle.   
+//> NULL
 
-
+//' @rdname Maximum-Mean-Cycle-Algorithms
+//' @description `HowardMmcRunner` runs Howard's policy iteration algorithm.
 //' @export
 // [[Rcpp::export]]
 Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
@@ -49,6 +58,8 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   return Rcpp::List::create(distances, path_nodes);
 }
 
+//' @rdname Maximum-Mean-Cycle-Algorithms
+//' @description `KarpMmcRunner` runs Karp's algorithm.
 //' @export
 // [[Rcpp::export]]
 Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
@@ -87,6 +98,9 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarget
   return Rcpp::List::create(distances, path_nodes);
 }
 
+
+//' @rdname Maximum-Mean-Cycle-Algorithms
+//' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm algorithm.
 //' @export
 // [[Rcpp::export]]
 Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {

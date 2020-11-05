@@ -23,6 +23,17 @@ template<typename ValueType>
 using NodeMap = ListGraph::NodeMap<ValueType>;
 
 
+//' Maximum Matching Algorithms
+//' @name Maximum-Matching-Algorithms
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param arcWeights, a vector corresponding to the weights of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @return A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a NumericVector of Numeric Vector of (node, node) pairs
+//> NULL
+
+//' @rdname Maximum-Matching-Algorithms
+//' @description `MaximumWeightPerfectMatchingRunner` solves the Maximum-Weight Perfect Matching Problem
 //' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
@@ -56,6 +67,8 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::
     return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
+//' @rdname Maximum-Matching-Algorithms
+//' @description `MaximumWeightFractionalPerfectMatchingRunner` solves the Maximum-Weight Fractional Perfect Matching Problem 
 //' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
@@ -90,7 +103,8 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSour
 }
 
 
-
+//' @rdname Maximum-Matching-Algorithms
+//' @description `MaximumWeightFractionalMatchingRunner` solves the Maximum-Weight Fractional Matching Problem
 //' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
@@ -124,6 +138,8 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, st
     return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
+//' @rdname Maximum-Matching-Algorithms
+//' @description `MaximumWeightMatchingRunner` solves the Maximum-Weight Matching Problem
 //' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
@@ -162,6 +178,8 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<
     return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
+//' @rdname Maximum-Matching-Algorithms
+//' @description `MaximumCardinalityMatchingRunner` solves the Maximum Cardinality Matching Problem
 //' @export
 // [[Rcpp::export]]
 std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
@@ -200,6 +218,9 @@ std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> 
     return arcs_out;
 }
 
+
+//' @rdname Maximum-Matching-Algorithms
+//' @description `MaximumCardinalityFractionalMatchingRunner` solves the Maximum-Cardinality Fractional Matching Problem
 //' @export
 // [[Rcpp::export]]
 std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {

@@ -6,7 +6,7 @@
 \alias{CapacityScalingRunner}
 \alias{CostScalingRunner}
 \alias{NetworkSimplexRunner}
-\title{Min Flow}
+\title{Minimum Cost Flow Algorithms}
 \usage{
 CycleCancellingRunner(
   arcSources,
