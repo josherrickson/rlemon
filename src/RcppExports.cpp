@@ -356,6 +356,38 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// PreflowRunner
+Rcpp::List PreflowRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int destinationNode, int numNodes);
+RcppExport SEXP _rlemon_PreflowRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP sourceNodeSEXP, SEXP destinationNodeSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type sourceNode(sourceNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type destinationNode(destinationNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(PreflowRunner(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// EdmondsKarpRunner
+Rcpp::List EdmondsKarpRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int destinationNode, int numNodes);
+RcppExport SEXP _rlemon_EdmondsKarpRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP sourceNodeSEXP, SEXP destinationNodeSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type sourceNode(sourceNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type destinationNode(destinationNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(EdmondsKarpRunner(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 // MaximumWeightPerfectMatchingRunner
 Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
 RcppExport SEXP _rlemon_MaximumWeightPerfectMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
@@ -684,6 +716,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_FindBiNodeConnectedNodes", (DL_FUNC) &_rlemon_FindBiNodeConnectedNodes, 3},
     {"_rlemon_FindConnectedComponents", (DL_FUNC) &_rlemon_FindConnectedComponents, 3},
     {"_rlemon_FindBiEdgeConnectedComponents", (DL_FUNC) &_rlemon_FindBiEdgeConnectedComponents, 3},
+    {"_rlemon_PreflowRunner", (DL_FUNC) &_rlemon_PreflowRunner, 6},
+    {"_rlemon_EdmondsKarpRunner", (DL_FUNC) &_rlemon_EdmondsKarpRunner, 6},
     {"_rlemon_MaximumWeightPerfectMatchingRunner", (DL_FUNC) &_rlemon_MaximumWeightPerfectMatchingRunner, 4},
     {"_rlemon_MaximumWeightFractionalPerfectMatchingRunner", (DL_FUNC) &_rlemon_MaximumWeightFractionalPerfectMatchingRunner, 4},
     {"_rlemon_MaximumWeightFractionalMatchingRunner", (DL_FUNC) &_rlemon_MaximumWeightFractionalMatchingRunner, 4},

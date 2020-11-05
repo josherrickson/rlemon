@@ -222,6 +222,31 @@ FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
+#' Maximum  Flow Algorithms
+#' @name Maximum Flow Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the capacities of nodes of a graph's edges
+#' @param sourceNode, the source node 
+#' @param destinationNode, the destination node
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of cut-values of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value
+NULL
+
+#' @rdname Maximum-Flow-Algorithms
+#' @description `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.
+#' @export
+PreflowRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes) {
+    .Call(`_rlemon_PreflowRunner`, arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes)
+}
+
+#' @rdname Maximum-Flow-Algorithms
+#' @description `EdmondsKarpRunner` runs the EdmondsKarp Algorithm to calculate the maximum flow.
+#' @export
+EdmondsKarpRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes) {
+    .Call(`_rlemon_EdmondsKarpRunner`, arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes)
+}
+
 #' Maximum Matching Algorithms
 #' @name Maximum-Matching-Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
