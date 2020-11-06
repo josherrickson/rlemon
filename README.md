@@ -1,1 +1,1 @@
-[![Travis-CI Build Status](https://travis-ci.org/atewari7/rlemon.svg?branch=master)](https://travis-ci.org/atewari7/rlemon)
+[![R-build-check](https://github.com/atewari7/rlemon/workflows/R-build-check/badge.svg)](https://github.com/atewari7/rlemon/actions)
