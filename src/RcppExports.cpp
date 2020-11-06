@@ -486,6 +486,35 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// KruskalRunner
+Rcpp::List KruskalRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
+RcppExport SEXP _rlemon_KruskalRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(KruskalRunner(arcSources, arcTargets, arcDistances, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MinCostArborescenceRunner
+Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int numNodes);
+RcppExport SEXP _rlemon_MinCostArborescenceRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP sourceNodeSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type sourceNode(sourceNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MinCostArborescenceRunner(arcSources, arcTargets, arcDistances, sourceNode, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 // CycleCancellingRunner
 Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
 RcppExport SEXP _rlemon_CycleCancellingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
@@ -741,6 +770,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_MaximumWeightMatchingRunner", (DL_FUNC) &_rlemon_MaximumWeightMatchingRunner, 4},
     {"_rlemon_MaximumCardinalityMatchingRunner", (DL_FUNC) &_rlemon_MaximumCardinalityMatchingRunner, 3},
     {"_rlemon_MaximumCardinalityFractionalMatchingRunner", (DL_FUNC) &_rlemon_MaximumCardinalityFractionalMatchingRunner, 3},
+    {"_rlemon_KruskalRunner", (DL_FUNC) &_rlemon_KruskalRunner, 4},
+    {"_rlemon_MinCostArborescenceRunner", (DL_FUNC) &_rlemon_MinCostArborescenceRunner, 5},
     {"_rlemon_CycleCancellingRunner", (DL_FUNC) &_rlemon_CycleCancellingRunner, 5},
     {"_rlemon_CapacityScalingRunner", (DL_FUNC) &_rlemon_CapacityScalingRunner, 5},
     {"_rlemon_CostScalingRunner", (DL_FUNC) &_rlemon_CostScalingRunner, 5},

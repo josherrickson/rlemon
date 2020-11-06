@@ -6,6 +6,7 @@
 #include "minimum_mean_cycle.h"
 #include "approximation.h"
 #include "max_flow.h"
+#include "minSpanTree.h"
 #include <Rcpp.h>
 #include <tuple>
 using namespace Rcpp;

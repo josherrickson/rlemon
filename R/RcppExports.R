@@ -316,6 +316,37 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
     .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
+#' MST Algorithms
+#' @name Minimum Spanning Tree Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+NULL
+
+#' Aborescense Algorithms
+#' @name Minimum Cost Aborescence Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
+#' @param sourceNode, the source node
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+NULL
+
+#' @rdname Minimum-Spanning-Tree-Algorithms
+#' @export
+KruskalRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
+    .Call(`_rlemon_KruskalRunner`, arcSources, arcTargets, arcDistances, numNodes)
+}
+
+#' @rdname Minimum-Cost-Aborescence-Algorithms
+#' @export
+MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, numNodes) {
+    .Call(`_rlemon_MinCostArborescenceRunner`, arcSources, arcTargets, arcDistances, sourceNode, numNodes)
+}
+
 #' Minimum Cost Flow Algorithms
 #' @name Mininimum Cost Flow Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges

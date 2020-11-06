@@ -1,58 +1,99 @@
-#include <std::vector>
-#include "kruskal.h"
-#include "list_graph.h"
+#include <vector>
+#include <lemon/kruskal.h>
+#include <lemon/list_graph.h>
+#include <lemon/min_cost_arborescence.h>
+#include <Rcpp.h>
 
 using namespace lemon;
-using namespace std;
-
-using Cost = int;
-
-using Graph = ListDigraph;
-using Node = Graph::Node;
-using Arc = Graph::Arc;
-
-template<typename ValueType>
-using ArcMap = ListDigraph::ArcMap<ValueType>;
 
 
-int main()
-{
-    Graph g;
+//' MST Algorithms
+//' @name Minimum Spanning Tree Algorithms
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+//> NULL
 
-    std::vector<Node> nodes;
-    for(int i = 0; i < 9; ++i)
-    {
-        Node n = g.addNode();
+//' Aborescense Algorithms
+//' @name Minimum Cost Aborescence Algorithms
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
+//' @param sourceNode, the source node
+//' @param numNodes, the number of nodes in the graph
+//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+//> NULL
+
+
+
+//' @rdname Minimum-Spanning-Tree-Algorithms
+//' @export
+// [[Rcpp::export]]
+Rcpp::List KruskalRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes){
+    ListDigraph g;
+
+    std::vector<ListDigraph::Node> nodes;
+
+    for(int i = 0; i < numNodes; ++i) {
+        ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-
-    ArcMap<bool> output(g);
-    ArcMap<Cost> costs(g);
-    std::vector<Arc> arcs;
-
-    std::vector<int> arc_src{1, 1, 2, 2, 2, 3, 3, 4, 4,5,5,5,6,6,7};
-    std::vector<int> arc_targ{2, 3, 3, 4, 5, 4, 7, 5, 7,7,8,6,8,9,8};
-    std::vector<int> arc_costs{5, 2, 2, 3, 7, 3, 9, 2, 6,5,7,8,3,4,2};
-    int NUM_ARCS = arc_src.size();
-
-    for(int i = 0; i < NUM_ARCS; ++i)
-    {
-        Arc a = g.addArc(nodes[arc_src[i] - 1], nodes[arc_targ[i] - 1]);
+    int NUM_ARCS = arcSources.size();
+    ListDigraph::ArcMap<int> dists(g);
+    std::vector<ListDigraph::Arc> tree;
+    std::vector<ListDigraph::Arc> arcs;
+    
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
         arcs.push_back(a);
-        costs[arcs[i]] = arc_costs[i];
-        output[arcs[i]] = false;
+        dists[a] = arcDistances[i];
     }
+    int treeVal = kruskal(g,dists,std::back_inserter(tree));
+    std::vector<int> treeSources;
+    std::vector<int> treeTargets;
+    for(int i = 0; i < tree.size(); i++){
+        treeSources.push_back(g.id(g.source(tree[i])));
+        treeSources.push_back(g.id(g.target(tree[i])));
+    }
+    return Rcpp::List::create(treeSources, treeTargets, treeVal);
+}
 
-    std::vector<Arc> tree;
-    cout << "Total Cost: " << kruskal(g,costs,output) << endl;
 
-    for(int i = 0; i < NUM_ARCS; ++i)
-    {
-        if(output[arcs[i]])
-        {
-            cout << arc_src[i] << "->" << arc_targ[i] << ": " << arc_costs[i] << endl;
+
+
+//' @rdname Minimum-Cost-Aborescence-Algorithms
+//' @export
+// [[Rcpp::export]]
+Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int numNodes){
+    ListDigraph g;
+
+    std::vector<ListDigraph::Node> nodes;
+
+    for(int i = 0; i < numNodes; ++i) {
+        ListDigraph::Node n = g.addNode();
+        nodes.push_back(n);
+    }
+    int NUM_ARCS = arcSources.size();
+    ListDigraph::ArcMap<int> dists(g);
+    std::vector<ListDigraph::Arc> tree;
+    std::vector<ListDigraph::Arc> arcs;
+    
+    for(int i = 0; i < NUM_ARCS; ++i) {
+        ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+        arcs.push_back(a);
+        dists[a] = arcDistances[i];
+    }
+    ListDigraph::ArcMap<int> arbs(g);
+    int arbVal = minCostArborescence(g,dists,nodes[sourceNode], arbs);
+    std::vector<int> treeSources;
+    std::vector<int> treeTargets;
+    for(int i = 0; i < tree.size(); i++){
+        if(arbs[arcs[i]]) {
+        treeSources.push_back(g.id(g.source(arcs[i])));
+        treeSources.push_back(g.id(g.target(arcs[i])));
         }
     }
-
-    return 1;
+    return Rcpp::List::create(treeSources, treeTargets, arbVal);
 }
