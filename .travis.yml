@@ -10,3 +10,5 @@ r:
   - devel
 before_install:
   - sudo apt-get update -qq
+after_success:
+  - Rscript -e 'covr::codecov()'
