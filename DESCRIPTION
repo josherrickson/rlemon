@@ -5,7 +5,7 @@ Version: 0.1
 Date: 2020-11-01
 Author: Arav Agarwal, Aditya Tewari, Josh Errickson
 Maintainer: Arav Agarwal <avaragal@umich.edu>
-Description: Provides interfaces to the LEMON algorithms (https://lemon.cs.elte.hu/trac/lemon).
+Description: Provides interfaces to the LEMON algorithms <https://lemon.cs.elte.hu/trac/lemon>.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.5)
 LinkingTo: Rcpp
