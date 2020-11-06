@@ -1,10 +1,10 @@
 Package: rlemon
 Type: Package
 Title: Interfaces from LEMON to R
-Version: 1.0
-Date: 2020-09-18
+Version: 0.1
+Date: 2020-011-01
 Author: Arav Agarwal, Aditya Tewari
-Maintainer: Your Name <your@email.com>
+Maintainer: Arav Agarwal <avaragal@umich.edu>
 Description: One paragraph description of what the package does as one
         or more full sentences.
 License: GPL (>= 2)
@@ -12,6 +12,6 @@ Imports: Rcpp (>= 1.0.5)
 LinkingTo: Rcpp
 RoxygenNote: 7.1.1
 Encoding: UTF-8
-Suggests: 
+Suggests:
     testthat,
     covr
