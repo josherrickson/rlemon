@@ -6,4 +6,5 @@ test_that("Calling a function works", {
    n <- 6
    out <- IsConnected(s, t, n)
    expect_is(out, "integer")
+   expect_equal(out, 0)
 })
