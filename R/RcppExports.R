@@ -63,6 +63,12 @@ getTopologicalSort <- function(arcSources, arcTargets, numNodes) {
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsConnected` returns if a graph is connected or not
+#' @examples
+#' data(small_graph_example)
+#' start <- small_graph_example$startnodes
+#' end <- small_graph_example$endnodes
+#' numnodes <- length(unique(c(start, end)))
+#' IsConnected(start, end, numnodes)
 #' @export
 IsConnected <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsConnected`, arcSources, arcTargets, numNodes)

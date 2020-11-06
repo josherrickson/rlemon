@@ -109,6 +109,12 @@ std::vector<int> getTopologicalSort(std::vector<int> arcSources, std::vector<int
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsConnected` returns if a graph is connected or not
+//' @examples
+//' data(small_graph_example)
+//' start <- small_graph_example$startnodes
+//' end <- small_graph_example$endnodes
+//' numnodes <- length(unique(c(start, end)))
+//' IsConnected(start, end, numnodes)
 //' @export
 // [[Rcpp::export]]
 int IsConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {

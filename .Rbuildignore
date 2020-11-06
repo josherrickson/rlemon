@@ -6,3 +6,4 @@ load.R
 README.md
 ^codecov\.yml$
 .github
+data-raw

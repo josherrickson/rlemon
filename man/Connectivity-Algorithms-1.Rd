@@ -75,3 +75,10 @@ a boolean, stating if a graph has some property
 
 `IsEulerian` returns if a graph is eulerian or not
 }
+\examples{
+data(small_graph_example)
+start <- small_graph_example$startnodes
+end <- small_graph_example$endnodes
+numnodes <- length(unique(c(start, end)))
+IsConnected(start, end, numnodes)
+}
