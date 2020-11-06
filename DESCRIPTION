@@ -2,11 +2,10 @@ Package: rlemon
 Type: Package
 Title: Interfaces from LEMON to R
 Version: 0.1
-Date: 2020-011-01
-Author: Arav Agarwal, Aditya Tewari
+Date: 2020-11-01
+Author: Arav Agarwal, Aditya Tewari, Josh Errickson
 Maintainer: Arav Agarwal <avaragal@umich.edu>
-Description: One paragraph description of what the package does as one
-        or more full sentences.
+Description: Provides interfaces to the LEMON algorithms (https://lemon.cs.elte.hu/trac/lemon).
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.5)
 LinkingTo: Rcpp
