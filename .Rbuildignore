@@ -5,3 +5,4 @@ load.R
 ^\.travis\.yml$
 README.md
 ^codecov\.yml$
+.github
