@@ -20,17 +20,26 @@ CycleCancellingRunner(
 CapacityScalingRunner(
   arcSources,
   arcTargets,
-  arcDistances,
+  arcCapacities,
+  arcCosts,
   nodeSupplies,
   numNodes
 )
 
-CostScalingRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+CostScalingRunner(
+  arcSources,
+  arcTargets,
+  arcCapacities,
+  arcCosts,
+  nodeSupplies,
+  numNodes
+)
 
 NetworkSimplexRunner(
   arcSources,
   arcTargets,
-  arcDistances,
+  arcCapacities,
+  arcCosts,
   nodeSupplies,
   numNodes
 )

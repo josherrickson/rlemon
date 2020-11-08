@@ -14,7 +14,8 @@ using namespace lemon;
 //' @name Mininimum Cost Flow Algorithms
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances, a vector corresponding to the capacities of nodes of a graph's edges
+//' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges
+//' @param arcCosts, a vector corresponding to the capacities of nodes of a graph's edges
 //' @param nodeSupplies, a vector corresponding to the supplies of each node
 //' @param numNodes, the number of nodes in the graph
 //' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
