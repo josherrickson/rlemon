@@ -24,18 +24,18 @@ using namespace lemon;
 //' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow. 
 //' @export
 // [[Rcpp::export]]
-Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
+Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
-    ListDigraph::ArcMap<int> dists(g);
+    ListDigraph::ArcMap<int> costs(g);
+    ListDigraph::ArcMap<int> capacities(g);
     ListDigraph::NodeMap<int> supplies(g);
 
     for(int i = 0; i < numNodes; ++i) {
@@ -44,14 +44,15 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> a
 
     for(int i = 0; i < NUM_ARCS; ++i) {
         ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
-        dists[a] = arcDistances[i];
-
+        costs[a] = arcCosts[i];
+        capacities[a] = arcCapacities[i];
         arcs.push_back(a);
     }
 
 
     CycleCanceling<ListDigraph, int, int> runner(g);
-    runner.costMap(dists);
+    runner.upperMap(capacities);
+    runner.costMap(costs);
     runner.supplyMap(supplies);
     runner.run();
 
@@ -75,18 +76,18 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> a
 //' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow. 
 //' @export
 // [[Rcpp::export]]
-Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
+Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
-    ListDigraph::ArcMap<int> dists(g);
+    ListDigraph::ArcMap<int> costs(g);
+    ListDigraph::ArcMap<int> capacities(g);
     ListDigraph::NodeMap<int> supplies(g);
 
     for(int i = 0; i < numNodes; ++i) {
@@ -95,14 +96,15 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> a
 
     for(int i = 0; i < NUM_ARCS; ++i) {
         ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
-        dists[a] = arcDistances[i];
-
+        costs[a] = arcCosts[i];
+        capacities[a] = arcCapacities[i];
         arcs.push_back(a);
     }
 
 
     CapacityScaling<ListDigraph, int, int> runner(g);
-    runner.costMap(dists);
+    runner.upperMap(capacities);
+    runner.costMap(costs);
     runner.supplyMap(supplies);
     runner.run();
 
@@ -126,18 +128,18 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> a
 //' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow. 
 //' @export
 // [[Rcpp::export]]
-Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
+Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
-    ListDigraph::ArcMap<int> dists(g);
+    ListDigraph::ArcMap<int> costs(g);
+    ListDigraph::ArcMap<int> capacities(g);
     ListDigraph::NodeMap<int> supplies(g);
 
     for(int i = 0; i < numNodes; ++i) {
@@ -146,14 +148,15 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTa
 
     for(int i = 0; i < NUM_ARCS; ++i) {
         ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
-        dists[a] = arcDistances[i];
-
+        costs[a] = arcCosts[i];
+        capacities[a] = arcCapacities[i];
         arcs.push_back(a);
     }
 
 
     CostScaling<ListDigraph, int, int> runner(g);
-    runner.costMap(dists);
+    runner.upperMap(capacities);
+    runner.costMap(costs);
     runner.supplyMap(supplies);
     runner.run();
 
@@ -177,18 +180,18 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTa
 //' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow. 
 //' @export
 // [[Rcpp::export]]
-Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes) {
+Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i) {
         ListDigraph::Node n = g.addNode();
         nodes.push_back(n);
     }
-
     std::vector<ListDigraph::Arc> arcs;
     int NUM_ARCS = arcSources.size();
 
-    ListDigraph::ArcMap<int> dists(g);
+    ListDigraph::ArcMap<int> costs(g);
+    ListDigraph::ArcMap<int> capacities(g);
     ListDigraph::NodeMap<int> supplies(g);
 
     for(int i = 0; i < numNodes; ++i) {
@@ -197,14 +200,15 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> ar
 
     for(int i = 0; i < NUM_ARCS; ++i) {
         ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
-        dists[a] = arcDistances[i];
-
+        costs[a] = arcCosts[i];
+        capacities[a] = arcCapacities[i];
         arcs.push_back(a);
     }
 
 
     NetworkSimplex<ListDigraph, int, int> runner(g);
-    runner.costMap(dists);
+    runner.upperMap(capacities);
+    runner.costMap(costs);
     runner.supplyMap(supplies);
     runner.run();
 

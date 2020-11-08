@@ -516,62 +516,66 @@ BEGIN_RCPP
 END_RCPP
 }
 // CycleCancellingRunner
-Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
-RcppExport SEXP _rlemon_CycleCancellingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _rlemon_CycleCancellingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcCapacitiesSEXP, SEXP arcCostsSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCapacities(arcCapacitiesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCosts(arcCostsSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CycleCancellingRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CycleCancellingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
 // CapacityScalingRunner
-Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
-RcppExport SEXP _rlemon_CapacityScalingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _rlemon_CapacityScalingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcCapacitiesSEXP, SEXP arcCostsSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCapacities(arcCapacitiesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCosts(arcCostsSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CapacityScalingRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CapacityScalingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
 // CostScalingRunner
-Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
-RcppExport SEXP _rlemon_CostScalingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _rlemon_CostScalingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcCapacitiesSEXP, SEXP arcCostsSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCapacities(arcCapacitiesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCosts(arcCostsSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CostScalingRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CostScalingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
 // NetworkSimplexRunner
-Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, std::vector<int> nodeSupplies, int numNodes);
-RcppExport SEXP _rlemon_NetworkSimplexRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
+Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes);
+RcppExport SEXP _rlemon_NetworkSimplexRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcCapacitiesSEXP, SEXP arcCostsSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCapacities(arcCapacitiesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCosts(arcCostsSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(NetworkSimplexRunner(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes));
+    rcpp_result_gen = Rcpp::wrap(NetworkSimplexRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -772,10 +776,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_MaximumCardinalityFractionalMatchingRunner", (DL_FUNC) &_rlemon_MaximumCardinalityFractionalMatchingRunner, 3},
     {"_rlemon_KruskalRunner", (DL_FUNC) &_rlemon_KruskalRunner, 4},
     {"_rlemon_MinCostArborescenceRunner", (DL_FUNC) &_rlemon_MinCostArborescenceRunner, 5},
-    {"_rlemon_CycleCancellingRunner", (DL_FUNC) &_rlemon_CycleCancellingRunner, 5},
-    {"_rlemon_CapacityScalingRunner", (DL_FUNC) &_rlemon_CapacityScalingRunner, 5},
-    {"_rlemon_CostScalingRunner", (DL_FUNC) &_rlemon_CostScalingRunner, 5},
-    {"_rlemon_NetworkSimplexRunner", (DL_FUNC) &_rlemon_NetworkSimplexRunner, 5},
+    {"_rlemon_CycleCancellingRunner", (DL_FUNC) &_rlemon_CycleCancellingRunner, 6},
+    {"_rlemon_CapacityScalingRunner", (DL_FUNC) &_rlemon_CapacityScalingRunner, 6},
+    {"_rlemon_CostScalingRunner", (DL_FUNC) &_rlemon_CostScalingRunner, 6},
+    {"_rlemon_NetworkSimplexRunner", (DL_FUNC) &_rlemon_NetworkSimplexRunner, 6},
     {"_rlemon_HowardMmcRunner", (DL_FUNC) &_rlemon_HowardMmcRunner, 4},
     {"_rlemon_KarpMmcRunner", (DL_FUNC) &_rlemon_KarpMmcRunner, 4},
     {"_rlemon_HartmannOrlinMmcRunner", (DL_FUNC) &_rlemon_HartmannOrlinMmcRunner, 4},

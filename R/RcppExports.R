@@ -366,29 +366,29 @@ NULL
 #' @rdname Mininimum-Cost-Flow-Algorithms
 #' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow. 
 #' @export
-CycleCancellingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_rlemon_CycleCancellingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+CycleCancellingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
+    .Call(`_rlemon_CycleCancellingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
 #' @rdname Mininimum-Cost-Flow-Algorithms
 #' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow. 
 #' @export
-CapacityScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_rlemon_CapacityScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+CapacityScalingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
+    .Call(`_rlemon_CapacityScalingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
 #' @rdname Mininimum-Cost-Flow-Algorithms
 #' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow. 
 #' @export
-CostScalingRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_rlemon_CostScalingRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+CostScalingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
+    .Call(`_rlemon_CostScalingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
 #' @rdname Mininimum-Cost-Flow-Algorithms
 #' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow. 
 #' @export
-NetworkSimplexRunner <- function(arcSources, arcTargets, arcDistances, nodeSupplies, numNodes) {
-    .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcDistances, nodeSupplies, numNodes)
+NetworkSimplexRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
+    .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
 #' Minimum Mean-Cycle Algorithms

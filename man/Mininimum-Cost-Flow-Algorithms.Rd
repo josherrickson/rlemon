@@ -11,7 +11,8 @@
 CycleCancellingRunner(
   arcSources,
   arcTargets,
-  arcDistances,
+  arcCapacities,
+  arcCosts,
   nodeSupplies,
   numNodes
 )
@@ -39,11 +40,11 @@ NetworkSimplexRunner(
 
 \item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
 
-\item{arcDistances, }{a vector corresponding to the capacities of nodes of a graph's edges}
-
 \item{nodeSupplies, }{a vector corresponding to the supplies of each node}
 
 \item{numNodes, }{the number of nodes in the graph}
+
+\item{arcDistances, }{a vector corresponding to the capacities of nodes of a graph's edges}
 }
 \value{
 A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
