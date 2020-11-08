@@ -8,3 +8,4 @@ test_that("Calling a function works", {
    expect_is(out, "integer")
    expect_equal(out, 0)
 })
+
