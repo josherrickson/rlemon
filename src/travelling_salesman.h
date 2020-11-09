@@ -46,7 +46,7 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcT
   runner.run();
 
   std::vector<int> tour;
-  for(int i = 0; i < NUM_ARCS; ++i) {
+  for(int i = 0; i < numNodes; ++i) {
       tour.push_back(g.id(runner.tourNodes()[i]));
   }
 
@@ -78,7 +78,7 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   runner.run();
 
   std::vector<int> tour;
-  for(int i = 0; i < NUM_ARCS; ++i) {
+  for(int i = 0; i < numNodes; ++i) {
       tour.push_back(g.id(runner.tourNodes()[i]));
   }
 
@@ -110,7 +110,7 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcT
   runner.run();
 
   std::vector<int> tour;
-  for(int i = 0; i < NUM_ARCS; ++i) {
+  for(int i = 0; i < numNodes; ++i) {
       tour.push_back(g.id(runner.tourNodes()[i]));
   }
 
@@ -143,7 +143,7 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int
   runner.run();
 
   std::vector<int> tour;
-  for(int i = 0; i < NUM_ARCS; ++i) {
+  for(int i = 0; i < numNodes; ++i) {
       tour.push_back(g.id(runner.tourNodes()[i]));
   }
 
@@ -175,7 +175,7 @@ Rcpp::List Opt2TSPRunner(std::vector<int> arcSources, std::vector<int> arcTarget
   runner.run();
 
   std::vector<int> tour;
-  for(int i = 0; i < NUM_ARCS; ++i) {
+  for(int i = 0; i < numNodes; ++i) {
       tour.push_back(g.id(runner.tourNodes()[i]));
   }
 

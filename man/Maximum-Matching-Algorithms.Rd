@@ -47,7 +47,7 @@ MaximumCardinalityFractionalMatchingRunner(arcSources, arcTargets, numNodes)
 \item{numNodes, }{the number of nodes in the graph}
 }
 \value{
-A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a NumericVector of Numeric Vector of (node, node) pairs
+A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a List of List of (node, node) pairs
 }
 \description{
 `MaximumWeightPerfectMatchingRunner` solves the Maximum-Weight Perfect Matching Problem
