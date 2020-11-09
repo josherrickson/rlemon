@@ -55,7 +55,7 @@ Rcpp::List KruskalRunner(std::vector<int> arcSources, std::vector<int> arcTarget
     std::vector<int> treeTargets;
     for(int i = 0; i < tree.size(); i++){
         treeSources.push_back(g.id(g.source(tree[i])));
-        treeSources.push_back(g.id(g.target(tree[i])));
+        treeTargets.push_back(g.id(g.target(tree[i])));
     }
     return Rcpp::List::create(treeSources, treeTargets, treeVal);
 }
@@ -89,10 +89,10 @@ Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources, std::vector<in
     int arbVal = minCostArborescence(g,dists,nodes[sourceNode], arbs);
     std::vector<int> treeSources;
     std::vector<int> treeTargets;
-    for(int i = 0; i < tree.size(); i++){
+    for(int i = 0; i < NUM_ARCS; i++){
         if(arbs[arcs[i]]) {
         treeSources.push_back(g.id(g.source(arcs[i])));
-        treeSources.push_back(g.id(g.target(arcs[i])));
+        treeTargets.push_back(g.id(g.target(arcs[i])));
         }
     }
     return Rcpp::List::create(treeSources, treeTargets, arbVal);
