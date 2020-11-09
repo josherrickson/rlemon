@@ -13,6 +13,10 @@ test_that("Planar-Coloring Checking", {
   expect_is(out[[1]], "logical")
   expect_equal(out[[1]], TRUE)
   expect_equal(out[[2]], c(1,1,0,0,0,0))
+  out <- PlanarColoringRunner(s,t,6,FALSE)
+  expect_is(out[[1]], "logical")
+  expect_equal(out[[1]], TRUE)
+  expect_equal(out[[2]], c(1,1,0,0,0,0))
 })
 
 

@@ -29,7 +29,7 @@ using NodeMap = ListGraph::NodeMap<ValueType>;
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcWeights, a vector corresponding to the weights of a graph's edges
 //' @param numNodes, the number of nodes in the graph
-//' @return A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a NumericVector of Numeric Vector of (node, node) pairs
+//' @return A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a List of List of (node, node) pairs
 //> NULL
 
 //' @rdname Maximum-Matching-Algorithms
