@@ -78,4 +78,68 @@ test_that("Testing Loop Free", {
 })
 
 
+test_that("Testing parallel-free", {
+   s <- c(0,0,0)
+   t <- c(1,2,2)
+   n <- 3
+   out <- IsParallelFree(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 0)
+})
 
+test_that("simple graph check works", {
+   s <- c(0,1,2)
+   t <- c(1,2,0)
+   n <- 3
+   out <- IsSimpleGraph(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 1)
+})
+
+
+test_that("eulerian check works", {
+   s <- c(0,1,2)
+   t <- c(1,2,0)
+   n <- 3
+   out <- IsEulerian(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 1)
+})
+
+
+test_that("countConnectedComponents works", {
+   s <- c(0,1,2)
+   t <- c(1,0,2)
+   n <- 3
+   out <- CountConnectedComponents(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 2)
+})
+
+test_that("countBiEdgeConnectedComponents works", {
+   s <- c(0,1,2)
+   t <- c(1,0,2)
+   n <- 3
+   out <- CountBiEdgeConnectedComponents(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 2)
+})
+
+
+test_that("countBiNodeConnectedComponents works", {
+   s <- c(0,1,2)
+   t <- c(1,0,2)
+   n <- 3
+   out <- CountBiNodeConnectedComponents(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 2)
+})
+
+test_that("countStronglyConnectedComponents works", {
+   s <- c(0,1,2)
+   t <- c(1,2,1)
+   n <- 3
+   out <- CountStronglyConnectedComponents(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 2)
+})
