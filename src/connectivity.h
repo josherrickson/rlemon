@@ -75,10 +75,10 @@ Rcpp::List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> 
 }
 
 //' @rdname Connectivity-Algorithms-3
-//' @return `getAndcheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
+//' @return `getAndCheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
 //' @export
 // [[Rcpp::export]]
-Rcpp::List getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+Rcpp::List getAndCheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     ListDigraph g;
     std::vector<ListDigraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){

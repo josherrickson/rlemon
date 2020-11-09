@@ -3,7 +3,7 @@
 \name{Connectivity-Algorithms-3}
 \alias{Connectivity-Algorithms-3}
 \alias{getBipartitePartitions}
-\alias{getAndcheckTopologicalSort}
+\alias{getAndCheckTopologicalSort}
 \alias{getTopologicalSort}
 \alias{FindStronglyConnectedComponents}
 \alias{FindStronglyConnectedCutArcs}
@@ -16,7 +16,7 @@
 \usage{
 getBipartitePartitions(arcSources, arcTargets, numNodes)
 
-getAndcheckTopologicalSort(arcSources, arcTargets, numNodes)
+getAndCheckTopologicalSort(arcSources, arcTargets, numNodes)
 
 getTopologicalSort(arcSources, arcTargets, numNodes)
 
@@ -46,7 +46,7 @@ a List, returning some set of nodes or edges in a graph
 
 `getBipartitePartitions` returns an R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
 
-`getAndcheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
+`getAndCheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
 
 `getTopologicalSort` returns a vector of length numNodes, containing the index of vertex i in the ordering at location i.
 }

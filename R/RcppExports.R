@@ -66,10 +66,10 @@ getBipartitePartitions <- function(arcSources, arcTargets, numNodes) {
 }
 
 #' @rdname Connectivity-Algorithms-3
-#' @return `getAndcheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
+#' @return `getAndCheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
 #' @export
-getAndcheckTopologicalSort <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_getAndcheckTopologicalSort`, arcSources, arcTargets, numNodes)
+getAndCheckTopologicalSort <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_getAndCheckTopologicalSort`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3

@@ -72,7 +72,7 @@ test_that("Testing Loop Free", {
    s <- c(0,0,0)
    t <- c(0,2,3)
    n <- 4
-   out <- IsBiEdgeConnected(s, t, n)
+   out <- IsLoopFree(s, t, n)
    expect_is(out, "integer")
    expect_equal(out, 0)
 })
@@ -102,6 +102,15 @@ test_that("eulerian check works", {
    t <- c(1,2,0)
    n <- 3
    out <- IsEulerian(s,t,n)
+   expect_is(out, "integer")
+   expect_equal(out, 1)
+})
+
+test_that("strongly connected check works", {
+   s <- c(0,1,2)
+   t <- c(1,2,0)
+   n <- 3
+   out <- IsStronglyConnected(s,t,n)
    expect_is(out, "integer")
    expect_equal(out, 1)
 })
@@ -142,4 +151,24 @@ test_that("countStronglyConnectedComponents works", {
    out <- CountStronglyConnectedComponents(s,t,n)
    expect_is(out, "integer")
    expect_equal(out, 2)
+})
+
+test_that("getBipartitePartitions works", {
+   s <- c(0,0,0,1,1,1,2,2,2)
+   t <- c(3,4,5,3,4,5,3,4,5)
+   n <- 6
+   out <- getBipartitePartitions(s,t,n)
+   expect_equal(out[[1]], TRUE)
+   expect_equal(out[[2]],c(0,0,0,1,1,1))
+})
+
+test_that("topologicalSort works", {
+   s <- c(0,0,0,1,1,1,2,2,2)
+   t <- c(3,4,5,3,4,5,3,4,5)
+   n <- 6
+   out <- getAndCheckTopologicalSort(s,t,n)
+   expect_equal(out[[1]],TRUE)
+   expect_equal(out[[2]],c(0,1,2,3,4,5))
+   out <- getTopologicalSort(s,t,n)
+   expect_equal(out, c(0,1,2,3,4,5))
 })

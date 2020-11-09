@@ -31,16 +31,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// getAndcheckTopologicalSort
-Rcpp::List getAndcheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_getAndcheckTopologicalSort(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// getAndCheckTopologicalSort
+Rcpp::List getAndCheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_getAndCheckTopologicalSort(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(getAndcheckTopologicalSort(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(getAndCheckTopologicalSort(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -740,7 +740,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_GrossoLocatelliPullanMcRunner", (DL_FUNC) &_rlemon_GrossoLocatelliPullanMcRunner, 3},
     {"_rlemon_getBipartitePartitions", (DL_FUNC) &_rlemon_getBipartitePartitions, 3},
-    {"_rlemon_getAndcheckTopologicalSort", (DL_FUNC) &_rlemon_getAndcheckTopologicalSort, 3},
+    {"_rlemon_getAndCheckTopologicalSort", (DL_FUNC) &_rlemon_getAndCheckTopologicalSort, 3},
     {"_rlemon_getTopologicalSort", (DL_FUNC) &_rlemon_getTopologicalSort, 3},
     {"_rlemon_IsConnected", (DL_FUNC) &_rlemon_IsConnected, 3},
     {"_rlemon_IsAcyclic", (DL_FUNC) &_rlemon_IsAcyclic, 3},
