@@ -48,3 +48,34 @@ test_that("Testing DAG", {
 })
 
 
+
+test_that("Testing Bi-Node Connectiveness", {
+   s <- c(0,0,0)
+   t <- c(1,2,3)
+   n <- 4
+   out <- IsBiNodeConnected(s, t, n)
+   expect_is(out, "integer")
+   expect_equal(out, 0)
+})
+
+test_that("Testing Bi-Edge Connectiveness", {
+   s <- c(0,0,0)
+   t <- c(1,2,3)
+   n <- 4
+   out <- IsBiEdgeConnected(s, t, n)
+   expect_is(out, "integer")
+   expect_equal(out, 0)
+})
+
+
+test_that("Testing Loop Free", {
+   s <- c(0,0,0)
+   t <- c(0,2,3)
+   n <- 4
+   out <- IsBiEdgeConnected(s, t, n)
+   expect_is(out, "integer")
+   expect_equal(out, 0)
+})
+
+
+

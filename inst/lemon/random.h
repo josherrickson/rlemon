@@ -59,6 +59,10 @@
  * email: m-mat @ math.sci.hiroshima-u.ac.jp (remove space)
  */
 
+#if __cplusplus > 199711L
+#define register      // Deprecated in C++11.
+#endif  // #if __cplusplus > 199711L
+
 #ifndef LEMON_RANDOM_H
 #define LEMON_RANDOM_H
 
