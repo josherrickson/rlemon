@@ -173,3 +173,17 @@ test_that("topologicalSort works", {
    expect_equal(out, c(0,1,2,3,4,5))
 })
 
+test_that("findingComponents works", {
+   s <- c(0,0,0,1,1,1,2,2,2)
+   t <- c(3,4,5,3,4,5,3,4,5)
+   n <- 6
+   out <- FindStronglyConnectedComponents(s,t,n)
+   expect_equal(out,c(0,1,2,3,4,5))
+   out <- FindStronglyConnectedCutArcs(s,t,n)
+   expect_equal(out[[1]], c(0,0,0,1,1,1,2,2,2))
+   expect_equal(out[[2]], c(3,4,5,3,4,5,3,4,5))
+   out <- FindConnectedComponents(s,t,n)
+   expect_equal(out, c(0,0,0,0,0,0))
+   out <- FindBiEdgeConnectedComponents(s,t,n)
+   expect_equal(out, c(0,0,0,0,0,0))
+})
