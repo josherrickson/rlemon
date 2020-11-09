@@ -172,3 +172,4 @@ test_that("topologicalSort works", {
    out <- getTopologicalSort(s,t,n)
    expect_equal(out, c(0,1,2,3,4,5))
 })
+
