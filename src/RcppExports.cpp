@@ -317,16 +317,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// FindBiNodeConnectedNodes
-std::vector<int> FindBiNodeConnectedNodes(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindBiNodeConnectedNodes(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindBiNodeConnectedCutNodes
+std::vector<int> FindBiNodeConnectedCutNodes(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindBiNodeConnectedCutNodes(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindBiNodeConnectedNodes(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindBiNodeConnectedCutNodes(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -762,7 +762,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_FindStronglyConnectedCutArcs", (DL_FUNC) &_rlemon_FindStronglyConnectedCutArcs, 3},
     {"_rlemon_FindBiEdgeConnectedCutEdges", (DL_FUNC) &_rlemon_FindBiEdgeConnectedCutEdges, 3},
     {"_rlemon_FindBiNodeConnectedComponents", (DL_FUNC) &_rlemon_FindBiNodeConnectedComponents, 3},
-    {"_rlemon_FindBiNodeConnectedNodes", (DL_FUNC) &_rlemon_FindBiNodeConnectedNodes, 3},
+    {"_rlemon_FindBiNodeConnectedCutNodes", (DL_FUNC) &_rlemon_FindBiNodeConnectedCutNodes, 3},
     {"_rlemon_FindConnectedComponents", (DL_FUNC) &_rlemon_FindConnectedComponents, 3},
     {"_rlemon_FindBiEdgeConnectedComponents", (DL_FUNC) &_rlemon_FindBiEdgeConnectedComponents, 3},
     {"_rlemon_CirculationRunner", (DL_FUNC) &_rlemon_CirculationRunner, 6},

@@ -228,8 +228,8 @@ FindBiNodeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindBiNodeConnectedCutNodes` returns a vector containing the cut nodes
 #' @export
-FindBiNodeConnectedNodes <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindBiNodeConnectedNodes`, arcSources, arcTargets, numNodes)
+FindBiNodeConnectedCutNodes <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindBiNodeConnectedCutNodes`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3

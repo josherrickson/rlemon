@@ -572,7 +572,7 @@ std::vector<int> FindBiNodeConnectedComponents(std::vector<int> arcSources, std:
 //' @description `FindBiNodeConnectedCutNodes` returns a vector containing the cut nodes
 //' @export
 // [[Rcpp::export]]
-std::vector<int> FindBiNodeConnectedNodes(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+std::vector<int> FindBiNodeConnectedCutNodes(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     for(int i = 0; i < numNodes; ++i){

@@ -9,7 +9,7 @@
 \alias{FindStronglyConnectedCutArcs}
 \alias{FindBiEdgeConnectedCutEdges}
 \alias{FindBiNodeConnectedComponents}
-\alias{FindBiNodeConnectedNodes}
+\alias{FindBiNodeConnectedCutNodes}
 \alias{FindConnectedComponents}
 \alias{FindBiEdgeConnectedComponents}
 \title{Connectivity Algorithms - List Return}
@@ -28,7 +28,7 @@ FindBiEdgeConnectedCutEdges(arcSources, arcTargets, numNodes)
 
 FindBiNodeConnectedComponents(arcSources, arcTargets, numNodes)
 
-FindBiNodeConnectedNodes(arcSources, arcTargets, numNodes)
+FindBiNodeConnectedCutNodes(arcSources, arcTargets, numNodes)
 
 FindConnectedComponents(arcSources, arcTargets, numNodes)
 
