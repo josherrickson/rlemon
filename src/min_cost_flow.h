@@ -11,7 +11,7 @@ using namespace lemon;
 
 
 //' Minimum Cost Flow Algorithms
-//' @name Mininimum Cost Flow Algorithms
+//' @name Minimum Cost Flow Algorithms
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges
@@ -21,9 +21,8 @@ using namespace lemon;
 //' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
 //> NULL
 
-//' @rdname Mininimum-Cost-Flow-Algorithms
+//' @rdname Minimum-Cost-Flow-Algorithms
 //' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow. 
-//' @export
 // [[Rcpp::export]]
 Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -73,9 +72,8 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> a
 }
 
 
-//' @rdname Mininimum-Cost-Flow-Algorithms
+//' @rdname Minimum-Cost-Flow-Algorithms
 //' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow. 
-//' @export
 // [[Rcpp::export]]
 Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -125,9 +123,8 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> a
 }
 
 
-//' @rdname Mininimum-Cost-Flow-Algorithms
+//' @rdname Minimum-Cost-Flow-Algorithms
 //' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow. 
-//' @export
 // [[Rcpp::export]]
 Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -177,9 +174,8 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTa
 }
 
 
-//' @rdname Mininimum-Cost-Flow-Algorithms
+//' @rdname Minimum-Cost-Flow-Algorithms
 //' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow. 
-//' @export
 // [[Rcpp::export]]
 Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -227,3 +223,27 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> ar
 
     return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
+
+//' @rdname Minimum-Cost-Flow-Algorithms
+//' @description `MinCostFlow` is the generic runner for the minimum cost algorithms in LEMON. 
+//' @param algorithmNumber determines the algorithm used, where 0 runs CycleCancelling, 1 runs CapacityScaling, 2 runs CostScaling, and 3 runs NetworkSimplex
+//' @export
+// [[Rcpp::export]]
+Rcpp::List MinCostFlow(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes, int algorithmNumber) {
+    if(algorithmNumber==0){
+        return CycleCancellingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
+    }
+    else if(algorithmNumber==1){
+        return CapacityScalingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
+    }
+    else if(algorithmNumber==2){
+        return CostScalingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
+    }
+    else if(algorithmNumber==3){
+        return NetworkSimplexRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
+    }
+    else{
+        throw std::runtime_error("Invalid algorithm argument. Should be one of 0,1,2 or 3.");
+    }
+}
+

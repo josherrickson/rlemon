@@ -579,6 +579,23 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// MinCostFlow
+Rcpp::List MinCostFlow(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes, int algorithmNumber);
+RcppExport SEXP _rlemon_MinCostFlow(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcCapacitiesSEXP, SEXP arcCostsSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP, SEXP algorithmNumberSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCapacities(arcCapacitiesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCosts(arcCostsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type nodeSupplies(nodeSuppliesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type algorithmNumber(algorithmNumberSEXP);
+    rcpp_result_gen = Rcpp::wrap(MinCostFlow(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithmNumber));
+    return rcpp_result_gen;
+END_RCPP
+}
 // HowardMmcRunner
 Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
 RcppExport SEXP _rlemon_HowardMmcRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
@@ -780,6 +797,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_CapacityScalingRunner", (DL_FUNC) &_rlemon_CapacityScalingRunner, 6},
     {"_rlemon_CostScalingRunner", (DL_FUNC) &_rlemon_CostScalingRunner, 6},
     {"_rlemon_NetworkSimplexRunner", (DL_FUNC) &_rlemon_NetworkSimplexRunner, 6},
+    {"_rlemon_MinCostFlow", (DL_FUNC) &_rlemon_MinCostFlow, 7},
     {"_rlemon_HowardMmcRunner", (DL_FUNC) &_rlemon_HowardMmcRunner, 4},
     {"_rlemon_KarpMmcRunner", (DL_FUNC) &_rlemon_KarpMmcRunner, 4},
     {"_rlemon_HartmannOrlinMmcRunner", (DL_FUNC) &_rlemon_HartmannOrlinMmcRunner, 4},

@@ -624,7 +624,6 @@ std::vector<int> FindConnectedComponents(std::vector<int> arcSources, std::vecto
 
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindBiEdgeConnectedComponents` returns a vector containing the component number of each node
-//' @export
 // [[Rcpp::export]]
 std::vector<int> FindBiEdgeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     ListGraph g;

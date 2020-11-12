@@ -241,7 +241,6 @@ FindConnectedComponents <- function(arcSources, arcTargets, numNodes) {
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindBiEdgeConnectedComponents` returns a vector containing the component number of each node
-#' @export
 FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
 }
@@ -372,7 +371,7 @@ MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sour
 }
 
 #' Minimum Cost Flow Algorithms
-#' @name Mininimum Cost Flow Algorithms
+#' @name Minimum Cost Flow Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges
@@ -382,32 +381,36 @@ MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sour
 #' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
 NULL
 
-#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @rdname Minimum-Cost-Flow-Algorithms
 #' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow. 
-#' @export
 CycleCancellingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_CycleCancellingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
-#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @rdname Minimum-Cost-Flow-Algorithms
 #' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow. 
-#' @export
 CapacityScalingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_CapacityScalingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
-#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @rdname Minimum-Cost-Flow-Algorithms
 #' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow. 
-#' @export
 CostScalingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_CostScalingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
-#' @rdname Mininimum-Cost-Flow-Algorithms
+#' @rdname Minimum-Cost-Flow-Algorithms
 #' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow. 
-#' @export
 NetworkSimplexRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
+}
+
+#' @rdname Minimum-Cost-Flow-Algorithms
+#' @description `MinCostFlow` is the generic runner for the minimum cost algorithms in LEMON. 
+#' @param algorithmNumber determines the algorithm used, where 0 runs CycleCancelling, 1 runs CapacityScaling, 2 runs CostScaling, and 3 runs NetworkSimplex
+#' @export
+MinCostFlow <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithmNumber) {
+    .Call(`_rlemon_MinCostFlow`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithmNumber)
 }
 
 #' Minimum Mean-Cycle Algorithms

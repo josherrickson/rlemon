@@ -54,3 +54,28 @@ test_that("Cycle Cancelling Test", {
    expect_equal(out[[3]],9833)
    expect_equal(out[[1]], small_graph_example$outflow)
 })
+test_that("MinCostFlow Test", {
+   s <- small_graph_example$startnodes
+   t <- small_graph_example$endnodes
+   cap <- small_graph_example$arccapacity
+   costs <- small_graph_example$arccosts
+   n <- small_graph_example$nodedemand
+   numNodes <- 34
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,0)
+   expect_is(out, "list")
+   expect_is(out[[3]], "integer")
+   expect_equal(out[[3]],9833)
+   expect_equal(out[[1]], small_graph_example$outflow)
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,1)
+   expect_is(out, "list")
+   expect_is(out[[3]], "integer")
+   expect_equal(out[[3]],9833)
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,2)
+   expect_is(out, "list")
+   expect_is(out[[3]], "integer")
+   expect_equal(out[[3]],9833)
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,3)
+   expect_is(out, "list")
+   expect_is(out[[3]], "integer")
+   expect_equal(out[[3]],9833)
+})
