@@ -6,7 +6,6 @@
 \alias{CapacityScalingRunner}
 \alias{CostScalingRunner}
 \alias{NetworkSimplexRunner}
-\alias{MinCostFlow}
 \title{Minimum Cost Flow Algorithms}
 \usage{
 CycleCancellingRunner(
@@ -44,16 +43,6 @@ NetworkSimplexRunner(
   nodeSupplies,
   numNodes
 )
-
-MinCostFlow(
-  arcSources,
-  arcTargets,
-  arcCapacities,
-  arcCosts,
-  nodeSupplies,
-  numNodes,
-  algorithmNumber
-)
 }
 \arguments{
 \item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
@@ -67,8 +56,6 @@ MinCostFlow(
 \item{nodeSupplies, }{a vector corresponding to the supplies of each node}
 
 \item{numNodes, }{the number of nodes in the graph}
-
-\item{algorithmNumber}{determines the algorithm used, where 0 runs CycleCancelling, 1 runs CapacityScaling, 2 runs CostScaling, and 3 runs NetworkSimplex}
 }
 \value{
 A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
@@ -81,6 +68,4 @@ A list containing three entries: 1) A list corresponding to the flows of arcs in
 `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow.
 
 `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow.
-
-`MinCostFlow` is the generic runner for the minimum cost algorithms in LEMON.
 }

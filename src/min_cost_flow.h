@@ -22,7 +22,7 @@ using namespace lemon;
 //> NULL
 
 //' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow. 
+//' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow.
 // [[Rcpp::export]]
 Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -73,7 +73,7 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> a
 
 
 //' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow. 
+//' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow.
 // [[Rcpp::export]]
 Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -124,7 +124,7 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources, std::vector<int> a
 
 
 //' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow. 
+//' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow.
 // [[Rcpp::export]]
 Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -175,7 +175,7 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources, std::vector<int> arcTa
 
 
 //' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow. 
+//' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow.
 // [[Rcpp::export]]
 Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes) {
     ListDigraph g;
@@ -223,27 +223,3 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources, std::vector<int> ar
 
     return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
 }
-
-//' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `MinCostFlow` is the generic runner for the minimum cost algorithms in LEMON. 
-//' @param algorithmNumber determines the algorithm used, where 0 runs CycleCancelling, 1 runs CapacityScaling, 2 runs CostScaling, and 3 runs NetworkSimplex
-//' @export
-// [[Rcpp::export]]
-Rcpp::List MinCostFlow(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes, int algorithmNumber) {
-    if(algorithmNumber==0){
-        return CycleCancellingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
-    }
-    else if(algorithmNumber==1){
-        return CapacityScalingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
-    }
-    else if(algorithmNumber==2){
-        return CostScalingRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
-    }
-    else if(algorithmNumber==3){
-        return NetworkSimplexRunner(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes);
-    }
-    else{
-        throw std::runtime_error("Invalid algorithm argument. Should be one of 0,1,2 or 3.");
-    }
-}
-

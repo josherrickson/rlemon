@@ -382,35 +382,27 @@ MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sour
 NULL
 
 #' @rdname Minimum-Cost-Flow-Algorithms
-#' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow. 
+#' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow.
 CycleCancellingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_CycleCancellingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
 #' @rdname Minimum-Cost-Flow-Algorithms
-#' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow. 
+#' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow.
 CapacityScalingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_CapacityScalingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
 #' @rdname Minimum-Cost-Flow-Algorithms
-#' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow. 
+#' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow.
 CostScalingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_CostScalingRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 }
 
 #' @rdname Minimum-Cost-Flow-Algorithms
-#' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow. 
+#' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow.
 NetworkSimplexRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
-}
-
-#' @rdname Minimum-Cost-Flow-Algorithms
-#' @description `MinCostFlow` is the generic runner for the minimum cost algorithms in LEMON. 
-#' @param algorithmNumber determines the algorithm used, where 0 runs CycleCancelling, 1 runs CapacityScaling, 2 runs CostScaling, and 3 runs NetworkSimplex
-#' @export
-MinCostFlow <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithmNumber) {
-    .Call(`_rlemon_MinCostFlow`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithmNumber)
 }
 
 #' Minimum Mean-Cycle Algorithms
