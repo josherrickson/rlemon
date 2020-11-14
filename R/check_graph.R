@@ -14,13 +14,13 @@ check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSup
       length(arcSources) != length(arcCapacities) |
       length(arcSources) != length(arcCosts) |
         length(arcSources) != length(arcCapacities)) {
-  #  stop("Inconsistent number of arcs across Sources/Targets/Capacities/Costs")
+    stop("Inconsistent number of arcs across Sources/Targets/Capacities/Costs")
   }
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
       !all(arcTargets == floor(arcTargets))) {
-    #  stop("Nodes must be integers")
+    stop("Nodes must be integers")
   }
 
   invisible(TRUE) # if it passes all checks. `invisible` instead of `return` avoids printing anything out
