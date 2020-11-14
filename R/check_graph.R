@@ -9,6 +9,7 @@
 ##' @return TRUE if no errors are found.
 ##' @export
 check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
+  # Checking that arc number is consistent
   if (length(arcSources) != length(arcTargets) |
       length(arcSources) != length(arcCapacities) |
       length(arcSources) != length(arcCosts) |
@@ -16,8 +17,11 @@ check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSup
   #  stop("Inconsistent number of arcs across Sources/Targets/Capacities/Costs")
   }
 
-  if (!is.integer(arcSources) | !is.integer(arcTargets)) { # add any others
-  #  stop("Nodes must be integers")
+  # Checking that node identifiers are integers
+  if (!all(arcSources == floor(arcSources)) |
+      !all(arcTargets == floor(arcTargets))) {
+    #  stop("Nodes must be integers")
   }
+
   invisible(TRUE) # if it passes all checks. `invisible` instead of `return` avoids printing anything out
 }
