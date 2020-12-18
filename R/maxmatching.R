@@ -15,8 +15,10 @@
 ##' @export
 maxmatching <- function(arcSources, arcTargets, numNodes, problem="MaxWeightedMatching", arcWeights=NULL) {
 
-  #check_graph(arcSources, arcTargets, arcCapacities, arcCapacities, nodeSupplies, numNodes)
-
+  check_graph_vertices(arcSources, arcTargets, numNodes)
+  if(!is.null(arcWeights)) {
+    check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
+  }
   switch(problem,
          "MaxWeightedMatching" = .Call(`_rlemon_MaximumWeightMatchingRunner`,arcSources, arcTargets, arcWeights, numNodes),
          "MaxWeightedPerfectMatching" = .Call(`_rlemon_MaximumWeightPerfectMatchingRunner`,arcSources, arcTargets, arcWeights, numNodes),

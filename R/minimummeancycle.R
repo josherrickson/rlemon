@@ -14,7 +14,9 @@
 ##' @export
 minimummeancycle <- function(arcSources, arcTargets, arcDistances, numNodes, algorithm) {
 
-  #check_graph(arcSources, arcTargets, arcCapacities, arcCapacities, nodeSupplies, numNodes)
+  check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
+  
 
   switch(algorithm,
          "Howard" = .Call(`_rlemon_HowardMmcRunner`,arcSources, arcTargets, arcDistances, numNodes),

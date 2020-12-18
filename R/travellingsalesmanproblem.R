@@ -14,6 +14,11 @@
 ##' @return a List with 1) the list of tour vertices, and 2) the total tour cost
 ##' @export
 travellingsalesmanproblem<- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight=999999, algorithm) {
+  
+  
+  check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
+  
   switch(algorithm,
          "Christofides" = .Call(`_rlemon_ChristofidesRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight=999999),
          "Greedy" = .Call(`_rlemon_GreedyTSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight=999999),
