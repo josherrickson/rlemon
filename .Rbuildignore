@@ -7,3 +7,5 @@ README.md
 ^codecov\.yml$
 .github
 data-raw
+.clang-format
+.vscode
