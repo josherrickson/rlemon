@@ -182,7 +182,7 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<
 //' @description `MaximumCardinalityMatchingRunner` solves the Maximum Cardinality Matching Problem
 //' @export
 // [[Rcpp::export]]
-std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -215,7 +215,7 @@ std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> 
             arcs_out.push_back(arc);
         }
     }
-    return arcs_out;
+    return Rcpp::List::create(test.matchingSize(), arcs_out);
 }
 
 
@@ -223,7 +223,7 @@ std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> 
 //' @description `MaximumCardinalityFractionalMatchingRunner` solves the Maximum-Cardinality Fractional Matching Problem
 //' @export
 // [[Rcpp::export]]
-std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+Rcpp::List MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
     //           One std::vector, arcDistances, which assigns for each arc an associated distance
     //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -256,5 +256,5 @@ std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::ve
             arcs_out.push_back(arc);
         }
     }
-    return arcs_out;
+    return Rcpp::List::create(test.matchingSize(), arcs_out);
 }
