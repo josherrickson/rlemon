@@ -16,7 +16,10 @@
 ##' @export
 maxflow <- function(arcSources, arcTargets, arcCapacities, sourceNode, destNode, numNodes, algorithm) {
 
-  #check_graph(arcSources, arcTargets, arcCapacities, arcCapacities, nodeSupplies, numNodes)
+  check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_arc_map(arcSources, arcTargets, arcCapacities, numNodes)
+  check_node(sourceNode,numNodes)
+  check_node(destNode, numNodes)
 
   switch(algorithm,
          "Preflow" = .Call(`_rlemon_PreflowRunner`,arcSources, arcTargets, arcCapacities, sourceNode, destNode, numNodes),
