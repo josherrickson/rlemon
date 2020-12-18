@@ -2,7 +2,17 @@
 % Please edit documentation in R/RcppExports.R
 \name{Minimum Cost Arborescence Algorithms}
 \alias{Minimum Cost Arborescence Algorithms}
+\alias{MinCostArborescenceRunner}
 \title{Arborescence Algorithms}
+\usage{
+MinCostArborescenceRunner(
+  arcSources,
+  arcTargets,
+  arcDistances,
+  sourceNode,
+  numNodes
+)
+}
 \arguments{
 \item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
 

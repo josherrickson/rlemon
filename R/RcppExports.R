@@ -10,7 +10,7 @@
 NULL
 
 #' @rdname Approximation-Algorithms
-#' @description `GrossoLocatelliPullanMcRunner` runs the Grosso, Locatelli, and Pullan for solving the maximum clique problem 
+#' @description `GrossoLocatelliPullanMcRunner` runs the Grosso, Locatelli, and Pullan for solving the maximum clique problem
 #' @export
 GrossoLocatelliPullanMcRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_GrossoLocatelliPullanMcRunner`, arcSources, arcTargets, numNodes)
@@ -18,15 +18,15 @@ GrossoLocatelliPullanMcRunner <- function(arcSources, arcTargets, numNodes) {
 
 #' Graph Input Specifications
 #' @name Input-Information
-#' @description Due to how LEMON operates, and to make the interfaces similar to the actual program, 
+#' @description Due to how LEMON operates, and to make the interfaces similar to the actual program,
 #' graphs in rLEMON use the following 2 vectors:
 #' arcSources, and arcTargets
 #' to acquire information about how the graph is structured
 #' each edge in a graph will consist of a (node id, node id) pair, which is represented
-#' by the ith entry in both arcSources and arcTargets. 
-#' The nodes are 0-indexed, and must be sequential. 
+#' by the ith entry in both arcSources and arcTargets.
+#' The nodes are 0-indexed, and must be sequential.
 #' numNodes must be equal to the number of nodes in the graph, as otherwise there
-#' are potentials to error out. 
+#' are potentials to error out.
 #' As an example, the cycle graph on three vertices would have the following input:
 #' arcSources <- c(0,1,2)
 #' arcTargets <- c(1,2,0)
@@ -261,7 +261,7 @@ NULL
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcDistances, a vector corresponding to the capacities of nodes of a graph's edges
-#' @param sourceNode, the source node 
+#' @param sourceNode, the source node
 #' @param destinationNode, the destination node
 #' @param numNodes, the number of nodes in the graph
 #' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
@@ -302,7 +302,7 @@ MaximumWeightPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeight
 }
 
 #' @rdname Maximum-Matching-Algorithms
-#' @description `MaximumWeightFractionalPerfectMatchingRunner` solves the Maximum-Weight Fractional Perfect Matching Problem 
+#' @description `MaximumWeightFractionalPerfectMatchingRunner` solves the Maximum-Weight Fractional Perfect Matching Problem
 MaximumWeightFractionalPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightFractionalPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
@@ -355,7 +355,7 @@ KruskalRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_KruskalRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
-#' @rdname Minimum-Cost-Aborescence-Algorithms
+#' @rdname Minimum-Cost-Arborescence-Algorithms
 MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, numNodes) {
     .Call(`_rlemon_MinCostArborescenceRunner`, arcSources, arcTargets, arcDistances, sourceNode, numNodes)
 }
@@ -396,7 +396,7 @@ NetworkSimplexRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts
 }
 
 #' Minimum Cut Algorithms - Gomory Hu Tree
-#' @name Minimum Cut Algorithms 2 
+#' @name Minimum Cut Algorithms 2
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcWeights, a vector corresponding to the weights of a graph's edges
@@ -440,7 +440,7 @@ GomoryHuTreeRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcDistances, a vector corresponding to the distances of a graph's edges
 #' @param numNodes, the number of nodes in the graph
-#' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC cycle, and 2) the nodes in the MMC cycle.   
+#' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC cycle, and 2) the nodes in the MMC cycle.
 NULL
 
 #' @rdname Maximum-Mean-Cycle-Algorithms

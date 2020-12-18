@@ -1,11 +1,11 @@
-#include <vector>
+#include <Rcpp.h>
 #include <iostream>
+#include <lemon/grosso_locatelli_pullan_mc.h>
+#include <lemon/list_graph.h>
+#include <vector>
 
 using namespace lemon;
 using namespace std;
-#include <Rcpp.h>
-#include <lemon/grosso_locatelli_pullan_mc.h>
-
 
 //' Approximation Algorithms
 //' @name Approximation-Algorithms
@@ -16,22 +16,23 @@ using namespace std;
 //> NULL
 
 //' @rdname Approximation-Algorithms
-//' @description `GrossoLocatelliPullanMcRunner` runs the Grosso, Locatelli, and Pullan for solving the maximum clique problem 
+//' @description `GrossoLocatelliPullanMcRunner` runs the Grosso, Locatelli, and Pullan for solving the maximum clique problem
 //' @export
 // [[Rcpp::export]]
-Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
+Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources,
+                                         std::vector<int> arcTargets,
+                                         int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
-  for(int i = 0; i < numNodes; ++i){
-      ListGraph::Node n = g.addNode();
-      nodes.push_back(n);
+  for (int i = 0; i < numNodes; ++i) {
+    ListGraph::Node n = g.addNode();
+    nodes.push_back(n);
   }
-
 
   int NUM_ARCS = arcSources.size();
 
-  for(int i = 0; i < NUM_ARCS; ++i) {
-      ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+  for (int i = 0; i < NUM_ARCS; ++i) {
+    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
   }
 
   GrossoLocatelliPullanMc<ListGraph> runner(g);
@@ -41,10 +42,10 @@ Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vecto
   ListGraph::NodeMap<int> clique_members(g);
   runner.cliqueMap(clique_members);
   std::vector<int> cliqueMembers;
-  for(int i = 0; i < numNodes; i++) {
-      if(clique_members[nodes[i]]){
-          cliqueMembers.push_back(i);
-      }
+  for (int i = 0; i < numNodes; i++) {
+    if (clique_members[nodes[i]]) {
+      cliqueMembers.push_back(i);
+    }
   }
 
   return Rcpp::List::create(cliqueSize, cliqueMembers);
