@@ -4,7 +4,7 @@
 #include "lemon/nagamochi_ibaraki.h"
 #include "lemon/hao_orlin.h"
 #include "lemon/list_graph.h"
-
+#include <Rcpp.h>
 
 using namespace lemon;
 using namespace std;
@@ -33,7 +33,7 @@ using namespace std;
 //' @description `NagamochiIbarakiRunner` runs the Nagamochi-Ibaraki Algorithm to calculate the minimum cut.
 //' @export
 // [[Rcpp::export]]
-auto NagamochiIbarakiRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes)
+Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes)
 {
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
@@ -73,14 +73,14 @@ auto NagamochiIbarakiRunner(std::vector<int> arcSources, std::vector<int> arcTar
         }
     }
 
-    return make_tuple(mincutvalue, partition1, partition2);
+    return Rcpp::List::create(mincutvalue, partition1, partition2);
 }
 
 //' @rdname Minimum-Cut-Algorithms
 //' @description `HaoOrlinRunner` runs the Hao-Orlin Algorithm to calculate the minimum cut.
 //' @export
 // [[Rcpp::export]]
-auto HaoOrlinRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes)
+Rcpp::List HaoOrlinRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes)
 {
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
@@ -120,14 +120,14 @@ auto HaoOrlinRunner(std::vector<int> arcSources, std::vector<int> arcTargets, st
         }
     }
 
-    return make_tuple(mincutvalue, partition1, partition2);
+    return Rcpp::List::create(mincutvalue, partition1, partition2);
 }
 
 //' @rdname Minimum-Cut-Algorithms-2
 //' @description `GomoryHuTreeRunner` runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.
 //' @export
 // [[Rcpp::export]]
-auto GomoryHuTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
+Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
     std::vector<ListGraph::Node> nodes;
     ListGraph::EdgeMap<Cost> dists(g);
@@ -165,5 +165,5 @@ auto GomoryHuTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets
     
     }
 
-    return std::make_tuple(predecessors, predEdgeWeights, rootDistances);
+    return Rcpp::List::create(predecessors, predEdgeWeights, rootDistances);
 }
