@@ -9,7 +9,7 @@ using namespace lemon;
 using namespace std;
 
 //' Minimum Cut Algorithms - Gomory Hu Tree
-//' @name Minimum Cut Algorithms 2 
+//' @name Minimum Cut Algorithms 2
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcWeights, a vector corresponding to the weights of a graph's edges
@@ -57,7 +57,6 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources, std::vector<int> 
     alg.minCutMap(mincutmap);
 
     int mincutvalue = alg.minCutValue();
-    cout << mincutvalue << endl;
     vector<int> partition1;
     vector<int> partition2;
     for(int i = 0; i < numNodes; ++i)
@@ -104,7 +103,6 @@ Rcpp::List HaoOrlinRunner(std::vector<int> arcSources, std::vector<int> arcTarge
     alg.minCutMap(mincutmap);
 
     int mincutvalue = alg.minCutValue();
-    cout << mincutvalue << endl;
     vector<int> partition1;
     vector<int> partition2;
     for(int i = 0; i < numNodes; ++i)
@@ -161,7 +159,7 @@ Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources, std::vector<int> arcT
             predEdgeWeights.push_back(-1);
         }
         rootDistances.push_back(rootDistance);
-    
+
     }
 
     return Rcpp::List::create(predecessors, predEdgeWeights, rootDistances);
