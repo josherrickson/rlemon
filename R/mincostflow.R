@@ -1,12 +1,12 @@
 ##' Runs mincostflow algorithms on graphs.
 ##'
 ##' @title MinCostFlow
-##' @param arcSources Arc sources
-##' @param arcTargets Arc targets
-##' @param arcCapacities Arc capacities
-##' @param arcCosts Arc costs
-##' @param nodeSupplies Node supplies
-##' @param numNodes Number of nodes
+##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+##' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges
+##' @param arcCosts, a vector corresponding to the capacities of nodes of a graph's edges
+##' @param nodeSupplies, a vector corresponding to the supplies of each node
+##' @param numNodes, the number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include
 ##'   "NetworkSimplex", "CostScaling", "CapacityScaling",
 ##'   "CycleCancelling". NetworkSimplex is the default; see
