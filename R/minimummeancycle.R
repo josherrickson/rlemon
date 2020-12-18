@@ -5,7 +5,7 @@
 ##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 ##' @param arcDistances, a vector corresponding to the distances of a graph's edges
 ##' @param numNodes, the number of nodes in the graph
-##' @param problem Which algorithm to run. Choices include
+##' @param algorithm Which algorithm to run. Choices include
 ##'   "Howard", "Karp", "HartmannOrlin"
 ##'   where "Howard" is the default.
 ##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00614.html> 
