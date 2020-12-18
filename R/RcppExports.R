@@ -276,14 +276,12 @@ CirculationRunner <- function(arcSources, arcTargets, arcLowerBound, arcUpperBou
 
 #' @rdname Maximum-Flow-Algorithms
 #' @description `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.
-#' @export
 PreflowRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes) {
     .Call(`_rlemon_PreflowRunner`, arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes)
 }
 
 #' @rdname Maximum-Flow-Algorithms
 #' @description `EdmondsKarpRunner` runs the EdmondsKarp Algorithm to calculate the maximum flow.
-#' @export
 EdmondsKarpRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes) {
     .Call(`_rlemon_EdmondsKarpRunner`, arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes)
 }
@@ -299,42 +297,36 @@ NULL
 
 #' @rdname Maximum-Matching-Algorithms
 #' @description `MaximumWeightPerfectMatchingRunner` solves the Maximum-Weight Perfect Matching Problem
-#' @export
 MaximumWeightPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 #' @rdname Maximum-Matching-Algorithms
 #' @description `MaximumWeightFractionalPerfectMatchingRunner` solves the Maximum-Weight Fractional Perfect Matching Problem 
-#' @export
 MaximumWeightFractionalPerfectMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightFractionalPerfectMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 #' @rdname Maximum-Matching-Algorithms
 #' @description `MaximumWeightFractionalMatchingRunner` solves the Maximum-Weight Fractional Matching Problem
-#' @export
 MaximumWeightFractionalMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightFractionalMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 #' @rdname Maximum-Matching-Algorithms
 #' @description `MaximumWeightMatchingRunner` solves the Maximum-Weight Matching Problem
-#' @export
 MaximumWeightMatchingRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_MaximumWeightMatchingRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 #' @rdname Maximum-Matching-Algorithms
 #' @description `MaximumCardinalityMatchingRunner` solves the Maximum Cardinality Matching Problem
-#' @export
 MaximumCardinalityMatchingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_MaximumCardinalityMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Maximum-Matching-Algorithms
 #' @description `MaximumCardinalityFractionalMatchingRunner` solves the Maximum-Cardinality Fractional Matching Problem
-#' @export
 MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
@@ -416,21 +408,18 @@ NULL
 
 #' @rdname Maximum-Mean-Cycle-Algorithms
 #' @description `HowardMmcRunner` runs Howard's policy iteration algorithm.
-#' @export
 HowardMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_HowardMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
 #' @rdname Maximum-Mean-Cycle-Algorithms
 #' @description `KarpMmcRunner` runs Karp's algorithm.
-#' @export
 KarpMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_KarpMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
 #' @rdname Maximum-Mean-Cycle-Algorithms
 #' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm algorithm.
-#' @export
 HartmannOrlinMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
@@ -477,35 +466,30 @@ NULL
 
 #' @rdname TSP-Algorithms
 #' @description `ChristofidesRunner` runs the Christofides Heuristic
-#' @export
 ChristofidesRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
     .Call(`_rlemon_ChristofidesRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }
 
 #' @rdname TSP-Algorithms
 #' @description `GreedyTSPRunner` runs the Greedy Heuristic
-#' @export
 GreedyTSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
     .Call(`_rlemon_GreedyTSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }
 
 #' @rdname TSP-Algorithms
 #' @description `InsertionTSPRunner` runs the Insertion Heuristic
-#' @export
 InsertionTSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
     .Call(`_rlemon_InsertionTSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }
 
 #' @rdname TSP-Algorithms
 #' @description `NearestNeighborTSPRunner` runs the Nearest-Neighbor Heuristic
-#' @export
 NearestNeighborTSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
     .Call(`_rlemon_NearestNeighborTSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }
 
 #' @rdname TSP-Algorithms
 #' @description `Opt2TSPRunner` runs a 2-OPT heuristic
-#' @export
 Opt2TSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
     .Call(`_rlemon_Opt2TSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }
