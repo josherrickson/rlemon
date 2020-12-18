@@ -340,24 +340,22 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
 #' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
 NULL
 
-#' Aborescense Algorithms
-#' @name Minimum Cost Aborescence Algorithms
+#' Arborescence Algorithms
+#' @name Minimum Cost Arborescence Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
 #' @param sourceNode, the source node
 #' @param numNodes, the number of nodes in the graph
-#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
 NULL
 
 #' @rdname Minimum-Spanning-Tree-Algorithms
-#' @export
 KruskalRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_KruskalRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
 #' @rdname Minimum-Cost-Aborescence-Algorithms
-#' @export
 MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, numNodes) {
     .Call(`_rlemon_MinCostArborescenceRunner`, arcSources, arcTargets, arcDistances, sourceNode, numNodes)
 }
@@ -395,6 +393,45 @@ CostScalingRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, n
 #' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow.
 NetworkSimplexRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
     .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
+}
+
+#' Minimum Cut Algorithms - Gomory Hu Tree
+#' @name Minimum Cut Algorithms 2 
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcWeights, a vector corresponding to the weights of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @return Calculates a Gomory-Hu Tree and returns a list containing three entries: 1) A list of predecessor nodes of each node in the graph, and 2) A list of weights of the predecessor edge of each node, and 3) A list of distances from the root node to each node.
+NULL
+
+#' Minimum Cut Algorithms
+#' @name Minimum Cut Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcWeights, a vector corresponding to the weights of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing three entries: 1) The value of the minimum cut in the graph, and 2) A list of nodes in the first partition, and 3) A list of nodes in the second partition.
+NULL
+
+#' @rdname Minimum-Cut-Algorithms
+#' @description `NagamochiIbarakiRunner` runs the Nagamochi-Ibaraki Algorithm to calculate the minimum cut.
+#' @export
+NagamochiIbarakiRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
+    .Call(`_rlemon_NagamochiIbarakiRunner`, arcSources, arcTargets, arcWeights, numNodes)
+}
+
+#' @rdname Minimum-Cut-Algorithms
+#' @description `HaoOrlinRunner` runs the Hao-Orlin Algorithm to calculate the minimum cut.
+#' @export
+HaoOrlinRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
+    .Call(`_rlemon_HaoOrlinRunner`, arcSources, arcTargets, arcWeights, numNodes)
+}
+
+#' @rdname Minimum-Cut-Algorithms-2
+#' @description `GomoryHuTreeRunner` runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.
+#' @export
+GomoryHuTreeRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
+    .Call(`_rlemon_GomoryHuTreeRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 #' Minimum Mean-Cycle Algorithms

@@ -1,5 +1,4 @@
 #include <vector>
-#include <iostream>
 #include "lemon/gomory_hu.h"
 #include "lemon/nagamochi_ibaraki.h"
 #include "lemon/hao_orlin.h"

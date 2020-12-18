@@ -579,6 +579,48 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// NagamochiIbarakiRunner
+Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
+RcppExport SEXP _rlemon_NagamochiIbarakiRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcWeights(arcWeightsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(NagamochiIbarakiRunner(arcSources, arcTargets, arcWeights, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// HaoOrlinRunner
+Rcpp::List HaoOrlinRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
+RcppExport SEXP _rlemon_HaoOrlinRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcWeights(arcWeightsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(HaoOrlinRunner(arcSources, arcTargets, arcWeights, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// GomoryHuTreeRunner
+Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes);
+RcppExport SEXP _rlemon_GomoryHuTreeRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcWeightsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcWeights(arcWeightsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(GomoryHuTreeRunner(arcSources, arcTargets, arcWeights, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 // HowardMmcRunner
 Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
 RcppExport SEXP _rlemon_HowardMmcRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
@@ -780,6 +822,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_CapacityScalingRunner", (DL_FUNC) &_rlemon_CapacityScalingRunner, 6},
     {"_rlemon_CostScalingRunner", (DL_FUNC) &_rlemon_CostScalingRunner, 6},
     {"_rlemon_NetworkSimplexRunner", (DL_FUNC) &_rlemon_NetworkSimplexRunner, 6},
+    {"_rlemon_NagamochiIbarakiRunner", (DL_FUNC) &_rlemon_NagamochiIbarakiRunner, 4},
+    {"_rlemon_HaoOrlinRunner", (DL_FUNC) &_rlemon_HaoOrlinRunner, 4},
+    {"_rlemon_GomoryHuTreeRunner", (DL_FUNC) &_rlemon_GomoryHuTreeRunner, 4},
     {"_rlemon_HowardMmcRunner", (DL_FUNC) &_rlemon_HowardMmcRunner, 4},
     {"_rlemon_KarpMmcRunner", (DL_FUNC) &_rlemon_KarpMmcRunner, 4},
     {"_rlemon_HartmannOrlinMmcRunner", (DL_FUNC) &_rlemon_HartmannOrlinMmcRunner, 4},
