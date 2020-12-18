@@ -39,7 +39,7 @@ test_that("Max Cardinality Checking", {
   t <- c(3,4,5,3,4,5,3,4,5)
   d <- c(1,2,3,4,5,6,7,8,9)
   out <- MaximumCardinalityMatchingRunner(s,t,6)
-  expect_equal(out,list(c(0,3),c(1,4),c(2,5)))
+  expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
 })
 
 test_that("Max Cardinality Fractional Checking", {
@@ -47,5 +47,5 @@ test_that("Max Cardinality Fractional Checking", {
   t <- c(3,4,5,3,4,5,3,4,5)
   d <- c(1,2,3,4,5,6,7,8,9)
   out <- MaximumCardinalityFractionalMatchingRunner(s,t,6)
-  expect_equal(out,list(c(0,5),c(1,4),c(2,3)))
+  expect_equal(out[[2]],list(c(0,5),c(1,4),c(2,3)))
 })
