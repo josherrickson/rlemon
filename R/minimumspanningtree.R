@@ -30,4 +30,4 @@ minimummspanningtree <- function(arcSources, arcTargets, arcDistances, numNodes,
 
   switch(algorithm,
          "Kruskal" = .Call(`_rlemon_KruskalRunner`,arcSources, arcTargets, arcDistances, numNodes),
-         "MinCostArborescence" = .Call(`_rlemon_MinCostArborescenceRunner`,arcSources, arcTargets, arcDistances, numNodes))}
+         "MinCostArborescence" = .Call(`_rlemon_MinCostArborescenceRunner`,arcSources, arcTargets, arcDistances, sourceNode, numNodes))}

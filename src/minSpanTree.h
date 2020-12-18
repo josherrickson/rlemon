@@ -16,14 +16,14 @@ using namespace lemon;
 //' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
 //> NULL
 
-//' Aborescense Algorithms
-//' @name Minimum Cost Aborescence Algorithms
+//' Arborescence Algorithms
+//' @name Minimum Cost Arborescence Algorithms
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
 //' @param sourceNode, the source node
 //' @param numNodes, the number of nodes in the graph
-//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
 //> NULL
 
 
