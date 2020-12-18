@@ -34,7 +34,6 @@ using NodeMap = ListGraph::NodeMap<ValueType>;
 
 //' @rdname Maximum-Matching-Algorithms
 //' @description `MaximumWeightPerfectMatchingRunner` solves the Maximum-Weight Perfect Matching Problem
-//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
@@ -69,7 +68,6 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::
 
 //' @rdname Maximum-Matching-Algorithms
 //' @description `MaximumWeightFractionalPerfectMatchingRunner` solves the Maximum-Weight Fractional Perfect Matching Problem 
-//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights, int numNodes) {
     ListGraph g;
@@ -105,7 +103,6 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSour
 
 //' @rdname Maximum-Matching-Algorithms
 //' @description `MaximumWeightFractionalMatchingRunner` solves the Maximum-Weight Fractional Matching Problem
-//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
@@ -140,7 +137,6 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, st
 
 //' @rdname Maximum-Matching-Algorithms
 //' @description `MaximumWeightMatchingRunner` solves the Maximum-Weight Matching Problem
-//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcWeights,  int numNodes) {
     ListGraph g;
@@ -180,7 +176,6 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<
 
 //' @rdname Maximum-Matching-Algorithms
 //' @description `MaximumCardinalityMatchingRunner` solves the Maximum Cardinality Matching Problem
-//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -221,7 +216,6 @@ Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::ve
 
 //' @rdname Maximum-Matching-Algorithms
 //' @description `MaximumCardinalityFractionalMatchingRunner` solves the Maximum-Cardinality Fractional Matching Problem
-//' @export
 // [[Rcpp::export]]
 Rcpp::List MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
     // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph

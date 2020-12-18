@@ -461,7 +461,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // MaximumCardinalityMatchingRunner
-std::vector<std::vector<int>> MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _rlemon_MaximumCardinalityMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -474,7 +474,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // MaximumCardinalityFractionalMatchingRunner
-std::vector<std::vector<int>> MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+Rcpp::List MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _rlemon_MaximumCardinalityFractionalMatchingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;

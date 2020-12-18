@@ -86,7 +86,6 @@ Rcpp::List CirculationRunner(std::vector<int> arcSources, std::vector<int> arcTa
 
 //' @rdname Maximum-Flow-Algorithms
 //' @description `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List PreflowRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int destinationNode, int numNodes) {
     ListDigraph g;
@@ -130,7 +129,6 @@ Rcpp::List PreflowRunner(std::vector<int> arcSources, std::vector<int> arcTarget
 
 //' @rdname Maximum-Flow-Algorithms
 //' @description `EdmondsKarpRunner` runs the EdmondsKarp Algorithm to calculate the maximum flow.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List EdmondsKarpRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int destinationNode, int numNodes) {
     ListDigraph g;

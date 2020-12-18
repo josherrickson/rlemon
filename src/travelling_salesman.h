@@ -23,7 +23,6 @@ using namespace std;
 
 //' @rdname TSP-Algorithms
 //' @description `ChristofidesRunner` runs the Christofides Heuristic
-//' @export
 // [[Rcpp::export]]
 Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -55,7 +54,6 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcT
 
 //' @rdname TSP-Algorithms
 //' @description `GreedyTSPRunner` runs the Greedy Heuristic
-//' @export
 // [[Rcpp::export]]
 Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -87,7 +85,6 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTarg
 
 //' @rdname TSP-Algorithms
 //' @description `InsertionTSPRunner` runs the Insertion Heuristic
-//' @export
 // [[Rcpp::export]]
 Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -120,7 +117,6 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcT
 
 //' @rdname TSP-Algorithms
 //' @description `NearestNeighborTSPRunner` runs the Nearest-Neighbor Heuristic
-//' @export
 // [[Rcpp::export]]
 Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -152,7 +148,6 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int
 
 //' @rdname TSP-Algorithms
 //' @description `Opt2TSPRunner` runs a 2-OPT heuristic
-//' @export
 // [[Rcpp::export]]
 Rcpp::List Opt2TSPRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight=999999) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph

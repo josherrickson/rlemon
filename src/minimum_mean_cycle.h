@@ -20,7 +20,6 @@ using namespace std;
 
 //' @rdname Maximum-Mean-Cycle-Algorithms
 //' @description `HowardMmcRunner` runs Howard's policy iteration algorithm.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -60,7 +59,6 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarg
 
 //' @rdname Maximum-Mean-Cycle-Algorithms
 //' @description `KarpMmcRunner` runs Karp's algorithm.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
@@ -101,7 +99,6 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources, std::vector<int> arcTarget
 
 //' @rdname Maximum-Mean-Cycle-Algorithms
 //' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm algorithm.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
