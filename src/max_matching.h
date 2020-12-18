@@ -52,8 +52,8 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources, std::
         dists[a] = arcWeights[i];
         arcs.push_back(a);
     }
-    auto test = MaxWeightedPerfectMatching<ListGraph, EdgeMap<Cost>>(g, dists);
-    std::vector<std::vector<int>> arcs_out;
+    auto test = MaxWeightedPerfectMatching<ListGraph, EdgeMap<Cost> >(g, dists);
+    std::vector<std::vector<int> > arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
@@ -86,8 +86,8 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(std::vector<int> arcSour
         dists[a] = arcWeights[i];
         arcs.push_back(a);
     }
-    auto test = MaxWeightedPerfectFractionalMatching<ListGraph, EdgeMap<Cost>>(g, dists);
-    std::vector<std::vector<int>> arcs_out;
+    auto test = MaxWeightedPerfectFractionalMatching<ListGraph, EdgeMap<Cost> >(g, dists);
+    std::vector<std::vector<int> > arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
@@ -121,8 +121,8 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources, st
         dists[a] = arcWeights[i];
         arcs.push_back(a);
     }
-    auto test = MaxWeightedFractionalMatching<ListGraph, EdgeMap<Cost>>(g, dists);
-    std::vector<std::vector<int>> arcs_out;
+    auto test = MaxWeightedFractionalMatching<ListGraph, EdgeMap<Cost> >(g, dists);
+    std::vector<std::vector<int> > arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
@@ -161,7 +161,7 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources, std::vector<
         arcs.push_back(a);
     }
     auto test = MaxWeightedMatching<ListGraph>(g,dists);
-    std::vector<std::vector<int>> arcs_out;
+    std::vector<std::vector<int> > arcs_out;
     test.run();
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
@@ -201,7 +201,7 @@ Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources, std::ve
     ListGraph::EdgeMap<int> map(g);
     auto test = MaxMatching<ListGraph>(g);
     test.run();
-    std::vector<std::vector<int>> arcs_out;
+    std::vector<std::vector<int> > arcs_out;
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
             std::vector<int> arc;
@@ -241,7 +241,7 @@ Rcpp::List MaximumCardinalityFractionalMatchingRunner(std::vector<int> arcSource
     ListGraph::EdgeMap<int> map(g);
     auto test = MaxFractionalMatching<ListGraph>(g);
     test.run();
-    std::vector<std::vector<int>> arcs_out;
+    std::vector<std::vector<int> > arcs_out;
     for(int i = 0; i < NUM_ARCS; i++) {
         if(test.matching(arcs[i])){
             std::vector<int> arc;

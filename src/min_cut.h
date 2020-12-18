@@ -50,9 +50,9 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources, std::vector<int> 
         dists[a] = arcWeights[i];
         arcs.push_back(a);
     }
-    NagamochiIbaraki<ListGraph, ListGraph::EdgeMap<int>> alg(g, dists);
-    alg.run();   
-    
+    NagamochiIbaraki<ListGraph, ListGraph::EdgeMap<int> > alg(g, dists);
+    alg.run();
+
     ListGraph::NodeMap<int> mincutmap(g);
     alg.minCutMap(mincutmap);
 
@@ -97,9 +97,9 @@ Rcpp::List HaoOrlinRunner(std::vector<int> arcSources, std::vector<int> arcTarge
         dists[a] = arcWeights[i];
         arcs.push_back(a);
     }
-    HaoOrlin<ListGraph, ListGraph::EdgeMap<int>> alg(g, dists);
-    alg.run();   
-    
+    HaoOrlin<ListGraph, ListGraph::EdgeMap<int> > alg(g, dists);
+    alg.run();
+
     ListGraph::NodeMap<int> mincutmap(g);
     alg.minCutMap(mincutmap);
 
@@ -143,9 +143,9 @@ Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources, std::vector<int> arcT
         dists[a] = arcWeights[i];
         arcs.push_back(a);
     }
-    GomoryHu<ListGraph, ListGraph::EdgeMap<Cost>> alg(g, dists);
+    GomoryHu<ListGraph, ListGraph::EdgeMap<Cost> > alg(g, dists);
     alg.run();
-    
+
     std::vector<int> predecessors;
     std::vector<int> predEdgeWeights;
     std::vector<int> rootDistances;

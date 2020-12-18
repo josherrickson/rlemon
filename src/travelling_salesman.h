@@ -41,7 +41,7 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcT
   }
 
 
-  ChristofidesTsp<FullGraph::EdgeMap<int>> runner(g,costs);
+  ChristofidesTsp<FullGraph::EdgeMap<int> > runner(g,costs);
   runner.run();
 
   std::vector<int> tour;
@@ -72,7 +72,7 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources, std::vector<int> arcTarg
   }
 
 
-  GreedyTsp<FullGraph::EdgeMap<int>> runner(g,costs);
+  GreedyTsp<FullGraph::EdgeMap<int> > runner(g,costs);
   runner.run();
 
   std::vector<int> tour;
@@ -103,7 +103,7 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources, std::vector<int> arcT
   }
 
 
-  InsertionTsp<FullGraph::EdgeMap<int>> runner(g,costs);
+  InsertionTsp<FullGraph::EdgeMap<int> > runner(g,costs);
   runner.run();
 
   std::vector<int> tour;
@@ -135,7 +135,7 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources, std::vector<int
   }
 
 
-  NearestNeighborTsp<FullGraph::EdgeMap<int>> runner(g,costs);
+  NearestNeighborTsp<FullGraph::EdgeMap<int> > runner(g,costs);
   runner.run();
 
   std::vector<int> tour;
@@ -166,7 +166,7 @@ Rcpp::List Opt2TSPRunner(std::vector<int> arcSources, std::vector<int> arcTarget
   }
 
 
-  Opt2Tsp<FullGraph::EdgeMap<int>> runner(g,costs);
+  Opt2Tsp<FullGraph::EdgeMap<int> > runner(g,costs);
   runner.run();
 
   std::vector<int> tour;
