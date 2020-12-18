@@ -1,4 +1,4 @@
-#include <std::vector>
+#include <vector>
 #include <iostream>
 #include "lemon/gomory_hu.h"
 #include "lemon/nagamochi_ibaraki.h"
