@@ -29,7 +29,6 @@ using namespace lemon;
 
 
 //' @rdname Minimum-Spanning-Tree-Algorithms
-//' @export
 // [[Rcpp::export]]
 Rcpp::List KruskalRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes){
     ListDigraph g;
@@ -64,7 +63,6 @@ Rcpp::List KruskalRunner(std::vector<int> arcSources, std::vector<int> arcTarget
 
 
 //' @rdname Minimum-Cost-Aborescence-Algorithms
-//' @export
 // [[Rcpp::export]]
 Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int numNodes){
     ListDigraph g;
