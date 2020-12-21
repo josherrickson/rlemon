@@ -98,7 +98,7 @@ Rcpp::List PlanarColoringRunner(std::vector<int> arcSources,
 }
 
 //' @rdname Planar-Embedding-Algorithms
-//' @description `PlanarCheckingRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
+//' @description `PlanarCheckingRunner` returns a List containing 1) a boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
 //' @export
 // [[Rcpp::export]]
 Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources,
