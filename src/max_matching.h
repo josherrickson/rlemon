@@ -2,7 +2,6 @@
 #include "lemon/list_graph.h"
 #include "lemon/matching.h"
 #include <Rcpp.h>
-#include <iostream>
 #include <vector>
 
 typedef int Value;

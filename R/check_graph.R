@@ -96,3 +96,26 @@ check_node <- function(testNode, numNodes) {
   invisible(TRUE)
 
 }
+
+
+##' Check arcs for common errors.
+##'
+##' @param arcSources Arc sources 
+##' @param arcTargets Arc Targets
+##' @return TRUE if no errors are found
+##' export
+check_graph_arcs <- function(arcSources, arcTargets) {
+  # Check that the arc number is consistent
+  if (length(arcSources) != length(arcTargets)) {
+    stop("Inconsistent number of arcs across Sources and Targets.")
+  }
+
+  # Checking that node identifiers are integers
+  if (!all(arcSources == floor(arcSources)) |
+      !all(arcTargets == floor(arcTargets))) {
+    stop("Nodes must be integers")
+  }
+
+  invisible(TRUE)
+
+}
