@@ -15,5 +15,5 @@ approx <- function(arcSources, arcTargets, numNodes, algorithm) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  switch(algorithm, "GrossoLocatelliPullanMc" = .Call(`_rlemon_GrossoLocatelliPullanMcRunner`, arcSources, arcTargets, arcWeights, numNodes))
+  switch(algorithm, "GrossoLocatelliPullanMc" = .Call(`_rlemon_GrossoLocatelliPullanMcRunner`, arcSources, arcTargets, numNodes))
 }
