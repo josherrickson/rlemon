@@ -1,6 +1,6 @@
-##' Runs maxflow algorithms on graphs.
+##' Runs maxmatching algorithms on graphs.
 ##'
-##' @title MinCostFlow
+##' @title MaxMatching
 ##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 ##' @param arcWeights, a vector corresponding to the weights of a graph's edges

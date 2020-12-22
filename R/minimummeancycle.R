@@ -1,6 +1,6 @@
 ##' Runs MMC (Minimum Mean Cycle) algorithms on graphs.
 ##'
-##' @title minimummeancycle
+##' @title MinimumMeanCycle
 ##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 ##' @param arcDistances, a vector corresponding to the distances of a graph's edges

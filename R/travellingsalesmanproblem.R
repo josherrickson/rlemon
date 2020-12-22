@@ -1,6 +1,6 @@
 ##' Runs travelling salesman algorithms on graphs.
 ##' NOTE: LEMON's TSP uses a complete graph in its backend, so expect less performance on sparse graphs
-##' @title travellingsalesmanproblem
+##' @title TravelingSalesmanProblem
 ##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 ##' @param arcDistances, a vector corresponding to the distances of a graph's edges

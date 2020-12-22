@@ -7,8 +7,8 @@
 
 using namespace lemon;
 
-//' Maximum  Flow Algorithms - Network Circulation
-//' @name Maximum Flow Algorithms 2
+//' Maximum Flow Algorithms - Network Circulation
+//' @name Maximum-Flow-Algorithms-2
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcLowerBound, a vector corresponding to the lower-bound capacities of nodes of a graph's edges
@@ -18,8 +18,8 @@ using namespace lemon;
 //' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of the graph's barrier nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value
 //> NULL
 
-//' Maximum  Flow Algorithms
-//' @name Maximum Flow Algorithms
+//' Maximum Flow Algorithms
+//' @name Maximum-Flow-Algorithms-1
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcDistances, a vector corresponding to the capacities of nodes of a graph's edges
@@ -82,7 +82,7 @@ Rcpp::List CirculationRunner(std::vector<int> arcSources,
   return Rcpp::List::create(arcFlows, barrierNodes);
 }
 
-//' @rdname Maximum-Flow-Algorithms
+//' @rdname Maximum-Flow-Algorithms-1
 //' @description `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.
 // [[Rcpp::export]]
 Rcpp::List PreflowRunner(std::vector<int> arcSources,
@@ -126,7 +126,7 @@ Rcpp::List PreflowRunner(std::vector<int> arcSources,
   return Rcpp::List::create(arcFlows, nodeCuts, outVal);
 }
 
-//' @rdname Maximum-Flow-Algorithms
+//' @rdname Maximum-Flow-Algorithms-1
 //' @description `EdmondsKarpRunner` runs the EdmondsKarp Algorithm to calculate the maximum flow.
 // [[Rcpp::export]]
 Rcpp::List EdmondsKarpRunner(std::vector<int> arcSources,

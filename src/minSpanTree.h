@@ -7,7 +7,7 @@
 using namespace lemon;
 
 //' MST Algorithms
-//' @name Minimum Spanning Tree Algorithms
+//' @name Minimum-Spanning-Tree-Algorithms
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
@@ -16,7 +16,7 @@ using namespace lemon;
 //> NULL
 
 //' Arborescence Algorithms
-//' @name Minimum Cost Arborescence Algorithms
+//' @name Minimum-Cost-Arborescence-Algorithms
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges

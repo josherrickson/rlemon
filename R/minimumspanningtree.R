@@ -1,6 +1,6 @@
 ##' Runs MST (Minimum Spanning Tree) algorithms on graphs.
 ##'
-##' @title minimumspanningtree
+##' @title MinimumSpanningTree
 ##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 ##' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges

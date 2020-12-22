@@ -1,6 +1,6 @@
 ##' Runs maxflow algorithms on graphs.
 ##'
-##' @title MinCostFlow
+##' @title MaxFlow
 ##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 ##' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges

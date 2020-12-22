@@ -9,7 +9,7 @@ using namespace lemon;
 using namespace std;
 
 //' Minimum Cut Algorithms - Gomory Hu Tree
-//' @name Minimum Cut Algorithms 2
+//' @name Minimum-Cut-Algorithms-2
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcWeights, a vector corresponding to the weights of a graph's edges
@@ -18,7 +18,7 @@ using namespace std;
 //> NULL
 
 //' Minimum Cut Algorithms
-//' @name Minimum Cut Algorithms
+//' @name Minimum-Cut-Algorithms-1
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcWeights, a vector corresponding to the weights of a graph's edges
@@ -26,7 +26,7 @@ using namespace std;
 //' @return A list containing three entries: 1) The value of the minimum cut in the graph, and 2) A list of nodes in the first partition, and 3) A list of nodes in the second partition.
 //> NULL
 
-//' @rdname Minimum-Cut-Algorithms
+//' @rdname Minimum-Cut-Algorithms-1
 //' @description `NagamochiIbarakiRunner` runs the Nagamochi-Ibaraki Algorithm to calculate the minimum cut.
 //' @export
 // [[Rcpp::export]]
@@ -69,7 +69,7 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
   return Rcpp::List::create(mincutvalue, partition1, partition2);
 }
 
-//' @rdname Minimum-Cut-Algorithms
+//' @rdname Minimum-Cut-Algorithms-1
 //' @description `HaoOrlinRunner` runs the Hao-Orlin Algorithm to calculate the minimum cut.
 //' @export
 // [[Rcpp::export]]
