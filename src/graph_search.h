@@ -1,0 +1,165 @@
+#include "lemon/bfs.h"
+#include "lemon/dfs.h"
+#include "lemon/dijkstra.h"
+#include "lemon/list_graph.h"
+#include "lemon/suurballe.h"
+#include <lemon/max_cardinality_search.h>
+
+#include <Rcpp.h>
+#include <vector>
+
+typedef int Value;
+
+using namespace lemon;
+using namespace std;
+
+//' Graph Search Algorithms - Distance
+//' @name Shortest-Path-Algorithms-1
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances, a vector corresponding to the distances of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @param startNode, the start node of the path
+//' @return A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+//> NULL
+
+//' @rdname Shortest-Path-Algorithms-2
+//' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of paths from the start node to the end node and 2) a list of paths found.
+//' @export
+// [[Rcpp::export]]
+Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                     int numNodes, int startNode = -1, int endNode = -1) {
+  ListDigraph g;
+  std::vector<ListDigraph::Node> nodes;
+  for (int i = 0; i < numNodes; ++i) {
+    ListDigraph::Node n = g.addNode();
+    nodes.push_back(n);
+  }
+
+  std::vector<ListDigraph::Arc> arcs;
+
+  int NUM_ARCS = arcSources.size();
+
+  for (int i = 0; i < NUM_ARCS; ++i) {
+    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    arcs.push_back(a);
+  }
+
+  Bfs<ListDigraph> runner(g);
+
+  if (startNode != -1 && endNode != -1) {
+    runner.run(nodes[startNode], nodes[endNode]);
+  } else if (startNode != -1) {
+    runner.run(nodes[startNode]);
+  } else {
+    runner.run();
+  }
+
+  std::vector<int> nodePreds;
+  std::vector<int> nodeDistances;
+  std::vector<int> nodeReached;
+
+  for (int i = 0; i < numNodes; ++i) {
+    nodePreds.push_back(g.id(runner.predNode(nodes[i])));
+    nodeDistances.push_back(runner.dist(nodes[i]));
+    if (runner.reached(nodes[i])) {
+      nodeReached.push_back(1);
+    } else {
+      nodeReached.push_back(0);
+    }
+  }
+
+  return Rcpp::List::create(nodePreds, nodeDistances, nodeReached);
+}
+
+// [[Rcpp::export]]
+Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                     int numNodes, int startNode = -1, int endNode = -1) {
+  ListDigraph g;
+  std::vector<ListDigraph::Node> nodes;
+  for (int i = 0; i < numNodes; ++i) {
+    ListDigraph::Node n = g.addNode();
+    nodes.push_back(n);
+  }
+
+  std::vector<ListDigraph::Arc> arcs;
+
+  int NUM_ARCS = arcSources.size();
+
+  for (int i = 0; i < NUM_ARCS; ++i) {
+    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    arcs.push_back(a);
+  }
+
+  Dfs<ListDigraph> runner(g);
+
+  if (startNode != -1 && endNode != -1) {
+    runner.run(nodes[startNode], nodes[endNode]);
+  } else if (startNode != -1) {
+    runner.run(nodes[startNode]);
+  } else {
+    runner.run();
+  }
+
+  std::vector<int> nodePreds;
+  std::vector<int> nodeDistances;
+  std::vector<int> nodeReached;
+
+  for (int i = 0; i < numNodes; ++i) {
+    nodePreds.push_back(g.id(runner.predNode(nodes[i])));
+    nodeDistances.push_back(runner.dist(nodes[i]));
+    if (runner.reached(nodes[i])) {
+      nodeReached.push_back(1);
+    } else {
+      nodeReached.push_back(0);
+    }
+  }
+
+  return Rcpp::List::create(nodePreds, nodeDistances, nodeReached);
+}
+
+// [[Rcpp::export]]
+Rcpp::List MaxCardinalitySearchRunner(std::vector<int> arcSources,
+                                      std::vector<int> arcTargets,
+                                      std::vector<int> arcCapacities,
+                                      int numNodes, int startNode = -1) {
+  ListDigraph g;
+  std::vector<ListDigraph::Node> nodes;
+  for (int i = 0; i < numNodes; ++i) {
+    ListDigraph::Node n = g.addNode();
+    nodes.push_back(n);
+  }
+
+  std::vector<ListDigraph::Arc> arcs;
+  ListDigraph::ArcMap<int> costs(g);
+  int NUM_ARCS = arcSources.size();
+
+  for (int i = 0; i < NUM_ARCS; ++i) {
+    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    costs[a] = arcCapacities[i];
+    arcs.push_back(a);
+  }
+
+  MaxCardinalitySearch<ListDigraph, ListDigraph::ArcMap<int> > runner(g, costs);
+
+  if (startNode != -1) {
+    runner.run(nodes[startNode]);
+  } else {
+    runner.run();
+  }
+
+  std::vector<int> nodeCardinality;
+  std::vector<int> nodeDistances;
+  std::vector<int> nodeReached;
+
+  for (int i = 0; i < numNodes; ++i) {
+    nodeCardinality.push_back(runner.cardinality(nodes[i]));
+    if (runner.reached(nodes[i])) {
+      nodeReached.push_back(1);
+    } else {
+      nodeReached.push_back(0);
+    }
+  }
+
+  return Rcpp::List::create(nodeCardinality, nodeReached);
+}

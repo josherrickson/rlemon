@@ -245,8 +245,47 @@ FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
 }
 
-#' Maximum  Flow Algorithms - Network Circulation
-#' @name Maximum Flow Algorithms 2
+#' Compatible Graph Converter
+#' @name Graph-Converter
+#' @param nodesList, a vector of all the nodes in the graph
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @return A list containing four entries: 1) rlemon compatible nodes, 2) arcSources which match the converted nodes 3) arcTargets which match the converted nodes, 4) a mapping of the original and converted nodes
+NULL
+
+#' @rdname Graph-Converter
+#' @description 'GraphCompatabilityConverter' returns a compatible version of the graph which can be used with the rest of rlemon's interfaces. rlemon's interface requires all node inputs to be 0-indexed.
+GraphCompatabilityConverter <- function(nodesList, arcSources, arcTargets) {
+    .Call(`_rlemon_GraphCompatabilityConverter`, nodesList, arcSources, arcTargets)
+}
+
+#' Graph Search Algorithms - Distance
+#' @name Shortest-Path-Algorithms-1
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @param startNode, the start node of the path
+#' @return A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+NULL
+
+#' @rdname Shortest-Path-Algorithms-2
+#' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of paths from the start node to the end node and 2) a list of paths found.
+#' @export
+BfsRunner <- function(arcSources, arcTargets, numNodes, startNode = -1L, endNode = -1L) {
+    .Call(`_rlemon_BfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode)
+}
+
+DfsRunner <- function(arcSources, arcTargets, numNodes, startNode = -1L, endNode = -1L) {
+    .Call(`_rlemon_DfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode)
+}
+
+MaxCardinalitySearchRunner <- function(arcSources, arcTargets, arcCapacities, numNodes, startNode = -1L) {
+    .Call(`_rlemon_MaxCardinalitySearchRunner`, arcSources, arcTargets, arcCapacities, numNodes, startNode)
+}
+
+#' Maximum Flow Algorithms - Network Circulation
+#' @name Maximum-Flow-Algorithms-2
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcLowerBound, a vector corresponding to the lower-bound capacities of nodes of a graph's edges
@@ -256,8 +295,8 @@ FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
 #' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of the graph's barrier nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value
 NULL
 
-#' Maximum  Flow Algorithms
-#' @name Maximum Flow Algorithms
+#' Maximum Flow Algorithms
+#' @name Maximum-Flow-Algorithms-1
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcDistances, a vector corresponding to the capacities of nodes of a graph's edges
@@ -274,13 +313,13 @@ CirculationRunner <- function(arcSources, arcTargets, arcLowerBound, arcUpperBou
     .Call(`_rlemon_CirculationRunner`, arcSources, arcTargets, arcLowerBound, arcUpperBound, nodeSupplies, numNodes)
 }
 
-#' @rdname Maximum-Flow-Algorithms
+#' @rdname Maximum-Flow-Algorithms-1
 #' @description `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.
 PreflowRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes) {
     .Call(`_rlemon_PreflowRunner`, arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes)
 }
 
-#' @rdname Maximum-Flow-Algorithms
+#' @rdname Maximum-Flow-Algorithms-1
 #' @description `EdmondsKarpRunner` runs the EdmondsKarp Algorithm to calculate the maximum flow.
 EdmondsKarpRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes) {
     .Call(`_rlemon_EdmondsKarpRunner`, arcSources, arcTargets, arcDistances, sourceNode, destinationNode, numNodes)
@@ -332,7 +371,7 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
 }
 
 #' MST Algorithms
-#' @name Minimum Spanning Tree Algorithms
+#' @name Minimum-Spanning-Tree-Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
@@ -341,7 +380,7 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
 NULL
 
 #' Arborescence Algorithms
-#' @name Minimum Cost Arborescence Algorithms
+#' @name Minimum-Cost-Arborescence-Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
@@ -396,7 +435,7 @@ NetworkSimplexRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts
 }
 
 #' Minimum Cut Algorithms - Gomory Hu Tree
-#' @name Minimum Cut Algorithms 2
+#' @name Minimum-Cut-Algorithms-2
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcWeights, a vector corresponding to the weights of a graph's edges
@@ -405,7 +444,7 @@ NetworkSimplexRunner <- function(arcSources, arcTargets, arcCapacities, arcCosts
 NULL
 
 #' Minimum Cut Algorithms
-#' @name Minimum Cut Algorithms
+#' @name Minimum-Cut-Algorithms-1
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcWeights, a vector corresponding to the weights of a graph's edges
@@ -413,14 +452,14 @@ NULL
 #' @return A list containing three entries: 1) The value of the minimum cut in the graph, and 2) A list of nodes in the first partition, and 3) A list of nodes in the second partition.
 NULL
 
-#' @rdname Minimum-Cut-Algorithms
+#' @rdname Minimum-Cut-Algorithms-1
 #' @description `NagamochiIbarakiRunner` runs the Nagamochi-Ibaraki Algorithm to calculate the minimum cut.
 #' @export
 NagamochiIbarakiRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_NagamochiIbarakiRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
-#' @rdname Minimum-Cut-Algorithms
+#' @rdname Minimum-Cut-Algorithms-1
 #' @description `HaoOrlinRunner` runs the Hao-Orlin Algorithm to calculate the minimum cut.
 #' @export
 HaoOrlinRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
@@ -485,10 +524,52 @@ PlanarColoringRunner <- function(arcSources, arcTargets, numNodes, useFiveAlg = 
 }
 
 #' @rdname Planar-Embedding-Algorithms
-#' @description `PlanarCheckingRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
+#' @description `PlanarCheckingRunner` returns a List containing 1) a boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
 #' @export
 PlanarDrawingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_PlanarDrawingRunner`, arcSources, arcTargets, numNodes)
+}
+
+#' Shortest Path Algorithms - Distance
+#' @name Shortest-Path-Algorithms-1
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @param startNode, the start node of the path
+#' @return A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+NULL
+
+#' Shortest Path Algorithms - Paths
+#' @name Shortest-Path-Algorithms-2
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @param startNode, the start node of the path
+#' @param endNode, the end node of the path
+#' @return A list containing two entries: 1) the number of paths from the start node to the end node and 2) a list of paths found.
+NULL
+
+#' @rdname Shortest-Path-Algorithms-2
+#' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of paths from the start node to the end node and 2) a list of paths found.
+#' @export
+SuurballeRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode, endNode) {
+    .Call(`_rlemon_SuurballeRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode, endNode)
+}
+
+#' @rdname Shortest-Path-Algorithms-1
+#' @description `DijkstraRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+#' @export
+DijkstraRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode) {
+    .Call(`_rlemon_DijkstraRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode)
+}
+
+#' @rdname Shortest-Path-Algorithms-1
+#' @description `BellmanFordRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+#' @export
+BellmanFordRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode) {
+    .Call(`_rlemon_BellmanFordRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode)
 }
 
 #' Travelling Salesman Algorithms on Full Graphs

@@ -356,6 +356,64 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// GraphCompatabilityConverter
+Rcpp::List GraphCompatabilityConverter(std::vector<int> nodesList, std::vector<int> arcSources, std::vector<int> arcTargets);
+RcppExport SEXP _rlemon_GraphCompatabilityConverter(SEXP nodesListSEXP, SEXP arcSourcesSEXP, SEXP arcTargetsSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type nodesList(nodesListSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    rcpp_result_gen = Rcpp::wrap(GraphCompatabilityConverter(nodesList, arcSources, arcTargets));
+    return rcpp_result_gen;
+END_RCPP
+}
+// BfsRunner
+Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, int startNode, int endNode);
+RcppExport SEXP _rlemon_BfsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP, SEXP startNodeSEXP, SEXP endNodeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type startNode(startNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type endNode(endNodeSEXP);
+    rcpp_result_gen = Rcpp::wrap(BfsRunner(arcSources, arcTargets, numNodes, startNode, endNode));
+    return rcpp_result_gen;
+END_RCPP
+}
+// DfsRunner
+Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, int startNode, int endNode);
+RcppExport SEXP _rlemon_DfsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP, SEXP startNodeSEXP, SEXP endNodeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type startNode(startNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type endNode(endNodeSEXP);
+    rcpp_result_gen = Rcpp::wrap(DfsRunner(arcSources, arcTargets, numNodes, startNode, endNode));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MaxCardinalitySearchRunner
+Rcpp::List MaxCardinalitySearchRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, int numNodes, int startNode);
+RcppExport SEXP _rlemon_MaxCardinalitySearchRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcCapacitiesSEXP, SEXP numNodesSEXP, SEXP startNodeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcCapacities(arcCapacitiesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type startNode(startNodeSEXP);
+    rcpp_result_gen = Rcpp::wrap(MaxCardinalitySearchRunner(arcSources, arcTargets, arcCapacities, numNodes, startNode));
+    return rcpp_result_gen;
+END_RCPP
+}
 // CirculationRunner
 Rcpp::List CirculationRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcLowerBound, std::vector<int> arcUpperBound, std::vector<int> nodeSupplies, int numNodes);
 RcppExport SEXP _rlemon_CirculationRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcLowerBoundSEXP, SEXP arcUpperBoundSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
@@ -703,6 +761,52 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// SuurballeRunner
+Rcpp::List SuurballeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int startNode, int endNode);
+RcppExport SEXP _rlemon_SuurballeRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP, SEXP startNodeSEXP, SEXP endNodeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type startNode(startNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type endNode(endNodeSEXP);
+    rcpp_result_gen = Rcpp::wrap(SuurballeRunner(arcSources, arcTargets, arcDistances, numNodes, startNode, endNode));
+    return rcpp_result_gen;
+END_RCPP
+}
+// DijkstraRunner
+Rcpp::List DijkstraRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int startNode);
+RcppExport SEXP _rlemon_DijkstraRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP, SEXP startNodeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type startNode(startNodeSEXP);
+    rcpp_result_gen = Rcpp::wrap(DijkstraRunner(arcSources, arcTargets, arcDistances, numNodes, startNode));
+    return rcpp_result_gen;
+END_RCPP
+}
+// BellmanFordRunner
+Rcpp::List BellmanFordRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int startNode);
+RcppExport SEXP _rlemon_BellmanFordRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP, SEXP startNodeSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    Rcpp::traits::input_parameter< int >::type startNode(startNodeSEXP);
+    rcpp_result_gen = Rcpp::wrap(BellmanFordRunner(arcSources, arcTargets, arcDistances, numNodes, startNode));
+    return rcpp_result_gen;
+END_RCPP
+}
 // ChristofidesRunner
 Rcpp::List ChristofidesRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes, int defaultEdgeWeight);
 RcppExport SEXP _rlemon_ChristofidesRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP, SEXP defaultEdgeWeightSEXP) {
@@ -807,6 +911,10 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_FindBiNodeConnectedCutNodes", (DL_FUNC) &_rlemon_FindBiNodeConnectedCutNodes, 3},
     {"_rlemon_FindConnectedComponents", (DL_FUNC) &_rlemon_FindConnectedComponents, 3},
     {"_rlemon_FindBiEdgeConnectedComponents", (DL_FUNC) &_rlemon_FindBiEdgeConnectedComponents, 3},
+    {"_rlemon_GraphCompatabilityConverter", (DL_FUNC) &_rlemon_GraphCompatabilityConverter, 3},
+    {"_rlemon_BfsRunner", (DL_FUNC) &_rlemon_BfsRunner, 5},
+    {"_rlemon_DfsRunner", (DL_FUNC) &_rlemon_DfsRunner, 5},
+    {"_rlemon_MaxCardinalitySearchRunner", (DL_FUNC) &_rlemon_MaxCardinalitySearchRunner, 5},
     {"_rlemon_CirculationRunner", (DL_FUNC) &_rlemon_CirculationRunner, 6},
     {"_rlemon_PreflowRunner", (DL_FUNC) &_rlemon_PreflowRunner, 6},
     {"_rlemon_EdmondsKarpRunner", (DL_FUNC) &_rlemon_EdmondsKarpRunner, 6},
@@ -831,6 +939,9 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_PlanarCheckingRunner", (DL_FUNC) &_rlemon_PlanarCheckingRunner, 3},
     {"_rlemon_PlanarColoringRunner", (DL_FUNC) &_rlemon_PlanarColoringRunner, 4},
     {"_rlemon_PlanarDrawingRunner", (DL_FUNC) &_rlemon_PlanarDrawingRunner, 3},
+    {"_rlemon_SuurballeRunner", (DL_FUNC) &_rlemon_SuurballeRunner, 6},
+    {"_rlemon_DijkstraRunner", (DL_FUNC) &_rlemon_DijkstraRunner, 5},
+    {"_rlemon_BellmanFordRunner", (DL_FUNC) &_rlemon_BellmanFordRunner, 5},
     {"_rlemon_ChristofidesRunner", (DL_FUNC) &_rlemon_ChristofidesRunner, 5},
     {"_rlemon_GreedyTSPRunner", (DL_FUNC) &_rlemon_GreedyTSPRunner, 5},
     {"_rlemon_InsertionTSPRunner", (DL_FUNC) &_rlemon_InsertionTSPRunner, 5},

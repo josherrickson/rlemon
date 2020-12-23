@@ -1,5 +1,7 @@
 #include "approximation.h"
 #include "connectivity.h"
+#include "convert.h"
+#include "graph_search.h"
 #include "max_flow.h"
 #include "max_matching.h"
 #include "minSpanTree.h"
@@ -7,6 +9,7 @@
 #include "min_cut.h"
 #include "minimum_mean_cycle.h"
 #include "planarityEmbedding.h"
+#include "shortestPath.h"
 #include "travelling_salesman.h"
 #include <Rcpp.h>
 #include <tuple>
