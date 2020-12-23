@@ -18,6 +18,14 @@ using namespace std;
 //' @return assorted values, depending on the function
 //> NULL
 
+//' Planar Embedding Algorithms
+//' @name Planar-Embedding-Algorithms-2
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @return A list containing the following 1) A boolean if the graph is planar or not, 2) start/end node lists for the vertices in the order of the Planar Embedding (if planar), 3) start/end node lists for the arcs in the kuratowski subdivision (if not planar)
+//> NULL
+
 //' @rdname Planar-Embedding-Algorithms
 //' @description `PlanarCheckingRunner` returns a bool stating if a graph is planar or not.
 //' @export
@@ -47,7 +55,7 @@ bool PlanarCheckingRunner(std::vector<int> arcSources,
   return alg.run();
 }
 
-//' @rdname Planar-Embedding-Algorithms
+//' @rdname Planar-Embedding-Algorithms-2
 //' @description `PlanarEmbeddingRunner` returns a list with many outputs
 //' @export
 // [[Rcpp::export]]

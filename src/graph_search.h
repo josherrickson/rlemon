@@ -13,18 +13,29 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
-//' Graph Search Algorithms - Distance
-//' @name Shortest-Path-Algorithms-1
+//' Graph Search Algorithms
+//' @name Graph-Search-Algorithms-1
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcDistances, a vector corresponding to the distances of a graph's edges
 //' @param numNodes, the number of nodes in the graph
 //' @param startNode, the start node of the path
-//' @return A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+//' @param endNode, the start node of the path
+//' @return A list containing two entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
 //> NULL
 
-//' @rdname Shortest-Path-Algorithms-2
-//' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of paths from the start node to the end node and 2) a list of paths found.
+//' Graph Search Algorithms
+//' @name Graph-Search-Algorithms-2
+//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances, a vector corresponding to the distances of a graph's edges
+//' @param numNodes, the number of nodes in the graph
+//' @param startNode, the start node of the path
+//' @return A list containing two entries: 1) the cardinality of each node , 3) a list containing if a node was reached or not
+//> NULL
+
+//' @rdname Shortest-Path-Algorithms-1
+//' @description `BfsRunner` calculates the shortest path using Breath-First-Search
 //' @export
 // [[Rcpp::export]]
 Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
@@ -72,6 +83,8 @@ Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return Rcpp::List::create(nodePreds, nodeDistances, nodeReached);
 }
 
+//' @rdname Shortest-Path-Algorithms-1
+//' @description `DfsRunner` calculates the shortest path using Depth-First-Search
 // [[Rcpp::export]]
 Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                      int numNodes, int startNode = -1, int endNode = -1) {
@@ -118,6 +131,8 @@ Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return Rcpp::List::create(nodePreds, nodeDistances, nodeReached);
 }
 
+//' @rdname Shortest-Path-Algorithms-2
+//' @description `MaxCardinalityRunner` runs the Maximum Cardinality Search Algorithm
 // [[Rcpp::export]]
 Rcpp::List MaxCardinalitySearchRunner(std::vector<int> arcSources,
                                       std::vector<int> arcTargets,
