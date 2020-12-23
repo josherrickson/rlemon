@@ -17,10 +17,9 @@ using namespace std;
 //' @name Graph-Search-Algorithms-1
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances, a vector corresponding to the distances of a graph's edges
 //' @param numNodes, the number of nodes in the graph
 //' @param startNode, the start node of the path
-//' @param endNode, the start node of the path
+//' @param endNode, the end node of the path
 //' @return A list containing two entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
 //> NULL
 
@@ -28,7 +27,7 @@ using namespace std;
 //' @name Graph-Search-Algorithms-2
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances, a vector corresponding to the distances of a graph's edges
+//' @param arcCapacities, a vector corresponding to the distances of a graph's edges
 //' @param numNodes, the number of nodes in the graph
 //' @param startNode, the start node of the path
 //' @return A list containing two entries: 1) the cardinality of each node , 3) a list containing if a node was reached or not
