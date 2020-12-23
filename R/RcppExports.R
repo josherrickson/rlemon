@@ -516,6 +516,13 @@ PlanarCheckingRunner <- function(arcSources, arcTargets, numNodes) {
 }
 
 #' @rdname Planar-Embedding-Algorithms
+#' @description `PlanarEmbeddingRunner` returns a list with many outputs
+#' @export
+PlanarEmbeddingRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_PlanarEmbeddingRunner`, arcSources, arcTargets, numNodes)
+}
+
+#' @rdname Planar-Embedding-Algorithms
 #' @description `PlanarColoringRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the colors of each node, represented as integers
 #' @param useFiveAlg, a boolean that asks if you want to 5-color a graph. If false, runs a faster 6-coloring algorithm instead.
 #' @export

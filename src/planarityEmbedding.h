@@ -48,6 +48,70 @@ bool PlanarCheckingRunner(std::vector<int> arcSources,
 }
 
 //' @rdname Planar-Embedding-Algorithms
+//' @description `PlanarEmbeddingRunner` returns a list with many outputs
+//' @export
+// [[Rcpp::export]]
+Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
+                                 std::vector<int> arcTargets, int numNodes) {
+  ListGraph g;
+  std::vector<ListGraph::Node> nodes;
+  for (int i = 0; i < numNodes; ++i) {
+    ListGraph::Node n = g.addNode();
+    nodes.push_back(n);
+  }
+  ListGraph::EdgeMap<Cost> costs(g);
+  ListGraph::NodeMap<Cost> dists(g);
+
+  std::vector<Edge> arcs;
+
+  int NUM_ARCS = arcSources.size();
+
+  for (int i = 0; i < NUM_ARCS; ++i) {
+    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    arcs.push_back(a);
+  }
+
+  // NOTE: While the LEMON Documentation does indicate PlanarityChecking is an algorithm, you need to access it through _planarity_bits, for some reason
+  lemon::PlanarEmbedding<Graph> runner(g);
+  int isplanar = runner.run();
+  //ListDigraph::ArcMap < ListDigraph::Arc > EmbeddingMap(g);
+  std::vector<int> kuratowskiSubInit;
+  std::vector<int> kuratowskiSubFin;
+  std::vector<int> planarEmbeddingStart;
+  std::vector<int> planarEmbeddingEnd;
+  if (!isplanar) {
+    // Return the list of edges that are in the Kuratowski Subdivision
+    for (int i = 0; i < NUM_ARCS; ++i) {
+      if (runner.kuratowski(arcs[i])) {
+        kuratowskiSubInit.push_back(g.id(g.u(arcs[i])));
+        kuratowskiSubFin.push_back(g.id(g.v(arcs[i])));
+      }
+    }
+  } else {
+    // This required a lot of random work, but here's what it is:
+    // First - Iterate over the nodes
+
+    for (int i = 0; i < numNodes; ++i) {
+
+      ListGraph::Arc current;
+      int testMe = 0;
+      for (ListGraph::OutArcIt a(g, nodes[i]); a != INVALID; ++a) {
+        if (testMe == 0) {
+          testMe = 1;
+          current = a;
+        } else {
+          current = runner.next(current);
+        }
+        planarEmbeddingStart.push_back(g.id(g.source(current)));
+        planarEmbeddingEnd.push_back(g.id(g.target(current)));
+      }
+    }
+  }
+  return Rcpp::List::create(isplanar, planarEmbeddingStart, planarEmbeddingEnd,
+                            kuratowskiSubInit, kuratowskiSubFin);
+}
+
+//' @rdname Planar-Embedding-Algorithms
 //' @description `PlanarColoringRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the colors of each node, represented as integers
 //' @param useFiveAlg, a boolean that asks if you want to 5-color a graph. If false, runs a faster 6-coloring algorithm instead.
 //' @export

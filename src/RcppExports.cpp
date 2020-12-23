@@ -734,6 +734,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// PlanarEmbeddingRunner
+Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_PlanarEmbeddingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(PlanarEmbeddingRunner(arcSources, arcTargets, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
 // PlanarColoringRunner
 Rcpp::List PlanarColoringRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes, bool useFiveAlg);
 RcppExport SEXP _rlemon_PlanarColoringRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP, SEXP useFiveAlgSEXP) {
@@ -937,6 +950,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_KarpMmcRunner", (DL_FUNC) &_rlemon_KarpMmcRunner, 4},
     {"_rlemon_HartmannOrlinMmcRunner", (DL_FUNC) &_rlemon_HartmannOrlinMmcRunner, 4},
     {"_rlemon_PlanarCheckingRunner", (DL_FUNC) &_rlemon_PlanarCheckingRunner, 3},
+    {"_rlemon_PlanarEmbeddingRunner", (DL_FUNC) &_rlemon_PlanarEmbeddingRunner, 3},
     {"_rlemon_PlanarColoringRunner", (DL_FUNC) &_rlemon_PlanarColoringRunner, 4},
     {"_rlemon_PlanarDrawingRunner", (DL_FUNC) &_rlemon_PlanarDrawingRunner, 3},
     {"_rlemon_SuurballeRunner", (DL_FUNC) &_rlemon_SuurballeRunner, 6},
