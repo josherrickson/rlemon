@@ -56,7 +56,7 @@ bool PlanarCheckingRunner(std::vector<int> arcSources,
 }
 
 //' @rdname Planar-Embedding-Algorithms-2
-//' @description `PlanarEmbeddingRunner` returns a list with many outputs
+//' @description `PlanarEmbeddingRunner` runs the Planar Embedding Algorithm to prove that some graph is planar or not.
 //' @export
 // [[Rcpp::export]]
 Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
