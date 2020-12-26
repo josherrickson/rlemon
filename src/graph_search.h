@@ -30,7 +30,7 @@ using namespace std;
 //' @param arcCapacities, a vector corresponding to the distances of a graph's edges
 //' @param numNodes, the number of nodes in the graph
 //' @param startNode, the start node of the path
-//' @return A list containing two entries: 1) the cardinality of each node , 3) a list containing if a node was reached or not
+//' @return A list containing two entries: 1) the cardinality of each node , 2) a list containing if a node was reached or not
 //> NULL
 
 //' @rdname Graph-Search-Algorithms-1

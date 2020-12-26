@@ -10,7 +10,7 @@
 using namespace lemon;
 
 //' Minimum Cost Flow Algorithms
-//' @name Minimum Cost Flow Algorithms
+//' @name Minimum-Cost-Flow-Algorithms
 //' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges

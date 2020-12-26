@@ -29,11 +29,11 @@ using namespace std;
 //' @param numNodes, the number of nodes in the graph
 //' @param startNode, the start node of the path
 //' @param endNode, the end node of the path
-//' @return A list containing two entries: 1) the number of paths from the start node to the end node and 2) a list of paths found.
+//' @return A list containing two entries: 1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
 //> NULL
 
 //' @rdname Shortest-Path-Algorithms-2
-//' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of paths from the start node to the end node and 2) a list of paths found.
+//' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
 //' @export
 // [[Rcpp::export]]
 Rcpp::List SuurballeRunner(std::vector<int> arcSources,
