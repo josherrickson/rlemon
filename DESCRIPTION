@@ -1,14 +1,18 @@
 Package: rlemon
 Type: Package
-Title: Interfaces from LEMON to R
+Title: R Interfaces to LEMON algorithms
 Version: 0.1
 Date: 2020-11-01
 Author: Arav Agarwal, Aditya Tewari, Josh Errickson
-Maintainer: Arav Agarwal <avaragal@umich.edu>
-Description: Provides interfaces to the LEMON algorithms <https://lemon.cs.elte.hu/trac/lemon>.
+Maintainer: Josh Errickson <jerrick@umich.edu>
+Description: Allows easy access to the LEMON Graph Library set of algorithms, written in C++.
+             See the LEMON project page at <https://lemon.cs.elte.hu/trac/lemon>.
+             Current LEMON version is 1.3.1.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.5)
 LinkingTo: Rcpp
+URL: https://github.com/atewari7/rlemon
+BugReports: https://github.com/atewari7/rlemon/issues
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 Suggests:
