@@ -2,7 +2,7 @@
 % Please edit documentation in R/minimummeancycle.R
 \name{minimummeancycle}
 \alias{minimummeancycle}
-\title{minimummeancycle}
+\title{MinimumMeanCycle}
 \usage{
 minimummeancycle(arcSources, arcTargets, arcDistances, numNodes, algorithm)
 }

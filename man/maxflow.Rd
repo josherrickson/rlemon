@@ -2,7 +2,7 @@
 % Please edit documentation in R/maxflow.R
 \name{maxflow}
 \alias{maxflow}
-\title{MinCostFlow}
+\title{MaxFlow}
 \usage{
 maxflow(
   arcSources,

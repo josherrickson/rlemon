@@ -30,5 +30,5 @@ assorted values, depending on the function
 
 `PlanarColoringRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the colors of each node, represented as integers
 
-`PlanarCheckingRunner` returns a List containing 1) a Boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
+`PlanarCheckingRunner` returns a List containing 1) a boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
 }

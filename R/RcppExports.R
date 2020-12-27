@@ -259,27 +259,41 @@ GraphCompatabilityConverter <- function(nodesList, arcSources, arcTargets) {
     .Call(`_rlemon_GraphCompatabilityConverter`, nodesList, arcSources, arcTargets)
 }
 
-#' Graph Search Algorithms - Distance
-#' @name Shortest-Path-Algorithms-1
+#' Graph Search Algorithms
+#' @name Graph-Search-Algorithms-1
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the distances of a graph's edges
 #' @param numNodes, the number of nodes in the graph
 #' @param startNode, the start node of the path
-#' @return A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+#' @param endNode, the end node of the path
+#' @return A list containing two entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
 NULL
 
-#' @rdname Shortest-Path-Algorithms-2
-#' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of paths from the start node to the end node and 2) a list of paths found.
+#' Graph Search Algorithms
+#' @name Graph-Search-Algorithms-2
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcCapacities, a vector corresponding to the distances of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @param startNode, the start node of the path
+#' @return A list containing two entries: 1) the cardinality of each node , 2) a list containing if a node was reached or not
+NULL
+
+#' @rdname Graph-Search-Algorithms-1
+#' @description `BfsRunner` calculates the shortest path using Breath-First-Search
 #' @export
 BfsRunner <- function(arcSources, arcTargets, numNodes, startNode = -1L, endNode = -1L) {
     .Call(`_rlemon_BfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode)
 }
 
+#' @rdname Graph-Search-Algorithms-1
+#' @description `DfsRunner` calculates the shortest path using Depth-First-Search
 DfsRunner <- function(arcSources, arcTargets, numNodes, startNode = -1L, endNode = -1L) {
     .Call(`_rlemon_DfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode)
 }
 
+#' @rdname Graph-Search-Algorithms-2
+#' @description `MaxCardinalityRunner` runs the Maximum Cardinality Search Algorithm
 MaxCardinalitySearchRunner <- function(arcSources, arcTargets, arcCapacities, numNodes, startNode = -1L) {
     .Call(`_rlemon_MaxCardinalitySearchRunner`, arcSources, arcTargets, arcCapacities, numNodes, startNode)
 }
@@ -400,7 +414,7 @@ MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sour
 }
 
 #' Minimum Cost Flow Algorithms
-#' @name Minimum Cost Flow Algorithms
+#' @name Minimum-Cost-Flow-Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges
@@ -508,6 +522,14 @@ HartmannOrlinMmcRunner <- function(arcSources, arcTargets, arcDistances, numNode
 #' @return assorted values, depending on the function
 NULL
 
+#' Planar Embedding Algorithms
+#' @name Planar-Embedding-Algorithms-2
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing the following 1) A boolean if the graph is planar or not, 2) start/end node lists for the vertices in the order of the Planar Embedding (if planar), 3) start/end node lists for the arcs in the kuratowski subdivision (if not planar)
+NULL
+
 #' @rdname Planar-Embedding-Algorithms
 #' @description `PlanarCheckingRunner` returns a bool stating if a graph is planar or not.
 #' @export
@@ -515,8 +537,8 @@ PlanarCheckingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_PlanarCheckingRunner`, arcSources, arcTargets, numNodes)
 }
 
-#' @rdname Planar-Embedding-Algorithms
-#' @description `PlanarEmbeddingRunner` returns a list with many outputs
+#' @rdname Planar-Embedding-Algorithms-2
+#' @description `PlanarEmbeddingRunner` runs the Planar Embedding Algorithm to prove that some graph is planar or not.
 #' @export
 PlanarEmbeddingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_PlanarEmbeddingRunner`, arcSources, arcTargets, numNodes)
@@ -555,11 +577,11 @@ NULL
 #' @param numNodes, the number of nodes in the graph
 #' @param startNode, the start node of the path
 #' @param endNode, the end node of the path
-#' @return A list containing two entries: 1) the number of paths from the start node to the end node and 2) a list of paths found.
+#' @return A list containing two entries: 1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
 NULL
 
 #' @rdname Shortest-Path-Algorithms-2
-#' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of paths from the start node to the end node and 2) a list of paths found.
+#' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
 #' @export
 SuurballeRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode, endNode) {
     .Call(`_rlemon_SuurballeRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode, endNode)

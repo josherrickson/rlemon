@@ -2,7 +2,7 @@
 % Please edit documentation in R/travellingsalesmanproblem.R
 \name{travellingsalesmanproblem}
 \alias{travellingsalesmanproblem}
-\title{travellingsalesmanproblem}
+\title{TravelingSalesmanProblem}
 \usage{
 travellingsalesmanproblem(
   arcSources,
