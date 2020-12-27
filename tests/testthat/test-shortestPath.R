@@ -1,11 +1,11 @@
-test_that("Surballe works", {
+test_that("Suurballe works", {
   s <- c(0, 0, 1, 1, 1, 2, 3)
   t <- c(1, 3, 2, 3, 4, 4, 4)
   d <- c(6, 1, 5, 2, 2, 5, 1)
   n <- 5
   sn <- 0
   en <- 4
-  out <- SurballeRunner(s,t,d,n,sn,en)
+  out <- SuurballeRunner(s,t,d,n,sn,en)
   expect_equal(out[[1]], 2)
   paths <- list()
   paths[[1]] <- c(0,3,4)
