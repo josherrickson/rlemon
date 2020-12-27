@@ -11,21 +11,21 @@ mincostflow(
   arcCosts,
   nodeSupplies,
   numNodes,
-  algorithm
+  algorithm = "NetworkSimplex"
 )
 }
 \arguments{
-\item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
 
-\item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
-\item{arcCapacities, }{a vector corresponding to the capacities of nodes of a graph's edges}
+\item{arcCapacities}{Vector corresponding to the capacities of nodes of a graph's edges}
 
-\item{arcCosts, }{a vector corresponding to the capacities of nodes of a graph's edges}
+\item{arcCosts}{Vector corresponding to the capacities of nodes of a graph's edges}
 
-\item{nodeSupplies, }{a vector corresponding to the supplies of each node}
+\item{nodeSupplies}{Vector corresponding to the supplies of each node}
 
-\item{numNodes, }{the number of nodes in the graph}
+\item{numNodes}{The number of nodes in the graph}
 
 \item{algorithm}{Which algorithm to run. Choices include
 "NetworkSimplex", "CostScaling", "CapacityScaling",

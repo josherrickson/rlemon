@@ -78,4 +78,7 @@ test_that("MinCostFlow Test", {
    expect_is(out, "list")
    expect_is(out[[3]], "integer")
    expect_equal(out[[3]],9833)
+
+   expect_error(mincostflow(s,t,cap,costs,n,numNodes,"abc"), "Invalid")
+
 })

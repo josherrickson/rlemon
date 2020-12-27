@@ -1,12 +1,12 @@
 ##' Runs mincostflow algorithms on graphs.
 ##'
 ##' @title MinCostFlow
-##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-##' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges
-##' @param arcCosts, a vector corresponding to the capacities of nodes of a graph's edges
-##' @param nodeSupplies, a vector corresponding to the supplies of each node
-##' @param numNodes, the number of nodes in the graph
+##' @param arcSources Vector corresponding to the source nodes of a graph's edges
+##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+##' @param arcCapacities Vector corresponding to the capacities of nodes of a graph's edges
+##' @param arcCosts Vector corresponding to the capacities of nodes of a graph's edges
+##' @param nodeSupplies Vector corresponding to the supplies of each node
+##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include
 ##'   "NetworkSimplex", "CostScaling", "CapacityScaling",
 ##'   "CycleCancelling". NetworkSimplex is the default; see
@@ -14,7 +14,7 @@
 ##'   on the differences.
 ##' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
 ##' @export
-mincostflow <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithm) {
+mincostflow <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithm = "NetworkSimplex") {
 
   check_graph(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
 
