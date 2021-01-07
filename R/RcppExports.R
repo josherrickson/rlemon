@@ -317,11 +317,11 @@ NULL
 #' @param sourceNode, the source node
 #' @param destinationNode, the destination node
 #' @param numNodes, the number of nodes in the graph
-#' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
+#' @return A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
 NULL
 
 #' @rdname Maximum-Flow-Algorithms-2
-#' @description `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.
+#' @description `CirculationRunner` runs the Circulation Algorithm to calculate the maximum flow.
 #' @export
 CirculationRunner <- function(arcSources, arcTargets, arcLowerBound, arcUpperBound, nodeSupplies, numNodes) {
     .Call(`_rlemon_CirculationRunner`, arcSources, arcTargets, arcLowerBound, arcUpperBound, nodeSupplies, numNodes)
@@ -493,23 +493,23 @@ GomoryHuTreeRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
 #' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 #' @param arcDistances, a vector corresponding to the distances of a graph's edges
 #' @param numNodes, the number of nodes in the graph
-#' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC cycle, and 2) the nodes in the MMC cycle.
+#' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC, and 2) the nodes in the MMC.
 NULL
 
 #' @rdname Maximum-Mean-Cycle-Algorithms
-#' @description `HowardMmcRunner` runs Howard's policy iteration algorithm.
+#' @description `HowardMmcRunner` runs Howard's policy iteration algorithm to find a directed cycle of minimum mean cost.
 HowardMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_HowardMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
 #' @rdname Maximum-Mean-Cycle-Algorithms
-#' @description `KarpMmcRunner` runs Karp's algorithm.
+#' @description `KarpMmcRunner` runs Karp's algorithm to find a directed cycle of minimum mean cost .
 KarpMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_KarpMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }
 
 #' @rdname Maximum-Mean-Cycle-Algorithms
-#' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm algorithm.
+#' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm to find a directed cycle of minimum mean cost .
 HartmannOrlinMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
 }

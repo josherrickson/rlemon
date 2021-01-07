@@ -21,11 +21,11 @@ maxmatching(
 )
 }
 \arguments{
-\item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
 
-\item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
-\item{numNodes, }{the number of nodes in the graph}
+\item{numNodes}{The number of nodes in the graph}
 
 \item{problem}{What type of problem you want to run. Choices include
 "MaxMatching", "MaxWeightedMatching", "MaxWeightedPerfectMatching", 
@@ -34,7 +34,15 @@ where "MaxWeightedMatching" is the default.
 See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> 
 for details on the differences.}
 
+\item{arcWeights}{Vector corresponding to the weights of a graph's edges}
+
+\item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
+
+\item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
+
 \item{arcWeights, }{a vector corresponding to the weights of a graph's edges}
+
+\item{numNodes, }{the number of nodes in the graph}
 }
 \value{
 A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a List of List of (node, node) pairs

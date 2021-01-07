@@ -23,12 +23,12 @@ HartmannOrlinMmcRunner(arcSources, arcTargets, arcDistances, numNodes)
 \item{numNodes, }{the number of nodes in the graph}
 }
 \value{
-A list containing two entries: 1) A vector containing the costs of each edge in the MMC cycle, and 2) the nodes in the MMC cycle.
+A list containing two entries: 1) A vector containing the costs of each edge in the MMC, and 2) the nodes in the MMC.
 }
 \description{
-`HowardMmcRunner` runs Howard's policy iteration algorithm.
+`HowardMmcRunner` runs Howard's policy iteration algorithm to find a directed cycle of minimum mean cost.
 
-`KarpMmcRunner` runs Karp's algorithm.
+`KarpMmcRunner` runs Karp's algorithm to find a directed cycle of minimum mean cost .
 
-`HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm algorithm.
+`HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm to find a directed cycle of minimum mean cost .
 }
