@@ -26,11 +26,11 @@ using namespace lemon;
 //' @param sourceNode, the source node
 //' @param destinationNode, the destination node
 //' @param numNodes, the number of nodes in the graph
-//' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
+//' @return A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
 //> NULL
 
 //' @rdname Maximum-Flow-Algorithms-2
-//' @description `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.
+//' @description `CirculationRunner` runs the Circulation Algorithm to calculate the maximum flow.
 //' @export
 // [[Rcpp::export]]
 Rcpp::List CirculationRunner(std::vector<int> arcSources,

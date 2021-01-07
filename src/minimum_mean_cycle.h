@@ -14,11 +14,11 @@ using namespace std;
 //' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
 //' @param arcDistances, a vector corresponding to the distances of a graph's edges
 //' @param numNodes, the number of nodes in the graph
-//' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC cycle, and 2) the nodes in the MMC cycle.
+//' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC, and 2) the nodes in the MMC.
 //> NULL
 
 //' @rdname Maximum-Mean-Cycle-Algorithms
-//' @description `HowardMmcRunner` runs Howard's policy iteration algorithm.
+//' @description `HowardMmcRunner` runs Howard's policy iteration algorithm to find a directed cycle of minimum mean cost.
 // [[Rcpp::export]]
 Rcpp::List HowardMmcRunner(std::vector<int> arcSources,
                            std::vector<int> arcTargets,
@@ -59,7 +59,7 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources,
 }
 
 //' @rdname Maximum-Mean-Cycle-Algorithms
-//' @description `KarpMmcRunner` runs Karp's algorithm.
+//' @description `KarpMmcRunner` runs Karp's algorithm to find a directed cycle of minimum mean cost .
 // [[Rcpp::export]]
 Rcpp::List KarpMmcRunner(std::vector<int> arcSources,
                          std::vector<int> arcTargets,
@@ -100,7 +100,7 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources,
 }
 
 //' @rdname Maximum-Mean-Cycle-Algorithms
-//' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm algorithm.
+//' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm to find a directed cycle of minimum mean cost .
 // [[Rcpp::export]]
 Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources,
                                   std::vector<int> arcTargets,

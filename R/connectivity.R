@@ -1,10 +1,10 @@
 ##' Runs maxflow algorithms on graphs.
 ##'
 ##' @title ConnectivityCheck
-##' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-##' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-##' @param arcWeights, a vector corresponding to the weights of a graph's edges
-##' @param numNodes, the number of nodes in the graph
+##' @param arcSources Vector corresponding to the source nodes of a graph's edges
+##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+##' @param arcWeights Vector corresponding to the weights of a graph's edges
+##' @param numNodes The number of nodes in the graph
 ##' @param problem What type of problem you want to run. Choices include
 ##'   "MaxMatching", "MaxWeightedMatching", "MaxWeightedPerfectMatching", 
 ##'   "MaxFractionalMatching", "MaxWeightedFractionalMatching", "MaxWeightedPerfectFractionalMatching"
@@ -25,5 +25,6 @@ maxmatching <- function(arcSources, arcTargets, numNodes, problem="MaxWeightedMa
          "MaxWeightedFractionalMatching" = .Call(`_rlemon_MaximumWeightFractionalMatchingRunner`,arcSources, arcTargets, arcWeights, numNodes),
          "MaxWeightedPerfectFractionalMatching" = .Call(`_rlemon_MaximumWeightFractionalPerfectMatchingRunner`,arcSources, arcTargets, arcWeights, numNodes),
          "MaxMatching" = .Call(`_rlemon_MaximumCardinalityMatchingRunner`,arcSources, arcTargets, numNodes),
-         "MaxFractionalMatching" = .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes))
+         "MaxFractionalMatching" = .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes),
+         stop("Invalid algorithm."))
 }

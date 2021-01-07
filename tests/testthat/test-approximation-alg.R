@@ -6,3 +6,13 @@ test_that("grosso locatelli works", {
   expect_equal(out[[1]],3)
   expect_equal(out[[2]],c(0,1,2))
 })
+
+test_that("approximation works", {
+  s <- c(0,1,2,3,4)
+  t <- c(1,2,0,4,3)
+  n <- 5
+  out <- approx(s,t,n,"GrossoLocatelliPullanMc")
+  expect_equal(out[[1]],3)
+  expect_equal(out[[2]],c(0,1,2))
+  expect_error(approx(s,t,n,"abc"), "Invalid")
+})

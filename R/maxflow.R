@@ -12,7 +12,7 @@
 ##'   where "Preflow" is the default.
 ##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> 
 ##'   for details on the differences.
-##' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
+##' @return A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
 ##' @export
 maxflow <- function(arcSources, arcTargets, arcCapacities, sourceNode, destNode, numNodes, algorithm) {
 
