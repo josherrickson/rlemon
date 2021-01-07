@@ -17,7 +17,6 @@ using namespace std;
 
 //' @rdname Approximation-Algorithms
 //' @description `GrossoLocatelliPullanMcRunner` runs the Grosso, Locatelli, and Pullan for solving the maximum clique problem
-//' @export
 // [[Rcpp::export]]
 Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources,
                                          std::vector<int> arcTargets,
