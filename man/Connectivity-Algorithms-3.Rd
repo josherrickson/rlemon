@@ -2,9 +2,9 @@
 % Please edit documentation in R/RcppExports.R
 \name{Connectivity-Algorithms-3}
 \alias{Connectivity-Algorithms-3}
-\alias{getBipartitePartitions}
-\alias{getAndCheckTopologicalSort}
-\alias{getTopologicalSort}
+\alias{getBipartitePartitionsRunner}
+\alias{getAndCheckTopologicalSortRunner}
+\alias{getTopologicalSortRunner}
 \alias{FindStronglyConnectedComponents}
 \alias{FindStronglyConnectedCutArcs}
 \alias{FindBiEdgeConnectedCutEdges}
@@ -14,11 +14,11 @@
 \alias{FindBiEdgeConnectedComponents}
 \title{Connectivity Algorithms - List Return}
 \usage{
-getBipartitePartitions(arcSources, arcTargets, numNodes)
+getBipartitePartitionsRunner(arcSources, arcTargets, numNodes)
 
-getAndCheckTopologicalSort(arcSources, arcTargets, numNodes)
+getAndCheckTopologicalSortRunner(arcSources, arcTargets, numNodes)
 
-getTopologicalSort(arcSources, arcTargets, numNodes)
+getTopologicalSortRunner(arcSources, arcTargets, numNodes)
 
 FindStronglyConnectedComponents(arcSources, arcTargets, numNodes)
 
@@ -44,11 +44,11 @@ FindBiEdgeConnectedComponents(arcSources, arcTargets, numNodes)
 \value{
 a List, returning some set of nodes or edges in a graph
 
-`getBipartitePartitions` returns an R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
+`getBipartitePartitionsRunner` returns an R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
 
-`getAndCheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
+`getAndCheckTopologicalSortRunner` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
 
-`getTopologicalSort` returns a vector of length numNodes, containing the index of vertex i in the ordering at location i.
+`getTopologicalSortRunner` returns a vector of length numNodes, containing the index of vertex i in the ordering at location i.
 }
 \description{
 `FindStronglyConnectedComponents` returns a vector containing the component number of each node

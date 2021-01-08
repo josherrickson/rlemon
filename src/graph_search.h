@@ -20,7 +20,7 @@ using namespace std;
 //' @param numNodes, the number of nodes in the graph
 //' @param startNode, the start node of the path
 //' @param endNode, the end node of the path
-//' @return A list containing two entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
+//' @return A list containing three entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
 //> NULL
 
 //' Graph Search Algorithms
@@ -35,7 +35,6 @@ using namespace std;
 
 //' @rdname Graph-Search-Algorithms-1
 //' @description `BfsRunner` calculates the shortest path using Breath-First-Search
-//' @export
 // [[Rcpp::export]]
 Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                      int numNodes, int startNode = -1, int endNode = -1) {
@@ -131,7 +130,7 @@ Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
 }
 
 //' @rdname Graph-Search-Algorithms-2
-//' @description `MaxCardinalityRunner` runs the Maximum Cardinality Search Algorithm
+//' @description `MaxCardinalitySearchRunner` runs the Maximum Cardinality Search Algorithm
 // [[Rcpp::export]]
 Rcpp::List MaxCardinalitySearchRunner(std::vector<int> arcSources,
                                       std::vector<int> arcTargets,

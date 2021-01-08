@@ -50,11 +50,11 @@ using namespace lemon;
 //> NULL
 
 //' @rdname Connectivity-Algorithms-3
-//' @return `getBipartitePartitions` returns an R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
-//' @export
+//' @return `getBipartitePartitionsRunner` returns an R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
 // [[Rcpp::export]]
-Rcpp::List getBipartitePartitions(std::vector<int> arcSources,
-                                  std::vector<int> arcTargets, int numNodes) {
+Rcpp::List getBipartitePartitionsRunner(std::vector<int> arcSources,
+                                        std::vector<int> arcTargets,
+                                        int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -77,12 +77,11 @@ Rcpp::List getBipartitePartitions(std::vector<int> arcSources,
 }
 
 //' @rdname Connectivity-Algorithms-3
-//' @return `getAndCheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
-//' @export
+//' @return `getAndCheckTopologicalSortRunner` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
 // [[Rcpp::export]]
-Rcpp::List getAndCheckTopologicalSort(std::vector<int> arcSources,
-                                      std::vector<int> arcTargets,
-                                      int numNodes) {
+Rcpp::List getAndCheckTopologicalSortRunner(std::vector<int> arcSources,
+                                            std::vector<int> arcTargets,
+                                            int numNodes) {
   ListDigraph g;
   std::vector<ListDigraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -105,11 +104,11 @@ Rcpp::List getAndCheckTopologicalSort(std::vector<int> arcSources,
 }
 
 //' @rdname Connectivity-Algorithms-3
-//' @return `getTopologicalSort` returns a vector of length numNodes, containing the index of vertex i in the ordering at location i.
-//' @export
+//' @return `getTopologicalSortRunner` returns a vector of length numNodes, containing the index of vertex i in the ordering at location i.
 // [[Rcpp::export]]
-std::vector<int> getTopologicalSort(std::vector<int> arcSources,
-                                    std::vector<int> arcTargets, int numNodes) {
+std::vector<int> getTopologicalSortRunner(std::vector<int> arcSources,
+                                          std::vector<int> arcTargets,
+                                          int numNodes) {
   ListDigraph g;
   std::vector<ListDigraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {

@@ -157,20 +157,30 @@ test_that("getBipartitePartitions works", {
    s <- c(0,0,0,1,1,1,2,2,2)
    t <- c(3,4,5,3,4,5,3,4,5)
    n <- 6
+   out <- getBipartitePartitionsRunner(s,t,n)
+   expect_equal(out[[1]], TRUE)
+   expect_equal(out[[2]],c(0,0,0,1,1,1))
    out <- getBipartitePartitions(s,t,n)
    expect_equal(out[[1]], TRUE)
    expect_equal(out[[2]],c(0,0,0,1,1,1))
+   expect_error(getBipartitePartitions(s,t,n,"abc"), "Invalid")
 })
 
 test_that("topologicalSort works", {
    s <- c(0,0,0,1,1,1,2,2,2)
    t <- c(3,4,5,3,4,5,3,4,5)
    n <- 6
+   out <- getAndCheckTopologicalSortRunner(s,t,n)
+   expect_equal(out[[1]],TRUE)
+   expect_equal(out[[2]],c(0,1,2,3,4,5))
+   out <- getTopologicalSortRunner(s,t,n)
+   expect_equal(out, c(0,1,2,3,4,5))
    out <- getAndCheckTopologicalSort(s,t,n)
    expect_equal(out[[1]],TRUE)
    expect_equal(out[[2]],c(0,1,2,3,4,5))
    out <- getTopologicalSort(s,t,n)
    expect_equal(out, c(0,1,2,3,4,5))
+   expect_error(getTopologicalSort(s,t,n,"abc"), "Invalid")
 })
 
 test_that("findingComponents works", {

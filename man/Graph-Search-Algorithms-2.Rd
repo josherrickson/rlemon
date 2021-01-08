@@ -28,5 +28,5 @@ MaxCardinalitySearchRunner(
 A list containing two entries: 1) the cardinality of each node , 2) a list containing if a node was reached or not
 }
 \description{
-`MaxCardinalityRunner` runs the Maximum Cardinality Search Algorithm
+`MaxCardinalitySearchRunner` runs the Maximum Cardinality Search Algorithm
 }

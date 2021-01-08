@@ -22,7 +22,7 @@ DfsRunner(arcSources, arcTargets, numNodes, startNode = -1L, endNode = -1L)
 \item{endNode, }{the end node of the path}
 }
 \value{
-A list containing two entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
+A list containing three entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
 }
 \description{
 `BfsRunner` calculates the shortest path using Breath-First-Search

@@ -11,7 +11,6 @@ NULL
 
 #' @rdname Approximation-Algorithms
 #' @description `GrossoLocatelliPullanMcRunner` runs the Grosso, Locatelli, and Pullan for solving the maximum clique problem
-#' @export
 GrossoLocatelliPullanMcRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_GrossoLocatelliPullanMcRunner`, arcSources, arcTargets, numNodes)
 }
@@ -59,24 +58,21 @@ NULL
 NULL
 
 #' @rdname Connectivity-Algorithms-3
-#' @return `getBipartitePartitions` returns an R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
-#' @export
-getBipartitePartitions <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_getBipartitePartitions`, arcSources, arcTargets, numNodes)
+#' @return `getBipartitePartitionsRunner` returns an R List containing (1) A boolean stating if the graph is bipartite, and (2) an std::vector of length numNodes, containing the partition for each node
+getBipartitePartitionsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_getBipartitePartitionsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
-#' @return `getAndCheckTopologicalSort` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
-#' @export
-getAndCheckTopologicalSort <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_getAndCheckTopologicalSort`, arcSources, arcTargets, numNodes)
+#' @return `getAndCheckTopologicalSortRunner` returns an R List containing (1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
+getAndCheckTopologicalSortRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_getAndCheckTopologicalSortRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
-#' @return `getTopologicalSort` returns a vector of length numNodes, containing the index of vertex i in the ordering at location i.
-#' @export
-getTopologicalSort <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_getTopologicalSort`, arcSources, arcTargets, numNodes)
+#' @return `getTopologicalSortRunner` returns a vector of length numNodes, containing the index of vertex i in the ordering at location i.
+getTopologicalSortRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_getTopologicalSortRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
@@ -266,7 +262,7 @@ GraphCompatabilityConverter <- function(nodesList, arcSources, arcTargets) {
 #' @param numNodes, the number of nodes in the graph
 #' @param startNode, the start node of the path
 #' @param endNode, the end node of the path
-#' @return A list containing two entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
+#' @return A list containing three entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
 NULL
 
 #' Graph Search Algorithms
@@ -281,7 +277,6 @@ NULL
 
 #' @rdname Graph-Search-Algorithms-1
 #' @description `BfsRunner` calculates the shortest path using Breath-First-Search
-#' @export
 BfsRunner <- function(arcSources, arcTargets, numNodes, startNode = -1L, endNode = -1L) {
     .Call(`_rlemon_BfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode)
 }
@@ -293,7 +288,7 @@ DfsRunner <- function(arcSources, arcTargets, numNodes, startNode = -1L, endNode
 }
 
 #' @rdname Graph-Search-Algorithms-2
-#' @description `MaxCardinalityRunner` runs the Maximum Cardinality Search Algorithm
+#' @description `MaxCardinalitySearchRunner` runs the Maximum Cardinality Search Algorithm
 MaxCardinalitySearchRunner <- function(arcSources, arcTargets, arcCapacities, numNodes, startNode = -1L) {
     .Call(`_rlemon_MaxCardinalitySearchRunner`, arcSources, arcTargets, arcCapacities, numNodes, startNode)
 }

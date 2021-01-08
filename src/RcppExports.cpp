@@ -18,42 +18,42 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// getBipartitePartitions
-Rcpp::List getBipartitePartitions(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_getBipartitePartitions(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// getBipartitePartitionsRunner
+Rcpp::List getBipartitePartitionsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_getBipartitePartitionsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(getBipartitePartitions(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(getBipartitePartitionsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// getAndCheckTopologicalSort
-Rcpp::List getAndCheckTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_getAndCheckTopologicalSort(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// getAndCheckTopologicalSortRunner
+Rcpp::List getAndCheckTopologicalSortRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_getAndCheckTopologicalSortRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(getAndCheckTopologicalSort(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(getAndCheckTopologicalSortRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// getTopologicalSort
-std::vector<int> getTopologicalSort(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_getTopologicalSort(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// getTopologicalSortRunner
+std::vector<int> getTopologicalSortRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_getTopologicalSortRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(getTopologicalSort(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(getTopologicalSortRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -898,9 +898,9 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_GrossoLocatelliPullanMcRunner", (DL_FUNC) &_rlemon_GrossoLocatelliPullanMcRunner, 3},
-    {"_rlemon_getBipartitePartitions", (DL_FUNC) &_rlemon_getBipartitePartitions, 3},
-    {"_rlemon_getAndCheckTopologicalSort", (DL_FUNC) &_rlemon_getAndCheckTopologicalSort, 3},
-    {"_rlemon_getTopologicalSort", (DL_FUNC) &_rlemon_getTopologicalSort, 3},
+    {"_rlemon_getBipartitePartitionsRunner", (DL_FUNC) &_rlemon_getBipartitePartitionsRunner, 3},
+    {"_rlemon_getAndCheckTopologicalSortRunner", (DL_FUNC) &_rlemon_getAndCheckTopologicalSortRunner, 3},
+    {"_rlemon_getTopologicalSortRunner", (DL_FUNC) &_rlemon_getTopologicalSortRunner, 3},
     {"_rlemon_IsConnected", (DL_FUNC) &_rlemon_IsConnected, 3},
     {"_rlemon_IsAcyclic", (DL_FUNC) &_rlemon_IsAcyclic, 3},
     {"_rlemon_IsTree", (DL_FUNC) &_rlemon_IsTree, 3},
