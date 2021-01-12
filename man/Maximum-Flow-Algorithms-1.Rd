@@ -25,17 +25,17 @@ EdmondsKarpRunner(
 )
 }
 \arguments{
-\item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
 
-\item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
-\item{arcDistances, }{a vector corresponding to the capacities of nodes of a graph's edges}
+\item{arcDistances}{Vector corresponding to the capacities of nodes of a graph's edges}
 
-\item{sourceNode, }{the source node}
+\item{sourceNode}{The source node}
 
-\item{destinationNode, }{the destination node}
+\item{destinationNode}{The destination node}
 
-\item{numNodes, }{the number of nodes in the graph}
+\item{numNodes}{The number of nodes in the graph}
 }
 \value{
 A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.

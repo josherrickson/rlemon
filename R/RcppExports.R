@@ -295,29 +295,28 @@ MaxCardinalitySearchRunner <- function(arcSources, arcTargets, arcCapacities, nu
 
 #' Maximum Flow Algorithms - Network Circulation
 #' @name Maximum-Flow-Algorithms-2
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcLowerBound, a vector corresponding to the lower-bound capacities of nodes of a graph's edges
-#' @param arcUpperBound, a vector corresponding to the upper-bound capacities of nodes of a graph's edges
-#' @param nodeSupplies, a vector corresponding to the supplies of each node of the graph.
-#' @param numNodes, the number of nodes in the graph
+#' @param arcSources Vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+#' @param arcLowerBound Vector corresponding to the lower-bound capacities of nodes of a graph's edges
+#' @param arcUpperBound Vector corresponding to the upper-bound capacities of nodes of a graph's edges
+#' @param nodeSupplies Vector corresponding to the supplies of each node of the graph.
+#' @param numNodes The number of nodes in the graph
 #' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of the graph's barrier nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value
 NULL
 
 #' Maximum Flow Algorithms
 #' @name Maximum-Flow-Algorithms-1
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the capacities of nodes of a graph's edges
-#' @param sourceNode, the source node
-#' @param destinationNode, the destination node
-#' @param numNodes, the number of nodes in the graph
+#' @param arcSources Vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances Vector corresponding to the capacities of nodes of a graph's edges
+#' @param sourceNode The source node
+#' @param destinationNode The destination node
+#' @param numNodes The number of nodes in the graph
 #' @return A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
 NULL
 
 #' @rdname Maximum-Flow-Algorithms-2
 #' @description `CirculationRunner` runs the Circulation Algorithm to calculate the maximum flow.
-#' @export
 CirculationRunner <- function(arcSources, arcTargets, arcLowerBound, arcUpperBound, nodeSupplies, numNodes) {
     .Call(`_rlemon_CirculationRunner`, arcSources, arcTargets, arcLowerBound, arcUpperBound, nodeSupplies, numNodes)
 }

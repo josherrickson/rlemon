@@ -8,6 +8,11 @@ test_that("Preflow works", {
   expect_is(out[[3]],"integer")
   expect_is(out[[2]],"integer")
   expect_is(out[[1]], "integer")
+  out <- MaxFlow(s,t,cap,0,5,6)
+  expect_is(out[[3]],"integer")
+  expect_is(out[[2]],"integer")
+  expect_is(out[[1]], "integer")
+  expect_error(MaxFlow(s,t,cap,0,5,6,"abc"), "Invalid")
 })
 
 test_that("Edmonds-Karp works", {
@@ -18,6 +23,11 @@ test_that("Edmonds-Karp works", {
   expect_is(out[[3]],"integer")
   expect_is(out[[2]], "integer")
   expect_is(out[[1]], "integer")
+  out <- MaxFlow(s,t,cap,0,5,6,"EdmondsKarp")
+  expect_is(out[[3]],"integer")
+  expect_is(out[[2]], "integer")
+  expect_is(out[[1]], "integer")
+  expect_error(MaxFlow(s,t,cap,0,5,6,"abc"), "Invalid")
 })
 
 test_that("Circulation works", {
@@ -27,4 +37,8 @@ test_that("Circulation works", {
   out <- CirculationRunner(s,t,cap,0,5,6)
   expect_is(out[[1]], "integer")
   expect_is(out[[2]], "integer")
+  out <- NetworkCirculation(s,t,cap,0,5,6)
+  expect_is(out[[1]], "integer")
+  expect_is(out[[2]], "integer")
+  expect_error(NetworkCirculation(s,t,cap,0,5,6,"abc"), "Invalid")
 })
