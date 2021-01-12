@@ -5,6 +5,10 @@ test_that("Max Perfect Checking", {
   out <- MaximumWeightPerfectMatchingRunner(s,t,d,6)
   expect_equal(out[[1]],15)
   expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  out <- MaxMatching(s,t,d,6,"MaxWeightedPerfectMatching")
+  expect_equal(out[[1]],15)
+  expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  expect_error(MaxMatching(s,t,d,6,"abc"), "Invalid")
 })
 
 test_that("Max Fractional Perfect Checking", {
@@ -14,6 +18,10 @@ test_that("Max Fractional Perfect Checking", {
   out <- MaximumWeightFractionalPerfectMatchingRunner(s,t,d,6)
   expect_equal(out[[1]],30)
   expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  out <- MaxMatching(s,t,d,6,"MaxWeightedPerfectFractionalMatching")
+  expect_equal(out[[1]],30)
+  expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  expect_error(MaxMatching(s,t,d,6,"abc"), "Invalid")
 })
 
 test_that("Max Weight Fractional Checking", {
@@ -23,6 +31,10 @@ test_that("Max Weight Fractional Checking", {
   out <- MaximumWeightFractionalMatchingRunner(s,t,d,6)
   expect_equal(out[[1]],30)
   expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  out <- MaxMatching(s,t,d,6,"MaxWeightedFractionalMatching")
+  expect_equal(out[[1]],30)
+  expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  expect_error(MaxMatching(s,t,d,6,"abc"), "Invalid")
 })
 
 test_that("Max Weight Checking", {
@@ -32,6 +44,10 @@ test_that("Max Weight Checking", {
   out <- MaximumWeightMatchingRunner(s,t,d,6)
   expect_equal(out[[1]],15)
   expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  out <- MaxMatching(s,t,d,6,"MaxWeightedMatching")
+  expect_equal(out[[1]],15)
+  expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  expect_error(MaxMatching(s,t,d,6,"abc"), "Invalid")
 })
 
 test_that("Max Cardinality Checking", {
@@ -40,6 +56,9 @@ test_that("Max Cardinality Checking", {
   d <- c(1,2,3,4,5,6,7,8,9)
   out <- MaximumCardinalityMatchingRunner(s,t,6)
   expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  out <- MaxCardinalityMatching(s,t,6,"MaxMatching")
+  expect_equal(out[[2]],list(c(0,3),c(1,4),c(2,5)))
+  expect_error(MaxCardinalityMatching(s,t,6,"abc"), "Invalid")
 })
 
 test_that("Max Cardinality Fractional Checking", {
@@ -48,4 +67,7 @@ test_that("Max Cardinality Fractional Checking", {
   d <- c(1,2,3,4,5,6,7,8,9)
   out <- MaximumCardinalityFractionalMatchingRunner(s,t,6)
   expect_equal(out[[2]],list(c(0,5),c(1,4),c(2,3)))
+  out <- MaxCardinalityMatching(s,t,6,"MaxFractionalMatching")
+  expect_equal(out[[2]],list(c(0,5),c(1,4),c(2,3)))
+  expect_error(MaxCardinalityMatching(s,t,6,"abc"), "Invalid")
 })

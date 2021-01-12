@@ -21,10 +21,10 @@ template <typename ValueType> using NodeMap = ListGraph::NodeMap<ValueType>;
 
 //' Maximum Matching Algorithms
 //' @name Maximum-Matching-Algorithms
-//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @param arcWeights, a vector corresponding to the weights of a graph's edges
-//' @param numNodes, the number of nodes in the graph
+//' @param arcSources Vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+//' @param arcWeights Vector corresponding to the weights of a graph's edges
+//' @param numNodes The number of nodes in the graph
 //' @return A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a List of List of (node, node) pairs
 //> NULL
 
