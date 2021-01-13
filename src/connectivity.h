@@ -136,10 +136,9 @@ std::vector<int> getTopologicalSortRunner(std::vector<int> arcSources,
 //' end <- small_graph_example$endnodes
 //' numnodes <- length(unique(c(start, end)))
 //' IsConnected(start, end, numnodes)
-//' @export
 // [[Rcpp::export]]
-int IsConnected(std::vector<int> arcSources, std::vector<int> arcTargets,
-                int numNodes) {
+int IsConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                      int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -155,10 +154,9 @@ int IsConnected(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsAcyclic` returns if a graph is acyclic or not
-//' @export
 // [[Rcpp::export]]
-int IsAcyclic(std::vector<int> arcSources, std::vector<int> arcTargets,
-              int numNodes) {
+int IsAcyclicRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                    int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -174,10 +172,9 @@ int IsAcyclic(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsTree` returns if a graph is a tree or not
-//' @export
 // [[Rcpp::export]]
-int IsTree(std::vector<int> arcSources, std::vector<int> arcTargets,
-           int numNodes) {
+int IsTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                 int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -193,10 +190,9 @@ int IsTree(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsBipartite` returns if a graph is bipartite or not
-//' @export
 // [[Rcpp::export]]
-int IsBipartite(std::vector<int> arcSources, std::vector<int> arcTargets,
-                int numNodes) {
+int IsBipartiteRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                      int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -212,10 +208,9 @@ int IsBipartite(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsStronglyConnected` returns if a graph is strongly connected or not
-//' @export
 // [[Rcpp::export]]
-int IsStronglyConnected(std::vector<int> arcSources,
-                        std::vector<int> arcTargets, int numNodes) {
+int IsStronglyConnectedRunner(std::vector<int> arcSources,
+                              std::vector<int> arcTargets, int numNodes) {
   ListDigraph g;
   std::vector<ListDigraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -231,10 +226,9 @@ int IsStronglyConnected(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsDAG` returns if a graph is a DAG or not
-//' @export
 // [[Rcpp::export]]
-int IsDAG(std::vector<int> arcSources, std::vector<int> arcTargets,
-          int numNodes) {
+int IsDAGRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                int numNodes) {
   ListDigraph g;
   std::vector<ListDigraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -250,10 +244,9 @@ int IsDAG(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsBiNodeConnected` returns if a graph is bi-node connected or not
-//' @export
 // [[Rcpp::export]]
-int IsBiNodeConnected(std::vector<int> arcSources, std::vector<int> arcTargets,
-                      int numNodes) {
+int IsBiNodeConnectedRunner(std::vector<int> arcSources,
+                            std::vector<int> arcTargets, int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -269,10 +262,9 @@ int IsBiNodeConnected(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsBiEdgeConnected` returns if a graph is bi-edge connected or not
-//' @export
 // [[Rcpp::export]]
-int IsBiEdgeConnected(std::vector<int> arcSources, std::vector<int> arcTargets,
-                      int numNodes) {
+int IsBiEdgeConnectedRunner(std::vector<int> arcSources,
+                            std::vector<int> arcTargets, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -292,10 +284,9 @@ int IsBiEdgeConnected(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsLoopFree` returns if a graph is loop-free or not
-//' @export
 // [[Rcpp::export]]
-int IsLoopFree(std::vector<int> arcSources, std::vector<int> arcTargets,
-               int numNodes) {
+int IsLoopFreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                     int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -315,10 +306,9 @@ int IsLoopFree(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsParallelFree` returns if a graph is parallel-free or not
-//' @export
 // [[Rcpp::export]]
-int IsParallelFree(std::vector<int> arcSources, std::vector<int> arcTargets,
-                   int numNodes) {
+int IsParallelFreeRunner(std::vector<int> arcSources,
+                         std::vector<int> arcTargets, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -338,10 +328,9 @@ int IsParallelFree(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsSimpleGraph` returns if a graph is simple or not
-//' @export
 // [[Rcpp::export]]
-int IsSimpleGraph(std::vector<int> arcSources, std::vector<int> arcTargets,
-                  int numNodes) {
+int IsSimpleGraphRunner(std::vector<int> arcSources,
+                        std::vector<int> arcTargets, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -361,10 +350,9 @@ int IsSimpleGraph(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-1
 //' @description `IsEulerian` returns if a graph is eulerian or not
-//' @export
 // [[Rcpp::export]]
-int IsEulerian(std::vector<int> arcSources, std::vector<int> arcTargets,
-               int numNodes) {
+int IsEulerianRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
+                     int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -384,10 +372,10 @@ int IsEulerian(std::vector<int> arcSources, std::vector<int> arcTargets,
 
 //' @rdname Connectivity-Algorithms-2
 //' @description `CountBiEdgeConnectedComponents` returns how many Bi-Edge Connected Components a graph has.
-//' @export
 // [[Rcpp::export]]
-int CountBiEdgeConnectedComponents(std::vector<int> arcSources,
-                                   std::vector<int> arcTargets, int numNodes) {
+int CountBiEdgeConnectedComponentsRunner(std::vector<int> arcSources,
+                                         std::vector<int> arcTargets,
+                                         int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -407,10 +395,9 @@ int CountBiEdgeConnectedComponents(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-2
 //' @description `CountConnectedComponents` returns how many Connected Components a graph has.
-//' @export
 // [[Rcpp::export]]
-int CountConnectedComponents(std::vector<int> arcSources,
-                             std::vector<int> arcTargets, int numNodes) {
+int CountConnectedComponentsRunner(std::vector<int> arcSources,
+                                   std::vector<int> arcTargets, int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -430,10 +417,10 @@ int CountConnectedComponents(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-2
 //' @description `CountBiNodeConnectedComponents` returns how many Bi-Node Connected Components a graph has.
-//' @export
 // [[Rcpp::export]]
-int CountBiNodeConnectedComponents(std::vector<int> arcSources,
-                                   std::vector<int> arcTargets, int numNodes) {
+int CountBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
+                                         std::vector<int> arcTargets,
+                                         int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
@@ -453,11 +440,10 @@ int CountBiNodeConnectedComponents(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-2
 //' @description `CountStronglyConnectedComponents` returns how many Strongly Connected Components a graph has.
-//' @export
 // [[Rcpp::export]]
-int CountStronglyConnectedComponents(std::vector<int> arcSources,
-                                     std::vector<int> arcTargets,
-                                     int numNodes) {
+int CountStronglyConnectedComponentsRunner(std::vector<int> arcSources,
+                                           std::vector<int> arcTargets,
+                                           int numNodes) {
   ListDigraph g;
   std::vector<ListDigraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -473,11 +459,9 @@ int CountStronglyConnectedComponents(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindStronglyConnectedComponents` returns a vector containing the component number of each node
-//' @export
 // [[Rcpp::export]]
-std::vector<int> FindStronglyConnectedComponents(std::vector<int> arcSources,
-                                                 std::vector<int> arcTargets,
-                                                 int numNodes) {
+std::vector<int> FindStronglyConnectedComponentsRunner(
+    std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
   ListDigraph g;
   std::vector<ListDigraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -500,11 +484,10 @@ std::vector<int> FindStronglyConnectedComponents(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindStronglyConnectedCutArcs` returns an R List containing 1) A list of cut arc sources, and 2) A list of cut arc destinations
-//' @export
 // [[Rcpp::export]]
-Rcpp::List FindStronglyConnectedCutArcs(std::vector<int> arcSources,
-                                        std::vector<int> arcTargets,
-                                        int numNodes) {
+Rcpp::List FindStronglyConnectedCutArcsRunner(std::vector<int> arcSources,
+                                              std::vector<int> arcTargets,
+                                              int numNodes) {
   // Returns: Two std::vectors containing the source and destination of the cut arcs
   ListDigraph g;
   std::vector<ListDigraph::Node> nodes;
@@ -535,11 +518,10 @@ Rcpp::List FindStronglyConnectedCutArcs(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindBiEdgeConnectedCutEdges` returns an R List containing 1) A list of cut edge sources, and 2) A list of cut edge destinations
-//' @export
 // [[Rcpp::export]]
-Rcpp::List FindBiEdgeConnectedCutEdges(std::vector<int> arcSources,
-                                       std::vector<int> arcTargets,
-                                       int numNodes) {
+Rcpp::List FindBiEdgeConnectedCutEdgesRunner(std::vector<int> arcSources,
+                                             std::vector<int> arcTargets,
+                                             int numNodes) {
   // Returns: Two std::vectors containing the source and destination of the cut arcs
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
@@ -569,11 +551,10 @@ Rcpp::List FindBiEdgeConnectedCutEdges(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindBiNodeConnectedCutComponents` returns a vector containing the component number of each cut arc.
-//' @export
 // [[Rcpp::export]]
-std::vector<int> FindBiNodeConnectedComponents(std::vector<int> arcSources,
-                                               std::vector<int> arcTargets,
-                                               int numNodes) {
+std::vector<int>
+FindBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
+                                    std::vector<int> arcTargets, int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -597,11 +578,10 @@ std::vector<int> FindBiNodeConnectedComponents(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindBiNodeConnectedCutNodes` returns a vector containing the cut nodes
-//' @export
 // [[Rcpp::export]]
-std::vector<int> FindBiNodeConnectedCutNodes(std::vector<int> arcSources,
-                                             std::vector<int> arcTargets,
-                                             int numNodes) {
+std::vector<int> FindBiNodeConnectedCutNodesRunner(std::vector<int> arcSources,
+                                                   std::vector<int> arcTargets,
+                                                   int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {
@@ -627,11 +607,10 @@ std::vector<int> FindBiNodeConnectedCutNodes(std::vector<int> arcSources,
 
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindConnectedComponents` returns a vector containing the component number of each node
-//' @export
 // [[Rcpp::export]]
-std::vector<int> FindConnectedComponents(std::vector<int> arcSources,
-                                         std::vector<int> arcTargets,
-                                         int numNodes) {
+std::vector<int> FindConnectedComponentsRunner(std::vector<int> arcSources,
+                                               std::vector<int> arcTargets,
+                                               int numNodes) {
   // Returns: A std::vector containing the component number of each node
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
@@ -656,9 +635,9 @@ std::vector<int> FindConnectedComponents(std::vector<int> arcSources,
 //' @rdname Connectivity-Algorithms-3
 //' @description `FindBiEdgeConnectedComponents` returns a vector containing the component number of each node
 // [[Rcpp::export]]
-std::vector<int> FindBiEdgeConnectedComponents(std::vector<int> arcSources,
-                                               std::vector<int> arcTargets,
-                                               int numNodes) {
+std::vector<int>
+FindBiEdgeConnectedComponentsRunner(std::vector<int> arcSources,
+                                    std::vector<int> arcTargets, int numNodes) {
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {

@@ -18,7 +18,7 @@ MaxMatching <- function(arcSources, arcTargets, arcWeights=NULL, numNodes, algor
   if(!is.null(arcWeights)) {
     check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
   }
-  switch(problem,
+  switch(algorithm,
          "MaxWeightedMatching" = .Call(`_rlemon_MaximumWeightMatchingRunner`,arcSources, arcTargets, arcWeights, numNodes),
          "MaxWeightedPerfectMatching" = .Call(`_rlemon_MaximumWeightPerfectMatchingRunner`,arcSources, arcTargets, arcWeights, numNodes),
          "MaxWeightedFractionalMatching" = .Call(`_rlemon_MaximumWeightFractionalMatchingRunner`,arcSources, arcTargets, arcWeights, numNodes),
@@ -39,13 +39,11 @@ MaxMatching <- function(arcSources, arcTargets, arcWeights=NULL, numNodes, algor
 ##'   for details on the differences.
 ##' @return A list containing two entries: 1) The matching value, 2) The edges of the final graph, in a List of List of (node, node) pairs
 ##' @export
-MaxCardinalityMatching <- function(arcSources, arcTargets, arcWeights=NULL, numNodes, algorithm="MaxMatching") {
+MaxCardinalityMatching <- function(arcSources, arcTargets, numNodes, algorithm="MaxMatching") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  if(!is.null(arcWeights)) {
-    check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
-  }
-  switch(problem,
+
+  switch(algorithm,
          "MaxMatching" = .Call(`_rlemon_MaximumCardinalityMatchingRunner`,arcSources, arcTargets, numNodes),
          "MaxFractionalMatching" = .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`,arcSources, arcTargets, numNodes),
          stop("Invalid algorithm."))
