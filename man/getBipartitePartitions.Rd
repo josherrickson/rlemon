@@ -21,12 +21,12 @@ getBipartitePartitions(
 \item{problem}{What type of problem you want to run. Choices include
 "getBipartitePartitions" 
 where "getBipartitePartitions" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58ba1d00c569f0eb0deb42afca9f80bb> 
+See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
 for details on the differences.}
 }
 \value{
-A list containing two entries:(1) A boolean stating if the graph is bipartite, and (2) a list of length numNodes, containing the partition for each node
+A list containing 1) A boolean stating if the graph is bipartite, and 2) A list of length numNodes, containing the partition for each node
 }
 \description{
-Checks weather an undirected graph is bipartite and gives back the bipartite partitions
+Checks if an undirected graph is bipartite and returns the bipartite partitions
 }

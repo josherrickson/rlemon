@@ -2,43 +2,43 @@
 % Please edit documentation in R/RcppExports.R
 \name{Connectivity-Algorithms-1}
 \alias{Connectivity-Algorithms-1}
-\alias{IsConnected}
-\alias{IsAcyclic}
-\alias{IsTree}
-\alias{IsBipartite}
-\alias{IsStronglyConnected}
-\alias{IsDAG}
-\alias{IsBiNodeConnected}
-\alias{IsBiEdgeConnected}
-\alias{IsLoopFree}
-\alias{IsParallelFree}
-\alias{IsSimpleGraph}
-\alias{IsEulerian}
+\alias{IsConnectedRunner}
+\alias{IsAcyclicRunner}
+\alias{IsTreeRunner}
+\alias{IsBipartiteRunner}
+\alias{IsStronglyConnectedRunner}
+\alias{IsDAGRunner}
+\alias{IsBiNodeConnectedRunner}
+\alias{IsBiEdgeConnectedRunner}
+\alias{IsLoopFreeRunner}
+\alias{IsParallelFreeRunner}
+\alias{IsSimpleGraphRunner}
+\alias{IsEulerianRunner}
 \title{Connectivity Algorithms - Boolean Return}
 \usage{
-IsConnected(arcSources, arcTargets, numNodes)
+IsConnectedRunner(arcSources, arcTargets, numNodes)
 
-IsAcyclic(arcSources, arcTargets, numNodes)
+IsAcyclicRunner(arcSources, arcTargets, numNodes)
 
-IsTree(arcSources, arcTargets, numNodes)
+IsTreeRunner(arcSources, arcTargets, numNodes)
 
-IsBipartite(arcSources, arcTargets, numNodes)
+IsBipartiteRunner(arcSources, arcTargets, numNodes)
 
-IsStronglyConnected(arcSources, arcTargets, numNodes)
+IsStronglyConnectedRunner(arcSources, arcTargets, numNodes)
 
-IsDAG(arcSources, arcTargets, numNodes)
+IsDAGRunner(arcSources, arcTargets, numNodes)
 
-IsBiNodeConnected(arcSources, arcTargets, numNodes)
+IsBiNodeConnectedRunner(arcSources, arcTargets, numNodes)
 
-IsBiEdgeConnected(arcSources, arcTargets, numNodes)
+IsBiEdgeConnectedRunner(arcSources, arcTargets, numNodes)
 
-IsLoopFree(arcSources, arcTargets, numNodes)
+IsLoopFreeRunner(arcSources, arcTargets, numNodes)
 
-IsParallelFree(arcSources, arcTargets, numNodes)
+IsParallelFreeRunner(arcSources, arcTargets, numNodes)
 
-IsSimpleGraph(arcSources, arcTargets, numNodes)
+IsSimpleGraphRunner(arcSources, arcTargets, numNodes)
 
-IsEulerian(arcSources, arcTargets, numNodes)
+IsEulerianRunner(arcSources, arcTargets, numNodes)
 }
 \arguments{
 \item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}

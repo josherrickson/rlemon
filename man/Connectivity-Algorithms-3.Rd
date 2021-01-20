@@ -5,13 +5,13 @@
 \alias{getBipartitePartitionsRunner}
 \alias{getAndCheckTopologicalSortRunner}
 \alias{getTopologicalSortRunner}
-\alias{FindStronglyConnectedComponents}
-\alias{FindStronglyConnectedCutArcs}
-\alias{FindBiEdgeConnectedCutEdges}
-\alias{FindBiNodeConnectedComponents}
-\alias{FindBiNodeConnectedCutNodes}
-\alias{FindConnectedComponents}
-\alias{FindBiEdgeConnectedComponents}
+\alias{FindStronglyConnectedComponentsRunner}
+\alias{FindStronglyConnectedCutArcsRunner}
+\alias{FindBiEdgeConnectedCutEdgesRunner}
+\alias{FindBiNodeConnectedComponentsRunner}
+\alias{FindBiNodeConnectedCutNodesRunner}
+\alias{FindConnectedComponentsRunner}
+\alias{FindBiEdgeConnectedComponentsRunner}
 \title{Connectivity Algorithms - List Return}
 \usage{
 getBipartitePartitionsRunner(arcSources, arcTargets, numNodes)
@@ -20,19 +20,19 @@ getAndCheckTopologicalSortRunner(arcSources, arcTargets, numNodes)
 
 getTopologicalSortRunner(arcSources, arcTargets, numNodes)
 
-FindStronglyConnectedComponents(arcSources, arcTargets, numNodes)
+FindStronglyConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 
-FindStronglyConnectedCutArcs(arcSources, arcTargets, numNodes)
+FindStronglyConnectedCutArcsRunner(arcSources, arcTargets, numNodes)
 
-FindBiEdgeConnectedCutEdges(arcSources, arcTargets, numNodes)
+FindBiEdgeConnectedCutEdgesRunner(arcSources, arcTargets, numNodes)
 
-FindBiNodeConnectedComponents(arcSources, arcTargets, numNodes)
+FindBiNodeConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 
-FindBiNodeConnectedCutNodes(arcSources, arcTargets, numNodes)
+FindBiNodeConnectedCutNodesRunner(arcSources, arcTargets, numNodes)
 
-FindConnectedComponents(arcSources, arcTargets, numNodes)
+FindConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 
-FindBiEdgeConnectedComponents(arcSources, arcTargets, numNodes)
+FindBiEdgeConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 }
 \arguments{
 \item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}

@@ -21,12 +21,12 @@ getAndCheckTopologicalSort(
 \item{problem}{What type of problem you want to run. Choices include
 "getAndCheckTopologicalSort" 
 where "getAndCheckTopologicalSort" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaf10c5e1630e5720c20d83cfb77dbf024> 
+See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
 for details on the differences.}
 }
 \value{
-A list containing two entries:(1) A boolean stating if the graph is a dag, and (2) a vector of length numNodes, containing the index of vertex i in the ordering at location i
+A list containing 1) A boolean stating if the graph is a dag, and 2) A vector of length numNodes, containing the index of vertex i in the ordering at location i
 }
 \description{
-Checks weather a directed graph is a DAG and gives back the topological order
+Checks if a directed graph is a DAG and returns the topological order
 }

@@ -2,19 +2,19 @@
 % Please edit documentation in R/RcppExports.R
 \name{Connectivity-Algorithms-2}
 \alias{Connectivity-Algorithms-2}
-\alias{CountBiEdgeConnectedComponents}
-\alias{CountConnectedComponents}
-\alias{CountBiNodeConnectedComponents}
-\alias{CountStronglyConnectedComponents}
+\alias{CountBiEdgeConnectedComponentsRunner}
+\alias{CountConnectedComponentsRunner}
+\alias{CountBiNodeConnectedComponentsRunner}
+\alias{CountStronglyConnectedComponentsRunner}
 \title{Connectivity Algorithms - Integer Return}
 \usage{
-CountBiEdgeConnectedComponents(arcSources, arcTargets, numNodes)
+CountBiEdgeConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 
-CountConnectedComponents(arcSources, arcTargets, numNodes)
+CountConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 
-CountBiNodeConnectedComponents(arcSources, arcTargets, numNodes)
+CountBiNodeConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 
-CountStronglyConnectedComponents(arcSources, arcTargets, numNodes)
+CountStronglyConnectedComponentsRunner(arcSources, arcTargets, numNodes)
 }
 \arguments{
 \item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
