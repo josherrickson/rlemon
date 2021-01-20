@@ -4,20 +4,12 @@
 ##' @param arcSources Vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param problem What type of problem you want to run. Choices include
-##'   "getBipartitePartitions" 
-##'   where "getBipartitePartitions" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-##'   for details on the differences.
 ##' @return A list containing 1) A boolean stating if the graph is bipartite, and 2) A list of length numNodes, containing the partition for each node
 ##' @export
-getBipartitePartitions <- function(arcSources, arcTargets, numNodes, problem="getBipartitePartitions") {
+GetBipartitePartitions <- function(arcSources, arcTargets, numNodes) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
-  switch(problem,
-         "getBipartitePartitions" = .Call(`_rlemon_getBipartitePartitionsRunner`,arcSources, arcTargets, numNodes),
-         stop("Invalid algorithm."))
+  .Call(`_rlemon_getBipartitePartitionsRunner`,arcSources, arcTargets, numNodes)
 }
 
 ##' Checks if a directed graph is a DAG and returns the topological order
@@ -26,20 +18,12 @@ getBipartitePartitions <- function(arcSources, arcTargets, numNodes, problem="ge
 ##' @param arcSources Vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param problem What type of problem you want to run. Choices include
-##'   "getAndCheckTopologicalSort" 
-##'   where "getAndCheckTopologicalSort" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-##'   for details on the differences.
 ##' @return A list containing 1) A boolean stating if the graph is a dag, and 2) A vector of length numNodes, containing the index of vertex i in the ordering at location i
 ##' @export
-getAndCheckTopologicalSort <- function(arcSources, arcTargets, numNodes, problem="getAndCheckTopologicalSort") {
+GetAndCheckTopologicalSort <- function(arcSources, arcTargets, numNodes) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
-  switch(problem,
-         "getAndCheckTopologicalSort" = .Call(`_rlemon_getAndCheckTopologicalSortRunner`,arcSources, arcTargets, numNodes),
-         stop("Invalid algorithm."))
+  .Call(`_rlemon_getAndCheckTopologicalSortRunner`,arcSources, arcTargets, numNodes)
 }
 
 ##' Gives back the topological order of a DAG
@@ -48,20 +32,12 @@ getAndCheckTopologicalSort <- function(arcSources, arcTargets, numNodes, problem
 ##' @param arcSources Vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param problem What type of problem you want to run. Choices include
-##'   "getTopologicalSort" 
-##'   where "getTopologicalSort" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-##'   for details on the differences.
 ##' @return A list of length numNodes, containing the index of vertex i in the ordering at location i.
 ##' @export
-getTopologicalSort <- function(arcSources, arcTargets, numNodes, problem="getTopologicalSort") {
+GetTopologicalSort <- function(arcSources, arcTargets, numNodes) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
-  switch(problem,
-         "getTopologicalSort" = .Call(`_rlemon_getTopologicalSortRunner`,arcSources, arcTargets, numNodes),
-         stop("Invalid algorithm."))
+  .Call(`_rlemon_getTopologicalSortRunner`,arcSources, arcTargets, numNodes)  
 }
 
 ##' Checks if an undirected graph is connected
@@ -70,20 +46,12 @@ getTopologicalSort <- function(arcSources, arcTargets, numNodes, problem="getTop
 ##' @param arcSources Vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param problem What type of problem you want to run. Choices include
-##'   "isConnected" 
-##'   where "isConnected" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-##'   for details on the differences.
 ##' @return A boolean stating if the graph is connected
 ##' @export
-IsConnected <- function(arcSources, arcTargets, numNodes, problem="isConnected") {
+IsConnected <- function(arcSources, arcTargets, numNodes) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
-  switch(problem,
-         "isConnected" = .Call(`_rlemon_IsConnectedRunner`,arcSources, arcTargets, numNodes),
-         stop("Invalid algorithm."))
+  .Call(`_rlemon_IsConnectedRunner`,arcSources, arcTargets, numNodes)
 }
 
 ##' Checks if an undirected graph is acyclic
@@ -92,20 +60,12 @@ IsConnected <- function(arcSources, arcTargets, numNodes, problem="isConnected")
 ##' @param arcSources Vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param problem What type of problem you want to run. Choices include
-##'   "isAcylic" 
-##'   where "isAcylic" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-##'   for details on the differences.
 ##' @return A boolean stating if the graph is acyclic
 ##' @export
 IsAcyclic <- function(arcSources, arcTargets, numNodes, problem="isAcyclic") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
-  switch(problem,
-         "isAcyclic" = .Call(`_rlemon_IsAcyclicRunner`,arcSources, arcTargets, numNodes),
-         stop("Invalid algorithm."))
+  .Call(`_rlemon_IsAcyclicRunner`,arcSources, arcTargets, numNodes) 
 }
 
 ##' Checks if an undirected graph is a tree
@@ -114,20 +74,12 @@ IsAcyclic <- function(arcSources, arcTargets, numNodes, problem="isAcyclic") {
 ##' @param arcSources Vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param problem What type of problem you want to run. Choices include
-##'   "isTree" 
-##'   where "isTree" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-##'   for details on the differences.
 ##' @return A boolean stating if the graph is a tree
 ##' @export
 IsTree <- function(arcSources, arcTargets, numNodes, problem="isTree") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
-  switch(problem,
-         "isTree" = .Call(`_rlemon_IsTreeRunner`,arcSources, arcTargets, numNodes),
-         stop("Invalid algorithm."))
+  .Call(`_rlemon_IsTreeRunner`,arcSources, arcTargets, numNodes)
 }
 
 ##' Checks if an undirected graph is bipartite
@@ -136,20 +88,12 @@ IsTree <- function(arcSources, arcTargets, numNodes, problem="isTree") {
 ##' @param arcSources Vector corresponding to the source nodes of a graph's edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param problem What type of problem you want to run. Choices include
-##'   "isBipartite" 
-##'   where "isBipartite" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-##'   for details on the differences.
 ##' @return A boolean stating if the graph is bipartite
 ##' @export
 IsBipartite <- function(arcSources, arcTargets, numNodes, problem="isBipartite") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
-  switch(problem,
-         "isBipartite" = .Call(`_rlemon_IsBipartiteRunner`,arcSources, arcTargets, numNodes),
-         stop("Invalid algorithm."))
+  .Call(`_rlemon_IsBipartiteRunner`,arcSources, arcTargets, numNodes)
 }
 
 ##' Checks if a directed graph is strongly connected

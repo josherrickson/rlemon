@@ -12,12 +12,6 @@ IsAcyclic(arcSources, arcTargets, numNodes, problem = "isAcyclic")
 \item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
-
-\item{problem}{What type of problem you want to run. Choices include
-"isAcylic" 
-where "isAcylic" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-for details on the differences.}
 }
 \value{
 A boolean stating if the graph is acyclic

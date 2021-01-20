@@ -4,7 +4,7 @@
 \alias{IsConnected}
 \title{IsConnected}
 \usage{
-IsConnected(arcSources, arcTargets, numNodes, problem = "isConnected")
+IsConnected(arcSources, arcTargets, numNodes)
 }
 \arguments{
 \item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
@@ -12,12 +12,6 @@ IsConnected(arcSources, arcTargets, numNodes, problem = "isConnected")
 \item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
-
-\item{problem}{What type of problem you want to run. Choices include
-"isConnected" 
-where "isConnected" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html> 
-for details on the differences.}
 }
 \value{
 A boolean stating if the graph is connected
