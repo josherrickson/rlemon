@@ -83,162 +83,140 @@ getTopologicalSortRunner <- function(arcSources, arcTargets, numNodes) {
 #' end <- small_graph_example$endnodes
 #' numnodes <- length(unique(c(start, end)))
 #' IsConnected(start, end, numnodes)
-#' @export
-IsConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsConnected`, arcSources, arcTargets, numNodes)
+IsConnectedRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsConnectedRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsAcyclic` returns if a graph is acyclic or not
-#' @export
-IsAcyclic <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsAcyclic`, arcSources, arcTargets, numNodes)
+IsAcyclicRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsAcyclicRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsTree` returns if a graph is a tree or not
-#' @export
-IsTree <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsTree`, arcSources, arcTargets, numNodes)
+IsTreeRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsTreeRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsBipartite` returns if a graph is bipartite or not
-#' @export
-IsBipartite <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsBipartite`, arcSources, arcTargets, numNodes)
+IsBipartiteRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsBipartiteRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsStronglyConnected` returns if a graph is strongly connected or not
-#' @export
-IsStronglyConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsStronglyConnected`, arcSources, arcTargets, numNodes)
+IsStronglyConnectedRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsStronglyConnectedRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsDAG` returns if a graph is a DAG or not
-#' @export
-IsDAG <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsDAG`, arcSources, arcTargets, numNodes)
+IsDAGRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsDAGRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsBiNodeConnected` returns if a graph is bi-node connected or not
-#' @export
-IsBiNodeConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsBiNodeConnected`, arcSources, arcTargets, numNodes)
+IsBiNodeConnectedRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsBiNodeConnectedRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsBiEdgeConnected` returns if a graph is bi-edge connected or not
-#' @export
-IsBiEdgeConnected <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsBiEdgeConnected`, arcSources, arcTargets, numNodes)
+IsBiEdgeConnectedRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsBiEdgeConnectedRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsLoopFree` returns if a graph is loop-free or not
-#' @export
-IsLoopFree <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsLoopFree`, arcSources, arcTargets, numNodes)
+IsLoopFreeRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsLoopFreeRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsParallelFree` returns if a graph is parallel-free or not
-#' @export
-IsParallelFree <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsParallelFree`, arcSources, arcTargets, numNodes)
+IsParallelFreeRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsParallelFreeRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsSimpleGraph` returns if a graph is simple or not
-#' @export
-IsSimpleGraph <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsSimpleGraph`, arcSources, arcTargets, numNodes)
+IsSimpleGraphRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsSimpleGraphRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-1
 #' @description `IsEulerian` returns if a graph is eulerian or not
-#' @export
-IsEulerian <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_IsEulerian`, arcSources, arcTargets, numNodes)
+IsEulerianRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_IsEulerianRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-2
 #' @description `CountBiEdgeConnectedComponents` returns how many Bi-Edge Connected Components a graph has.
-#' @export
-CountBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_CountBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
+CountBiEdgeConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_CountBiEdgeConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-2
 #' @description `CountConnectedComponents` returns how many Connected Components a graph has.
-#' @export
-CountConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_CountConnectedComponents`, arcSources, arcTargets, numNodes)
+CountConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_CountConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-2
 #' @description `CountBiNodeConnectedComponents` returns how many Bi-Node Connected Components a graph has.
-#' @export
-CountBiNodeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_CountBiNodeConnectedComponents`, arcSources, arcTargets, numNodes)
+CountBiNodeConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_CountBiNodeConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-2
 #' @description `CountStronglyConnectedComponents` returns how many Strongly Connected Components a graph has.
-#' @export
-CountStronglyConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_CountStronglyConnectedComponents`, arcSources, arcTargets, numNodes)
+CountStronglyConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_CountStronglyConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindStronglyConnectedComponents` returns a vector containing the component number of each node
-#' @export
-FindStronglyConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindStronglyConnectedComponents`, arcSources, arcTargets, numNodes)
+FindStronglyConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindStronglyConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindStronglyConnectedCutArcs` returns an R List containing 1) A list of cut arc sources, and 2) A list of cut arc destinations
-#' @export
-FindStronglyConnectedCutArcs <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindStronglyConnectedCutArcs`, arcSources, arcTargets, numNodes)
+FindStronglyConnectedCutArcsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindStronglyConnectedCutArcsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindBiEdgeConnectedCutEdges` returns an R List containing 1) A list of cut edge sources, and 2) A list of cut edge destinations
-#' @export
-FindBiEdgeConnectedCutEdges <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindBiEdgeConnectedCutEdges`, arcSources, arcTargets, numNodes)
+FindBiEdgeConnectedCutEdgesRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindBiEdgeConnectedCutEdgesRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindBiNodeConnectedCutComponents` returns a vector containing the component number of each cut arc.
-#' @export
-FindBiNodeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindBiNodeConnectedComponents`, arcSources, arcTargets, numNodes)
+FindBiNodeConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindBiNodeConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindBiNodeConnectedCutNodes` returns a vector containing the cut nodes
-#' @export
-FindBiNodeConnectedCutNodes <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindBiNodeConnectedCutNodes`, arcSources, arcTargets, numNodes)
+FindBiNodeConnectedCutNodesRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindBiNodeConnectedCutNodesRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindConnectedComponents` returns a vector containing the component number of each node
-#' @export
-FindConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindConnectedComponents`, arcSources, arcTargets, numNodes)
+FindConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' @rdname Connectivity-Algorithms-3
 #' @description `FindBiEdgeConnectedComponents` returns a vector containing the component number of each node
-FindBiEdgeConnectedComponents <- function(arcSources, arcTargets, numNodes) {
-    .Call(`_rlemon_FindBiEdgeConnectedComponents`, arcSources, arcTargets, numNodes)
+FindBiEdgeConnectedComponentsRunner <- function(arcSources, arcTargets, numNodes) {
+    .Call(`_rlemon_FindBiEdgeConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
 }
 
 #' Compatible Graph Converter
@@ -378,35 +356,6 @@ MaximumCardinalityFractionalMatchingRunner <- function(arcSources, arcTargets, n
     .Call(`_rlemon_MaximumCardinalityFractionalMatchingRunner`, arcSources, arcTargets, numNodes)
 }
 
-#' MST Algorithms
-#' @name Minimum-Spanning-Tree-Algorithms
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
-#' @param numNodes, the number of nodes in the graph
-#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
-NULL
-
-#' Arborescence Algorithms
-#' @name Minimum-Cost-Arborescence-Algorithms
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
-#' @param sourceNode, the source node
-#' @param numNodes, the number of nodes in the graph
-#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
-NULL
-
-#' @rdname Minimum-Spanning-Tree-Algorithms
-KruskalRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
-    .Call(`_rlemon_KruskalRunner`, arcSources, arcTargets, arcDistances, numNodes)
-}
-
-#' @rdname Minimum-Cost-Arborescence-Algorithms
-MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, numNodes) {
-    .Call(`_rlemon_MinCostArborescenceRunner`, arcSources, arcTargets, arcDistances, sourceNode, numNodes)
-}
-
 #' Minimum Cost Flow Algorithms
 #' @name Minimum-Cost-Flow-Algorithms
 #' @param arcSources, a vector corresponding to the source nodes of a graph's edges
@@ -506,6 +455,35 @@ KarpMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
 #' @description `HartmannOrlinMmcRunner` runs Hartmann-Orlin's algorithm to find a directed cycle of minimum mean cost .
 HartmannOrlinMmcRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
     .Call(`_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets, arcDistances, numNodes)
+}
+
+#' MST Algorithms
+#' @name Minimum-Spanning-Tree-Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+NULL
+
+#' Arborescence Algorithms
+#' @name Minimum-Cost-Arborescence-Algorithms
+#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
+#' @param sourceNode, the source node
+#' @param numNodes, the number of nodes in the graph
+#' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
+NULL
+
+#' @rdname Minimum-Spanning-Tree-Algorithms
+KruskalRunner <- function(arcSources, arcTargets, arcDistances, numNodes) {
+    .Call(`_rlemon_KruskalRunner`, arcSources, arcTargets, arcDistances, numNodes)
+}
+
+#' @rdname Minimum-Cost-Arborescence-Algorithms
+MinCostArborescenceRunner <- function(arcSources, arcTargets, arcDistances, sourceNode, numNodes) {
+    .Call(`_rlemon_MinCostArborescenceRunner`, arcSources, arcTargets, arcDistances, sourceNode, numNodes)
 }
 
 #' Planar Embedding Algorithms

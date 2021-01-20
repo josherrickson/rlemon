@@ -57,302 +57,302 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// IsConnected
-int IsConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsConnected(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsConnectedRunner
+int IsConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsConnectedRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsConnected(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsConnectedRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsAcyclic
-int IsAcyclic(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsAcyclic(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsAcyclicRunner
+int IsAcyclicRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsAcyclicRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsAcyclic(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsAcyclicRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsTree
-int IsTree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsTree(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsTreeRunner
+int IsTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsTreeRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsTree(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsTreeRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsBipartite
-int IsBipartite(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsBipartite(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsBipartiteRunner
+int IsBipartiteRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsBipartiteRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsBipartite(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsBipartiteRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsStronglyConnected
-int IsStronglyConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsStronglyConnected(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsStronglyConnectedRunner
+int IsStronglyConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsStronglyConnectedRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsStronglyConnected(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsStronglyConnectedRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsDAG
-int IsDAG(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsDAG(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsDAGRunner
+int IsDAGRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsDAGRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsDAG(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsDAGRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsBiNodeConnected
-int IsBiNodeConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsBiNodeConnected(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsBiNodeConnectedRunner
+int IsBiNodeConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsBiNodeConnectedRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsBiNodeConnected(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsBiNodeConnectedRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsBiEdgeConnected
-int IsBiEdgeConnected(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsBiEdgeConnected(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsBiEdgeConnectedRunner
+int IsBiEdgeConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsBiEdgeConnectedRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsBiEdgeConnected(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsBiEdgeConnectedRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsLoopFree
-int IsLoopFree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsLoopFree(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsLoopFreeRunner
+int IsLoopFreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsLoopFreeRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsLoopFree(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsLoopFreeRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsParallelFree
-int IsParallelFree(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsParallelFree(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsParallelFreeRunner
+int IsParallelFreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsParallelFreeRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsParallelFree(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsParallelFreeRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsSimpleGraph
-int IsSimpleGraph(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsSimpleGraph(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsSimpleGraphRunner
+int IsSimpleGraphRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsSimpleGraphRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsSimpleGraph(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsSimpleGraphRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// IsEulerian
-int IsEulerian(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_IsEulerian(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// IsEulerianRunner
+int IsEulerianRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_IsEulerianRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(IsEulerian(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(IsEulerianRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// CountBiEdgeConnectedComponents
-int CountBiEdgeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_CountBiEdgeConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// CountBiEdgeConnectedComponentsRunner
+int CountBiEdgeConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_CountBiEdgeConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CountBiEdgeConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CountBiEdgeConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// CountConnectedComponents
-int CountConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_CountConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// CountConnectedComponentsRunner
+int CountConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_CountConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CountConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CountConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// CountBiNodeConnectedComponents
-int CountBiNodeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_CountBiNodeConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// CountBiNodeConnectedComponentsRunner
+int CountBiNodeConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_CountBiNodeConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CountBiNodeConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CountBiNodeConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// CountStronglyConnectedComponents
-int CountStronglyConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_CountStronglyConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// CountStronglyConnectedComponentsRunner
+int CountStronglyConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_CountStronglyConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(CountStronglyConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(CountStronglyConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// FindStronglyConnectedComponents
-std::vector<int> FindStronglyConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindStronglyConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindStronglyConnectedComponentsRunner
+std::vector<int> FindStronglyConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindStronglyConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindStronglyConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindStronglyConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// FindStronglyConnectedCutArcs
-Rcpp::List FindStronglyConnectedCutArcs(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindStronglyConnectedCutArcs(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindStronglyConnectedCutArcsRunner
+Rcpp::List FindStronglyConnectedCutArcsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindStronglyConnectedCutArcsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindStronglyConnectedCutArcs(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindStronglyConnectedCutArcsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// FindBiEdgeConnectedCutEdges
-Rcpp::List FindBiEdgeConnectedCutEdges(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindBiEdgeConnectedCutEdges(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindBiEdgeConnectedCutEdgesRunner
+Rcpp::List FindBiEdgeConnectedCutEdgesRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindBiEdgeConnectedCutEdgesRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindBiEdgeConnectedCutEdges(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindBiEdgeConnectedCutEdgesRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// FindBiNodeConnectedComponents
-std::vector<int> FindBiNodeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindBiNodeConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindBiNodeConnectedComponentsRunner
+std::vector<int> FindBiNodeConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindBiNodeConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindBiNodeConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindBiNodeConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// FindBiNodeConnectedCutNodes
-std::vector<int> FindBiNodeConnectedCutNodes(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindBiNodeConnectedCutNodes(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindBiNodeConnectedCutNodesRunner
+std::vector<int> FindBiNodeConnectedCutNodesRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindBiNodeConnectedCutNodesRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindBiNodeConnectedCutNodes(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindBiNodeConnectedCutNodesRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// FindConnectedComponents
-std::vector<int> FindConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindConnectedComponentsRunner
+std::vector<int> FindConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
-// FindBiEdgeConnectedComponents
-std::vector<int> FindBiEdgeConnectedComponents(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
-RcppExport SEXP _rlemon_FindBiEdgeConnectedComponents(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
+// FindBiEdgeConnectedComponentsRunner
+std::vector<int> FindBiEdgeConnectedComponentsRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
+RcppExport SEXP _rlemon_FindBiEdgeConnectedComponentsRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
     Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(FindBiEdgeConnectedComponents(arcSources, arcTargets, numNodes));
+    rcpp_result_gen = Rcpp::wrap(FindBiEdgeConnectedComponentsRunner(arcSources, arcTargets, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -544,35 +544,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// KruskalRunner
-Rcpp::List KruskalRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
-RcppExport SEXP _rlemon_KruskalRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
-    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(KruskalRunner(arcSources, arcTargets, arcDistances, numNodes));
-    return rcpp_result_gen;
-END_RCPP
-}
-// MinCostArborescenceRunner
-Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int numNodes);
-RcppExport SEXP _rlemon_MinCostArborescenceRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP sourceNodeSEXP, SEXP numNodesSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
-    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
-    Rcpp::traits::input_parameter< int >::type sourceNode(sourceNodeSEXP);
-    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
-    rcpp_result_gen = Rcpp::wrap(MinCostArborescenceRunner(arcSources, arcTargets, arcDistances, sourceNode, numNodes));
-    return rcpp_result_gen;
-END_RCPP
-}
 // CycleCancellingRunner
 Rcpp::List CycleCancellingRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcCapacities, std::vector<int> arcCosts, std::vector<int> nodeSupplies, int numNodes);
 RcppExport SEXP _rlemon_CycleCancellingRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcCapacitiesSEXP, SEXP arcCostsSEXP, SEXP nodeSuppliesSEXP, SEXP numNodesSEXP) {
@@ -718,6 +689,35 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
     Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
     rcpp_result_gen = Rcpp::wrap(HartmannOrlinMmcRunner(arcSources, arcTargets, arcDistances, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// KruskalRunner
+Rcpp::List KruskalRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int numNodes);
+RcppExport SEXP _rlemon_KruskalRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(KruskalRunner(arcSources, arcTargets, arcDistances, numNodes));
+    return rcpp_result_gen;
+END_RCPP
+}
+// MinCostArborescenceRunner
+Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources, std::vector<int> arcTargets, std::vector<int> arcDistances, int sourceNode, int numNodes);
+RcppExport SEXP _rlemon_MinCostArborescenceRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP arcDistancesSEXP, SEXP sourceNodeSEXP, SEXP numNodesSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcSources(arcSourcesSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcTargets(arcTargetsSEXP);
+    Rcpp::traits::input_parameter< std::vector<int> >::type arcDistances(arcDistancesSEXP);
+    Rcpp::traits::input_parameter< int >::type sourceNode(sourceNodeSEXP);
+    Rcpp::traits::input_parameter< int >::type numNodes(numNodesSEXP);
+    rcpp_result_gen = Rcpp::wrap(MinCostArborescenceRunner(arcSources, arcTargets, arcDistances, sourceNode, numNodes));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -901,29 +901,29 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_getBipartitePartitionsRunner", (DL_FUNC) &_rlemon_getBipartitePartitionsRunner, 3},
     {"_rlemon_getAndCheckTopologicalSortRunner", (DL_FUNC) &_rlemon_getAndCheckTopologicalSortRunner, 3},
     {"_rlemon_getTopologicalSortRunner", (DL_FUNC) &_rlemon_getTopologicalSortRunner, 3},
-    {"_rlemon_IsConnected", (DL_FUNC) &_rlemon_IsConnected, 3},
-    {"_rlemon_IsAcyclic", (DL_FUNC) &_rlemon_IsAcyclic, 3},
-    {"_rlemon_IsTree", (DL_FUNC) &_rlemon_IsTree, 3},
-    {"_rlemon_IsBipartite", (DL_FUNC) &_rlemon_IsBipartite, 3},
-    {"_rlemon_IsStronglyConnected", (DL_FUNC) &_rlemon_IsStronglyConnected, 3},
-    {"_rlemon_IsDAG", (DL_FUNC) &_rlemon_IsDAG, 3},
-    {"_rlemon_IsBiNodeConnected", (DL_FUNC) &_rlemon_IsBiNodeConnected, 3},
-    {"_rlemon_IsBiEdgeConnected", (DL_FUNC) &_rlemon_IsBiEdgeConnected, 3},
-    {"_rlemon_IsLoopFree", (DL_FUNC) &_rlemon_IsLoopFree, 3},
-    {"_rlemon_IsParallelFree", (DL_FUNC) &_rlemon_IsParallelFree, 3},
-    {"_rlemon_IsSimpleGraph", (DL_FUNC) &_rlemon_IsSimpleGraph, 3},
-    {"_rlemon_IsEulerian", (DL_FUNC) &_rlemon_IsEulerian, 3},
-    {"_rlemon_CountBiEdgeConnectedComponents", (DL_FUNC) &_rlemon_CountBiEdgeConnectedComponents, 3},
-    {"_rlemon_CountConnectedComponents", (DL_FUNC) &_rlemon_CountConnectedComponents, 3},
-    {"_rlemon_CountBiNodeConnectedComponents", (DL_FUNC) &_rlemon_CountBiNodeConnectedComponents, 3},
-    {"_rlemon_CountStronglyConnectedComponents", (DL_FUNC) &_rlemon_CountStronglyConnectedComponents, 3},
-    {"_rlemon_FindStronglyConnectedComponents", (DL_FUNC) &_rlemon_FindStronglyConnectedComponents, 3},
-    {"_rlemon_FindStronglyConnectedCutArcs", (DL_FUNC) &_rlemon_FindStronglyConnectedCutArcs, 3},
-    {"_rlemon_FindBiEdgeConnectedCutEdges", (DL_FUNC) &_rlemon_FindBiEdgeConnectedCutEdges, 3},
-    {"_rlemon_FindBiNodeConnectedComponents", (DL_FUNC) &_rlemon_FindBiNodeConnectedComponents, 3},
-    {"_rlemon_FindBiNodeConnectedCutNodes", (DL_FUNC) &_rlemon_FindBiNodeConnectedCutNodes, 3},
-    {"_rlemon_FindConnectedComponents", (DL_FUNC) &_rlemon_FindConnectedComponents, 3},
-    {"_rlemon_FindBiEdgeConnectedComponents", (DL_FUNC) &_rlemon_FindBiEdgeConnectedComponents, 3},
+    {"_rlemon_IsConnectedRunner", (DL_FUNC) &_rlemon_IsConnectedRunner, 3},
+    {"_rlemon_IsAcyclicRunner", (DL_FUNC) &_rlemon_IsAcyclicRunner, 3},
+    {"_rlemon_IsTreeRunner", (DL_FUNC) &_rlemon_IsTreeRunner, 3},
+    {"_rlemon_IsBipartiteRunner", (DL_FUNC) &_rlemon_IsBipartiteRunner, 3},
+    {"_rlemon_IsStronglyConnectedRunner", (DL_FUNC) &_rlemon_IsStronglyConnectedRunner, 3},
+    {"_rlemon_IsDAGRunner", (DL_FUNC) &_rlemon_IsDAGRunner, 3},
+    {"_rlemon_IsBiNodeConnectedRunner", (DL_FUNC) &_rlemon_IsBiNodeConnectedRunner, 3},
+    {"_rlemon_IsBiEdgeConnectedRunner", (DL_FUNC) &_rlemon_IsBiEdgeConnectedRunner, 3},
+    {"_rlemon_IsLoopFreeRunner", (DL_FUNC) &_rlemon_IsLoopFreeRunner, 3},
+    {"_rlemon_IsParallelFreeRunner", (DL_FUNC) &_rlemon_IsParallelFreeRunner, 3},
+    {"_rlemon_IsSimpleGraphRunner", (DL_FUNC) &_rlemon_IsSimpleGraphRunner, 3},
+    {"_rlemon_IsEulerianRunner", (DL_FUNC) &_rlemon_IsEulerianRunner, 3},
+    {"_rlemon_CountBiEdgeConnectedComponentsRunner", (DL_FUNC) &_rlemon_CountBiEdgeConnectedComponentsRunner, 3},
+    {"_rlemon_CountConnectedComponentsRunner", (DL_FUNC) &_rlemon_CountConnectedComponentsRunner, 3},
+    {"_rlemon_CountBiNodeConnectedComponentsRunner", (DL_FUNC) &_rlemon_CountBiNodeConnectedComponentsRunner, 3},
+    {"_rlemon_CountStronglyConnectedComponentsRunner", (DL_FUNC) &_rlemon_CountStronglyConnectedComponentsRunner, 3},
+    {"_rlemon_FindStronglyConnectedComponentsRunner", (DL_FUNC) &_rlemon_FindStronglyConnectedComponentsRunner, 3},
+    {"_rlemon_FindStronglyConnectedCutArcsRunner", (DL_FUNC) &_rlemon_FindStronglyConnectedCutArcsRunner, 3},
+    {"_rlemon_FindBiEdgeConnectedCutEdgesRunner", (DL_FUNC) &_rlemon_FindBiEdgeConnectedCutEdgesRunner, 3},
+    {"_rlemon_FindBiNodeConnectedComponentsRunner", (DL_FUNC) &_rlemon_FindBiNodeConnectedComponentsRunner, 3},
+    {"_rlemon_FindBiNodeConnectedCutNodesRunner", (DL_FUNC) &_rlemon_FindBiNodeConnectedCutNodesRunner, 3},
+    {"_rlemon_FindConnectedComponentsRunner", (DL_FUNC) &_rlemon_FindConnectedComponentsRunner, 3},
+    {"_rlemon_FindBiEdgeConnectedComponentsRunner", (DL_FUNC) &_rlemon_FindBiEdgeConnectedComponentsRunner, 3},
     {"_rlemon_GraphCompatabilityConverter", (DL_FUNC) &_rlemon_GraphCompatabilityConverter, 3},
     {"_rlemon_BfsRunner", (DL_FUNC) &_rlemon_BfsRunner, 5},
     {"_rlemon_DfsRunner", (DL_FUNC) &_rlemon_DfsRunner, 5},
@@ -937,8 +937,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_MaximumWeightMatchingRunner", (DL_FUNC) &_rlemon_MaximumWeightMatchingRunner, 4},
     {"_rlemon_MaximumCardinalityMatchingRunner", (DL_FUNC) &_rlemon_MaximumCardinalityMatchingRunner, 3},
     {"_rlemon_MaximumCardinalityFractionalMatchingRunner", (DL_FUNC) &_rlemon_MaximumCardinalityFractionalMatchingRunner, 3},
-    {"_rlemon_KruskalRunner", (DL_FUNC) &_rlemon_KruskalRunner, 4},
-    {"_rlemon_MinCostArborescenceRunner", (DL_FUNC) &_rlemon_MinCostArborescenceRunner, 5},
     {"_rlemon_CycleCancellingRunner", (DL_FUNC) &_rlemon_CycleCancellingRunner, 6},
     {"_rlemon_CapacityScalingRunner", (DL_FUNC) &_rlemon_CapacityScalingRunner, 6},
     {"_rlemon_CostScalingRunner", (DL_FUNC) &_rlemon_CostScalingRunner, 6},
@@ -949,6 +947,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"_rlemon_HowardMmcRunner", (DL_FUNC) &_rlemon_HowardMmcRunner, 4},
     {"_rlemon_KarpMmcRunner", (DL_FUNC) &_rlemon_KarpMmcRunner, 4},
     {"_rlemon_HartmannOrlinMmcRunner", (DL_FUNC) &_rlemon_HartmannOrlinMmcRunner, 4},
+    {"_rlemon_KruskalRunner", (DL_FUNC) &_rlemon_KruskalRunner, 4},
+    {"_rlemon_MinCostArborescenceRunner", (DL_FUNC) &_rlemon_MinCostArborescenceRunner, 5},
     {"_rlemon_PlanarCheckingRunner", (DL_FUNC) &_rlemon_PlanarCheckingRunner, 3},
     {"_rlemon_PlanarEmbeddingRunner", (DL_FUNC) &_rlemon_PlanarEmbeddingRunner, 3},
     {"_rlemon_PlanarColoringRunner", (DL_FUNC) &_rlemon_PlanarColoringRunner, 4},
