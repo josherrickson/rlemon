@@ -1,7 +1,3 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
-})
-
 test_that("christofides works",{
   s <- c(0,0,0,1,1,2)
   t <- c(1,2,3,2,3,3)
@@ -38,11 +34,33 @@ test_that("Nearest Neighbor works",{
   expect_equal(out[[2]],14)
 })
 
-test_that("Nearest Neighbor works",{
+test_that("opt2tsp works",{
   s <- c(0,0,0,1,1,2)
   t <- c(1,2,3,2,3,3)
   d <- c(1,2,3,4,5,6)
   out <- Opt2TSPRunner(s,t,d,4)
   expect_equal(out[[1]],c(0,1,2,3))
   expect_equal(out[[2]],14)
+})
+
+test_that("traveling saleman works",{
+  s <- c(0,0,0,1,1,2)
+  t <- c(1,2,3,2,3,3)
+  d <- c(1,2,3,4,5,6)
+  out <- travellingsalesman(s,t,d,4,"Christofides")
+  expect_equal(out[[1]],c(2,0,1,3))
+  expect_equal(out[[2]],14)
+  out <- travellingsalesman(s,t,d,4,"Greedy")
+  expect_equal(out[[1]],c(0,1,3,2))
+  expect_equal(out[[2]],14)
+  out <- travellingsalesman(s,t,d,4,"Insertion")
+  expect_equal(out[[1]],c(0,1,2,3))
+  expect_equal(out[[2]],14)
+  out <- travellingsalesman(s,t,d,4,"NearestNeighbor")
+  expect_equal(out[[1]],c(2,0,1,3))
+  expect_equal(out[[2]],14) 
+  out <- travellingsalesman(s,t,d,4,"Opt2")  
+  expect_equal(out[[1]],c(0,1,2,3))
+  expect_equal(out[[2]],14)
+  expect_error(travellingsalesman(s,t,d,4,"abc"), "Invalid")  
 })

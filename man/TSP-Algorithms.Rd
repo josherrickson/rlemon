@@ -50,18 +50,18 @@ Opt2TSPRunner(
 )
 }
 \arguments{
-\item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
 
-\item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
-\item{arcDistances, }{a vector corresponding to the distances of a graph's edges}
+\item{arcDistances}{Vector corresponding to the distances of a graph's edges}
 
-\item{numNodes, }{the number of nodes in the graph}
+\item{numNodes}{The number of nodes in the graph}
 
-\item{defaultEdgeWeight, }{the default edge weight if an edge is not-specified (default value 999999)}
+\item{defaultEdgeWeight}{The default edge weight if an edge is not-specified (default value 999999)}
 }
 \value{
-a List with 1) the list of tour vertices, and 2) the total tour cost
+A list with 1) the list of tour vertices, and 2) the total tour cost
 }
 \description{
 `ChristofidesRunner` runs the Christofides Heuristic

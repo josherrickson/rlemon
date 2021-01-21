@@ -575,12 +575,12 @@ BellmanFordRunner <- function(arcSources, arcTargets, arcDistances, numNodes, st
 
 #' Travelling Salesman Algorithms on Full Graphs
 #' @name TSP-Algorithms
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the distances of a graph's edges
-#' @param numNodes, the number of nodes in the graph
-#' @param defaultEdgeWeight, the default edge weight if an edge is not-specified (default value 999999)
-#' @return a List with 1) the list of tour vertices, and 2) the total tour cost
+#' @param arcSources Vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances Vector corresponding to the distances of a graph's edges
+#' @param numNodes The number of nodes in the graph
+#' @param defaultEdgeWeight The default edge weight if an edge is not-specified (default value 999999)
+#' @return A list with 1) the list of tour vertices, and 2) the total tour cost
 NULL
 
 #' @rdname TSP-Algorithms
