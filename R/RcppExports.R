@@ -432,10 +432,10 @@ GomoryHuTreeRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
 
 #' Minimum Mean-Cycle Algorithms
 #' @name Maximum-Mean-Cycle-Algorithms
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the distances of a graph's edges
-#' @param numNodes, the number of nodes in the graph
+#' @param arcSources Vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances Vector corresponding to the distances of a graph's edges
+#' @param numNodes The number of nodes in the graph
 #' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC, and 2) the nodes in the MMC.
 NULL
 
