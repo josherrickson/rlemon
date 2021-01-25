@@ -13,7 +13,7 @@
 ##'   on the differences.
 ##' @return a List with 1) the list of tour vertices, and 2) the total tour cost
 ##' @export
-travellingsalesman<- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight=999999, algorithm="Christofides") {
+TravelingSalesman<- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight=999999, algorithm="Christofides") {
   
   
   check_graph_vertices(arcSources, arcTargets, numNodes)

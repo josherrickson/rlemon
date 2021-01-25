@@ -12,7 +12,7 @@
 ##'   for details on the differences.
 ##' @return A list containing two entries: 1) A vector containing the costs of each edge in the MMC, and 2) the nodes in the MMC.   
 ##' @export
-minmeancycle <- function(arcSources, arcTargets, arcDistances, numNodes, algorithm = "Howard") {
+MinMeanCycle <- function(arcSources, arcTargets, arcDistances, numNodes, algorithm = "Howard") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)

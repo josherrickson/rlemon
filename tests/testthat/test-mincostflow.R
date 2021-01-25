@@ -61,24 +61,24 @@ test_that("MinCostFlow Test", {
    costs <- small_graph_example$arccosts
    n <- small_graph_example$nodedemand
    numNodes <- 34
-   out <- mincostflow(s,t,cap,costs,n,numNodes,"NetworkSimplex")
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,"NetworkSimplex")
    expect_is(out, "list")
    expect_is(out[[3]], "integer")
    expect_equal(out[[3]],9833)
    expect_equal(out[[1]], small_graph_example$outflow)
-   out <- mincostflow(s,t,cap,costs,n,numNodes,"CostScaling")
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,"CostScaling")
    expect_is(out, "list")
    expect_is(out[[3]], "integer")
    expect_equal(out[[3]],9833)
-   out <- mincostflow(s,t,cap,costs,n,numNodes,"CapacityScaling")
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,"CapacityScaling")
    expect_is(out, "list")
    expect_is(out[[3]], "integer")
    expect_equal(out[[3]],9833)
-   out <- mincostflow(s,t,cap,costs,n,numNodes,"CycleCancelling")
+   out <- MinCostFlow(s,t,cap,costs,n,numNodes,"CycleCancelling")
    expect_is(out, "list")
    expect_is(out[[3]], "integer")
    expect_equal(out[[3]],9833)
 
-   expect_error(mincostflow(s,t,cap,costs,n,numNodes,"abc"), "Invalid")
+   expect_error(MinCostFlow(s,t,cap,costs,n,numNodes,"abc"), "Invalid")
 
 })

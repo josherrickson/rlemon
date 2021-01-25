@@ -11,7 +11,7 @@
 ##'   on the differences.
 ##' @return A list containing two entries: 1) the clique size, and 2) the members of the clique.
 ##' @export
-maxclique <- function(arcSources, arcTargets, numNodes, algorithm = "GrossoLocatelliPullanMc") {
+MaxClique <- function(arcSources, arcTargets, numNodes, algorithm = "GrossoLocatelliPullanMc") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
