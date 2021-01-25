@@ -8,21 +8,21 @@ using namespace lemon;
 
 //' MST Algorithms
 //' @name Minimum-Spanning-Tree-Algorithms
-//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
-//' @param numNodes, the number of nodes in the graph
-//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+//' @param arcSources Vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances Vector corresponding to the distances of nodes of a graph's edges
+//' @param numNodes The number of nodes in the graph
+//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
 //> NULL
 
 //' Arborescence Algorithms
 //' @name Minimum-Cost-Arborescence-Algorithms
-//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances, a vector corresponding to the distances of nodes of a graph's edges
-//' @param sourceNode, the source node
-//' @param numNodes, the number of nodes in the graph
-//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
+//' @param arcSources Vector corresponding to the source nodes of a graph's edges
+//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+//' @param arcDistances Vector corresponding to the distances of nodes of a graph's edges
+//' @param sourceNode The source node
+//' @param numNodes The number of nodes in the graph
+//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total cost of the arborescence.
 //> NULL
 
 //' @rdname Minimum-Spanning-Tree-Algorithms

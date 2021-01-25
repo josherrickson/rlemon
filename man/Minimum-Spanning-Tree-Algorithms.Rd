@@ -8,16 +8,16 @@
 KruskalRunner(arcSources, arcTargets, arcDistances, numNodes)
 }
 \arguments{
-\item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
 
-\item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
-\item{arcDistances, }{a vector corresponding to the distances of nodes of a graph's edges}
+\item{arcDistances}{Vector corresponding to the distances of nodes of a graph's edges}
 
-\item{numNodes, }{the number of nodes in the graph}
+\item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the trre, and 2) the total minimum spanning tree value.
+A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
 }
 \description{
 MST Algorithms
