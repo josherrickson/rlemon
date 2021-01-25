@@ -15,17 +15,17 @@ SuurballeRunner(
 )
 }
 \arguments{
-\item{arcSources, }{a vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
 
-\item{arcTargets, }{a vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
-\item{arcDistances, }{a vector corresponding to the distances of a graph's edges}
+\item{arcDistances}{Vector corresponding to the distances of a graph's edges}
 
-\item{numNodes, }{the number of nodes in the graph}
+\item{numNodes}{The number of nodes in the graph}
 
-\item{startNode, }{the start node of the path}
+\item{startNode}{The start node of the path}
 
-\item{endNode, }{the end node of the path}
+\item{endNode}{The end node of the path}
 }
 \value{
 A list containing two entries: 1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.

@@ -533,22 +533,22 @@ PlanarDrawingRunner <- function(arcSources, arcTargets, numNodes) {
 
 #' Shortest Path Algorithms - Distance
 #' @name Shortest-Path-Algorithms-1
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the distances of a graph's edges
-#' @param numNodes, the number of nodes in the graph
-#' @param startNode, the start node of the path
+#' @param arcSources Vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances Vector corresponding to the distances of a graph's edges
+#' @param numNodes The number of nodes in the graph
+#' @param startNode The start node of the path
 #' @return A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
 NULL
 
 #' Shortest Path Algorithms - Paths
 #' @name Shortest-Path-Algorithms-2
-#' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-#' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-#' @param arcDistances, a vector corresponding to the distances of a graph's edges
-#' @param numNodes, the number of nodes in the graph
-#' @param startNode, the start node of the path
-#' @param endNode, the end node of the path
+#' @param arcSources Vector corresponding to the source nodes of a graph's edges
+#' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+#' @param arcDistances Vector corresponding to the distances of a graph's edges
+#' @param numNodes The number of nodes in the graph
+#' @param startNode The start node of the path
+#' @param endNode The end node of the path
 #' @return A list containing two entries: 1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
 NULL
 
