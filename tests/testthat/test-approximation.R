@@ -14,5 +14,5 @@ test_that("maxclique works", {
   out <- MaxClique(s,t,n,"GrossoLocatelliPullanMc")
   expect_equal(out[[1]],3)
   expect_equal(out[[2]],c(0,1,2))
-  expect_error(maxclique(s,t,n,"abc"), "Invalid")
+  expect_error(MaxClique(s,t,n,"abc"), "Invalid")
 })
