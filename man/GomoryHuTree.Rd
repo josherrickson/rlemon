@@ -16,7 +16,7 @@ GomoryHuTree(arcSources, arcTargets, arcWeights, numNodes)
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing three entries:  1) The value of the minimum cut in the graph, and 2) A list of nodes in the first partition, and 3) A list of nodes in the second partition. GomoryHu calculates a Gomory-Hu Tree and returns a list containing three entries: 1) A list of predecessor nodes of each node in the graph, and 2) A list of weights of the predecessor edge of each node, and 3) A list of distances from the root node to each node.
+A list containing three entries: 1) A list of predecessor nodes of each node in the graph, and 2) A list of weights of the predecessor edge of each node, and 3) A list of distances from the root node to each node.
 }
 \description{
 Runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.

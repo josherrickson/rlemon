@@ -123,7 +123,7 @@ Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources,
   std::vector<ListGraph::Node> nodes;
   ListGraph::EdgeMap<Cost> dists(g);
   for (int i = 0; i < numNodes; ++i) {
-    Node n = g.addNode();
+    ListGraph::Node n = g.addNode();
     nodes.push_back(n);
   }
 
