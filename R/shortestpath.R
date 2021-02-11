@@ -13,7 +13,7 @@
 ##'   for details on the differences.
 ##' @return  A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
 ##' @export
-ShortestPathFromSource <- function(arcSources, arcTargets, arcDistances, sourceNode, numNodes, algorithm="Dijkstra") {
+ShortestPathFromSource <- function(arcSources, arcTargets, arcDistances, numNodes, sourceNode, algorithm="Dijkstra") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)

@@ -279,7 +279,7 @@ MaxCardinalitySearchRunner <- function(arcSources, arcTargets, arcCapacities, nu
 #' @param arcUpperBound Vector corresponding to the upper-bound capacities of nodes of a graph's edges
 #' @param nodeSupplies Vector corresponding to the supplies of each node of the graph.
 #' @param numNodes The number of nodes in the graph
-#' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of the graph's barrier nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value
+#' @return A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of the graph's barrier nodes.
 NULL
 
 #' Maximum Flow Algorithms
@@ -290,7 +290,7 @@ NULL
 #' @param sourceNode The source node
 #' @param destinationNode The destination node
 #' @param numNodes The number of nodes in the graph
-#' @return A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
+#' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of cut-values of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value.
 NULL
 
 #' @rdname Maximum-Flow-Algorithms-2

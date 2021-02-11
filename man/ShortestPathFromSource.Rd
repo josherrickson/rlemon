@@ -8,8 +8,8 @@ ShortestPathFromSource(
   arcSources,
   arcTargets,
   arcDistances,
-  sourceNode,
   numNodes,
+  sourceNode,
   algorithm = "Dijkstra"
 )
 }
@@ -20,9 +20,9 @@ ShortestPathFromSource(
 
 \item{arcDistances}{Vector corresponding to the distances of a graph's edges}
 
-\item{sourceNode}{The start node of the path}
-
 \item{numNodes}{The number of nodes in the graph}
+
+\item{sourceNode}{The start node of the path}
 
 \item{algorithm}{Which algorithm to run. Choices include
 "Dijkstra", "BellmanFord"

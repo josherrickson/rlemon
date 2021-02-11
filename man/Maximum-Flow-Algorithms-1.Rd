@@ -38,7 +38,7 @@ EdmondsKarpRunner(
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of cut-values of the graph's nodes.
+A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of cut-values of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value.
 }
 \description{
 `PreflowRunner` runs the Preflow Algorithm to calculate the maximum flow.

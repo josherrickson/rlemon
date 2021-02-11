@@ -28,7 +28,7 @@ CirculationRunner(
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of the graph's barrier nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value
+A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of the graph's barrier nodes.
 }
 \description{
 `CirculationRunner` runs the Circulation Algorithm to calculate the maximum flow.
