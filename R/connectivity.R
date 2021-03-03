@@ -62,7 +62,7 @@ IsConnected <- function(arcSources, arcTargets, numNodes) {
 ##' @param numNodes The number of nodes in the graph
 ##' @return A boolean stating if the graph is acyclic
 ##' @export
-IsAcyclic <- function(arcSources, arcTargets, numNodes, problem="isAcyclic") {
+IsAcyclic <- function(arcSources, arcTargets, numNodes) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   .Call(`_rlemon_IsAcyclicRunner`,arcSources, arcTargets, numNodes) 
@@ -76,7 +76,7 @@ IsAcyclic <- function(arcSources, arcTargets, numNodes, problem="isAcyclic") {
 ##' @param numNodes The number of nodes in the graph
 ##' @return A boolean stating if the graph is a tree
 ##' @export
-IsTree <- function(arcSources, arcTargets, numNodes, problem="isTree") {
+IsTree <- function(arcSources, arcTargets, numNodes) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   .Call(`_rlemon_IsTreeRunner`,arcSources, arcTargets, numNodes)
@@ -90,7 +90,7 @@ IsTree <- function(arcSources, arcTargets, numNodes, problem="isTree") {
 ##' @param numNodes The number of nodes in the graph
 ##' @return A boolean stating if the graph is bipartite
 ##' @export
-IsBipartite <- function(arcSources, arcTargets, numNodes, problem="isBipartite") {
+IsBipartite <- function(arcSources, arcTargets, numNodes) {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   .Call(`_rlemon_IsBipartiteRunner`,arcSources, arcTargets, numNodes)

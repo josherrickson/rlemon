@@ -4,7 +4,7 @@
 \alias{IsBipartite}
 \title{IsBipartite}
 \usage{
-IsBipartite(arcSources, arcTargets, numNodes, problem = "isBipartite")
+IsBipartite(arcSources, arcTargets, numNodes)
 }
 \arguments{
 \item{arcSources}{Vector corresponding to the source nodes of a graph's edges}

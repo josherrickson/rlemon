@@ -4,7 +4,7 @@
 \alias{IsTree}
 \title{IsTree}
 \usage{
-IsTree(arcSources, arcTargets, numNodes, problem = "isTree")
+IsTree(arcSources, arcTargets, numNodes)
 }
 \arguments{
 \item{arcSources}{Vector corresponding to the source nodes of a graph's edges}

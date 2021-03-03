@@ -4,7 +4,7 @@
 \alias{IsAcyclic}
 \title{IsAcylic}
 \usage{
-IsAcyclic(arcSources, arcTargets, numNodes, problem = "isAcyclic")
+IsAcyclic(arcSources, arcTargets, numNodes)
 }
 \arguments{
 \item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
