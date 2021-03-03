@@ -1,6 +1,6 @@
 Package: rlemon
 Type: Package
-Title: R Interfaces to LEMON algorithms
+Title: R Interfaces to LEMON Algorithms
 Version: 0.1
 Date: 2020-11-01
 Author: Arav Agarwal, Aditya Tewari, Josh Errickson
