@@ -70,10 +70,29 @@ check_graph_vertices <- function(arcSources, arcTargets, numNodes) {
 check_arc_map <- function(arcSources, arcTargets, mapTest, numNodes) {
   # Check that the arc number is consistent
   if (length(arcSources) != length(mapTest)) {
+    print(length(arcSources))
+    print(length(mapTest))
     stop("Inconsistent number of arcs across Sources and Arc Map (ArcWeights/ArcCapacities/ArcCosts)")
   }
   if (length(arcTargets) != length(mapTest)) {
     stop("Inconsistent number of arcs across Targets and Arc Map (ArcWeights/ArcCapacities/ArcCosts)")
+  }
+  invisible(TRUE)
+
+}
+
+
+##' Check node maps for common errors. 
+##' Doesn't check if the underlying graph is correct - see `check_graph_vertices`
+##'
+##' @param mapTest Node Map to Test
+##' @param numNodes Number of nodes
+##' @return TRUE if no errors are found
+##' export
+check_node_map <- function(mapTest, numNodes) {
+  # Check that the arc number is consistent
+  if (length(mapTest) != numNodes) {
+    stop("Inconsistent number of nodes in Node Map (NodeSupplies)")
   }
   invisible(TRUE)
 
