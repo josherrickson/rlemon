@@ -17,6 +17,11 @@
 MinCostFlow <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes, algorithm = "NetworkSimplex") {
 
   check_graph(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes)
+  check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_arc_map(arcSources, arcTargets, arcCapacities, numNodes)
+  check_arc_map(arcSources, arcTargets, arcCosts, numNodes)
+  check_arc_map(arcSources, arcTargets, arcCosts, numNodes)
+  check_node_map(nodeSupplies, numNodes)
 
   switch(algorithm,
          "NetworkSimplex" = .Call(`_rlemon_NetworkSimplexRunner`, arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes),
