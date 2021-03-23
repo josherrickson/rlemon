@@ -282,8 +282,10 @@ CountBiEdgeConnectedComponents <- function(arcSources,
                                            arcTargets,
                                            numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountBiEdgeConnectedComponentsRunner`, arcSources, arcTargets,
-        numNodes)
+  .Call(
+    `_rlemon_CountBiEdgeConnectedComponentsRunner`, arcSources, arcTargets,
+    numNodes
+  )
 }
 
 ##' Counts the number of connected components in an undirected graph.
@@ -300,8 +302,10 @@ CountConnectedComponents <- function(arcSources,
                                      arcTargets,
                                      numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountConnectedComponentsRunner`, arcSources, arcTargets,
-        numNodes)
+  .Call(
+    `_rlemon_CountConnectedComponentsRunner`, arcSources, arcTargets,
+    numNodes
+  )
 }
 
 ##' Counts the number of bi-node connected components in an undirected graph.
@@ -318,8 +322,10 @@ CountBiNodeConnectedComponents <- function(arcSources,
                                            arcTargets,
                                            numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountBiNodeConnectedComponentsRunner`, arcSources, arcTargets,
-        numNodes)
+  .Call(
+    `_rlemon_CountBiNodeConnectedComponentsRunner`, arcSources, arcTargets,
+    numNodes
+  )
 }
 
 ##' Counts the number of strongly connected components in a directed graph.
@@ -336,8 +342,10 @@ CountStronglyConnectedComponents <- function(arcSources,
                                              arcTargets,
                                              numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountStronglyConnectedComponentsRunner`, arcSources,
-        arcTargets, numNodes)
+  .Call(
+    `_rlemon_CountStronglyConnectedComponentsRunner`, arcSources,
+    arcTargets, numNodes
+  )
 }
 
 ##' Finds the strongly connected components in a directed graph.
@@ -354,8 +362,10 @@ FindStronglyConnectedComponents <- function(arcSources,
                                             arcTargets,
                                             numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_FindStronglyConnectedComponentsRunner`, arcSources, arcTargets,
-        numNodes)
+  .Call(
+    `_rlemon_FindStronglyConnectedComponentsRunner`, arcSources, arcTargets,
+    numNodes
+  )
 }
 
 ##' Finds the cut arcs of strongly connected components in a directed graph.
@@ -373,8 +383,10 @@ FindStronglyConnectedCutArcs <- function(arcSources,
                                          arcTargets,
                                          numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_FindStronglyConnectedCutArcsRunner`, arcSources, arcTargets,
-        numNodes)
+  .Call(
+    `_rlemon_FindStronglyConnectedCutArcsRunner`, arcSources, arcTargets,
+    numNodes
+  )
 }
 
 ##' Finds the bi-edge-connected cut edges in an undirected graph.
@@ -392,8 +404,10 @@ FindBiEdgeConnectedCutEdges <- function(arcSources,
                                         arcTargets,
                                         numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_FindBiEdgeConnectedCutEdgesRunner`, arcSources, arcTargets,
-        numNodes)
+  .Call(
+    `_rlemon_FindBiEdgeConnectedCutEdgesRunner`, arcSources, arcTargets,
+    numNodes
+  )
 }
 
 ##' Finds the bi-node-connected components of an undirected graph.

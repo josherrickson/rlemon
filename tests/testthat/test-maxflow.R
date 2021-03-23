@@ -53,6 +53,8 @@ test_that("Circulation works", {
   expect_is(out[[2]], "integer")
   expect_equal(out[[1]], c(0, 1, 0, 2, 0, 0, 0, 6, 4, 0))
   expect_equal(out[[2]], c(5))
-  expect_error(NetworkCirculation(s, t, lower, upper, supplies, 6, "abc"),
-               "Invalid")
+  expect_error(
+    NetworkCirculation(s, t, lower, upper, supplies, 6, "abc"),
+    "Invalid"
+  )
 })
