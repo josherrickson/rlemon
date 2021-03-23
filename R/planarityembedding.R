@@ -55,12 +55,16 @@ PlanarColoring <- function(arcSources,
                            algorithm = "fiveColoring") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   switch(algorithm,
-         "fiveColoring" = .Call(`_rlemon_PlanarColoringRunner`, arcSources,
-                                arcTargets, numNodes, TRUE),
-         "sixColoring" = .Call(`_rlemon_PlanarColoringRunner`, arcSources,
-                               arcTargets, numNodes, FALSE),
-         stop("Invalid algorithm.")
-         )
+    "fiveColoring" = .Call(
+      `_rlemon_PlanarColoringRunner`, arcSources,
+      arcTargets, numNodes, TRUE
+    ),
+    "sixColoring" = .Call(
+      `_rlemon_PlanarColoringRunner`, arcSources,
+      arcTargets, numNodes, FALSE
+    ),
+    stop("Invalid algorithm.")
+  )
 }
 
 ##' Checks if a graph is planar and returns the coloring of the graph

@@ -26,11 +26,13 @@ MinSpanningTree <- function(arcSources,
 
 
   switch(algorithm,
-         "Kruskal" =
-           .Call(`_rlemon_KruskalRunner`, arcSources, arcTargets, arcDistances,
-                 numNodes),
-         stop("Invalid algorithm.")
-         )
+    "Kruskal" =
+      .Call(
+        `_rlemon_KruskalRunner`, arcSources, arcTargets, arcDistances,
+        numNodes
+      ),
+    stop("Invalid algorithm.")
+  )
 }
 
 
@@ -68,9 +70,11 @@ MinCostArborescence <- function(arcSources,
 
 
   switch(algorithm,
-         "MinCostArborescence" =
-           .Call(`_rlemon_MinCostArborescenceRunner`, arcSources, arcTargets,
-                 arcDistances, sourceNode, numNodes),
-         stop("Invalid algorithm.")
-         )
+    "MinCostArborescence" =
+      .Call(
+        `_rlemon_MinCostArborescenceRunner`, arcSources, arcTargets,
+        arcDistances, sourceNode, numNodes
+      ),
+    stop("Invalid algorithm.")
+  )
 }

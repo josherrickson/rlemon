@@ -27,11 +27,16 @@ ShortestPathFromSource <- function(arcSources,
   check_node(sourceNode, numNodes)
 
   switch(algorithm,
-         "Dijkstra" = .Call(`_rlemon_DijkstraRunner`, arcSources, arcTargets,
-                            arcDistances, numNodes, sourceNode),
-         "BellmanFord" = .Call(`_rlemon_BellmanFordRunner`, arcSources, arcTargets, arcDistances, numNodes, sourceNode),
-         stop("Invalid algorithm.")
-         )
+    "Dijkstra" = .Call(
+      `_rlemon_DijkstraRunner`, arcSources, arcTargets,
+      arcDistances, numNodes, sourceNode
+    ),
+    "BellmanFord" = .Call(
+      `_rlemon_BellmanFordRunner`, arcSources, arcTargets,
+      arcDistances, numNodes, sourceNode
+    ),
+    stop("Invalid algorithm.")
+  )
 }
 
 ##' Finds the shortest arc disjoint paths between two nodes in a directed graph.
@@ -65,8 +70,10 @@ ShortestPath <- function(arcSources,
   check_node(destNode, numNodes)
 
   switch(algorithm,
-         "Suurballe" = .Call(`_rlemon_SuurballeRunner`, arcSources, arcTargets,
-                             arcDistances, numNodes, sourceNode, destNode),
-         stop("Invalid algorithm.")
-         )
+    "Suurballe" = .Call(
+      `_rlemon_SuurballeRunner`, arcSources, arcTargets,
+      arcDistances, numNodes, sourceNode, destNode
+    ),
+    stop("Invalid algorithm.")
+  )
 }

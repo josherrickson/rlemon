@@ -29,7 +29,7 @@ check_graph <- function(arcSources,
   }
 
   invisible(TRUE) # if it passes all checks. `invisible` instead of `return`
-                  # avoids printing anything out
+  # avoids printing anything out
 }
 
 ##' Check sources and target arrays for common errors.

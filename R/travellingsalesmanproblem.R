@@ -25,19 +25,27 @@ TravelingSalesman <- function(arcSources,
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
 
   switch(algorithm,
-         "Christofides" = .Call(`_rlemon_ChristofidesRunner`, arcSources, arcTargets,
-                                arcDistances, numNodes,
-                                defaultEdgeWeight = 999999),
-         "Greedy" = .Call(`_rlemon_GreedyTSPRunner`, arcSources, arcTargets,
-                          arcDistances, numNodes, defaultEdgeWeight = 999999),
-         "Insertion" = .Call(`_rlemon_InsertionTSPRunner`, arcSources,
-                             arcTargets, arcDistances, numNodes,
-                             defaultEdgeWeight = 999999),
-         "NearestNeighbor" = .Call(`_rlemon_NearestNeighborTSPRunner`,
-                                   arcSources, arcTargets, arcDistances,
-                                   numNodes, defaultEdgeWeight = 999999),
-         "Opt2" = .Call(`_rlemon_Opt2TSPRunner`, arcSources, arcTargets,
-                        arcDistances, numNodes, defaultEdgeWeight = 999999),
-         stop("Invalid algorithm.")
-         )
+    "Christofides" = .Call(`_rlemon_ChristofidesRunner`, arcSources, arcTargets,
+      arcDistances, numNodes,
+      defaultEdgeWeight = 999999
+    ),
+    "Greedy" = .Call(`_rlemon_GreedyTSPRunner`, arcSources, arcTargets,
+      arcDistances, numNodes,
+      defaultEdgeWeight = 999999
+    ),
+    "Insertion" = .Call(`_rlemon_InsertionTSPRunner`, arcSources,
+      arcTargets, arcDistances, numNodes,
+      defaultEdgeWeight = 999999
+    ),
+    "NearestNeighbor" = .Call(`_rlemon_NearestNeighborTSPRunner`,
+      arcSources, arcTargets, arcDistances,
+      numNodes,
+      defaultEdgeWeight = 999999
+    ),
+    "Opt2" = .Call(`_rlemon_Opt2TSPRunner`, arcSources, arcTargets,
+      arcDistances, numNodes,
+      defaultEdgeWeight = 999999
+    ),
+    stop("Invalid algorithm.")
+  )
 }

@@ -24,15 +24,21 @@ MinMeanCycle <- function(arcSources,
 
 
   switch(algorithm,
-         "Howard" =
-           .Call(`_rlemon_HowardMmcRunner`, arcSources, arcTargets,
-                 arcDistances, numNodes),
-         "Karp" =
-           .Call(`_rlemon_KarpMmcRunner`, arcSources, arcTargets, arcDistances,
-                 numNodes),
-         "HartmannOrlin" =
-           .Call(`_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets,
-                 arcDistances, numNodes),
-         stop("Invalid algorithm.")
-         )
+    "Howard" =
+      .Call(
+        `_rlemon_HowardMmcRunner`, arcSources, arcTargets,
+        arcDistances, numNodes
+      ),
+    "Karp" =
+      .Call(
+        `_rlemon_KarpMmcRunner`, arcSources, arcTargets, arcDistances,
+        numNodes
+      ),
+    "HartmannOrlin" =
+      .Call(
+        `_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets,
+        arcDistances, numNodes
+      ),
+    stop("Invalid algorithm.")
+  )
 }

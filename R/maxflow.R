@@ -31,12 +31,16 @@ MaxFlow <- function(arcSources,
   check_node(destNode, numNodes)
 
   switch(algorithm,
-         "Preflow" = .Call(`_rlemon_PreflowRunner`, arcSources, arcTargets,
-                           arcCapacities, sourceNode, destNode, numNodes),
-         "EdmondsKarp" = .Call(`_rlemon_EdmondsKarpRunner`, arcSources, arcTargets,
-                               arcCapacities, sourceNode, destNode, numNodes),
-         stop("Invalid algorithm.")
-         )
+    "Preflow" = .Call(
+      `_rlemon_PreflowRunner`, arcSources, arcTargets,
+      arcCapacities, sourceNode, destNode, numNodes
+    ),
+    "EdmondsKarp" = .Call(
+      `_rlemon_EdmondsKarpRunner`, arcSources, arcTargets,
+      arcCapacities, sourceNode, destNode, numNodes
+    ),
+    stop("Invalid algorithm.")
+  )
 }
 
 ##' Runs the push-rebel algorithm for the network circulatin problem.
@@ -73,9 +77,11 @@ NetworkCirculation <- function(arcSources,
   check_node_map(nodeSupplies, numNodes)
 
   switch(algorithm,
-         "Circulation" = .Call(`_rlemon_CirculationRunner`, arcSources, arcTargets,
-                               arcLowerBound, arcUpperBound, nodeSupplies,
-                               numNodes),
-         stop("Invalid algorithm.")
-         )
+    "Circulation" = .Call(
+      `_rlemon_CirculationRunner`, arcSources, arcTargets,
+      arcLowerBound, arcUpperBound, nodeSupplies,
+      numNodes
+    ),
+    stop("Invalid algorithm.")
+  )
 }

@@ -31,13 +31,18 @@ MinCut <- function(arcSources,
   ## add a undirected/directed boolean?
 
   switch(algorithm,
-         "NagamochiIbaraki" =
-           .Call(`_rlemon_NagamochiIbarakiRunner`, arcSources, arcTargets,
-                 arcWeights, numNodes),
-         "HaoOrlin" =
-           .Call(`_rlemon_HaoOrlinRunner`, arcSources, arcTargets, arcWeights,
-                 numNodes),
-         stop("Invalid algorithm."))
+    "NagamochiIbaraki" =
+      .Call(
+        `_rlemon_NagamochiIbarakiRunner`, arcSources, arcTargets,
+        arcWeights, numNodes
+      ),
+    "HaoOrlin" =
+      .Call(
+        `_rlemon_HaoOrlinRunner`, arcSources, arcTargets, arcWeights,
+        numNodes
+      ),
+    stop("Invalid algorithm.")
+  )
 }
 
 
