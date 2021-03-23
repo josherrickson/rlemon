@@ -16,7 +16,7 @@ MinCut(arcSources, arcTargets, arcWeights, numNodes, algorithm)
 \item{numNodes}{The number of nodes in the graph}
 
 \item{algorithm}{Which algorithm to run. Choices include
-"NagamochiIbaraki", "HaoOrlin" where 
+"NagamochiIbaraki", "HaoOrlin" where
  NagamochiIbaraki is the default; see
 <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html> for details
 on the differences.}

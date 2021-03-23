@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_graph.R
 \name{check_arc_map}
 \alias{check_arc_map}
-\title{Check arc maps for common errors. 
+\title{Check arc maps for common errors.
 Doesn't check if the underlying graph is correct - see `check_graph_vertices`}
 \usage{
 check_arc_map(arcSources, arcTargets, mapTest, numNodes)
@@ -21,6 +21,6 @@ TRUE if no errors are found
 export
 }
 \description{
-Check arc maps for common errors. 
+Check arc maps for common errors.
 Doesn't check if the underlying graph is correct - see `check_graph_vertices`
 }

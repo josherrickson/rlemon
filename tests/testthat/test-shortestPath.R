@@ -5,12 +5,12 @@ test_that("Suurballe works", {
   n <- 5
   sn <- 1
   en <- 5
-  out <- SuurballeRunner(s,t,d,n,sn,en)
+  out <- SuurballeRunner(s, t, d, n, sn, en)
   expect_equal(out[[1]], 2)
   paths <- list()
-  paths[[1]] <- c(1,4,5)
-  paths[[2]] <- c(1,2,5)
-  expect_equal(out[[2]],paths)
+  paths[[1]] <- c(1, 4, 5)
+  paths[[2]] <- c(1, 2, 5)
+  expect_equal(out[[2]], paths)
 })
 
 test_that("Dijkstra works", {
@@ -19,9 +19,9 @@ test_that("Dijkstra works", {
   d <- c(6, 1, 5, 2, 2, 5, 1)
   n <- 5
   sn <- 1
-  out <- DijkstraRunner(s,t,d,n,sn)
-  expect_equal(out[[1]],c(0,6,11,1,2))
-  expect_equal(out[[2]],c(0,1,2,1,4))
+  out <- DijkstraRunner(s, t, d, n, sn)
+  expect_equal(out[[1]], c(0, 6, 11, 1, 2))
+  expect_equal(out[[2]], c(0, 1, 2, 1, 4))
 })
 
 test_that("BellmanFord works", {
@@ -30,9 +30,9 @@ test_that("BellmanFord works", {
   d <- c(6, 1, 5, 2, 2, 5, 1)
   n <- 5
   sn <- 1
-  out <- BellmanFordRunner(s,t,d,n,sn)
-  expect_equal(out[[1]],c(0,6,11,1,2))
-  expect_equal(out[[2]],c(0,1,2,1,4))
+  out <- BellmanFordRunner(s, t, d, n, sn)
+  expect_equal(out[[1]], c(0, 6, 11, 1, 2))
+  expect_equal(out[[2]], c(0, 1, 2, 1, 4))
 })
 
 test_that("ShortestPath works", {
@@ -42,14 +42,14 @@ test_that("ShortestPath works", {
   n <- 5
   sn <- 1
   en <- 5
-  out <- ShortestPath(s,t,d,n,sn,en)
+  out <- ShortestPath(s, t, d, n, sn, en)
   expect_equal(out[[1]], 2)
   paths <- list()
-  paths[[1]] <- c(1,4,5)
-  paths[[2]] <- c(1,2,5)
-  expect_equal(out[[2]],paths)
+  paths[[1]] <- c(1, 4, 5)
+  paths[[2]] <- c(1, 2, 5)
+  expect_equal(out[[2]], paths)
 
-  expect_error(ShortestPath(s,t,d,n,sn,en,"abc"), "Invalid")
+  expect_error(ShortestPath(s, t, d, n, sn, en, "abc"), "Invalid")
 })
 
 test_that("ShortestPathFromSource works", {
@@ -58,9 +58,9 @@ test_that("ShortestPathFromSource works", {
   d <- c(6, 1, 5, 2, 2, 5, 1)
   n <- 5
   sn <- 1
-  out <- ShortestPathFromSource(s,t,d,n,sn)
-  expect_equal(out[[1]],c(0,6,11,1,2))
-  expect_equal(out[[2]],c(0,1,2,1,4))
+  out <- ShortestPathFromSource(s, t, d, n, sn)
+  expect_equal(out[[1]], c(0, 6, 11, 1, 2))
+  expect_equal(out[[2]], c(0, 1, 2, 1, 4))
 
-  expect_error(ShortestPathFromSource(s,t,d,n,sn,"abc"), "Invalid")
+  expect_error(ShortestPathFromSource(s, t, d, n, sn, "abc"), "Invalid")
 })

@@ -13,16 +13,16 @@
 ##'   for details on the differences.
 ##' @return  A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
 ##' @export
-ShortestPathFromSource <- function(arcSources, arcTargets, arcDistances, numNodes, sourceNode, algorithm="Dijkstra") {
-
+ShortestPathFromSource <- function(arcSources, arcTargets, arcDistances, numNodes, sourceNode, algorithm = "Dijkstra") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
-  check_node(sourceNode,numNodes)
+  check_node(sourceNode, numNodes)
 
   switch(algorithm,
-         "Dijkstra" = .Call(`_rlemon_DijkstraRunner`,arcSources, arcTargets, arcDistances, numNodes, sourceNode),
-         "BellmanFord" = .Call(`_rlemon_BellmanFordRunner`, arcSources, arcTargets, arcDistances, numNodes, sourceNode),
-         stop("Invalid algorithm."))
+    "Dijkstra" = .Call(`_rlemon_DijkstraRunner`, arcSources, arcTargets, arcDistances, numNodes, sourceNode),
+    "BellmanFord" = .Call(`_rlemon_BellmanFordRunner`, arcSources, arcTargets, arcDistances, numNodes, sourceNode),
+    stop("Invalid algorithm.")
+  )
 }
 
 ##' Finds the shortest arc disjoint paths between two nodes in a directed graph.
@@ -41,14 +41,14 @@ ShortestPathFromSource <- function(arcSources, arcTargets, arcDistances, numNode
 ##'   for details on the differences.
 ##' @return  A list containing two entries: 1) the number of paths from the start node to the end node and 2) a list of paths found.
 ##' @export
-ShortestPath <- function(arcSources, arcTargets, arcDistances, numNodes, sourceNode, destNode, algorithm="Suurballe") {
-
+ShortestPath <- function(arcSources, arcTargets, arcDistances, numNodes, sourceNode, destNode, algorithm = "Suurballe") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
-  check_node(sourceNode,numNodes)
+  check_node(sourceNode, numNodes)
   check_node(destNode, numNodes)
-  
+
   switch(algorithm,
-         "Suurballe" = .Call(`_rlemon_SuurballeRunner`,arcSources, arcTargets, arcDistances, numNodes, sourceNode, destNode),
-         stop("Invalid algorithm."))
+    "Suurballe" = .Call(`_rlemon_SuurballeRunner`, arcSources, arcTargets, arcDistances, numNodes, sourceNode, destNode),
+    stop("Invalid algorithm.")
+  )
 }

@@ -11,15 +11,15 @@
 check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
   # Checking that arc number is consistent
   if (length(arcSources) != length(arcTargets) |
-      length(arcSources) != length(arcCapacities) |
-      length(arcSources) != length(arcCosts) |
-        length(arcSources) != length(arcCapacities)) {
+    length(arcSources) != length(arcCapacities) |
+    length(arcSources) != length(arcCosts) |
+    length(arcSources) != length(arcCapacities)) {
     stop("Inconsistent number of arcs across Sources/Targets/Capacities/Costs")
   }
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
-      !all(arcTargets == floor(arcTargets))) {
+    !all(arcTargets == floor(arcTargets))) {
     stop("Nodes must be integers")
   }
 
@@ -28,7 +28,7 @@ check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSup
 
 ##' Check sources and target arrays for common errors.
 ##'
-##' @param arcSources Arc sources 
+##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
 ##' @param numNodes Number of nodes
 ##' @return TRUE if no errors are found
@@ -44,7 +44,7 @@ check_graph_vertices <- function(arcSources, arcTargets, numNodes) {
   }
 
   if (!all(arcSources > 0)) {
-  stop("The arcSources vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+    stop("The arcSources vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
   }
 
 
@@ -53,23 +53,22 @@ check_graph_vertices <- function(arcSources, arcTargets, numNodes) {
   }
 
   if (!all(arcTargets > 0)) {
-  stop("The arcTargets vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+    stop("The arcTargets vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
   }
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
-      !all(arcTargets == floor(arcTargets))) {
+    !all(arcTargets == floor(arcTargets))) {
     stop("Nodes must be integers")
   }
 
   invisible(TRUE)
-
 }
 
-##' Check arc maps for common errors. 
+##' Check arc maps for common errors.
 ##' Doesn't check if the underlying graph is correct - see `check_graph_vertices`
 ##'
-##' @param arcSources Arc sources 
+##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
 ##' @param mapTest Arc Map to Test
 ##' @param numNodes Number of nodes
@@ -86,11 +85,10 @@ check_arc_map <- function(arcSources, arcTargets, mapTest, numNodes) {
     stop("Inconsistent number of arcs across Targets and Arc Map (ArcWeights/ArcCapacities/ArcCosts)")
   }
   invisible(TRUE)
-
 }
 
 
-##' Check node maps for common errors. 
+##' Check node maps for common errors.
 ##' Doesn't check if the underlying graph is correct - see `check_graph_vertices`
 ##'
 ##' @param mapTest Node Map to Test
@@ -103,7 +101,6 @@ check_node_map <- function(mapTest, numNodes) {
     stop("Inconsistent number of nodes in Node Map (NodeSupplies)")
   }
   invisible(TRUE)
-
 }
 
 ##' Check node definitions for common errors
@@ -114,23 +111,22 @@ check_node_map <- function(mapTest, numNodes) {
 ##' export
 check_node <- function(testNode, numNodes) {
   # Check that the arc number is consistent
-  if (testNode != floor(testNode)){
+  if (testNode != floor(testNode)) {
     stop("Node index given ( sourceNode/destNode ) not integral.")
   }
-  if (testNode > numNodes){
+  if (testNode > numNodes) {
     stop("Node index given is out of range for graph instance. ")
   }
-    if (testNode <= 0){
+  if (testNode <= 0) {
     stop("Node index given is out of range for graph instance. ")
   }
   invisible(TRUE)
-
 }
 
 
 ##' Check arcs for common errors.
 ##'
-##' @param arcSources Arc sources 
+##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
 ##' @return TRUE if no errors are found
 ##' export
@@ -142,10 +138,9 @@ check_graph_arcs <- function(arcSources, arcTargets) {
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
-      !all(arcTargets == floor(arcTargets))) {
+    !all(arcTargets == floor(arcTargets))) {
     stop("Nodes must be integers")
   }
 
   invisible(TRUE)
-
 }

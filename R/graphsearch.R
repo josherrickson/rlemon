@@ -12,22 +12,20 @@
 ##'   on the differences.
 ##' @return A list containing three entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
 ##' @export
-GraphSearch <- function(arcSources, arcTargets, numNodes, startNode = -1, endNode  = -1, algorithm = "Bfs") {
-
+GraphSearch <- function(arcSources, arcTargets, numNodes, startNode = -1, endNode = -1, algorithm = "Bfs") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  if(startNode != -1)
-  {
-      check_node(startNode, numNodes)
+  if (startNode != -1) {
+    check_node(startNode, numNodes)
   }
-  if(endNode != -1)
-  {
-      check_node(endNode, numNodes)
+  if (endNode != -1) {
+    check_node(endNode, numNodes)
   }
 
   switch(algorithm,
-         "Bfs" = .Call(`_rlemon_BfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode),
-         "Dfs" = .Call(`_rlemon_DfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode),
-         stop("Invalid algorithm."))
+    "Bfs" = .Call(`_rlemon_BfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode),
+    "Dfs" = .Call(`_rlemon_DfsRunner`, arcSources, arcTargets, numNodes, startNode, endNode),
+    stop("Invalid algorithm.")
+  )
 }
 
 ##' Runs the maxiumum cardinality search algorithm on a directed graph. The maximum cardinality search first chooses any node of the digraph. Then every time it chooses one unprocessed node with maximum cardinality, i.e the sum of capacities on out arcs to the nodes which were previusly processed. If there is a cut in the digraph the algorithm should choose again any unprocessed node of the digraph.
@@ -45,15 +43,14 @@ GraphSearch <- function(arcSources, arcTargets, numNodes, startNode = -1, endNod
 ##' @return A list containing two entries: 1) the cardinality of each node , 2) a list containing if a node was reached or not
 ##' @export
 MaxCardinalitySearch <- function(arcSources, arcTargets, arcCapacities, numNodes, startNode = -1, algorithm = "maxcardinalitysearch") {
-
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  if(startNode != -1)
-  {
-      check_node(startNode, numNodes)
+  if (startNode != -1) {
+    check_node(startNode, numNodes)
   }
   check_arc_map(arcSources, arcTargets, arcCapacities, numNodes)
-  
+
   switch(algorithm,
-         "maxcardinalitysearch" = .Call(`_rlemon_MaxCardinalitySearchRunner`, arcSources, arcTargets, arcCapacities, numNodes, startNode),
-         stop("Invalid algorithm."))
+    "maxcardinalitysearch" = .Call(`_rlemon_MaxCardinalitySearchRunner`, arcSources, arcTargets, arcCapacities, numNodes, startNode),
+    stop("Invalid algorithm.")
+  )
 }

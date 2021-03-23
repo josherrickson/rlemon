@@ -27,7 +27,7 @@ MinCostArborescence(
 \item{algorithm}{Which algorithm to run. Choices include
 "MinCostArborescence"
 where "MinCostArborescence" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html> 
+See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html>
 for details on the differences.}
 }
 \value{

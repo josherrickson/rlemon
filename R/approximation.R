@@ -12,10 +12,10 @@
 ##' @return A list containing two entries: 1) the clique size, and 2) the members of the clique.
 ##' @export
 MaxClique <- function(arcSources, arcTargets, numNodes, algorithm = "GrossoLocatelliPullanMc") {
-
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  switch(algorithm, 
-        "GrossoLocatelliPullanMc" = .Call(`_rlemon_GrossoLocatelliPullanMcRunner`, arcSources, arcTargets, numNodes),
-        stop("Invalid algorithm."))
+  switch(algorithm,
+    "GrossoLocatelliPullanMc" = .Call(`_rlemon_GrossoLocatelliPullanMcRunner`, arcSources, arcTargets, numNodes),
+    stop("Invalid algorithm.")
+  )
 }

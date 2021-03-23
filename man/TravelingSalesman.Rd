@@ -25,7 +25,7 @@ TravelingSalesman(
 \item{defaultEdgeWeight}{The default edge weight if an edge is not-specified (default value 999999)}
 
 \item{algorithm}{Which algorithm to run. Choices include
-"Christofides","Greedy","Insertion","NearestNeighbor","Opt2". 
+"Christofides","Greedy","Insertion","NearestNeighbor","Opt2".
  Christofides is the default; see
 <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html> for details
 on the differences.}

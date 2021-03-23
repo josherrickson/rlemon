@@ -22,9 +22,9 @@ MinSpanningTree(
 \item{numNodes}{The number of nodes in the graph}
 
 \item{algorithm}{Which algorithm to run. Choices include
-"Kruskal" 
+"Kruskal"
 where "Kruskal" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html> 
+See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html>
 for details on the differences.}
 }
 \value{
