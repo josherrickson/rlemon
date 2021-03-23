@@ -43,10 +43,18 @@ check_graph_vertices <- function(arcSources, arcTargets, numNodes) {
     stop("The arcSources vec contains vertices with indices greater than the number of nodes. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
   }
 
+  if (!all(arcSources > 0)) {
+  stop("The arcSources vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+  }
+
+
+  if (!all(arcTargets <= numNodes)) {
+    stop("The arcTargets vec contains vertices with indices greater than the number of nodes. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+  }
+
   if (!all(arcTargets > 0)) {
   stop("The arcTargets vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
   }
-
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
@@ -109,7 +117,10 @@ check_node <- function(testNode, numNodes) {
   if (testNode != floor(testNode)){
     stop("Node index given ( sourceNode/destNode ) not integral.")
   }
-  if (testNode >= numNodes){
+  if (testNode > numNodes){
+    stop("Node index given is out of range for graph instance. ")
+  }
+    if (testNode <= 0){
     stop("Node index given is out of range for graph instance. ")
   }
   invisible(TRUE)

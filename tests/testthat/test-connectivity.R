@@ -163,8 +163,8 @@ test_that("GetBipartitePartitions works", {
 })
 
 test_that("topologicalSort works", {
-   s <- c(0,0,0,1,1,1,2,2,2)
-   t <- c(3,4,5,3,4,5,3,4,5)
+   s <- c(1,1,1,2,2,2,3,3,3)
+   t <- c(4,5,6,4,5,6,4,5,6)
    n <- 6
    out <- GetAndCheckTopologicalSort(s,t,n)
    expect_equal(out[[1]],TRUE)

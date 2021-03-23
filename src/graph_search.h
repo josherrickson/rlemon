@@ -58,9 +58,9 @@ Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   Bfs<ListDigraph> runner(g);
 
   if (startNode != -1 && endNode != -1) {
-    runner.run(nodes[startNode], nodes[endNode]);
+    runner.run(nodes[startNode - 1], nodes[endNode - 1]);
   } else if (startNode != -1) {
-    runner.run(nodes[startNode]);
+    runner.run(nodes[startNode - 1]);
   } else {
     runner.run();
   }
@@ -70,7 +70,7 @@ Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   std::vector<int> nodeReached;
 
   for (int i = 0; i < numNodes; ++i) {
-    nodePreds.push_back(g.id(runner.predNode(nodes[i])));
+    nodePreds.push_back(g.id(runner.predNode(nodes[i])) + 1);
     nodeDistances.push_back(runner.dist(nodes[i]));
     if (runner.reached(nodes[i])) {
       nodeReached.push_back(1);
@@ -107,9 +107,9 @@ Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   Dfs<ListDigraph> runner(g);
 
   if (startNode != -1 && endNode != -1) {
-    runner.run(nodes[startNode], nodes[endNode]);
+    runner.run(nodes[startNode - 1], nodes[endNode - 1]);
   } else if (startNode != -1) {
-    runner.run(nodes[startNode]);
+    runner.run(nodes[startNode - 1]);
   } else {
     runner.run();
   }
@@ -119,7 +119,7 @@ Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   std::vector<int> nodeReached;
 
   for (int i = 0; i < numNodes; ++i) {
-    nodePreds.push_back(g.id(runner.predNode(nodes[i])));
+    nodePreds.push_back(g.id(runner.predNode(nodes[i])) + 1);
     nodeDistances.push_back(runner.dist(nodes[i]));
     if (runner.reached(nodes[i])) {
       nodeReached.push_back(1);
@@ -159,7 +159,7 @@ Rcpp::List MaxCardinalitySearchRunner(std::vector<int> arcSources,
   MaxCardinalitySearch<ListDigraph, ListDigraph::ArcMap<int> > runner(g, costs);
 
   if (startNode != -1) {
-    runner.run(nodes[startNode]);
+    runner.run(nodes[startNode - 1]);
   } else {
     runner.run();
   }
