@@ -50,7 +50,8 @@ Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -98,7 +99,8 @@ Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -148,7 +150,8 @@ Rcpp::List MaxCardinalitySearchRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     costs[a] = arcCapacities[i];
     arcs.push_back(a);
   }

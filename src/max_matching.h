@@ -47,7 +47,7 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -83,7 +83,7 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -121,7 +121,7 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -160,7 +160,7 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -201,7 +201,7 @@ Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListGraph::EdgeMap<int> map(g);
@@ -241,7 +241,7 @@ Rcpp::List MaximumCardinalityFractionalMatchingRunner(
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListGraph::EdgeMap<int> map(g);

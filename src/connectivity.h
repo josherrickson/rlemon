@@ -63,7 +63,7 @@ Rcpp::List getBipartitePartitionsRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   ListGraph::NodeMap<int> nodePartition(g);
   bool isBipartite = bipartitePartitions(g, nodePartition);
@@ -90,7 +90,7 @@ Rcpp::List getAndCheckTopologicalSortRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   ListDigraph::NodeMap<int> nodeOrder(g);
   bool isDAG = checkedTopologicalSort(g, nodeOrder);
@@ -117,7 +117,7 @@ std::vector<int> getTopologicalSortRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   ListDigraph::NodeMap<int> nodeOrder(g);
   topologicalSort(g, nodeOrder);
@@ -147,7 +147,7 @@ int IsConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return connected(g);
 }
@@ -165,7 +165,7 @@ int IsAcyclicRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return acyclic(g);
 }
@@ -183,7 +183,7 @@ int IsTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return tree(g);
 }
@@ -201,7 +201,7 @@ int IsBipartiteRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return bipartite(g);
 }
@@ -219,7 +219,7 @@ int IsStronglyConnectedRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return stronglyConnected(g);
 }
@@ -237,7 +237,7 @@ int IsDAGRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return dag(g);
 }
@@ -255,7 +255,7 @@ int IsBiNodeConnectedRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return biNodeConnected(g);
 }
@@ -277,7 +277,7 @@ int IsBiEdgeConnectedRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return biEdgeConnected(g);
 }
@@ -299,7 +299,7 @@ int IsLoopFreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return loopFree(g);
 }
@@ -321,7 +321,7 @@ int IsParallelFreeRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return parallelFree(g);
 }
@@ -343,7 +343,7 @@ int IsSimpleGraphRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return simpleGraph(g);
 }
@@ -365,7 +365,7 @@ int IsEulerianRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return eulerian(g);
 }
@@ -388,7 +388,7 @@ int CountBiEdgeConnectedComponentsRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return countBiEdgeConnectedComponents(g);
 }
@@ -410,7 +410,7 @@ int CountConnectedComponentsRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return countConnectedComponents(g);
 }
@@ -433,7 +433,7 @@ int CountBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return countBiNodeConnectedComponents(g);
 }
@@ -452,7 +452,7 @@ int CountStronglyConnectedComponentsRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   return countStronglyConnectedComponents(g);
 }
@@ -470,7 +470,7 @@ std::vector<int> FindStronglyConnectedComponentsRunner(
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   ListDigraph::NodeMap<int> ComponentMap(g);
   stronglyConnectedComponents(g, ComponentMap);
@@ -498,7 +498,7 @@ Rcpp::List FindStronglyConnectedCutArcsRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
   std::vector<ListDigraph::Arc> arcs;
   for (int i = 0; i < NUM_ARCS; ++i) {
-    auto a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    auto a = g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListDigraph::ArcMap<int> ComponentMap(g);
@@ -532,7 +532,7 @@ Rcpp::List FindBiEdgeConnectedCutEdgesRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
   std::vector<ListGraph::Edge> arcs;
   for (int i = 0; i < NUM_ARCS; ++i) {
-    auto a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    auto a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListGraph::EdgeMap<int> ComponentMap(g);
@@ -564,7 +564,7 @@ FindBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
   std::vector<ListGraph::Edge> arcs;
   for (int i = 0; i < NUM_ARCS; ++i) {
-    auto a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    auto a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListGraph::EdgeMap<int> ComponentMap(g);
@@ -591,7 +591,7 @@ std::vector<int> FindBiNodeConnectedCutNodesRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
   std::vector<ListGraph::Edge> arcs;
   for (int i = 0; i < NUM_ARCS; ++i) {
-    auto a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    auto a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListGraph::NodeMap<int> CutMap(g);
@@ -620,7 +620,7 @@ std::vector<int> FindConnectedComponentsRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   ListGraph::NodeMap<int> ComponentMap(g);
   connectedComponents(g, ComponentMap);
@@ -646,7 +646,7 @@ FindBiEdgeConnectedComponentsRunner(std::vector<int> arcSources,
   }
   int NUM_ARCS = arcSources.size();
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
   ListGraph::NodeMap<int> ComponentMap(g);
   biEdgeConnectedComponents(g, ComponentMap);

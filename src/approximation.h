@@ -31,7 +31,7 @@ Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
   }
 
   GrossoLocatelliPullanMc<ListGraph> runner(g);

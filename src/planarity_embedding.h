@@ -45,7 +45,8 @@ bool PlanarCheckingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListGraph::Edge a =
+        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -73,7 +74,8 @@ Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListGraph::Edge a =
+        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -141,7 +143,7 @@ Rcpp::List PlanarColoringRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -187,7 +189,7 @@ Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 

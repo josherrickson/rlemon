@@ -58,7 +58,8 @@ Rcpp::List CirculationRunner(std::vector<int> arcSources,
   ListDigraph::ArcMap<int> lower(g);
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     upper[a] = arcUpperBound[i];
     lower[a] = arcLowerBound[i];
     arcs.push_back(a);
@@ -102,7 +103,8 @@ Rcpp::List PreflowRunner(std::vector<int> arcSources,
   ListDigraph::ArcMap<int> dists(g);
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcDistances[i];
 
     arcs.push_back(a);
@@ -146,7 +148,8 @@ Rcpp::List EdmondsKarpRunner(std::vector<int> arcSources,
   ListDigraph::ArcMap<int> dists(g);
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcDistances[i];
 
     arcs.push_back(a);

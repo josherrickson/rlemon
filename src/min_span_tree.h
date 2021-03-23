@@ -44,7 +44,8 @@ Rcpp::List KruskalRunner(std::vector<int> arcSources,
   std::vector<ListDigraph::Arc> arcs;
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
     dists[a] = arcDistances[i];
   }
@@ -78,7 +79,8 @@ Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources,
   std::vector<ListDigraph::Arc> arcs;
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
     dists[a] = arcDistances[i];
   }
