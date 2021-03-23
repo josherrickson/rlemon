@@ -53,8 +53,8 @@ Rcpp::List KruskalRunner(std::vector<int> arcSources,
   std::vector<int> treeSources;
   std::vector<int> treeTargets;
   for (size_t i = 0; i < tree.size(); i++) {
-    treeSources.push_back(g.id(g.source(tree[i])));
-    treeTargets.push_back(g.id(g.target(tree[i])));
+    treeSources.push_back(g.id(g.source(tree[i])) + 1);
+    treeTargets.push_back(g.id(g.target(tree[i])) + 1);
   }
   return Rcpp::List::create(treeSources, treeTargets, treeVal);
 }
@@ -85,13 +85,13 @@ Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources,
     dists[a] = arcDistances[i];
   }
   ListDigraph::ArcMap<int> arbs(g);
-  int arbVal = minCostArborescence(g, dists, nodes[sourceNode], arbs);
+  int arbVal = minCostArborescence(g, dists, nodes[sourceNode - 1], arbs);
   std::vector<int> treeSources;
   std::vector<int> treeTargets;
   for (int i = 0; i < NUM_ARCS; i++) {
     if (arbs[arcs[i]]) {
-      treeSources.push_back(g.id(g.source(arcs[i])));
-      treeTargets.push_back(g.id(g.target(arcs[i])));
+      treeSources.push_back(g.id(g.source(arcs[i])) + 1);
+      treeTargets.push_back(g.id(g.target(arcs[i])) + 1);
     }
   }
   return Rcpp::List::create(treeSources, treeTargets, arbVal);
