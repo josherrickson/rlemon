@@ -1,6 +1,6 @@
 test_that("NagamochiIbaraki Test", {
-   s <- c(0, 0, 1, 1, 2, 2, 3, 3, 4, 4)
-   t <- c(1, 3, 2, 3, 3, 5, 1, 4, 2, 5)
+   s <- c(1, 1, 2, 2, 3, 3,4, 4, 5, 5)
+   t <- c(2, 4, 3, 4, 4, 6, 2, 5, 3, 6)
    weights <- c(16, 13, 12, 10, 9, 20, 4, 14, 7, 4)
    numNodes <- 6
    out <- MinCut(s,t,weights,numNodes, "NagamochiIbaraki")
@@ -11,8 +11,8 @@ test_that("NagamochiIbaraki Test", {
 })
 
 test_that("HaoOrlin Test", {
-   s <- c(0, 0, 1, 1, 2, 2, 3, 3, 4, 4)
-   t <- c(1, 3, 2, 3, 3, 5, 1, 4, 2, 5)
+   s <- c(1, 1, 2, 2, 3, 3,4, 4, 5, 5)
+   t <- c(2, 4, 3, 4, 4, 6, 2, 5, 3, 6)
    weights <- c(16, 13, 12, 10, 9, 20, 4, 14, 7, 4)
    numNodes <- 6
    out <- MinCut(s,t,weights,numNodes, "HaoOrlin")
@@ -23,12 +23,12 @@ test_that("HaoOrlin Test", {
 
 
 test_that("GomoryHu Test", {
-   s <- c(0, 0, 1, 1, 2, 2, 3, 3, 4, 4)
-   t <- c(1, 3, 2, 3, 3, 5, 1, 4, 2, 5)
+   s <- c(1, 1, 2, 2, 3, 3,4, 4, 5, 5)
+   t <- c(2, 4, 3, 4, 4, 6, 2, 5, 3, 6)
    weights <- c(16, 13, 12, 10, 9, 20, 4, 14, 7, 4)
    numNodes <- 6
    out <- GomoryHuTree(s,t,weights,numNodes)
-   expect_equal(out[[1]],c(1, 3, 5, 2, 3, -1))
+   expect_equal(out[[1]],c(2, 4, 6, 3, 4, -1))
    expect_equal(out[[2]],c(29, 39, 24, 32, 25, -1))
    expect_equal(out[[3]],c(5, 4, 1, 2, 3, 0))   
 })

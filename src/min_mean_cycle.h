@@ -41,7 +41,8 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
     costs[arcs[i]] = arcDistances[i];
   }
@@ -53,7 +54,7 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources,
   std::vector<int> path_nodes;
   for (int i = 0; i < finale.length(); i++) {
     distances.push_back(costs[finale.nth(i)]);
-    path_nodes.push_back(g.id(g.source(finale.nth(i))));
+    path_nodes.push_back(g.id(g.source(finale.nth(i))) + 1);
   }
   return Rcpp::List::create(distances, path_nodes);
 }
@@ -82,7 +83,8 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
     costs[arcs[i]] = arcDistances[i];
   }
@@ -94,7 +96,7 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources,
   std::vector<int> path_nodes;
   for (int i = 0; i < finale.length(); i++) {
     distances.push_back(costs[finale.nth(i)]);
-    path_nodes.push_back(g.id(g.source(finale.nth(i))));
+    path_nodes.push_back(g.id(g.source(finale.nth(i))) + 1);
   }
   return Rcpp::List::create(distances, path_nodes);
 }
@@ -123,7 +125,8 @@ Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
     costs[arcs[i]] = arcDistances[i];
   }
@@ -135,7 +138,7 @@ Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources,
   std::vector<int> path_nodes;
   for (int i = 0; i < finale.length(); i++) {
     distances.push_back(costs[finale.nth(i)]);
-    path_nodes.push_back(g.id(g.source(finale.nth(i))));
+    path_nodes.push_back(g.id(g.source(finale.nth(i))) + 1);
   }
   return Rcpp::List::create(distances, path_nodes);
 }

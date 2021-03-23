@@ -1,14 +1,15 @@
+
 test_that("Planarity Checking", {
-  s <- c(0,0,0,1,1,1,2,2,2)
-  t <- c(3,4,5,3,4,5,3,4,5)
+  s <- c(1,1,1,2,2,2,3,3,3)
+  t <- c(4,5,6,4,5,6,4,5,6)
   out <- PlanarCheckingRunner(s,t,6)
   expect_is(out, "logical")
   expect_equal(out, FALSE)
 })
 
 test_that("Planar-Coloring Checking", {
-  s <- c(0,0,0,1,1,1,2)
-  t <- c(3,4,5,3,4,5,0)
+  s <- c(1,1,1,2,2,2,3)
+  t <- c(4,5,6,4,5,6,1)
   out <- PlanarColoringRunner(s,t,6)
   expect_is(out[[1]], "logical")
   expect_equal(out[[1]], TRUE)
@@ -21,8 +22,8 @@ test_that("Planar-Coloring Checking", {
 
 
 test_that("Planar-Embedding Checking", {
-  s <- c(0,0,0,1,1,1,2)
-  t <- c(3,4,5,3,4,5,0)
+  s <- c(1,1,1,2,2,2,3)
+  t <- c(4,5,6,4,5,6,1)
   out <- PlanarDrawingRunner(s,t,6)
   expect_is(out[[1]], "logical")
   expect_equal(out[[1]], TRUE)

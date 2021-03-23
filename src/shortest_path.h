@@ -54,7 +54,8 @@ Rcpp::List SuurballeRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
 
     arcs.push_back(a);
     costs[arcs[i]] = arcDistances[i];
@@ -62,7 +63,7 @@ Rcpp::List SuurballeRunner(std::vector<int> arcSources,
 
   Suurballe<ListDigraph, DigraphExtender<ListDigraphBase>::ArcMap<int> > s(
       g, costs);
-  int NUM_PATHS = s.run(nodes[startNode], nodes[endNode], NUM_ARCS);
+  int NUM_PATHS = s.run(nodes[startNode - 1], nodes[endNode - 1], NUM_ARCS);
 
   std::vector<int> temp;
   std::vector<std::vector<int> > paths(NUM_PATHS, temp);
@@ -74,9 +75,9 @@ Rcpp::List SuurballeRunner(std::vector<int> arcSources,
       auto s = g.source(arc);
       auto t = g.target(arc);
       path.eraseFront();
-      paths.at(i).push_back(g.id(s));
+      paths.at(i).push_back(g.id(s) + 1);
       if (j == length - 1)
-        paths.at(i).push_back(g.id(t));
+        paths.at(i).push_back(g.id(t) + 1);
     }
   }
   return Rcpp::List::create(NUM_PATHS, paths);
@@ -104,19 +105,20 @@ Rcpp::List DijkstraRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
     costs[arcs[i]] = arcDistances[i];
   }
 
   Dijkstra<ListDigraph, DigraphExtender<ListDigraphBase>::ArcMap<int> > bf(
       g, costs);
-  bf.run(nodes[startNode]);
+  bf.run(nodes[startNode - 1]);
   std::vector<int> distances;
   std::vector<int> predecessors;
   for (int i = 0; i < numNodes; i++) {
     distances.push_back(bf.dist(nodes[i]));
-    predecessors.push_back(g.id(bf.predNode(nodes[i])));
+    predecessors.push_back(g.id(bf.predNode(nodes[i])) + 1);
   }
   return Rcpp::List::create(distances, predecessors);
 }
@@ -143,7 +145,8 @@ Rcpp::List BellmanFordRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
     costs[arcs[i]] = arcDistances[i];
   }
@@ -151,12 +154,12 @@ Rcpp::List BellmanFordRunner(std::vector<int> arcSources,
   BellmanFord<ListDigraph, DigraphExtender<ListDigraphBase>::ArcMap<int> > bf =
       BellmanFord<ListDigraph, DigraphExtender<ListDigraphBase>::ArcMap<int> >(
           g, costs);
-  bf.run(nodes[startNode]);
+  bf.run(nodes[startNode - 1]);
   std::vector<int> distances;
   std::vector<int> predecessors;
   for (int i = 0; i < numNodes; i++) {
     distances.push_back(bf.dist(nodes[i]));
-    predecessors.push_back(g.id(bf.predNode(nodes[i])));
+    predecessors.push_back(g.id(bf.predNode(nodes[i])) + 1);
   }
   return Rcpp::List::create(distances, predecessors);
 }

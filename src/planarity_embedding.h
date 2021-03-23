@@ -45,7 +45,8 @@ bool PlanarCheckingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListGraph::Edge a =
+        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -73,7 +74,8 @@ Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListGraph::Edge a =
+        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -89,8 +91,8 @@ Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
     // Return the list of edges that are in the Kuratowski Subdivision
     for (int i = 0; i < NUM_ARCS; ++i) {
       if (runner.kuratowski(arcs[i])) {
-        kuratowskiSubInit.push_back(g.id(g.u(arcs[i])));
-        kuratowskiSubFin.push_back(g.id(g.v(arcs[i])));
+        kuratowskiSubInit.push_back(g.id(g.u(arcs[i])) + 1);
+        kuratowskiSubFin.push_back(g.id(g.v(arcs[i])) + 1);
       }
     }
   } else {
@@ -108,8 +110,8 @@ Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
         } else {
           current = runner.next(current);
         }
-        planarEmbeddingStart.push_back(g.id(g.source(current)));
-        planarEmbeddingEnd.push_back(g.id(g.target(current)));
+        planarEmbeddingStart.push_back(g.id(g.source(current)) + 1);
+        planarEmbeddingEnd.push_back(g.id(g.target(current)) + 1);
       }
     }
   }
@@ -141,7 +143,7 @@ Rcpp::List PlanarColoringRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 
@@ -187,7 +189,7 @@ Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
 

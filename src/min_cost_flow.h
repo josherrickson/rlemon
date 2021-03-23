@@ -46,7 +46,8 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
   }
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     costs[a] = arcCosts[i];
     capacities[a] = arcCapacities[i];
     arcs.push_back(a);
@@ -98,7 +99,8 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
   }
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     costs[a] = arcCosts[i];
     capacities[a] = arcCapacities[i];
     arcs.push_back(a);
@@ -150,7 +152,8 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources,
   }
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     costs[a] = arcCosts[i];
     capacities[a] = arcCapacities[i];
     arcs.push_back(a);
@@ -202,7 +205,8 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources,
   }
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     costs[a] = arcCosts[i];
     capacities[a] = arcCapacities[i];
     arcs.push_back(a);

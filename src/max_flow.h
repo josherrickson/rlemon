@@ -58,7 +58,8 @@ Rcpp::List CirculationRunner(std::vector<int> arcSources,
   ListDigraph::ArcMap<int> lower(g);
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     upper[a] = arcUpperBound[i];
     lower[a] = arcLowerBound[i];
     arcs.push_back(a);
@@ -75,7 +76,7 @@ Rcpp::List CirculationRunner(std::vector<int> arcSources,
 
   for (int i = 0; i < numNodes; ++i) {
     if (runner.barrier(nodes[i])) {
-      barrierNodes.push_back(i);
+      barrierNodes.push_back(i + 1);
     }
   }
   return Rcpp::List::create(arcFlows, barrierNodes);
@@ -102,14 +103,15 @@ Rcpp::List PreflowRunner(std::vector<int> arcSources,
   ListDigraph::ArcMap<int> dists(g);
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcDistances[i];
 
     arcs.push_back(a);
   }
 
-  Preflow<ListDigraph> runner(g, dists, nodes[sourceNode],
-                              nodes[destinationNode]);
+  Preflow<ListDigraph> runner(g, dists, nodes[sourceNode - 1],
+                              nodes[destinationNode - 1]);
   runner.run();
 
   int outVal = runner.flowValue();
@@ -146,14 +148,15 @@ Rcpp::List EdmondsKarpRunner(std::vector<int> arcSources,
   ListDigraph::ArcMap<int> dists(g);
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListDigraph::Arc a = g.addArc(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcDistances[i];
 
     arcs.push_back(a);
   }
 
-  EdmondsKarp<ListDigraph> runner(g, dists, nodes[sourceNode],
-                                  nodes[destinationNode]);
+  EdmondsKarp<ListDigraph> runner(g, dists, nodes[sourceNode - 1],
+                                  nodes[destinationNode - 1]);
   runner.run();
 
   int outVal = runner.flowValue();

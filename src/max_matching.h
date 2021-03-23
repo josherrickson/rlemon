@@ -47,7 +47,7 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -57,8 +57,8 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -83,7 +83,7 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -94,8 +94,8 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -121,7 +121,7 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -132,8 +132,8 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -160,7 +160,7 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -170,8 +170,8 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -201,7 +201,7 @@ Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListGraph::EdgeMap<int> map(g);
@@ -211,8 +211,8 @@ Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -241,7 +241,7 @@ Rcpp::List MaximumCardinalityFractionalMatchingRunner(
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    Edge a = g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     arcs.push_back(a);
   }
   ListGraph::EdgeMap<int> map(g);
@@ -251,8 +251,8 @@ Rcpp::List MaximumCardinalityFractionalMatchingRunner(
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }

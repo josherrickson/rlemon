@@ -45,7 +45,8 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListGraph::Edge a =
+        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -88,7 +89,8 @@ Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListGraph::Edge a =
+        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -131,7 +133,8 @@ Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a = g.addEdge(nodes[arcSources[i]], nodes[arcTargets[i]]);
+    ListGraph::Edge a =
+        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
@@ -145,11 +148,13 @@ Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources,
     int predNodeLoc = g.id(alg.predNode(nodes[i]));
     int predNodeWeight = alg.predValue(nodes[i]);
     int rootDistance = alg.rootDist(nodes[i]);
-    predecessors.push_back(predNodeLoc);
+
     if (predNodeLoc != -1) {
       predEdgeWeights.push_back(predNodeWeight);
+      predecessors.push_back(predNodeLoc + 1);
     } else {
       predEdgeWeights.push_back(-1);
+      predecessors.push_back(predNodeLoc);
     }
     rootDistances.push_back(rootDistance);
   }

@@ -39,7 +39,7 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    costs[g.arc(g(arcSources[i]), g(arcTargets[i]))] = arcDistances[i];
+    costs[g.arc(g(arcSources[i] - 1), g(arcTargets[i] - 1))] = arcDistances[i];
   }
 
   ChristofidesTsp<FullGraph::EdgeMap<int> > runner(g, costs);
@@ -47,7 +47,7 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources,
 
   std::vector<int> tour;
   for (int i = 0; i < numNodes; ++i) {
-    tour.push_back(g.id(runner.tourNodes()[i]));
+    tour.push_back(g.id(runner.tourNodes()[i]) + 1);
   }
 
   return Rcpp::List::create(tour, runner.tourCost());
@@ -72,7 +72,7 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    costs[g.arc(g(arcSources[i]), g(arcTargets[i]))] = arcDistances[i];
+    costs[g.arc(g(arcSources[i] - 1), g(arcTargets[i] - 1))] = arcDistances[i];
   }
 
   GreedyTsp<FullGraph::EdgeMap<int> > runner(g, costs);
@@ -80,7 +80,7 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources,
 
   std::vector<int> tour;
   for (int i = 0; i < numNodes; ++i) {
-    tour.push_back(g.id(runner.tourNodes()[i]));
+    tour.push_back(g.id(runner.tourNodes()[i]) + 1);
   }
 
   return Rcpp::List::create(tour, runner.tourCost());
@@ -105,7 +105,7 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    costs[g.arc(g(arcSources[i]), g(arcTargets[i]))] = arcDistances[i];
+    costs[g.arc(g(arcSources[i] - 1), g(arcTargets[i] - 1))] = arcDistances[i];
   }
 
   InsertionTsp<FullGraph::EdgeMap<int> > runner(g, costs);
@@ -113,7 +113,7 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources,
 
   std::vector<int> tour;
   for (int i = 0; i < numNodes; ++i) {
-    tour.push_back(g.id(runner.tourNodes()[i]));
+    tour.push_back(g.id(runner.tourNodes()[i]) + 1);
   }
 
   return Rcpp::List::create(tour, runner.tourCost());
@@ -138,7 +138,7 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    costs[g.arc(g(arcSources[i]), g(arcTargets[i]))] = arcDistances[i];
+    costs[g.arc(g(arcSources[i] - 1), g(arcTargets[i] - 1))] = arcDistances[i];
   }
 
   NearestNeighborTsp<FullGraph::EdgeMap<int> > runner(g, costs);
@@ -146,7 +146,7 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources,
 
   std::vector<int> tour;
   for (int i = 0; i < numNodes; ++i) {
-    tour.push_back(g.id(runner.tourNodes()[i]));
+    tour.push_back(g.id(runner.tourNodes()[i]) + 1);
   }
 
   return Rcpp::List::create(tour, runner.tourCost());
@@ -171,7 +171,7 @@ Rcpp::List Opt2TSPRunner(std::vector<int> arcSources,
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    costs[g.arc(g(arcSources[i]), g(arcTargets[i]))] = arcDistances[i];
+    costs[g.arc(g(arcSources[i] - 1), g(arcTargets[i] - 1))] = arcDistances[i];
   }
 
   Opt2Tsp<FullGraph::EdgeMap<int> > runner(g, costs);
@@ -179,7 +179,7 @@ Rcpp::List Opt2TSPRunner(std::vector<int> arcSources,
 
   std::vector<int> tour;
   for (int i = 0; i < numNodes; ++i) {
-    tour.push_back(g.id(runner.tourNodes()[i]));
+    tour.push_back(g.id(runner.tourNodes()[i]) + 1);
   }
 
   return Rcpp::List::create(tour, runner.tourCost());
