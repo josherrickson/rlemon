@@ -36,7 +36,7 @@ Rcpp::List GraphCompatabilityConverter(std::vector<int> nodesList,
   std::unordered_map<int, int> nodeMap;
   std::vector<int> ret_nodesList;
   std::vector<std::string> ret_nodeMapping;
-  for (int i = 0; i < allNodes.size(); ++i) {
+  for (size_t i = 0; i < allNodes.size(); ++i) {
     nodeMap[allNodes[i]] = i;
     ret_nodesList.push_back(i);
     ret_nodeMapping.push_back(std::to_string(allNodes[i]) + " -> " +
@@ -45,7 +45,7 @@ Rcpp::List GraphCompatabilityConverter(std::vector<int> nodesList,
 
   std::vector<int> ret_arcSources;
   std::vector<int> ret_arcTargets;
-  for (int i = 0; i < arcSources.size(); ++i) {
+  for (size_t i = 0; i < arcSources.size(); ++i) {
     ret_arcSources.push_back(nodeMap[arcSources[i]]);
     ret_arcTargets.push_back(nodeMap[arcTargets[i]]);
   }

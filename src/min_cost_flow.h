@@ -61,7 +61,7 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
 
-  for (int i = 0; i < arcs.size(); ++i) {
+  for (size_t i = 0; i < arcs.size(); ++i) {
     arcFlows.push_back(runner.flow(arcs[i]));
   }
 
@@ -113,7 +113,7 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
 
-  for (int i = 0; i < arcs.size(); ++i) {
+  for (size_t i = 0; i < arcs.size(); ++i) {
     arcFlows.push_back(runner.flow(arcs[i]));
   }
 
@@ -165,7 +165,7 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources,
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
 
-  for (int i = 0; i < arcs.size(); ++i) {
+  for (size_t i = 0; i < arcs.size(); ++i) {
     arcFlows.push_back(runner.flow(arcs[i]));
   }
 
@@ -217,7 +217,7 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources,
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
 
-  for (int i = 0; i < arcs.size(); ++i) {
+  for (size_t i = 0; i < arcs.size(); ++i) {
     arcFlows.push_back(runner.flow(arcs[i]));
   }
 

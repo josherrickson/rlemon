@@ -51,7 +51,7 @@ Rcpp::List KruskalRunner(std::vector<int> arcSources,
   int treeVal = kruskal(g, dists, std::back_inserter(tree));
   std::vector<int> treeSources;
   std::vector<int> treeTargets;
-  for (int i = 0; i < tree.size(); i++) {
+  for (size_t i = 0; i < tree.size(); i++) {
     treeSources.push_back(g.id(g.source(tree[i])));
     treeTargets.push_back(g.id(g.target(tree[i])));
   }
