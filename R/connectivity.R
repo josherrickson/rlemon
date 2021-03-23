@@ -97,10 +97,11 @@ IsAcyclic <- function(arcSources,
 ##' Checks if an undirected graph is a tree
 ##'
 ##' @title IsTree
-##' @param arcSources Vector corresponding to the source nodes of a graph's edges
-##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
-##' @param numNodes The
-##' number of nodes in the graph
+##' @param arcSources Vector corresponding to the source nodes of a graph's
+##'   edges
+##' @param arcTargets Vector corresponding to the destination nodes of a graph's
+##'   edges
+##' @param numNodes The number of nodes in the graph
 ##' @return A boolean stating if the graph is a tree
 ##' @export
 IsTree <- function(arcSources,
@@ -281,7 +282,8 @@ CountBiEdgeConnectedComponents <- function(arcSources,
                                            arcTargets,
                                            numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountBiEdgeConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
+  .Call(`_rlemon_CountBiEdgeConnectedComponentsRunner`, arcSources, arcTargets,
+        numNodes)
 }
 
 ##' Counts the number of connected components in an undirected graph.
@@ -298,7 +300,8 @@ CountConnectedComponents <- function(arcSources,
                                      arcTargets,
                                      numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
+  .Call(`_rlemon_CountConnectedComponentsRunner`, arcSources, arcTargets,
+        numNodes)
 }
 
 ##' Counts the number of bi-node connected components in an undirected graph.
@@ -315,7 +318,8 @@ CountBiNodeConnectedComponents <- function(arcSources,
                                            arcTargets,
                                            numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountBiNodeConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
+  .Call(`_rlemon_CountBiNodeConnectedComponentsRunner`, arcSources, arcTargets,
+        numNodes)
 }
 
 ##' Counts the number of strongly connected components in a directed graph.
@@ -332,7 +336,8 @@ CountStronglyConnectedComponents <- function(arcSources,
                                              arcTargets,
                                              numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_CountStronglyConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
+  .Call(`_rlemon_CountStronglyConnectedComponentsRunner`, arcSources,
+        arcTargets, numNodes)
 }
 
 ##' Finds the strongly connected components in a directed graph.
@@ -349,7 +354,8 @@ FindStronglyConnectedComponents <- function(arcSources,
                                             arcTargets,
                                             numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_FindStronglyConnectedComponentsRunner`, arcSources, arcTargets, numNodes)
+  .Call(`_rlemon_FindStronglyConnectedComponentsRunner`, arcSources, arcTargets,
+        numNodes)
 }
 
 ##' Finds the cut arcs of strongly connected components in a directed graph.
@@ -367,10 +373,8 @@ FindStronglyConnectedCutArcs <- function(arcSources,
                                          arcTargets,
                                          numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(
-    `_rlemon_FindStronglyConnectedCutArcsRunner`, arcSources, arcTargets,
-    numNodes
-  )
+  .Call(`_rlemon_FindStronglyConnectedCutArcsRunner`, arcSources, arcTargets,
+        numNodes)
 }
 
 ##' Finds the bi-edge-connected cut edges in an undirected graph.
@@ -388,10 +392,8 @@ FindBiEdgeConnectedCutEdges <- function(arcSources,
                                         arcTargets,
                                         numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(
-    `_rlemon_FindBiEdgeConnectedCutEdgesRunner`, arcSources, arcTargets,
-    numNodes
-  )
+  .Call(`_rlemon_FindBiEdgeConnectedCutEdgesRunner`, arcSources, arcTargets,
+        numNodes)
 }
 
 ##' Finds the bi-node-connected components of an undirected graph.

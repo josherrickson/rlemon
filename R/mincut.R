@@ -49,15 +49,20 @@ MinCut <- function(arcSources,
 ##' Runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.
 ##'
 ##' @title MinCut
-##' @param arcSources Vector corresponding to the source nodes of a graph's edges
-##' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
+##' @param arcSources Vector corresponding to the source nodes of a graph's
+##'   edges
+##' @param arcTargets Vector corresponding to the destination nodes of a graph's
+##'   edges
 ##' @param arcWeights Vector corresponding to the weights of a graph's arcs
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing three entries: 1) A list of predecessor nodes of each node in the graph, and 2) A list of weights of the predecessor edge of each node, and 3) A list of distances from the root node to each node.
+##' @return A list containing three entries: 1) A list of predecessor nodes of
+##'   each node in the graph, and 2) A list of weights of the predecessor edge
+##'   of each node, and 3) A list of distances from the root node to each node.
 ##' @export
 GomoryHuTree <- function(arcSources, arcTargets, arcWeights, numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
 
-  .Call(`_rlemon_GomoryHuTreeRunner`, arcSources, arcTargets, arcWeights, numNodes)
+  .Call(`_rlemon_GomoryHuTreeRunner`, arcSources, arcTargets, arcWeights,
+        numNodes)
 }

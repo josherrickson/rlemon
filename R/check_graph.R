@@ -48,20 +48,30 @@ check_graph_vertices <- function(arcSources,
   }
   # Check that no node is above the maximum
   if (!all(arcSources <= numNodes)) {
-    stop("The arcSources vec contains vertices with indices greater than the number of nodes. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+    stop(paste("The arcSources vec contains vertices with indices greater",
+               "than the number of nodes. rLEMON is 1-indexed on the number",
+               "of graph vertices, and will assume that the vertices in",
+               "between exist"))
   }
 
   if (!all(arcSources > 0)) {
-    stop("The arcSources vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+    stop(paste("The arcSources vec contains vertices with indices less than 1.",
+               "rLEMON is 1-indexed on the number of graph vertices, and will",
+               "assume that the vertices in between exist"))
   }
 
 
   if (!all(arcTargets <= numNodes)) {
-    stop("The arcTargets vec contains vertices with indices greater than the number of nodes. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+    stop(paste("The arcTargets vec contains vertices with indices greater than",
+               " the number of nodes. rLEMON is 1-indexed on the number of",
+               "graph vertices, and will assume that the vertices in between",
+               "exist"))
   }
 
   if (!all(arcTargets > 0)) {
-    stop("The arcTargets vec contains vertices with indices less than 1. rLEMON is 1-indexed on the number of graph vertices, and will assume that the vertices in between exist")
+    stop(paste("The arcTargets vec contains vertices with indices less than 1.",
+               "rLEMON is 1-indexed on the number of graph vertices, and will",
+               "assume that the vertices in between exist"))
   }
 
   # Checking that node identifiers are integers
@@ -90,17 +100,19 @@ check_arc_map <- function(arcSources,
   if (length(arcSources) != length(mapTest)) {
     print(length(arcSources))
     print(length(mapTest))
-    stop("Inconsistent number of arcs across Sources and Arc Map (ArcWeights/ArcCapacities/ArcCosts)")
+    stop(paste("Inconsistent number of arcs across Sources and Arc Map",
+               "(ArcWeights/ArcCapacities/ArcCosts)"))
   }
   if (length(arcTargets) != length(mapTest)) {
-    stop("Inconsistent number of arcs across Targets and Arc Map (ArcWeights/ArcCapacities/ArcCosts)")
+    stop(paste("Inconsistent number of arcs across Targets and Arc Map",
+               "(ArcWeights/ArcCapacities/ArcCosts)"))
   }
   invisible(TRUE)
 }
 
 
-##' Check node maps for common errors.
-##' Doesn't check if the underlying graph is correct - see `check_graph_vertices`
+##' Check node maps for common errors. Doesn't check if the underlying graph is
+##' correct - see `check_graph_vertices`
 ##'
 ##' @param mapTest Node Map to Test
 ##' @param numNodes Number of nodes
