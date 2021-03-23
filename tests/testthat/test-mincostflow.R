@@ -1,6 +1,6 @@
 test_that("Capcity Scaling Test", {
-   s <- small_graph_example$startnodes+1
-   t <- small_graph_example$endnodes+1
+   s <- small_graph_example$startnodes
+   t <- small_graph_example$endnodes
    cap <- small_graph_example$arccapacity
    costs <- small_graph_example$arccosts
    n <- small_graph_example$nodedemand
@@ -13,8 +13,8 @@ test_that("Capcity Scaling Test", {
 })
 
 test_that("Cost Scaling Test", {
-   s <- small_graph_example$startnodes+1
-   t <- small_graph_example$endnodes+1
+   s <- small_graph_example$startnodes
+   t <- small_graph_example$endnodes
    cap <- small_graph_example$arccapacity
    costs <- small_graph_example$arccosts
    n <- small_graph_example$nodedemand
@@ -28,8 +28,8 @@ test_that("Cost Scaling Test", {
 
 
 test_that("Network Simplex Test", {
-   s <- small_graph_example$startnodes+1
-   t <- small_graph_example$endnodes+1
+   s <- small_graph_example$startnodes
+   t <- small_graph_example$endnodes
    cap <- small_graph_example$arccapacity
    costs <- small_graph_example$arccosts
    n <- small_graph_example$nodedemand
@@ -42,8 +42,8 @@ test_that("Network Simplex Test", {
 })
 
 test_that("Cycle Cancelling Test", {
-   s <- small_graph_example$startnodes+1
-   t <- small_graph_example$endnodes+1
+   s <- small_graph_example$startnodes
+   t <- small_graph_example$endnodes
    cap <- small_graph_example$arccapacity
    costs <- small_graph_example$arccosts
    n <- small_graph_example$nodedemand
@@ -55,8 +55,8 @@ test_that("Cycle Cancelling Test", {
    expect_equal(out[[1]], small_graph_example$outflow)
 })
 test_that("MinCostFlow Test", {
-   s <- small_graph_example$startnodes+1
-   t <- small_graph_example$endnodes+1
+   s <- small_graph_example$startnodes
+   t <- small_graph_example$endnodes
    cap <- small_graph_example$arccapacity
    costs <- small_graph_example$arccosts
    n <- small_graph_example$nodedemand
