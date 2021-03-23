@@ -45,11 +45,6 @@ MaxFlow <- function(arcSources, arcTargets, arcCapacities, sourceNode, destNode,
 ##' @export
 NetworkCirculation <- function(arcSources, arcTargets, arcLowerBound, arcUpperBound, nodeSupplies, numNodes, algorithm) {
 
-  print(length(arcSources))
-  print(length(arcTargets))
-  print(length(arcLowerBound))
-  print(length(arcUpperBound))
-  
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcLowerBound, numNodes)
   check_arc_map(arcSources, arcTargets, arcUpperBound, numNodes)

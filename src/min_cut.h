@@ -148,11 +148,13 @@ Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources,
     int predNodeLoc = g.id(alg.predNode(nodes[i]));
     int predNodeWeight = alg.predValue(nodes[i]);
     int rootDistance = alg.rootDist(nodes[i]);
-    predecessors.push_back(predNodeLoc);
+
     if (predNodeLoc != -1) {
       predEdgeWeights.push_back(predNodeWeight);
+      predecessors.push_back(predNodeLoc + 1);
     } else {
       predEdgeWeights.push_back(-1);
+      predecessors.push_back(predNodeLoc);
     }
     rootDistances.push_back(rootDistance);
   }
