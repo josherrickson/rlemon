@@ -8,7 +8,12 @@
 ##' @param numNodes Number of nodes
 ##' @return TRUE if no errors are found.
 ##' @export
-check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies, numNodes) {
+check_graph <- function(arcSources,
+                        arcTargets,
+                        arcCapacities,
+                        arcCosts,
+                        nodeSupplies,
+                        numNodes) {
   # Checking that arc number is consistent
   if (length(arcSources) != length(arcTargets) |
     length(arcSources) != length(arcCapacities) |
@@ -23,7 +28,8 @@ check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSup
     stop("Nodes must be integers")
   }
 
-  invisible(TRUE) # if it passes all checks. `invisible` instead of `return` avoids printing anything out
+  invisible(TRUE) # if it passes all checks. `invisible` instead of `return`
+                  # avoids printing anything out
 }
 
 ##' Check sources and target arrays for common errors.
@@ -33,7 +39,9 @@ check_graph <- function(arcSources, arcTargets, arcCapacities, arcCosts, nodeSup
 ##' @param numNodes Number of nodes
 ##' @return TRUE if no errors are found
 ##' export
-check_graph_vertices <- function(arcSources, arcTargets, numNodes) {
+check_graph_vertices <- function(arcSources,
+                                 arcTargets,
+                                 numNodes) {
   # Check that the arc number is consistent
   if (length(arcSources) != length(arcTargets)) {
     stop("Inconsistent number of arcs across Sources and Targets.")
@@ -65,8 +73,8 @@ check_graph_vertices <- function(arcSources, arcTargets, numNodes) {
   invisible(TRUE)
 }
 
-##' Check arc maps for common errors.
-##' Doesn't check if the underlying graph is correct - see `check_graph_vertices`
+##' Check arc maps for common errors. Doesn't check if the underlying graph is
+##' correct - see `check_graph_vertices`
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
@@ -74,7 +82,10 @@ check_graph_vertices <- function(arcSources, arcTargets, numNodes) {
 ##' @param numNodes Number of nodes
 ##' @return TRUE if no errors are found
 ##' export
-check_arc_map <- function(arcSources, arcTargets, mapTest, numNodes) {
+check_arc_map <- function(arcSources,
+                          arcTargets,
+                          mapTest,
+                          numNodes) {
   # Check that the arc number is consistent
   if (length(arcSources) != length(mapTest)) {
     print(length(arcSources))
@@ -95,7 +106,8 @@ check_arc_map <- function(arcSources, arcTargets, mapTest, numNodes) {
 ##' @param numNodes Number of nodes
 ##' @return TRUE if no errors are found
 ##' export
-check_node_map <- function(mapTest, numNodes) {
+check_node_map <- function(mapTest,
+                           numNodes) {
   # Check that the arc number is consistent
   if (length(mapTest) != numNodes) {
     stop("Inconsistent number of nodes in Node Map (NodeSupplies)")
@@ -109,7 +121,8 @@ check_node_map <- function(mapTest, numNodes) {
 ##' @param numNodes Number of nodes
 ##' @return TRUE if no errors are found
 ##' export
-check_node <- function(testNode, numNodes) {
+check_node <- function(testNode,
+                       numNodes) {
   # Check that the arc number is consistent
   if (testNode != floor(testNode)) {
     stop("Node index given ( sourceNode/destNode ) not integral.")
@@ -130,7 +143,8 @@ check_node <- function(testNode, numNodes) {
 ##' @param arcTargets Arc Targets
 ##' @return TRUE if no errors are found
 ##' export
-check_graph_arcs <- function(arcSources, arcTargets) {
+check_graph_arcs <- function(arcSources,
+                             arcTargets) {
   # Check that the arc number is consistent
   if (length(arcSources) != length(arcTargets)) {
     stop("Inconsistent number of arcs across Sources and Targets.")

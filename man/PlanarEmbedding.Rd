@@ -7,15 +7,21 @@
 PlanarEmbedding(arcSources, arcTargets, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A boolean if the graph is planar, 2) the start nodes of the arcs of the embedding, 3) the end nodes of the arcs of the planar embedding, 4) the start nodes of the edges of the kuratowski subdivision, 5) the end nodes of the edges of the kuratowski subdivision.
+A list containing 1) A boolean if the graph is planar, 2) the start
+  nodes of the arcs of the embedding, 3) the end nodes of the arcs of the
+  planar embedding, 4) the start nodes of the edges of the kuratowski
+  subdivision, 5) the end nodes of the edges of the kuratowski subdivision.
 }
 \description{
-Checks if an undirected graph is planar and returns a list of outputs related to the planar embedding
+Checks if an undirected graph is planar and returns a list of outputs
+related to the planar embedding
 }

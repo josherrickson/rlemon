@@ -7,9 +7,11 @@
 IsSimpleGraph(arcSources, arcTargets, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 }
@@ -17,5 +19,6 @@ IsSimpleGraph(arcSources, arcTargets, numNodes)
 A boolean stating if the graph is simple
 }
 \description{
-Checks if a graph is simple, i.e. it contains no loop arcs/edges and no parallel arcs/edges. Works for both undirected and directed graphs.
+Checks if a graph is simple, i.e. it contains no loop arcs/edges and no
+parallel arcs/edges. Works for both undirected and directed graphs.
 }

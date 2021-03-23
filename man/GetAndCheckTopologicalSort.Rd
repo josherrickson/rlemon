@@ -7,14 +7,18 @@
 GetAndCheckTopologicalSort(arcSources, arcTargets, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A boolean stating if the graph is a dag, and 2) A vector of length numNodes, containing the index of vertex i in the ordering at location i
+A list containing 1) A boolean stating if the graph is a dag, and 2)
+  A vector of length numNodes, containing the index of vertex i in the
+  ordering at location i
 }
 \description{
 Checks if a directed graph is a DAG and returns the topological order

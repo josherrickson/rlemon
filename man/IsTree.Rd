@@ -11,7 +11,8 @@ IsTree(arcSources, arcTargets, numNodes)
 
 \item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
 
-\item{numNodes}{The number of nodes in the graph}
+\item{numNodes}{The
+number of nodes in the graph}
 }
 \value{
 A boolean stating if the graph is a tree

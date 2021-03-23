@@ -15,11 +15,14 @@ MaxFlow(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
-\item{arcCapacities}{Vector corresponding to the capacities of nodes of a graph's edges}
+\item{arcCapacities}{Vector corresponding to the capacities of nodes of a
+graph's edges}
 
 \item{sourceNode}{The source node}
 
@@ -27,14 +30,15 @@ MaxFlow(
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"Preflow", "EdmondsKarp",
-where "Preflow" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html>
-for details on the differences.}
+\item{algorithm}{Which algorithm to run. Choices include "Preflow",
+"EdmondsKarp", where "Preflow" is the default. See
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> for details on the
+differences.}
 }
 \value{
-A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of cut-values of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the maxflow value.
+A list containing three entries: 1) A list corresponding to the
+  flows of arcs in the graph, 2) A list of cut-values of the graph's nodes,
+  and 3) the total cost of the flows in the graph, i.e. the maxflow value.
 }
 \description{
 Runs maxflow algorithms on graphs.

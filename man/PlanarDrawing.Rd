@@ -7,14 +7,18 @@
 PlanarDrawing(arcSources, arcTargets, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list of 1) a boolean of if the graph is planar, 2) the x-coordinate of the planar embedding, 3) the y-coordinate of the planar embedding
+A list of 1) a boolean of if the graph is planar, 2) the
+  x-coordinate of the planar embedding, 3) the y-coordinate of the planar
+  embedding
 }
 \description{
 Checks if a graph is planar and returns the coloring of the graph

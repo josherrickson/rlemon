@@ -13,22 +13,26 @@ MinSpanningTree(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
-\item{arcDistances}{Vector corresponding to the distances of nodes of a graph's edges}
+\item{arcDistances}{Vector corresponding to the distances of nodes of a
+graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"Kruskal"
-where "Kruskal" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html>
-for details on the differences.}
+\item{algorithm}{Which algorithm to run. Choices include "Kruskal" where
+"Kruskal" is the default. See
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html> for details on the
+differences.}
 }
 \value{
-A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
+A list containing three entries: 1) Two vectors corresponding the
+  source and target nodes of the edges in the tree, and 2) the total minimum
+  spanning tree value.
 }
 \description{
 Runs MST (Minimum Spanning Tree) algorithms on graphs.

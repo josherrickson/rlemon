@@ -7,14 +7,17 @@
 FindStronglyConnectedCutArcs(arcSources, arcTargets, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A list of cut arc sources, and 2) A list of cut arc destinations.
+A list containing 1) A list of cut arc sources, and 2) A list of cut
+  arc destinations.
 }
 \description{
 Finds the cut arcs of strongly connected components in a directed graph.

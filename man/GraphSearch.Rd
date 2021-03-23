@@ -14,9 +14,11 @@ GraphSearch(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
@@ -24,13 +26,15 @@ GraphSearch(
 
 \item{endNode}{Optional end node of the path}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"Bfs", "Dfs". Bfs (Breadth First Search) is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details
-on the differences.}
+\item{algorithm}{Which algorithm to run. Choices include "Bfs", "Dfs". Bfs
+(Breadth First Search) is the default; see
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details on the
+differences.}
 }
 \value{
-A list containing three entries: 1) the predecessor of each vertex in its shortest path, 2) the distances from each node to the startNode , 3) a list containing if a node was reached or not
+A list containing three entries: 1) the predecessor of each vertex
+  in its shortest path, 2) the distances from each node to the startNode ,
+  3) a list containing if a node was reached or not
 }
 \description{
 Runs a common graph search algorithm to find the shortest path.

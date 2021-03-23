@@ -13,22 +13,24 @@ MinMeanCycle(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{arcDistances}{Vector corresponding to the distances of a graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"Howard", "Karp", "HartmannOrlin"
-where "Howard" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00614.html>
-for details on the differences.}
+\item{algorithm}{Which algorithm to run. Choices include "Howard", "Karp",
+"HartmannOrlin" where "Howard" is the default. See
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00614.html> for details on the
+differences.}
 }
 \value{
-A list containing two entries: 1) A vector containing the costs of each edge in the MMC, and 2) the nodes in the MMC.
+A list containing two entries: 1) A vector containing the costs of
+  each edge in the MMC, and 2) the nodes in the MMC.
 }
 \description{
 Finds the MMC in directed graphs.

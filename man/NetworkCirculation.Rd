@@ -15,26 +15,31 @@ NetworkCirculation(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
-\item{arcLowerBound}{Vector corresponding to the lower-bound capacities of nodes of a graph's edges}
+\item{arcLowerBound}{Vector corresponding to the lower-bound capacities of
+nodes of a graph's edges}
 
-\item{arcUpperBound}{Vector corresponding to the upper-bound capacities of nodes of a graph's edges}
+\item{arcUpperBound}{Vector corresponding to the upper-bound capacities of
+nodes of a graph's edges}
 
-\item{nodeSupplies}{Vector corresponding to the supplies of each node of the graph.}
+\item{nodeSupplies}{Vector corresponding to the supplies of each node of the
+graph.}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"Circulation"
-where "Circulation" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html>
-for details on the differences.}
+\item{algorithm}{Which algorithm to run. Choices include "Circulation" where
+"Circulation" is the default. See
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> for details on the
+differences.}
 }
 \value{
-A list containing two entries: 1) A list corresponding to the flows of arcs in the graph, and 2) A list of the graph's barrier nodes.
+A list containing two entries: 1) A list corresponding to the flows
+  of arcs in the graph, and 2) A list of the graph's barrier nodes.
 }
 \description{
 Runs the push-rebel algorithm for the network circulatin problem.

@@ -14,11 +14,14 @@ MaxCardinalitySearch(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
-\item{arcCapacities}{Vector corresponding to the distances of a graph's edges}
+\item{arcCapacities}{Vector corresponding to the distances of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
@@ -26,12 +29,18 @@ MaxCardinalitySearch(
 
 \item{algorithm}{Which algorithm to run. Choices include
 "maxcardinalitysearch". maxcardinalitysearch is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details
-on the differences.}
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details on the
+differences.}
 }
 \value{
-A list containing two entries: 1) the cardinality of each node , 2) a list containing if a node was reached or not
+A list containing two entries: 1) the cardinality of each node , 2)
+  a list containing if a node was reached or not
 }
 \description{
-Runs the maxiumum cardinality search algorithm on a directed graph. The maximum cardinality search first chooses any node of the digraph. Then every time it chooses one unprocessed node with maximum cardinality, i.e the sum of capacities on out arcs to the nodes which were previusly processed. If there is a cut in the digraph the algorithm should choose again any unprocessed node of the digraph.
+Runs the maxiumum cardinality search algorithm on a directed graph. The
+maximum cardinality search first chooses any node of the digraph. Then every
+time it chooses one unprocessed node with maximum cardinality, i.e the sum
+of capacities on out arcs to the nodes which were previusly processed. If
+there is a cut in the digraph the algorithm should choose again any
+unprocessed node of the digraph.
 }

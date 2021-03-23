@@ -15,9 +15,11 @@ ShortestPath(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{arcDistances}{Vector corresponding to the distances of a graph's edges}
 
@@ -27,14 +29,14 @@ ShortestPath(
 
 \item{destNode}{The end node of the path}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"Suurballe"
-where "Suurballe" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html>
-for details on the differences.}
+\item{algorithm}{Which algorithm to run. Choices include "Suurballe" where
+"Suurballe" is the default. See
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details on the
+differences.}
 }
 \value{
-A list containing two entries: 1) the number of paths from the start node to the end node and 2) a list of paths found.
+A list containing two entries: 1) the number of paths from the start
+  node to the end node and 2) a list of paths found.
 }
 \description{
 Finds the shortest arc disjoint paths between two nodes in a directed graph.

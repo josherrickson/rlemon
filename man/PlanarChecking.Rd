@@ -7,9 +7,11 @@
 PlanarChecking(arcSources, arcTargets, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 }
@@ -17,5 +19,5 @@ PlanarChecking(arcSources, arcTargets, numNodes)
 A boolean stating if the graph is planar or not.
 }
 \description{
-Checks if an undirected graph is planar and returns a boolean if it is or not.
+Checks if an undirected graph is planar.
 }

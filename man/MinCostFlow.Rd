@@ -15,26 +15,32 @@ MinCostFlow(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
-\item{arcCapacities}{Vector corresponding to the capacities of nodes of a graph's edges}
+\item{arcCapacities}{Vector corresponding to the capacities of nodes of a
+graph's edges}
 
-\item{arcCosts}{Vector corresponding to the capacities of nodes of a graph's edges}
+\item{arcCosts}{Vector corresponding to the capacities of nodes of a graph's
+edges}
 
 \item{nodeSupplies}{Vector corresponding to the supplies of each node}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"NetworkSimplex", "CostScaling", "CapacityScaling",
-"CycleCancelling". NetworkSimplex is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for details
-on the differences.}
+\item{algorithm}{Which algorithm to run. Choices include "NetworkSimplex",
+"CostScaling", "CapacityScaling", "CycleCancelling". NetworkSimplex is the
+default; see <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for
+details on the differences.}
 }
 \value{
-A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
+A list containing three entries: 1) A list corresponding to the
+  flows of arcs in the graph, 2) A list of potentials of the graph's nodes,
+  and 3) the total cost of the flows in the graph, i.e. the mincostflow
+  value
 }
 \description{
 Runs mincostflow algorithms on graphs.

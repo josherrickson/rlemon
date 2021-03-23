@@ -7,9 +7,11 @@
 IsEulerian(arcSources, arcTargets, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 }
@@ -17,5 +19,6 @@ IsEulerian(arcSources, arcTargets, numNodes)
 A boolean stating if the graph is eulerian
 }
 \description{
-Checks if a graph is eulerian. Works for both undirected and directed graphs.
+Checks if a graph is eulerian. Works for both undirected and directed
+graphs.
 }

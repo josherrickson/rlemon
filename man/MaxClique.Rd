@@ -12,21 +12,24 @@ MaxClique(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
 \item{algorithm}{Which algorithm to run. Choices include
-"GrossoLocatelliPullanMc".
- GrossoLocatelliPullanMc is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00619.html> for details
-on the differences.}
+"GrossoLocatelliPullanMc". GrossoLocatelliPullanMc is the default; see
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00619.html> for details on the
+differences.}
 }
 \value{
-A list containing two entries: 1) the clique size, and 2) the members of the clique.
+A list containing two entries: 1) the clique size, and 2) the
+  members of the clique.
 }
 \description{
-Runs approximation algorthims for the maximal clique problem to find the largest complete subgraph (clique) in an undirected graph.
+Runs approximation algorthims for the maximal clique problem to find the
+largest complete subgraph (clique) in an undirected graph.
 }

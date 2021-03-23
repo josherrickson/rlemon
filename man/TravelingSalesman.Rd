@@ -14,26 +14,28 @@ TravelingSalesman(
 )
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{arcDistances}{Vector corresponding to the distances of a graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{defaultEdgeWeight}{The default edge weight if an edge is not-specified (default value 999999)}
+\item{defaultEdgeWeight}{The default edge weight if an edge is not-specified
+(default value 999999)}
 
 \item{algorithm}{Which algorithm to run. Choices include
-"Christofides","Greedy","Insertion","NearestNeighbor","Opt2".
- Christofides is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html> for details
-on the differences.}
+"Christofides","Greedy","Insertion","NearestNeighbor","Opt2". Christofides
+is the default; see <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html>
+for details on the differences.}
 }
 \value{
 a List with 1) the list of tour vertices, and 2) the total tour cost
 }
 \description{
-Runs travelling salesman algorithms on graphs.
-NOTE: LEMON's TSP uses a complete graph in its backend, so expect less performance on sparse graphs
+Runs travelling salesman algorithms on graphs. NOTE: LEMON's TSP uses a
+complete graph in its backend, so expect less performance on sparse graphs
 }

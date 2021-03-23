@@ -7,16 +7,20 @@
 PlanarColoring(arcSources, arcTargets, numNodes, algorithm = "fiveColoring")
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm, }{the algorithm to use. "sixColoring" generates a 6-coloring of the graph, while "fiveColoring" generates a 5-coloring.}
+\item{algorithm, }{the algorithm to use. "sixColoring" generates a 6-coloring
+of the graph, while "fiveColoring" generates a 5-coloring.}
 }
 \value{
-A list containing 1) A boolean if the graph is planar, 2) the color of each vertex of the graph
+A list containing 1) A boolean if the graph is planar, 2) the color
+  of each vertex of the graph
 }
 \description{
 Checks if a graph is planar and returns the coloring of the graph
