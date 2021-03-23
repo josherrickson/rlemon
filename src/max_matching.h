@@ -57,8 +57,8 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -94,8 +94,8 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -132,8 +132,8 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -170,8 +170,8 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -211,8 +211,8 @@ Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources,
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
@@ -251,8 +251,8 @@ Rcpp::List MaximumCardinalityFractionalMatchingRunner(
   for (int i = 0; i < NUM_ARCS; i++) {
     if (test.matching(arcs[i])) {
       std::vector<int> arc;
-      arc.push_back(g.id(g.u(arcs[i])));
-      arc.push_back(g.id(g.v(arcs[i])));
+      arc.push_back(g.id(g.u(arcs[i])) + 1);
+      arc.push_back(g.id(g.v(arcs[i])) + 1);
       arcs_out.push_back(arc);
     }
   }
