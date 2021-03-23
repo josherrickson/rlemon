@@ -508,8 +508,8 @@ Rcpp::List FindStronglyConnectedCutArcsRunner(std::vector<int> arcSources,
   std::vector<int> arc_destinations;
   for (int i = 0; i < NUM_ARCS; i++) {
     if (ComponentMap[arcs[i]]) {
-      arc_sources.push_back(g.id(g.source(arcs[i])));
-      arc_destinations.push_back(g.id(g.target(arcs[i])));
+      arc_sources.push_back(g.id(g.source(arcs[i])) + 1);
+      arc_destinations.push_back(g.id(g.target(arcs[i])) + 1);
     }
   }
 
@@ -542,8 +542,8 @@ Rcpp::List FindBiEdgeConnectedCutEdgesRunner(std::vector<int> arcSources,
   std::vector<int> arc_destinations;
   for (int i = 0; i < NUM_ARCS; i++) {
     if (ComponentMap[arcs[i]]) {
-      arc_sources.push_back(g.id(g.u(arcs[i])));
-      arc_destinations.push_back(g.id(g.v(arcs[i])));
+      arc_sources.push_back(g.id(g.u(arcs[i])) + 1);
+      arc_destinations.push_back(g.id(g.v(arcs[i])) + 1);
     }
   }
   return Rcpp::List::create(arc_sources, arc_destinations);
@@ -599,7 +599,7 @@ std::vector<int> FindBiNodeConnectedCutNodesRunner(std::vector<int> arcSources,
   std::vector<int> CutNodes;
   for (int i = 0; i < numNodes; ++i) {
     if (CutMap[nodes[i]]) {
-      CutNodes.push_back(g.id(nodes[i]));
+      CutNodes.push_back(g.id(nodes[i]) + 1);
     }
   }
   return CutNodes;

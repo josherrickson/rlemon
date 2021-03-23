@@ -43,7 +43,7 @@ Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources,
   std::vector<int> cliqueMembers;
   for (int i = 0; i < numNodes; i++) {
     if (clique_members[nodes[i]]) {
-      cliqueMembers.push_back(i);
+      cliqueMembers.push_back(i + 1);
     }
   }
 
