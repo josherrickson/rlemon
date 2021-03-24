@@ -27,7 +27,7 @@ using namespace std;
 //> NULL
 
 //' @rdname Planar-Embedding-Algorithms
-//' @description `PlanarCheckingRunner` returns a bool stating if a graph is planar or not.
+//' @description `PlanarCheckingRunner` returns a boolean stating if a graph is planar or not.
 // [[Rcpp::export]]
 bool PlanarCheckingRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets, int numNodes) {
@@ -169,7 +169,7 @@ Rcpp::List PlanarColoringRunner(std::vector<int> arcSources,
 }
 
 //' @rdname Planar-Embedding-Algorithms
-//' @description `PlanarCheckingRunner` returns a List containing 1) a boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
+//' @description `PlanarCheckingRunner` returns a List containing 1) a boolean stating if a graph is planar or not, 2) a vector containing the x-coordinates of each node and 3) a vector containing the y-coordinates of each node
 // [[Rcpp::export]]
 Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources,
                                std::vector<int> arcTargets, int numNodes) {

@@ -148,7 +148,7 @@ IsSimpleGraphRunner <- function(arcSources, arcTargets, numNodes) {
 }
 
 #' @rdname Connectivity-Algorithms-1
-#' @description `IsEulerian` returns if a graph is eulerian or not
+#' @description `IsEulerian` returns if a graph is Eulerian or not
 IsEulerianRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_IsEulerianRunner`, arcSources, arcTargets, numNodes)
 }
@@ -503,7 +503,7 @@ NULL
 NULL
 
 #' @rdname Planar-Embedding-Algorithms
-#' @description `PlanarCheckingRunner` returns a bool stating if a graph is planar or not.
+#' @description `PlanarCheckingRunner` returns a boolean stating if a graph is planar or not.
 PlanarCheckingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_PlanarCheckingRunner`, arcSources, arcTargets, numNodes)
 }
@@ -522,7 +522,7 @@ PlanarColoringRunner <- function(arcSources, arcTargets, numNodes, useFiveAlg = 
 }
 
 #' @rdname Planar-Embedding-Algorithms
-#' @description `PlanarCheckingRunner` returns a List containing 1) a boolean stating if a graph is planar or not, 2) a vector containing the x-coords of each node and 3) a vector containing the y-coords of each node
+#' @description `PlanarCheckingRunner` returns a List containing 1) a boolean stating if a graph is planar or not, 2) a vector containing the x-coordinates of each node and 3) a vector containing the y-coordinates of each node
 PlanarDrawingRunner <- function(arcSources, arcTargets, numNodes) {
     .Call(`_rlemon_PlanarDrawingRunner`, arcSources, arcTargets, numNodes)
 }
@@ -549,7 +549,7 @@ NULL
 NULL
 
 #' @rdname Shortest-Path-Algorithms-2
-#' @description `SuurballeRunner` calculates the shortest path between a specificed start and end node and returns a list containing  1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
+#' @description `SuurballeRunner` calculates the shortest path between a specified start and end node and returns a list containing  1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
 #' @export
 SuurballeRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode, endNode) {
     .Call(`_rlemon_SuurballeRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode, endNode)
@@ -569,7 +569,7 @@ BellmanFordRunner <- function(arcSources, arcTargets, arcDistances, numNodes, st
     .Call(`_rlemon_BellmanFordRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode)
 }
 
-#' Travelling Salesman Algorithms on Full Graphs
+#' Traveling Salesman Algorithms on Full Graphs
 #' @name TSP-Algorithms
 #' @param arcSources Vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets Vector corresponding to the destination nodes of a graph's edges

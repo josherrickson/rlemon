@@ -1,4 +1,4 @@
-##' Runs approximation algorthims for the maximal clique problem to find the
+##' Runs approximation algorithms for the maximal clique problem to find the
 ##' largest complete subgraph (clique) in an undirected graph.
 ##'
 ##' @title MaxClique

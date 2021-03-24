@@ -250,7 +250,7 @@ IsSimpleGraph <- function(arcSources,
   .Call(`_rlemon_IsSimpleGraphRunner`, arcSources, arcTargets, numNodes)
 }
 
-##' Checks if a graph is eulerian. Works for both undirected and directed
+##' Checks if a graph is Eulerian. Works for both undirected and directed
 ##' graphs.
 ##'
 ##' @title IsEulerian
@@ -259,7 +259,7 @@ IsSimpleGraph <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is eulerian
+##' @return A boolean stating if the graph is Eulerian
 ##' @export
 IsEulerian <- function(arcSources,
                        arcTargets,

@@ -42,5 +42,5 @@ A list containing two entries: 1) A list corresponding to the flows
   of arcs in the graph, and 2) A list of the graph's barrier nodes.
 }
 \description{
-Runs the push-rebel algorithm for the network circulatin problem.
+Runs the push-rebel algorithm for the network circulation problem.
 }

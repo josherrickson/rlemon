@@ -73,7 +73,7 @@ a boolean, stating if a graph has some property
 
 `IsSimpleGraph` returns if a graph is simple or not
 
-`IsEulerian` returns if a graph is eulerian or not
+`IsEulerian` returns if a graph is Eulerian or not
 }
 \examples{
 data(small_graph_example)

@@ -2,9 +2,19 @@
 % Please edit documentation in R/travellingsalesmanproblem.R
 \name{TravelingSalesman}
 \alias{TravelingSalesman}
+\alias{TravellingSalesman}
 \title{TravelingSalesmanProblem}
 \usage{
 TravelingSalesman(
+  arcSources,
+  arcTargets,
+  arcDistances,
+  numNodes,
+  defaultEdgeWeight = 999999,
+  algorithm = "Christofides"
+)
+
+TravellingSalesman(
   arcSources,
   arcTargets,
   arcDistances,
@@ -36,6 +46,6 @@ for details on the differences.}
 a List with 1) the list of tour vertices, and 2) the total tour cost
 }
 \description{
-Runs travelling salesman algorithms on graphs. NOTE: LEMON's TSP uses a
+Runs traveling salesman algorithms on graphs. NOTE: LEMON's TSP uses a
 complete graph in its backend, so expect less performance on sparse graphs
 }

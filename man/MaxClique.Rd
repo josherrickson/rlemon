@@ -30,6 +30,6 @@ A list containing two entries: 1) the clique size, and 2) the
   members of the clique.
 }
 \description{
-Runs approximation algorthims for the maximal clique problem to find the
+Runs approximation algorithms for the maximal clique problem to find the
 largest complete subgraph (clique) in an undirected graph.
 }

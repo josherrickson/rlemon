@@ -7,16 +7,20 @@
 GomoryHuTree(arcSources, arcTargets, arcWeights, numNodes)
 }
 \arguments{
-\item{arcSources}{Vector corresponding to the source nodes of a graph's edges}
+\item{arcSources}{Vector corresponding to the source nodes of a graph's
+edges}
 
-\item{arcTargets}{Vector corresponding to the destination nodes of a graph's edges}
+\item{arcTargets}{Vector corresponding to the destination nodes of a graph's
+edges}
 
 \item{arcWeights}{Vector corresponding to the weights of a graph's arcs}
 
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing three entries: 1) A list of predecessor nodes of each node in the graph, and 2) A list of weights of the predecessor edge of each node, and 3) A list of distances from the root node to each node.
+A list containing three entries: 1) A list of predecessor nodes of
+  each node in the graph, and 2) A list of weights of the predecessor edge
+  of each node, and 3) A list of distances from the root node to each node.
 }
 \description{
 Runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.

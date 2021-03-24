@@ -43,10 +43,10 @@ GraphSearch <- function(arcSources,
   )
 }
 
-##' Runs the maxiumum cardinality search algorithm on a directed graph. The
+##' Runs the maximum cardinality search algorithm on a directed graph. The
 ##' maximum cardinality search first chooses any node of the digraph. Then every
 ##' time it chooses one unprocessed node with maximum cardinality, i.e the sum
-##' of capacities on out arcs to the nodes which were previusly processed. If
+##' of capacities on out arcs to the nodes which were previously processed. If
 ##' there is a cut in the digraph the algorithm should choose again any
 ##' unprocessed node of the digraph.
 ##'

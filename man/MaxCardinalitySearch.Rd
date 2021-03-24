@@ -37,10 +37,10 @@ A list containing two entries: 1) the cardinality of each node , 2)
   a list containing if a node was reached or not
 }
 \description{
-Runs the maxiumum cardinality search algorithm on a directed graph. The
+Runs the maximum cardinality search algorithm on a directed graph. The
 maximum cardinality search first chooses any node of the digraph. Then every
 time it chooses one unprocessed node with maximum cardinality, i.e the sum
-of capacities on out arcs to the nodes which were previusly processed. If
+of capacities on out arcs to the nodes which were previously processed. If
 there is a cut in the digraph the algorithm should choose again any
 unprocessed node of the digraph.
 }

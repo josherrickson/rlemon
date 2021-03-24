@@ -16,9 +16,9 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is eulerian
+A boolean stating if the graph is Eulerian
 }
 \description{
-Checks if a graph is eulerian. Works for both undirected and directed
+Checks if a graph is Eulerian. Works for both undirected and directed
 graphs.
 }

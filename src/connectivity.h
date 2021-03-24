@@ -349,14 +349,14 @@ int IsSimpleGraphRunner(std::vector<int> arcSources,
 }
 
 //' @rdname Connectivity-Algorithms-1
-//' @description `IsEulerian` returns if a graph is eulerian or not
+//' @description `IsEulerian` returns if a graph is Eulerian or not
 // [[Rcpp::export]]
 int IsEulerianRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                      int numNodes) {
   // Requires: Two std::vectors, arcSources and arcTargets, each of which take integers to index specific nodes and, as pairs, consitute arcs in our graph
   //           One std::vector, arcDistances, which assigns for each arc an associated distance
   //           Two ints, numNodes and startnode, which give us the number of nodes in the directed graph and the starting node for Bellman Ford
-  // Returns: A boolean stating if the graph is simple, i.e. it has an eulerian cycle
+  // Returns: A boolean stating if the graph is simple, i.e. it has an Eulerian cycle
   ListGraph g;
   std::vector<ListGraph::Node> nodes;
   for (int i = 0; i < numNodes; ++i) {

@@ -7,7 +7,7 @@
 \alias{InsertionTSPRunner}
 \alias{NearestNeighborTSPRunner}
 \alias{Opt2TSPRunner}
-\title{Travelling Salesman Algorithms on Full Graphs}
+\title{Traveling Salesman Algorithms on Full Graphs}
 \usage{
 ChristofidesRunner(
   arcSources,

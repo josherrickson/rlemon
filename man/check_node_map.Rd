@@ -2,8 +2,8 @@
 % Please edit documentation in R/check_graph.R
 \name{check_node_map}
 \alias{check_node_map}
-\title{Check node maps for common errors.
-Doesn't check if the underlying graph is correct - see `check_graph_vertices`}
+\title{Check node maps for common errors. Doesn't check if the underlying graph is
+correct - see `check_graph_vertices`}
 \usage{
 check_node_map(mapTest, numNodes)
 }
@@ -17,6 +17,6 @@ TRUE if no errors are found
 export
 }
 \description{
-Check node maps for common errors.
-Doesn't check if the underlying graph is correct - see `check_graph_vertices`
+Check node maps for common errors. Doesn't check if the underlying graph is
+correct - see `check_graph_vertices`
 }

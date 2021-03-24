@@ -43,7 +43,7 @@ MaxFlow <- function(arcSources,
   )
 }
 
-##' Runs the push-rebel algorithm for the network circulatin problem.
+##' Runs the push-rebel algorithm for the network circulation problem.
 ##'
 ##' @title NetworkCirculation
 ##' @param arcSources Vector corresponding to the source nodes of a graph's

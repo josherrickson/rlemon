@@ -1,4 +1,4 @@
-##' Runs travelling salesman algorithms on graphs. NOTE: LEMON's TSP uses a
+##' Runs traveling salesman algorithms on graphs. NOTE: LEMON's TSP uses a
 ##' complete graph in its backend, so expect less performance on sparse graphs
 ##' @title TravelingSalesmanProblem
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -14,6 +14,7 @@
 ##'   is the default; see <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html>
 ##'   for details on the differences.
 ##' @return a List with 1) the list of tour vertices, and 2) the total tour cost
+##' @rdname TravelingSalesman
 ##' @export
 TravelingSalesman <- function(arcSources,
                               arcTargets,
@@ -49,3 +50,7 @@ TravelingSalesman <- function(arcSources,
     stop("Invalid algorithm.")
   )
 }
+
+##' @rdname TravelingSalesman
+##' @export
+TravellingSalesman <- TravelingSalesman
