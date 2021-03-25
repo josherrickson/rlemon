@@ -62,5 +62,9 @@ test_that("ShortestPathFromSource works", {
   expect_equal(out[[1]], c(0, 6, 11, 1, 2))
   expect_equal(out[[2]], c(0, 1, 2, 1, 4))
 
+  out <- ShortestPathFromSource(s, t, d, n, sn, "BellmanFord")
+  expect_equal(out[[1]], c(0, 6, 11, 1, 2))
+  expect_equal(out[[2]], c(0, 1, 2, 1, 4))
+
   expect_error(ShortestPathFromSource(s, t, d, n, sn, "abc"), "Invalid")
 })
