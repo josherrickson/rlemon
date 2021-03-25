@@ -55,14 +55,14 @@ test_that("Planar-Embedding Checking", {
   n <- 6  
   out <- PlanarEmbeddingRunner(s,t,n)
   expect_equal(out[[1]], 0)
-  expect_equal(out[[2]], c())
-  expect_equal(out[[3]], c())
+  expect_equal(out[[2]], integer())
+  expect_equal(out[[3]], integer())
   expect_equal(out[[4]], c(1,1,1,2,2,2,3,3,3))
   expect_equal(out[[5]], c(4,5,6,4,5,6,4,5,6))
   out <- PlanarEmbedding(s,t,n)
   expect_equal(out[[1]], 0)
-  expect_equal(out[[2]], c())
-  expect_equal(out[[3]], c())
+  expect_equal(out[[2]], integer())
+  expect_equal(out[[3]], integer())
   expect_equal(out[[4]], c(1,1,1,2,2,2,3,3,3))
   expect_equal(out[[5]], c(4,5,6,4,5,6,4,5,6))
 
