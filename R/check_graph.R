@@ -106,8 +106,6 @@ check_arc_map <- function(arcSources,
                           numNodes) {
   # Check that the arc number is consistent
   if (length(arcSources) != length(mapTest)) {
-    print(length(arcSources))
-    print(length(mapTest))
     stop(paste(
       "Inconsistent number of arcs across Sources and Arc Map",
       "(ArcWeights/ArcCapacities/ArcCosts)"
