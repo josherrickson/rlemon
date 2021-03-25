@@ -31,6 +31,8 @@ test_that("Planar-Coloring Checking", {
   expect_is(out[[1]], "logical")
   expect_equal(out[[1]], TRUE)
   expect_equal(out[[2]], c(1, 1, 0, 0, 0, 0))
+  expect_error(PlanarColoring(s, t, 6, "blahblah"))
+
 })
 
 
@@ -52,33 +54,33 @@ test_that("Planar-Drawing Checking", {
 test_that("Planar-Embedding Checking", {
   s <- c(1, 1, 1, 2, 2, 2, 3, 3, 3)
   t <- c(4, 5, 6, 4, 5, 6, 4, 5, 6)
-  n <- 6  
-  out <- PlanarEmbeddingRunner(s,t,n)
+  n <- 6
+  out <- PlanarEmbeddingRunner(s, t, n)
   expect_equal(out[[1]], 0)
   expect_equal(out[[2]], integer())
   expect_equal(out[[3]], integer())
-  expect_equal(out[[4]], c(1,1,1,2,2,2,3,3,3))
-  expect_equal(out[[5]], c(4,5,6,4,5,6,4,5,6))
-  out <- PlanarEmbedding(s,t,n)
+  expect_equal(out[[4]], c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+  expect_equal(out[[5]], c(4, 5, 6, 4, 5, 6, 4, 5, 6))
+  out <- PlanarEmbedding(s, t, n)
   expect_equal(out[[1]], 0)
   expect_equal(out[[2]], integer())
   expect_equal(out[[3]], integer())
-  expect_equal(out[[4]], c(1,1,1,2,2,2,3,3,3))
-  expect_equal(out[[5]], c(4,5,6,4,5,6,4,5,6))
+  expect_equal(out[[4]], c(1, 1, 1, 2, 2, 2, 3, 3, 3))
+  expect_equal(out[[5]], c(4, 5, 6, 4, 5, 6, 4, 5, 6))
 
   s <- c(1, 1, 1, 2, 2, 2, 3)
   t <- c(4, 5, 6, 4, 5, 6, 1)
-  n <- 6  
-  out <- PlanarEmbeddingRunner(s,t,n)
+  n <- 6
+  out <- PlanarEmbeddingRunner(s, t, n)
   expect_equal(out[[1]], 1)
-  expect_equal(out[[2]], c(1,1,1,1,2,2,2,3,4,4,5,5,6,6))
-  expect_equal(out[[3]], c(3,5,4,6,6,4,5,1,2,1,2,1,2,1))
+  expect_equal(out[[2]], c(1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 6, 6))
+  expect_equal(out[[3]], c(3, 5, 4, 6, 6, 4, 5, 1, 2, 1, 2, 1, 2, 1))
   expect_equal(out[[4]], integer())
   expect_equal(out[[5]], integer())
-  out <- PlanarEmbedding(s,t,n)
+  out <- PlanarEmbedding(s, t, n)
   expect_equal(out[[1]], 1)
-  expect_equal(out[[2]], c(1,1,1,1,2,2,2,3,4,4,5,5,6,6))
-  expect_equal(out[[3]], c(3,5,4,6,6,4,5,1,2,1,2,1,2,1))
+  expect_equal(out[[2]], c(1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 6, 6))
+  expect_equal(out[[3]], c(3, 5, 4, 6, 6, 4, 5, 1, 2, 1, 2, 1, 2, 1))
   expect_equal(out[[4]], integer())
   expect_equal(out[[5]], integer())
 })
