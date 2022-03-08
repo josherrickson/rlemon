@@ -19,8 +19,7 @@ edges}
 
 \item{algorithm}{Which algorithm to run. Choices include "GomoryHu" 
  where GomoryHu is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html> for details on the
-differences.}
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html> for more information.}
 }
 \value{
 A list containing three entries: 1) A list of predecessor nodes of

@@ -33,5 +33,5 @@ A list containing two entries: 1) A vector containing the costs of
   each edge in the MMC, and 2) the nodes in the MMC.
 }
 \description{
-Finds the MMC in directed graphs.
+Finds the Minimum Mean Cycle in directed graphs.
 }

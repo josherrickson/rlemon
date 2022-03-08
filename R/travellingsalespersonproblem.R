@@ -1,7 +1,7 @@
-##' Finds approximations for the travelling salesman problem using 
-##' approximation algorithms on graphs. NOTE: LEMON's TSP uses a 
+##' Finds approximations for the travelling salesperson problem using
+##' approximation algorithms on graphs. NOTE: LEMON's TSP uses a
 ##' complete graph in its backend, so expect less performance on sparse graphs.
-##' @title TravelingSalesmanProblem
+##' @title TravelingSalespersonProblem
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -15,14 +15,14 @@
 ##'   is the default; see <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html>
 ##'   for details on the differences.
 ##' @return a List with 1) the list of tour vertices, and 2) the total tour cost
-##' @rdname TravelingSalesman
+##' @rdname TravelingSalesperson
 ##' @export
-TravelingSalesman <- function(arcSources,
-                              arcTargets,
-                              arcDistances,
-                              numNodes,
-                              defaultEdgeWeight = 999999,
-                              algorithm = "Christofides") {
+TravelingSalesperson <- function(arcSources,
+                                 arcTargets,
+                                 arcDistances,
+                                 numNodes,
+                                 defaultEdgeWeight = 999999,
+                                 algorithm = "Christofides") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
 
@@ -52,6 +52,6 @@ TravelingSalesman <- function(arcSources,
   )
 }
 
-##' @rdname TravelingSalesman
+##' @rdname TravelingSalesperson
 ##' @export
-TravellingSalesman <- TravelingSalesman
+TravellingSalesperson <- TravelingSalesperson

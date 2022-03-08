@@ -22,14 +22,13 @@ edges}
 
 \item{algorithm}{Which algorithm to run. Choices include
 "GrossoLocatelliPullanMc". GrossoLocatelliPullanMc is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00619.html> for details on the
-differences.}
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00194.html> for more information.}
 }
 \value{
 A list containing two entries: 1) the clique size, and 2) the
   members of the clique.
 }
 \description{
-Runs approximation algorithms for the maximal clique problem to find the
-largest complete subgraph (clique) in an undirected graph.
+Finds the largest complete subgraph (clique) in an undirected graph
+via approximation algorithms for the maximal clique problem.
 }

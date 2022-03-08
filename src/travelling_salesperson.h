@@ -10,7 +10,7 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
-//' Traveling Salesman Algorithms on Full Graphs
+//' Traveling Salesperson Algorithms on Full Graphs
 //' @name TSP-Algorithms
 //' @param arcSources Vector corresponding to the source nodes of a graph's edges
 //' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
