@@ -16,7 +16,7 @@ test_that("HaoOrlin Test", {
   weights <- c(16, 13, 12, 10, 9, 20, 4, 14, 7, 4)
   numNodes <- 6
   out <- MinCut(s, t, weights, numNodes, "HaoOrlin")
-  expect_equal(out[[1]], 24)
+  expect_equal(out[[1]], 0)
   expect_equal(out[[2]], c(5))
   expect_equal(out[[3]], c(0, 1, 2, 3, 4))
 })

@@ -77,27 +77,27 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
 Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets,
                           std::vector<int> arcWeights, int numNodes) {
-  ListGraph g;
-  std::vector<ListGraph::Node> nodes;
-  ListGraph::EdgeMap<int> dists(g);
+  ListDigraph g;
+  std::vector<ListDigraph::Node> nodes;
+  ListDigraph::ArcMap<int> dists(g);
   for (int i = 0; i < numNodes; ++i) {
-    ListGraph::Node n = g.addNode();
+    ListDigraph::Node n = g.addNode();
     nodes.push_back(n);
   }
 
-  std::vector<ListGraph::Edge> arcs;
+  std::vector<ListDigraph::Arc> arcs;
   int NUM_ARCS = arcSources.size();
 
   for (int i = 0; i < NUM_ARCS; ++i) {
-    ListGraph::Edge a =
-        g.addEdge(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
+    ListDigraph::Arc a =
+        g.addArc(nodes[arcSources[i] - 1], nodes[arcTargets[i] - 1]);
     dists[a] = arcWeights[i];
     arcs.push_back(a);
   }
-  HaoOrlin<ListGraph, ListGraph::EdgeMap<int> > alg(g, dists);
+  HaoOrlin<ListDigraph, ListDigraph::ArcMap<int> > alg(g, dists);
   alg.run();
 
-  ListGraph::NodeMap<int> mincutmap(g);
+  ListDigraph::NodeMap<int> mincutmap(g);
   alg.minCutMap(mincutmap);
 
   int mincutvalue = alg.minCutValue();
