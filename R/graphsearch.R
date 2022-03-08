@@ -1,4 +1,4 @@
-##' Runs a common graph search algorithm to find the shortest path.
+##' Runs a common graph search algorithm to find the minimum cardinality shortest path.
 ##' Finds the shortest path from/to all vertices if a start/end node are
 ##' not given.
 ##'
