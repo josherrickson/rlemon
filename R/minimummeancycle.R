@@ -1,4 +1,4 @@
-##' Finds the MMC in directed graphs.
+##' Finds the Minimum Mean Cycle in directed graphs.
 ##'
 ##' @title MinimumMeanCycle
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
