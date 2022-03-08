@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // GrossoLocatelliPullanMcRunner
 Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes);
 RcppExport SEXP _rlemon_GrossoLocatelliPullanMcRunner(SEXP arcSourcesSEXP, SEXP arcTargetsSEXP, SEXP numNodesSEXP) {
