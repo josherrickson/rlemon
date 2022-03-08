@@ -1,5 +1,6 @@
-##' Runs algorithms for calculating maximum weighted matching in graphs and
-##' bipartite graphs.
+##' Finds the maximum weighted matching in graphs and
+##' bipartite graphs. Each algorithm in this set returns different outputs
+##' depending on different situations, like PerfectMatching or PerfectFractionalMathing.
 ##'
 ##' @title MaxMatching
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -51,7 +52,7 @@ MaxMatching <- function(arcSources,
   )
 }
 
-##' Runs algorithms for calculating maximum cardinality matching in graphs and
+##' Finds the maximum cardinality matching in graphs and
 ##' bipartite graphs.
 ##'
 ##' @title MaxCardinalityMatching
