@@ -35,6 +35,7 @@ A list containing two entries: 1) The matching value, 2) The edges
   of the final graph, in a List of List of (node, node) pairs
 }
 \description{
-Runs algorithms for calculating maximum weighted matching in graphs and
-bipartite graphs.
+Finds the maximum weighted matching in graphs and
+bipartite graphs. Each algorithm in this set returns different outputs
+depending on different situations, like PerfectMatching or PerfectFractionalMathing.
 }

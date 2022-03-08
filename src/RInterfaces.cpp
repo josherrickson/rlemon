@@ -10,7 +10,7 @@
 #include "min_span_tree.h"
 #include "planarity_embedding.h"
 #include "shortest_path.h"
-#include "travelling_salesman.h"
+#include "travelling_salesperson.h"
 #include <Rcpp.h>
 #include <tuple>
 using namespace Rcpp;

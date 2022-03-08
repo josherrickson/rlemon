@@ -569,7 +569,7 @@ BellmanFordRunner <- function(arcSources, arcTargets, arcDistances, numNodes, st
     .Call(`_rlemon_BellmanFordRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode)
 }
 
-#' Traveling Salesman Algorithms on Full Graphs
+#' Traveling Salesperson Algorithms on Full Graphs
 #' @name TSP-Algorithms
 #' @param arcSources Vector corresponding to the source nodes of a graph's edges
 #' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
