@@ -29,6 +29,14 @@ check: FUNC=check
 .PHONY:document
 document: FUNC=document
 
+.PHONY:coverage
+coverage:
+	@$(RCMD) "covr::report(file = 'coverage.html', browse = TRUE)"
+
+.PHONY:goodpractice
+goodpractice:
+	@$(RCMD) "goodpractice::gp('.')"
+
 .PHONY:build
 build: FUNC=build
 
