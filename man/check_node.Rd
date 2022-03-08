@@ -2,7 +2,9 @@
 % Please edit documentation in R/check_graph.R
 \name{check_node}
 \alias{check_node}
-\title{Check node definitions for common errors}
+\title{Check node definitions for common errors. Specifically, 
+checks that all nodes are integral, and that they are consistent
+with 0 based indexing.}
 \usage{
 check_node(testNode, numNodes)
 }
@@ -16,5 +18,7 @@ TRUE if no errors are found
 export
 }
 \description{
-Check node definitions for common errors
+Check node definitions for common errors. Specifically, 
+checks that all nodes are integral, and that they are consistent
+with 0 based indexing.
 }

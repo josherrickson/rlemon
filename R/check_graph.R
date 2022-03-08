@@ -1,4 +1,6 @@
-##' Check graph inputs for common issues.
+##' Check graph inputs for common issues. Specifically checks if
+##' arc source, target, capacity, and cost arrays have the same length.
+##' Additionally, checks if all arc sources and targets are integral.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc targets
@@ -32,7 +34,9 @@ check_graph <- function(arcSources,
   # avoids printing anything out
 }
 
-##' Check sources and target arrays for common errors.
+##' Check sources and target arrays for common errors. Specifically checks that graphs
+##' follow 0-indexing conventions, that the number of source and target nodes are the same,
+##' and that all node indices are integral.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
@@ -92,7 +96,8 @@ check_graph_vertices <- function(arcSources,
 }
 
 ##' Check arc maps for common errors. Doesn't check if the underlying graph is
-##' correct - see `check_graph_vertices`
+##' correct - see `check_graph_vertices` for that purpose. Specifically checks
+##' if the number of arcs in the graph is the same as the number in the map.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
@@ -122,7 +127,8 @@ check_arc_map <- function(arcSources,
 
 
 ##' Check node maps for common errors. Doesn't check if the underlying graph is
-##' correct - see `check_graph_vertices`
+##' correct - see `check_graph_vertices` for that purpose. Specifically checks
+##' if the number of nodes is inconsistent.
 ##'
 ##' @param mapTest Node Map to Test
 ##' @param numNodes Number of nodes
@@ -137,7 +143,9 @@ check_node_map <- function(mapTest,
   invisible(TRUE)
 }
 
-##' Check node definitions for common errors
+##' Check node definitions for common errors. Specifically, 
+##' checks that all nodes are integral, and that they are consistent
+##' with 0 based indexing.
 ##'
 ##' @param testNode Node to test
 ##' @param numNodes Number of nodes
@@ -159,7 +167,9 @@ check_node <- function(testNode,
 }
 
 
-##' Check arcs for common errors.
+##' Check arcs for common errors. Specifically, check that
+##' the number of source nodes is the same as the number of target
+##' nodes, and that all arc sources and targets are integral.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets

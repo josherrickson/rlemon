@@ -2,7 +2,9 @@
 % Please edit documentation in R/check_graph.R
 \name{check_graph}
 \alias{check_graph}
-\title{Check graph inputs for common issues.}
+\title{Check graph inputs for common issues. Specifically checks if
+arc source, target, capacity, and cost arrays have the same length.
+Additionally, checks if all arc sources and targets are integral.}
 \usage{
 check_graph(
   arcSources,
@@ -30,5 +32,7 @@ check_graph(
 TRUE if no errors are found.
 }
 \description{
-Check graph inputs for common issues.
+Check graph inputs for common issues. Specifically checks if
+arc source, target, capacity, and cost arrays have the same length.
+Additionally, checks if all arc sources and targets are integral.
 }

@@ -3,7 +3,8 @@
 \name{check_arc_map}
 \alias{check_arc_map}
 \title{Check arc maps for common errors. Doesn't check if the underlying graph is
-correct - see `check_graph_vertices`}
+correct - see `check_graph_vertices` for that purpose. Specifically checks
+if the number of arcs in the graph is the same as the number in the map.}
 \usage{
 check_arc_map(arcSources, arcTargets, mapTest, numNodes)
 }
@@ -22,5 +23,6 @@ export
 }
 \description{
 Check arc maps for common errors. Doesn't check if the underlying graph is
-correct - see `check_graph_vertices`
+correct - see `check_graph_vertices` for that purpose. Specifically checks
+if the number of arcs in the graph is the same as the number in the map.
 }

@@ -3,7 +3,8 @@
 \name{check_node_map}
 \alias{check_node_map}
 \title{Check node maps for common errors. Doesn't check if the underlying graph is
-correct - see `check_graph_vertices`}
+correct - see `check_graph_vertices` for that purpose. Specifically checks
+if the number of nodes is inconsistent.}
 \usage{
 check_node_map(mapTest, numNodes)
 }
@@ -18,5 +19,6 @@ export
 }
 \description{
 Check node maps for common errors. Doesn't check if the underlying graph is
-correct - see `check_graph_vertices`
+correct - see `check_graph_vertices` for that purpose. Specifically checks
+if the number of nodes is inconsistent.
 }
