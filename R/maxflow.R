@@ -1,4 +1,4 @@
-##' Runs maxflow algorithms on graphs.
+##' Finds the maximum flow of a directed graph, given a source and destination node.
 ##'
 ##' @title MaxFlow
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -43,7 +43,7 @@ MaxFlow <- function(arcSources,
   )
 }
 
-##' Runs the push-rebel algorithm for the network circulation problem.
+##' Finds the solution to the network circulation problem via the push-relabel circulation algorithm.
 ##'
 ##' @title NetworkCirculation
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -59,7 +59,7 @@ MaxFlow <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include "Circulation" where
 ##'   "Circulation" is the default. See
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> for details on the
+##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html> for details on the
 ##'   differences.
 ##' @return A list containing two entries: 1) A list corresponding to the flows
 ##'   of arcs in the graph, and 2) A list of the graph's barrier nodes.
