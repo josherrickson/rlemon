@@ -1,4 +1,4 @@
-##' Runs mincostflow algorithms on graphs.
+##' Finds the minimum cost flow of a directed graph.
 ##'
 ##' @title MinCostFlow
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
