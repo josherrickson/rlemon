@@ -31,7 +31,7 @@ A list containing three entries: 1) The value of the minimum cut in
   of each node, and 3) A list of distances from the root node to each node.
 }
 \description{
-Runs mincut algorithms on graphs. NagamochiIbaraki calculates the min cut
-value in undirected graphs. HaoOrlin calculates the min cut value in
-directed graphs.
+Finds the minimum cut on graphs. NagamochiIbaraki calculates the min cut
+value and edges in undirected graphs,while HaoOrlin calculates the min cut value 
+and edges in directed graphs.
 }

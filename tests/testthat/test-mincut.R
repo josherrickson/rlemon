@@ -27,7 +27,7 @@ test_that("GomoryHu Test", {
   t <- c(2, 4, 3, 4, 4, 6, 2, 5, 3, 6)
   weights <- c(16, 13, 12, 10, 9, 20, 4, 14, 7, 4)
   numNodes <- 6
-  out <- GomoryHuTree(s, t, weights, numNodes)
+  out <- AllPairsMinCut(s, t, weights, numNodes, "GomoryHu")
   expect_equal(out[[1]], c(2, 4, 6, 3, 4, -1))
   expect_equal(out[[2]], c(29, 39, 24, 32, 25, -1))
   expect_equal(out[[3]], c(5, 4, 1, 2, 3, 0))

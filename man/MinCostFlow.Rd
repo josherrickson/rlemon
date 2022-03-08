@@ -43,5 +43,5 @@ A list containing three entries: 1) A list corresponding to the
   value
 }
 \description{
-Runs mincostflow algorithms on graphs.
+Finds the minimum cost flow of a directed graph.
 }

@@ -41,5 +41,5 @@ A list containing three entries: 1) A list corresponding to the
   and 3) the total cost of the flows in the graph, i.e. the maxflow value.
 }
 \description{
-Runs maxflow algorithms on graphs.
+Finds the maximum flow of a directed graph, given a source and destination node.
 }
