@@ -19,5 +19,7 @@ edges}
 A boolean stating if the graph is connected
 }
 \description{
-Checks if an undirected graph is connected
+Checks if an undirected graph is connected.
+See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad5c8d1b650f6b614a852f8430d90e184'
+for more information.
 }

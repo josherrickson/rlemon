@@ -20,4 +20,6 @@ A list containing the node id of each bi-edge-connected component.
 }
 \description{
 Finds the bi-edge-connected components of an undirected graph.
+See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga76c1fdd1881d21677507100b7e96c983'
+for more information.
 }

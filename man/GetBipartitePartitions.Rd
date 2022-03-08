@@ -20,6 +20,8 @@ A list containing 1) A boolean stating if the graph is bipartite,
   and 2) A list of length numNodes, containing the partition for each node
 }
 \description{
-Checks if an undirected graph is bipartite and returns the bipartite
-partitions
+Checks if an undirected graph is bipartite and finds the bipartite
+partitions.
+See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58ba1d00c569f0eb0deb42afca9f80bb'
+for more information.
 }

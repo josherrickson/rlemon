@@ -21,4 +21,6 @@ A list containing 1) A list of cut arc sources, and 2) A list of cut
 }
 \description{
 Finds the bi-edge-connected cut edges in an undirected graph.
+See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58d444eba448c5f1a53539bd1b69636e'
+for more information.
 }

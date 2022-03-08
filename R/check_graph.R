@@ -1,4 +1,4 @@
-##' Check graph for common issues.
+##' Check graph inputs for common issues.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc targets

@@ -19,5 +19,7 @@ edges}
 A boolean stating if the graph is bipartite
 }
 \description{
-Checks if an undirected graph is bipartite
+Checks if an undirected graph is bipartite.
+See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga577db110d33bd487aaad5bfffb31c6f5'
+for more information.
 }

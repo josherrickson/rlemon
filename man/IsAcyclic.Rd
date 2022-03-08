@@ -19,5 +19,7 @@ edges}
 A boolean stating if the graph is acyclic
 }
 \description{
-Checks if an undirected graph is acyclic
+Checks if an undirected graph is acyclic.
+See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga14c191b2133a1dd23e1527f074c821c0'
+for more information.
 }
