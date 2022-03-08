@@ -411,21 +411,18 @@ NULL
 
 #' @rdname Minimum-Cut-Algorithms-1
 #' @description `NagamochiIbarakiRunner` runs the Nagamochi-Ibaraki Algorithm to calculate the minimum cut.
-#' @export
 NagamochiIbarakiRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_NagamochiIbarakiRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 #' @rdname Minimum-Cut-Algorithms-1
 #' @description `HaoOrlinRunner` runs the Hao-Orlin Algorithm to calculate the minimum cut.
-#' @export
 HaoOrlinRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_HaoOrlinRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
 
 #' @rdname Minimum-Cut-Algorithms-2
 #' @description `GomoryHuTreeRunner` runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.
-#' @export
 GomoryHuTreeRunner <- function(arcSources, arcTargets, arcWeights, numNodes) {
     .Call(`_rlemon_GomoryHuTreeRunner`, arcSources, arcTargets, arcWeights, numNodes)
 }
@@ -550,21 +547,18 @@ NULL
 
 #' @rdname Shortest-Path-Algorithms-2
 #' @description `SuurballeRunner` calculates the shortest path between a specified start and end node and returns a list containing  1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
-#' @export
 SuurballeRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode, endNode) {
     .Call(`_rlemon_SuurballeRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode, endNode)
 }
 
 #' @rdname Shortest-Path-Algorithms-1
 #' @description `DijkstraRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
-#' @export
 DijkstraRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode) {
     .Call(`_rlemon_DijkstraRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode)
 }
 
 #' @rdname Shortest-Path-Algorithms-1
 #' @description `BellmanFordRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
-#' @export
 BellmanFordRunner <- function(arcSources, arcTargets, arcDistances, numNodes, startNode) {
     .Call(`_rlemon_BellmanFordRunner`, arcSources, arcTargets, arcDistances, numNodes, startNode)
 }
@@ -608,4 +602,3 @@ NearestNeighborTSPRunner <- function(arcSources, arcTargets, arcDistances, numNo
 Opt2TSPRunner <- function(arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight = 999999L) {
     .Call(`_rlemon_Opt2TSPRunner`, arcSources, arcTargets, arcDistances, numNodes, defaultEdgeWeight)
 }
-
