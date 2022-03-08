@@ -37,5 +37,7 @@ A list containing three entries: 1) the predecessor of each vertex
   3) a list containing if a node was reached or not
 }
 \description{
-Runs a common graph search algorithm to find the shortest path.
+Runs a common graph search algorithm to find the minimum cardinality shortest path.
+Finds the shortest path from/to all vertices if a start/end node are
+not given.
 }

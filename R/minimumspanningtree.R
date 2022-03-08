@@ -1,4 +1,7 @@
-##' Runs MST (Minimum Spanning Tree) algorithms on graphs.
+##' Finds the minimum spanning tree of a graph.
+##' The minimum spanning tree is the minimal connected acyclic subgraph of a graph,
+##' assuming the graph is undirected.
+##' 
 ##'
 ##' @title MinSpanningTree
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -10,8 +13,8 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include "Kruskal" where
 ##'   "Kruskal" is the default. See
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html> for details on the
-##'   differences.
+##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
+##'   for more information.
 ##' @return A list containing three entries: 1) Two vectors corresponding the
 ##'   source and target nodes of the edges in the tree, and 2) the total minimum
 ##'   spanning tree value.
@@ -36,7 +39,8 @@ MinSpanningTree <- function(arcSources,
 }
 
 
-##' Runs Minimum Cost Arborescence algorithms on graphs.
+##' Finds the minimum cost arborescence of a graph, returning both the cost and
+##' the pairs of nodes for the edges in the arborescence.
 ##'
 ##' @title MinCostArborescence
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -49,8 +53,7 @@ MinSpanningTree <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include
 ##'   "MinCostArborescence" where "MinCostArborescence" is the default. See
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html> for details on the
-##'   differences.
+##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html> for more information.
 ##' @return A list containing three entries: 1) Two vectors corresponding the
 ##'   source and target nodes of the edges in the tree, and 2) the total cost of
 ##'   the arborescence.

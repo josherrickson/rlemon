@@ -26,8 +26,8 @@ graph's edges}
 
 \item{algorithm}{Which algorithm to run. Choices include "Kruskal" where
 "Kruskal" is the default. See
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html> for details on the
-differences.}
+<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
+for more information.}
 }
 \value{
 A list containing three entries: 1) Two vectors corresponding the
@@ -35,5 +35,7 @@ A list containing three entries: 1) Two vectors corresponding the
   spanning tree value.
 }
 \description{
-Runs MST (Minimum Spanning Tree) algorithms on graphs.
+Finds the minimum spanning tree of a graph.
+The minimum spanning tree is the minimal connected acyclic subgraph of a graph,
+assuming the graph is undirected.
 }
