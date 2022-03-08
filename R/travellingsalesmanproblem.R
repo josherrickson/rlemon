@@ -1,5 +1,6 @@
-##' Runs traveling salesman algorithms on graphs. NOTE: LEMON's TSP uses a
-##' complete graph in its backend, so expect less performance on sparse graphs
+##' Finds approximations for the travelling salesman problem using 
+##' approximation algorithms on graphs. NOTE: LEMON's TSP uses a 
+##' complete graph in its backend, so expect less performance on sparse graphs.
 ##' @title TravelingSalesmanProblem
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
