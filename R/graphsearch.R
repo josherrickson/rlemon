@@ -1,4 +1,6 @@
 ##' Runs a common graph search algorithm to find the shortest path.
+##' Finds the shortest path from/to all vertices if a start/end node are
+##' not given.
 ##'
 ##' @title GraphSearch
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -61,8 +63,7 @@ GraphSearch <- function(arcSources,
 ##' @param startNode Optional start node of the path
 ##' @param algorithm Which algorithm to run. Choices include
 ##'   "maxcardinalitysearch". maxcardinalitysearch is the default; see
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details on the
-##'   differences.
+##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html> for more information.
 ##' @return A list containing two entries: 1) the cardinality of each node , 2)
 ##'   a list containing if a node was reached or not
 ##' @export
