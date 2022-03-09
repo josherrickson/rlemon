@@ -35,7 +35,7 @@ check_graph <- function(arcSources,
 }
 
 ##' Check sources and target arrays for common errors. Specifically checks that graphs
-##' follow 0-indexing conventions, that the number of source and target nodes are the same,
+##' follow 1-indexing conventions, that the number of source and target nodes are the same,
 ##' and that all node indices are integral.
 ##'
 ##' @param arcSources Arc sources
@@ -145,7 +145,7 @@ check_node_map <- function(mapTest,
 
 ##' Check node definitions for common errors. Specifically, 
 ##' checks that all nodes are integral, and that they are consistent
-##' with 0 based indexing.
+##' with 1-based indexing.
 ##'
 ##' @param testNode Node to test
 ##' @param numNodes Number of nodes
