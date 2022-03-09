@@ -3,7 +3,7 @@
 \name{check_graph_vertices}
 \alias{check_graph_vertices}
 \title{Check sources and target arrays for common errors. Specifically checks that graphs
-follow 0-indexing conventions, that the number of source and target nodes are the same,
+follow 1-indexing conventions, that the number of source and target nodes are the same,
 and that all node indices are integral.}
 \usage{
 check_graph_vertices(arcSources, arcTargets, numNodes)
@@ -21,6 +21,6 @@ export
 }
 \description{
 Check sources and target arrays for common errors. Specifically checks that graphs
-follow 0-indexing conventions, that the number of source and target nodes are the same,
+follow 1-indexing conventions, that the number of source and target nodes are the same,
 and that all node indices are integral.
 }
