@@ -4,7 +4,7 @@
 \alias{check_node}
 \title{Check node definitions for common errors. Specifically, 
 checks that all nodes are integral, and that they are consistent
-with 0 based indexing.}
+with 1-based indexing.}
 \usage{
 check_node(testNode, numNodes)
 }
@@ -20,5 +20,5 @@ export
 \description{
 Check node definitions for common errors. Specifically, 
 checks that all nodes are integral, and that they are consistent
-with 0 based indexing.
+with 1-based indexing.
 }
