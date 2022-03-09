@@ -47,3 +47,5 @@ main.cpp
 a.out
 *.so
 *.o
+
+.DS_Store

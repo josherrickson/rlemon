@@ -22,3 +22,12 @@ to solve the following problems:
 |PlanarEmbedding and Drawing  | Planar Embedding, Schnyder's planar drawing, Planar Coloring                                        |
 |Traveling Salesperson        | Christosfides, Greedy, Insertion heuristic, Nearest Neighbor, 2-opt                                 |
 |Approximation Algorithms     | Grosso, Locatelli, and Pullan                                                                       |
+
+## 1-indexing vs 0-indexing
+
+The LEMON C++ library uses 0-indexing, as is common in C++, meaning a graph of 5
+nodes will be labeled 0 through 4. R almost exclusively uses 1-indexing, meaning
+the same graph of 5 nodes will be labeled 1 through 5.
+
+For consistency in R, all function in R expect 1-indexing, and convert to
+0-indexing before passing to C++.
