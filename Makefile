@@ -40,7 +40,20 @@ goodpractice:
 .PHONY:build
 build: FUNC=build
 
-dependencies test check document build: .devtools
+.PHONY:check_win_old
+check_win_old: FUNC=check_win_oldrelease # Check & build on win-builder old release
+
+.PHONY:check_win
+check_win: FUNC=check_win_release        # ... on win-builder release
+
+.PHONY:check_win_dev
+check_win_dev: FUNC=check_win_devel    # ... on win-builder dev
+
+.PHONY:check_rhub
+check_rhub: FUNC=check_rhub
+check_rhub: DEVTOOLSARG=interactive=FALSE
+
+dependencies test check document build check_win check_win_dev check_win_old check_rhub: .devtools
 
 .PHONY: clean
 clean:
