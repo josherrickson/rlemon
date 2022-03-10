@@ -57,8 +57,17 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
   runner.upperMap(capacities);
   runner.costMap(costs);
   runner.supplyMap(supplies);
-  runner.run();
-
+  CycleCanceling<ListDigraph, int, int>::ProblemType feasibility = runner.run();
+  std::string feasibility_type = "";
+  if (feasibility ==
+      CycleCanceling<ListDigraph, int, int>::ProblemType::INFEASIBLE) {
+    feasibility_type = "INFEASIBLE";
+  } else if (feasibility ==
+             CycleCanceling<ListDigraph, int, int>::ProblemType::OPTIMAL) {
+    feasibility_type = "OPTIMAL";
+  } else {
+    feasibility_type = "UNBOUNDED";
+  }
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
 
@@ -70,7 +79,8 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
     nodePots.push_back(runner.potential(nodes[i]));
   }
 
-  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
+  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost(),
+                            feasibility_type);
 }
 
 //' @rdname Minimum-Cost-Flow-Algorithms
@@ -110,7 +120,18 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
   runner.upperMap(capacities);
   runner.costMap(costs);
   runner.supplyMap(supplies);
-  runner.run();
+  CapacityScaling<ListDigraph, int, int>::ProblemType feasibility =
+      runner.run();
+  std::string feasibility_type = "";
+  if (feasibility ==
+      CapacityScaling<ListDigraph, int, int>::ProblemType::INFEASIBLE) {
+    feasibility_type = "INFEASIBLE";
+  } else if (feasibility ==
+             CapacityScaling<ListDigraph, int, int>::ProblemType::OPTIMAL) {
+    feasibility_type = "OPTIMAL";
+  } else {
+    feasibility_type = "UNBOUNDED";
+  }
 
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
@@ -123,7 +144,8 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
     nodePots.push_back(runner.potential(nodes[i]));
   }
 
-  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
+  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost(),
+                            feasibility_type);
 }
 
 //' @rdname Minimum-Cost-Flow-Algorithms
@@ -163,7 +185,17 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources,
   runner.upperMap(capacities);
   runner.costMap(costs);
   runner.supplyMap(supplies);
-  runner.run();
+  CostScaling<ListDigraph, int, int>::ProblemType feasibility = runner.run();
+  std::string feasibility_type = "";
+  if (feasibility ==
+      CostScaling<ListDigraph, int, int>::ProblemType::INFEASIBLE) {
+    feasibility_type = "INFEASIBLE";
+  } else if (feasibility ==
+             CostScaling<ListDigraph, int, int>::ProblemType::OPTIMAL) {
+    feasibility_type = "OPTIMAL";
+  } else {
+    feasibility_type = "UNBOUNDED";
+  }
 
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
@@ -176,7 +208,8 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources,
     nodePots.push_back(runner.potential(nodes[i]));
   }
 
-  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
+  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost(),
+                            feasibility_type);
 }
 
 //' @rdname Minimum-Cost-Flow-Algorithms
@@ -216,7 +249,17 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources,
   runner.upperMap(capacities);
   runner.costMap(costs);
   runner.supplyMap(supplies);
-  runner.run();
+  NetworkSimplex<ListDigraph, int, int>::ProblemType feasibility = runner.run();
+  std::string feasibility_type = "";
+  if (feasibility ==
+      NetworkSimplex<ListDigraph, int, int>::ProblemType::INFEASIBLE) {
+    feasibility_type = "INFEASIBLE";
+  } else if (feasibility ==
+             NetworkSimplex<ListDigraph, int, int>::ProblemType::OPTIMAL) {
+    feasibility_type = "OPTIMAL";
+  } else {
+    feasibility_type = "UNBOUNDED";
+  }
 
   std::vector<int> arcFlows;
   std::vector<int> nodePots;
@@ -229,5 +272,6 @@ Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources,
     nodePots.push_back(runner.potential(nodes[i]));
   }
 
-  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost());
+  return Rcpp::List::create(arcFlows, nodePots, runner.totalCost(),
+                            feasibility_type);
 }
