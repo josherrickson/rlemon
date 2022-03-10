@@ -34,7 +34,6 @@ using namespace std;
 
 //' @rdname Shortest-Path-Algorithms-2
 //' @description `SuurballeRunner` calculates the shortest path between a specified start and end node and returns a list containing  1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List SuurballeRunner(std::vector<int> arcSources,
                            std::vector<int> arcTargets,
@@ -85,7 +84,6 @@ Rcpp::List SuurballeRunner(std::vector<int> arcSources,
 
 //' @rdname Shortest-Path-Algorithms-1
 //' @description `DijkstraRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List DijkstraRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets,
@@ -125,7 +123,6 @@ Rcpp::List DijkstraRunner(std::vector<int> arcSources,
 
 //' @rdname Shortest-Path-Algorithms-1
 //' @description `BellmanFordRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List BellmanFordRunner(std::vector<int> arcSources,
                              std::vector<int> arcTargets,

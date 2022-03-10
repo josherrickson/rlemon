@@ -28,7 +28,6 @@ using namespace std;
 
 //' @rdname Minimum-Cut-Algorithms-1
 //' @description `NagamochiIbarakiRunner` runs the Nagamochi-Ibaraki Algorithm to calculate the minimum cut.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
                                   std::vector<int> arcTargets,
@@ -72,7 +71,6 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
 
 //' @rdname Minimum-Cut-Algorithms-1
 //' @description `HaoOrlinRunner` runs the Hao-Orlin Algorithm to calculate the minimum cut.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets,
@@ -116,7 +114,6 @@ Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
 
 //' @rdname Minimum-Cut-Algorithms-2
 //' @description `GomoryHuTreeRunner` runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.
-//' @export
 // [[Rcpp::export]]
 Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources,
                               std::vector<int> arcTargets,
