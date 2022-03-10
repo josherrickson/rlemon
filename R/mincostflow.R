@@ -13,7 +13,7 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include "NetworkSimplex",
 ##'   "CostScaling", "CapacityScaling", "CycleCancelling". NetworkSimplex is the
-##'   default; see <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for
+##'   default; see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for
 ##'   details on the differences.
 ##' @return A list containing three entries: 1) A list corresponding to the
 ##'   flows of arcs in the graph, 2) A list of potentials of the graph's nodes,

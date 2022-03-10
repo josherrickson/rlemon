@@ -34,7 +34,7 @@ graph.}
 
 \item{algorithm}{Which algorithm to run. Choices include "Circulation" where
 "Circulation" is the default. See
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html> for details on the
+<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html> for details on the
 differences.}
 }
 \value{

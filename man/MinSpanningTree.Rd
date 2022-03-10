@@ -26,7 +26,7 @@ graph's edges}
 
 \item{algorithm}{Which algorithm to run. Choices include "Kruskal" where
 "Kruskal" is the default. See
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
+<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
 for more information.}
 }
 \value{

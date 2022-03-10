@@ -12,7 +12,7 @@
 ##' @param endNode Optional end node of the path
 ##' @param algorithm Which algorithm to run. Choices include "Bfs", "Dfs". Bfs
 ##'   (Breadth First Search) is the default; see
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details on the
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details on the
 ##'   differences.
 ##' @return A list containing three entries: 1) the predecessor of each vertex
 ##'   in its shortest path, 2) the distances from each node to the startNode ,
@@ -63,7 +63,7 @@ GraphSearch <- function(arcSources,
 ##' @param startNode Optional start node of the path
 ##' @param algorithm Which algorithm to run. Choices include
 ##'   "maxcardinalitysearch". maxcardinalitysearch is the default; see
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html> for more information.
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html> for more information.
 ##' @return A list containing two entries: 1) the cardinality of each node , 2)
 ##'   a list containing if a node was reached or not
 ##' @export

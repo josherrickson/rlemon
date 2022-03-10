@@ -33,7 +33,7 @@ edges}
 
 \item{algorithm}{Which algorithm to run. Choices include "NetworkSimplex",
 "CostScaling", "CapacityScaling", "CycleCancelling". NetworkSimplex is the
-default; see <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for
+default; see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for
 details on the differences.}
 }
 \value{

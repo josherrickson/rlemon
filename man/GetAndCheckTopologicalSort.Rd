@@ -22,6 +22,6 @@ A list containing 1) A boolean stating if the graph is a dag, and 2)
 }
 \description{
 Checks if a directed graph is a DAG and returns the topological order.
-See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gafc2cb20cf3859f157c0e12da7f310bb3'
+See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gafc2cb20cf3859f157c0e12da7f310bb3'
 for more information.
 }

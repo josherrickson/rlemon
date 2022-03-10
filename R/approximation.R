@@ -9,7 +9,7 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include
 ##'   "GrossoLocatelliPullanMc". GrossoLocatelliPullanMc is the default; see
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00194.html> for more information.
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00194.html> for more information.
 ##' @return A list containing two entries: 1) the clique size, and 2) the
 ##'   members of the clique.
 ##' @export

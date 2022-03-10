@@ -29,7 +29,7 @@ edges}
 
 \item{algorithm}{Which algorithm to run. Choices include
 "maxcardinalitysearch". maxcardinalitysearch is the default; see
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html> for more information.}
+<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html> for more information.}
 }
 \value{
 A list containing two entries: 1) the cardinality of each node , 2)

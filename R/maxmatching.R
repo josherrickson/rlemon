@@ -13,7 +13,7 @@
 ##'   "MaxWeightedMatching", "MaxWeightedPerfectMatching",
 ##'   "MaxWeightedFractionalMatching", "MaxWeightedPerfectFractionalMatching"
 ##'   where "MaxWeightedMatching" is the default. See
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
 ##'   differences.
 ##' @return A list containing two entries: 1) The matching value, 2) The edges
 ##'   of the final graph, in a List of List of (node, node) pairs
@@ -63,7 +63,7 @@ MaxMatching <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm What algorithm you want to run. Choices include
 ##'   "MaxMatching", "MaxFractionalMatching" where "MaxMatching" is the default.
-##'   See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
+##'   See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
 ##'   differences.
 ##' @return A list containing two entries: 1) The matching value, 2) The edges
 ##'   of the final graph, in a List of List of (node, node) pairs

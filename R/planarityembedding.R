@@ -1,5 +1,5 @@
 ##' Checks if an undirected graph is planar.
-##' See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00617.html#ga230242aa2ee36f9b1b5a58f2c53016eb'
+##' See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00617.html#ga230242aa2ee36f9b1b5a58f2c53016eb'
 ##' for more information.
 ##'
 ##' @title PlanarChecking
@@ -19,7 +19,7 @@ PlanarChecking <- function(arcSources,
 
 ##' Checks if an undirected graph is planar and returns a list of outputs
 ##' related to the planar embedding
-##' See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00308.html'
+##' See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00308.html'
 ##' for more information.
 ##'
 ##' @title PlanarEmbedding
@@ -41,7 +41,7 @@ PlanarEmbedding <- function(arcSources,
 }
 
 ##' Checks if a graph is planar and returns the coloring of the graph
-##' See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00306.html'
+##' See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00306.html'
 ##' for more information.
 ##'
 ##' @title PlanarColoring
@@ -74,7 +74,7 @@ PlanarColoring <- function(arcSources,
 }
 
 ##' Checks if a graph is planar and returns the coloring of the graph
-##' See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00307.html'
+##' See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00307.html'
 ##' for more information.
 ##'
 ##' @title PlanarDrawing

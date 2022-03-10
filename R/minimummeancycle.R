@@ -9,7 +9,7 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include "Howard", "Karp",
 ##'   "HartmannOrlin" where "Howard" is the default. See
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00614.html> for details on the
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00614.html> for details on the
 ##'   differences.
 ##' @return A list containing two entries: 1) A vector containing the costs of
 ##'   each edge in the MMC, and 2) the nodes in the MMC.

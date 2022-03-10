@@ -20,6 +20,6 @@ An integer defining the number of bi-node connected components
 }
 \description{
 Counts the number of bi-edge connected components in an undirected graph.
-See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaf7c5744b2175210b8ea67897aaa27885'
+See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaf7c5744b2175210b8ea67897aaa27885'
 for more information.
 }

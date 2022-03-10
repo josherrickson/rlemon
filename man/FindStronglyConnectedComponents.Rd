@@ -20,6 +20,6 @@ A list containing the node id of each strongly connected component.
 }
 \description{
 Finds the strongly connected components in a directed graph.
-See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga46f8c22f3e2989c4689faa4c46ec9436'
+See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga46f8c22f3e2989c4689faa4c46ec9436'
 for more information.
 }

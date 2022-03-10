@@ -1,5 +1,5 @@
 ##' Finds the minimum cut on graphs. NagamochiIbaraki calculates the min cut
-##' value and edges in undirected graphs,while HaoOrlin calculates the min cut value 
+##' value and edges in undirected graphs,while HaoOrlin calculates the min cut value
 ##' and edges in directed graphs.
 ##'
 ##' @title MinCut
@@ -11,7 +11,7 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Which algorithm to run. Choices include "NagamochiIbaraki",
 ##'   "HaoOrlin" where NagamochiIbaraki is the default; see
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html> for details on the
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html> for details on the
 ##'   differences.
 ##' @return A list containing three entries: 1) The value of the minimum cut in
 ##'   the graph, and 2) A list of nodes in the first partition, and 3) A list of
@@ -55,9 +55,9 @@ MinCut <- function(arcSources,
 ##'   edges
 ##' @param arcWeights Vector corresponding to the weights of a graph's arcs
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include "GomoryHu" 
+##' @param algorithm Which algorithm to run. Choices include "GomoryHu"
 ##'    where GomoryHu is the default; see
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html> for more information.
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html> for more information.
 ##' @return A list containing three entries: 1) A list of predecessor nodes of
 ##'   each node in the graph, and 2) A list of weights of the predecessor edge
 ##'   of each node, and 3) A list of distances from the root node to each node.

@@ -22,7 +22,7 @@ edges}
 
 \item{algorithm}{What algorithm you want to run. Choices include
 "MaxMatching", "MaxFractionalMatching" where "MaxMatching" is the default.
-See <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
 differences.}
 }
 \value{

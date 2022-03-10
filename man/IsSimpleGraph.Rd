@@ -21,6 +21,6 @@ A boolean stating if the graph is simple
 \description{
 Checks if a graph is simple, i.e. it contains no loop arcs/edges and no
 parallel arcs/edges. Works for both undirected and directed graphs.
-See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gae4c7ae734e2509ab78dc747d602c9236'
+See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gae4c7ae734e2509ab78dc747d602c9236'
 for more information.
 }

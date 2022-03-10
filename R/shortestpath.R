@@ -12,7 +12,7 @@
 ##' @param sourceNode The start node of the path
 ##' @param algorithm Which algorithm to run. Choices include "Dijkstra",
 ##'   "BellmanFord" where "Dijkstra" is the default. See
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html> for details on the
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html> for details on the
 ##'   differences.
 ##' @return A list containing two entries: 1) the distances from each node to
 ##'   the startNode and 2) the predecessor of each vertex in its shortest path.
@@ -40,7 +40,7 @@ ShortestPathFromSource <- function(arcSources,
   )
 }
 
-##' Finds the shortest arc disjoint paths between two nodes in a directed graph. 
+##' Finds the shortest arc disjoint paths between two nodes in a directed graph.
 ##' This implementation runs a variation of the successive shortest path algorithm.
 ##'
 ##' @title ShortestPath
@@ -54,7 +54,7 @@ ShortestPathFromSource <- function(arcSources,
 ##' @param destNode The end node of the path
 ##' @param algorithm Which algorithm to run. Choices include "Suurballe" where
 ##'   "Suurballe" is the default. See
-##'   <http://lemon.cs.elte.hu/pub/doc/1.3.1/a00420.html> for more information.
+##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00420.html> for more information.
 ##' @return A list containing two entries: 1) the number of paths from the start
 ##'   node to the end node and 2) a list of paths found.
 ##' @export

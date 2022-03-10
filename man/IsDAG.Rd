@@ -20,6 +20,6 @@ A boolean stating if the graph is DAG
 }
 \description{
 Checks if a directed graph is a DAG.
-See 'http://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaef2b43c8cd1d74e15fa5c7607bc5e396'
+See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaef2b43c8cd1d74e15fa5c7607bc5e396'
 for more information.
 }

@@ -32,7 +32,7 @@ graph's edges}
 
 \item{algorithm}{Which algorithm to run. Choices include "Preflow",
 "EdmondsKarp", where "Preflow" is the default. See
-<http://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> for details on the
+<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> for details on the
 differences.}
 }
 \value{
