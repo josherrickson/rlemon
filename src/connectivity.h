@@ -10,7 +10,7 @@ using namespace lemon;
 //' Graph Input Specifications
 //' @name Input-Information
 //' @description Due to how LEMON operates, and to make the interfaces similar to the actual program,
-//' graphs in rLEMON use the following 2 vectors:
+//' graphs in rlemon use the following 2 vectors:
 //' arcSources, and arcTargets
 //' to acquire information about how the graph is structured
 //' each edge in a graph will consist of a (node id, node id) pair, which is represented

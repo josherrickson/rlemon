@@ -54,7 +54,7 @@ check_graph_vertices <- function(arcSources,
   if (!all(arcSources <= numNodes)) {
     stop(paste(
       "The arcSources vec contains vertices with indices greater",
-      "than the number of nodes. rLEMON is 1-indexed on the number",
+      "than the number of nodes. rlemon is 1-indexed on the number",
       "of graph vertices, and will assume that the vertices in",
       "between exist"
     ))
@@ -63,7 +63,7 @@ check_graph_vertices <- function(arcSources,
   if (!all(arcSources > 0)) {
     stop(paste(
       "The arcSources vec contains vertices with indices less than 1.",
-      "rLEMON is 1-indexed on the number of graph vertices, and will",
+      "rlemon is 1-indexed on the number of graph vertices, and will",
       "assume that the vertices in between exist"
     ))
   }
@@ -72,7 +72,7 @@ check_graph_vertices <- function(arcSources,
   if (!all(arcTargets <= numNodes)) {
     stop(paste(
       "The arcTargets vec contains vertices with indices greater than",
-      " the number of nodes. rLEMON is 1-indexed on the number of",
+      " the number of nodes. rlemon is 1-indexed on the number of",
       "graph vertices, and will assume that the vertices in between",
       "exist"
     ))
@@ -81,7 +81,7 @@ check_graph_vertices <- function(arcSources,
   if (!all(arcTargets > 0)) {
     stop(paste(
       "The arcTargets vec contains vertices with indices less than 1.",
-      "rLEMON is 1-indexed on the number of graph vertices, and will",
+      "rlemon is 1-indexed on the number of graph vertices, and will",
       "assume that the vertices in between exist"
     ))
   }
@@ -143,7 +143,7 @@ check_node_map <- function(mapTest,
   invisible(TRUE)
 }
 
-##' Check node definitions for common errors. Specifically, 
+##' Check node definitions for common errors. Specifically,
 ##' checks that all nodes are integral, and that they are consistent
 ##' with 1-based indexing.
 ##'
