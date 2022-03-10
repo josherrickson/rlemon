@@ -31,4 +31,5 @@ test_that("GomoryHu Test", {
   expect_equal(out[[1]], c(2, 4, 6, 3, 4, -1))
   expect_equal(out[[2]], c(29, 39, 24, 32, 25, -1))
   expect_equal(out[[3]], c(5, 4, 1, 2, 3, 0))
+  expect_error(AllPairsMinCut(s, t, weights, 6, "abc"), "Invalid")
 })
