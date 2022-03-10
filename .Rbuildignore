@@ -11,3 +11,4 @@ data-raw
 .vscode
 lib
 cran-comments.md
+^CRAN-SUBMISSION$
