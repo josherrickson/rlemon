@@ -6,26 +6,7 @@
 
 using namespace lemon;
 
-//' MST Algorithms
-//' @name Minimum-Spanning-Tree-Algorithms
-//' @param arcSources Vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances Vector corresponding to the distances of nodes of a graph's edges
-//' @param numNodes The number of nodes in the graph
-//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total minimum spanning tree value.
-//> NULL
-
-//' Arborescence Algorithms
-//' @name Minimum-Cost-Arborescence-Algorithms
-//' @param arcSources Vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances Vector corresponding to the distances of nodes of a graph's edges
-//' @param sourceNode The source node
-//' @param numNodes The number of nodes in the graph
-//' @return A list containing three entries: 1) Two vectors corresponding the source and target nodes of the edges in the tree, and 2) the total cost of the arborescence.
-//> NULL
-
-//' @rdname Minimum-Spanning-Tree-Algorithms
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List KruskalRunner(std::vector<int> arcSources,
                          std::vector<int> arcTargets,
@@ -59,7 +40,7 @@ Rcpp::List KruskalRunner(std::vector<int> arcSources,
   return Rcpp::List::create(treeSources, treeTargets, treeVal);
 }
 
-//' @rdname Minimum-Cost-Arborescence-Algorithms
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources,
                                      std::vector<int> arcTargets,

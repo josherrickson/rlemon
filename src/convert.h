@@ -8,16 +8,7 @@
 using namespace lemon;
 using namespace std;
 
-//' Compatible Graph Converter
-//' @name Graph-Converter
-//' @param nodesList, a vector of all the nodes in the graph
-//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @return A list containing four entries: 1) rlemon compatible nodes, 2) arcSources which match the converted nodes 3) arcTargets which match the converted nodes, 4) a mapping of the original and converted nodes
-//> NULL
-
-//' @rdname Graph-Converter
-//' @description 'GraphCompatabilityConverter' returns a compatible version of the graph which can be used with the rest of rlemon's interfaces. rlemon's interface requires all node inputs to be 0-indexed.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List GraphCompatabilityConverter(std::vector<int> nodesList,
                                        std::vector<int> arcSources,

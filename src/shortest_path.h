@@ -11,29 +11,7 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
-//' Shortest Path Algorithms - Distance
-//' @name Shortest-Path-Algorithms-1
-//' @param arcSources Vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances Vector corresponding to the distances of a graph's edges
-//' @param numNodes The number of nodes in the graph
-//' @param startNode The start node of the path
-//' @return A list containing two entries: 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
-//> NULL
-
-//' Shortest Path Algorithms - Paths
-//' @name Shortest-Path-Algorithms-2
-//' @param arcSources Vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
-//' @param arcDistances Vector corresponding to the distances of a graph's edges
-//' @param numNodes The number of nodes in the graph
-//' @param startNode The start node of the path
-//' @param endNode The end node of the path
-//' @return A list containing two entries: 1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
-//> NULL
-
-//' @rdname Shortest-Path-Algorithms-2
-//' @description `SuurballeRunner` calculates the shortest path between a specified start and end node and returns a list containing  1) the number of arc disjoint paths from the start node to the end node and 2) a list of paths found.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List SuurballeRunner(std::vector<int> arcSources,
                            std::vector<int> arcTargets,
@@ -82,8 +60,7 @@ Rcpp::List SuurballeRunner(std::vector<int> arcSources,
   return Rcpp::List::create(NUM_PATHS, paths);
 }
 
-//' @rdname Shortest-Path-Algorithms-1
-//' @description `DijkstraRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List DijkstraRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets,
@@ -121,8 +98,7 @@ Rcpp::List DijkstraRunner(std::vector<int> arcSources,
   return Rcpp::List::create(distances, predecessors);
 }
 
-//' @rdname Shortest-Path-Algorithms-1
-//' @description `BellmanFordRunner` calculates the shortest path from the start node to each node in the graph and returns a list containing 1) the distances from each node to the startNode and 2) the predecessor of each vertex in its shortest path.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List BellmanFordRunner(std::vector<int> arcSources,
                              std::vector<int> arcTargets,

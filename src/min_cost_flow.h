@@ -9,19 +9,7 @@
 
 using namespace lemon;
 
-//' Minimum Cost Flow Algorithms
-//' @name Minimum-Cost-Flow-Algorithms
-//' @param arcSources, a vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets, a vector corresponding to the destination nodes of a graph's edges
-//' @param arcCapacities, a vector corresponding to the capacities of nodes of a graph's edges
-//' @param arcCosts, a vector corresponding to the capacities of nodes of a graph's edges
-//' @param nodeSupplies, a vector corresponding to the supplies of each node
-//' @param numNodes, the number of nodes in the graph
-//' @return A list containing three entries: 1) A list corresponding to the flows of arcs in the graph, 2) A list of potentials of the graph's nodes, and 3) the total cost of the flows in the graph, i.e. the mincostflow value
-//> NULL
-
-//' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `CycleCancellingRunner` runs the Cycle-Cancelling Algorithm to calculate the minimum cost flow.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
                                  std::vector<int> arcTargets,
@@ -83,8 +71,7 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
                             feasibility_type);
 }
 
-//' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `CapacityScalingRunner` runs the Capacity-Scaling Algorithm to calculate the minimum cost flow.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
                                  std::vector<int> arcTargets,
@@ -148,8 +135,7 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
                             feasibility_type);
 }
 
-//' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `CostScalingRunner` runs the Cost-Scaling Algorithm to calculate the minimum cost flow.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List CostScalingRunner(std::vector<int> arcSources,
                              std::vector<int> arcTargets,
@@ -212,8 +198,7 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources,
                             feasibility_type);
 }
 
-//' @rdname Minimum-Cost-Flow-Algorithms
-//' @description `NetworkSimplexRunner` runs the Network-Simplex Algorithm to calculate the minimum cost flow.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources,
                                 std::vector<int> arcTargets,

@@ -8,26 +8,7 @@
 using namespace lemon;
 using namespace std;
 
-//' Minimum Cut Algorithms - Gomory Hu Tree
-//' @name Minimum-Cut-Algorithms-2
-//' @param arcSources Vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
-//' @param arcWeights Vector corresponding to the weights of a graph's edges
-//' @param numNodes The number of nodes in the graph
-//' @return Calculates a Gomory-Hu Tree and returns a list containing three entries: 1) A list of predecessor nodes of each node in the graph, and 2) A list of weights of the predecessor edge of each node, and 3) A list of distances from the root node to each node.
-//> NULL
-
-//' Minimum Cut Algorithms
-//' @name Minimum-Cut-Algorithms-1
-//' @param arcSources Vector corresponding to the source nodes of a graph's edges
-//' @param arcTargets Vector corresponding to the destination nodes of a graph's edges
-//' @param arcWeights Vector corresponding to the weights of a graph's edges
-//' @param numNodes The number of nodes in the graph
-//' @return A list containing three entries: 1) The value of the minimum cut in the graph, and 2) A list of nodes in the first partition, and 3) A list of nodes in the second partition.
-//> NULL
-
-//' @rdname Minimum-Cut-Algorithms-1
-//' @description `NagamochiIbarakiRunner` runs the Nagamochi-Ibaraki Algorithm to calculate the minimum cut.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
                                   std::vector<int> arcTargets,
@@ -69,8 +50,7 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
   return Rcpp::List::create(mincutvalue, partition1, partition2);
 }
 
-//' @rdname Minimum-Cut-Algorithms-1
-//' @description `HaoOrlinRunner` runs the Hao-Orlin Algorithm to calculate the minimum cut.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets,
@@ -112,8 +92,7 @@ Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
   return Rcpp::List::create(mincutvalue, partition1, partition2);
 }
 
-//' @rdname Minimum-Cut-Algorithms-2
-//' @description `GomoryHuTreeRunner` runs the Gomory-Hu Algorithm to calculate a rooted Gomory Hu Tree.
+//' @rdname lemon-runners
 // [[Rcpp::export]]
 Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources,
                               std::vector<int> arcTargets,
