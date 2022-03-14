@@ -2,7 +2,6 @@
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/rlemon)](https://cran.r-project.org/package=rlemon)
 [![R-CMD-check](https://github.com/atewari7/rlemon/workflows/R-CMD-check/badge.svg)](https://github.com/atewari7/rlemon/actions)
-[![Codecov test coverage](https://codecov.io/gh/atewari7/rlemon/branch/master/graph/badge.svg)](https://codecov.io/gh/atewari7/rlemon?branch=master)
 
 rlemon provides convenient access to the
 [LEMON](https://lemon.cs.elte.hu/trac/lemon) C++ graph library. Built with the
