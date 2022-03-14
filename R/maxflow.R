@@ -24,7 +24,7 @@ MaxFlow <- function(arcSources,
                     sourceNode,
                     destNode,
                     numNodes,
-                    algorithm) {
+                    algorithm = "Preflow") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcCapacities, numNodes)
   check_node(sourceNode, numNodes)
@@ -70,7 +70,7 @@ NetworkCirculation <- function(arcSources,
                                arcUpperBound,
                                nodeSupplies,
                                numNodes,
-                               algorithm) {
+                               algorithm = "Circulation") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcLowerBound, numNodes)
   check_arc_map(arcSources, arcTargets, arcUpperBound, numNodes)

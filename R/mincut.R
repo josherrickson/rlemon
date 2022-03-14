@@ -24,7 +24,7 @@ MinCut <- function(arcSources,
                    arcTargets,
                    arcWeights,
                    numNodes,
-                   algorithm) {
+                   algorithm = "NagamochiIbaraki") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
 
@@ -62,7 +62,11 @@ MinCut <- function(arcSources,
 ##'   each node in the graph, and 2) A list of weights of the predecessor edge
 ##'   of each node, and 3) A list of distances from the root node to each node.
 ##' @export
-AllPairsMinCut <- function(arcSources, arcTargets, arcWeights, numNodes, algorithm) {
+AllPairsMinCut <- function(arcSources,
+                           arcTargets,
+                           arcWeights,
+                           numNodes,
+                           algorithm = "GomoryHu") {
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
 

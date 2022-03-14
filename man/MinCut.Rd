@@ -4,7 +4,13 @@
 \alias{MinCut}
 \title{MinCut}
 \usage{
-MinCut(arcSources, arcTargets, arcWeights, numNodes, algorithm)
+MinCut(
+  arcSources,
+  arcTargets,
+  arcWeights,
+  numNodes,
+  algorithm = "NagamochiIbaraki"
+)
 }
 \arguments{
 \item{arcSources}{Vector corresponding to the source nodes of a graph's

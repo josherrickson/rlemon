@@ -11,7 +11,7 @@ NetworkCirculation(
   arcUpperBound,
   nodeSupplies,
   numNodes,
-  algorithm
+  algorithm = "Circulation"
 )
 }
 \arguments{

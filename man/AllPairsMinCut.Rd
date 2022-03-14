@@ -4,7 +4,13 @@
 \alias{AllPairsMinCut}
 \title{AllPairsMinCut}
 \usage{
-AllPairsMinCut(arcSources, arcTargets, arcWeights, numNodes, algorithm)
+AllPairsMinCut(
+  arcSources,
+  arcTargets,
+  arcWeights,
+  numNodes,
+  algorithm = "GomoryHu"
+)
 }
 \arguments{
 \item{arcSources}{Vector corresponding to the source nodes of a graph's

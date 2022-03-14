@@ -11,7 +11,7 @@ MaxFlow(
   sourceNode,
   destNode,
   numNodes,
-  algorithm
+  algorithm = "Preflow"
 )
 }
 \arguments{
