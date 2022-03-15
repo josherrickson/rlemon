@@ -15,24 +15,24 @@
 ##'   edges
 ##' @param arcTargets a vector corresponding to the destination nodes of a
 ##'   graph’s edges
-##' @param numNodes the number of nodes in the graph
-##' @param nodesList a vector of all the nodes in the graph
-##' @param startNode the start node of the path
-##' @param endNode the end node of the path
 ##' @param arcCapacities vector corresponding to the capacities of nodes of a
 ##'   graph’s edges
 ##' @param arcLowerBound vector corresponding to the lower-bound capacities of
 ##'   nodes of a graph’s edges
 ##' @param arcUpperBound vector corresponding to the upper-bound capacities of
 ##'   nodes of a graph’s edges
-##' @param nodeSupplies vector corresponding to the supplies of each node of the
-##'   graph
 ##' @param arcDistances vector corresponding to the distances of a graph’s edges
-##' @param sourceNode The source node
-##' @param destinationNode The destionation node
 ##' @param arcWeights vector corresponding to the weights of a graph’s arcs
 ##' @param arcCosts vector corresponding to the costs of nodes of a graph’s
 ##'   edges
+##' @param numNodes the number of nodes in the graph
+##' @param nodesList a vector of all the nodes in the graph
+##' @param startNode in path-based algorithms, the start node of the path
+##' @param endNode in path-based algorithms, the end node of the path
+##' @param sourceNode in flow-based algorithms, the source node of the flow
+##' @param destinationNode in flow-based algorithms, the destination node of the flow
+##' @param nodeSupplies vector corresponding to the supplies of each node of the
+##'   graph
 ##' @param useFiveAlg a boolean that asks if you want to 5-color a graph. If
 ##'   false, runs a faster 6-coloring algorithm instead.
 ##' @param defaultEdgeWeight The default edge weight if an edge is not-specified

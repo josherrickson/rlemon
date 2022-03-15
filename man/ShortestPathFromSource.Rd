@@ -24,7 +24,7 @@ edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{sourceNode}{The start node of the path}
+\item{sourceNode}{The source node}
 
 \item{algorithm}{Which algorithm to run. Choices include "Dijkstra",
 "BellmanFord" where "Dijkstra" is the default. See

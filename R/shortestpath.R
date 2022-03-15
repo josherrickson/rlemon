@@ -9,7 +9,7 @@
 ##'   edges
 ##' @param arcDistances Vector corresponding to the distances of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param sourceNode The start node of the path
+##' @param sourceNode The source node
 ##' @param algorithm Which algorithm to run. Choices include "Dijkstra",
 ##'   "BellmanFord" where "Dijkstra" is the default. See
 ##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html> for details on the

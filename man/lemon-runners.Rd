@@ -322,9 +322,9 @@ graph’s edges}
 
 \item{nodesList}{a vector of all the nodes in the graph}
 
-\item{startNode}{the start node of the path}
+\item{startNode}{in path-based algorithms, the start node of the path}
 
-\item{endNode}{the end node of the path}
+\item{endNode}{in path-based algorithms, the end node of the path}
 
 \item{arcCapacities}{vector corresponding to the capacities of nodes of a
 graph’s edges}
@@ -340,9 +340,9 @@ graph}
 
 \item{arcDistances}{vector corresponding to the distances of a graph’s edges}
 
-\item{sourceNode}{The source node}
+\item{sourceNode}{in flow-based algorithms, the source node of the flow}
 
-\item{destinationNode}{The destionation node}
+\item{destinationNode}{in flow-based algorithms, the destination node of the flow}
 
 \item{arcWeights}{vector corresponding to the weights of a graph’s arcs}
 
