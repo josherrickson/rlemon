@@ -19,26 +19,15 @@ MinMeanCycle <- function(arcSources,
                          arcDistances,
                          numNodes,
                          algorithm = "Howard") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
 
-
   switch(algorithm,
-    "Howard" =
-      .Call(
-        `_rlemon_HowardMmcRunner`, arcSources, arcTargets,
-        arcDistances, numNodes
-      ),
-    "Karp" =
-      .Call(
-        `_rlemon_KarpMmcRunner`, arcSources, arcTargets, arcDistances,
-        numNodes
-      ),
-    "HartmannOrlin" =
-      .Call(
-        `_rlemon_HartmannOrlinMmcRunner`, arcSources, arcTargets,
-        arcDistances, numNodes
-      ),
-    stop("Invalid algorithm.")
-  )
+         "Howard" = HowardMmcRunner(arcSources, arcTargets, arcDistances, numNodes),
+         "Karp" = KarpMmcRunner(arcSources, arcTargets, arcDistances, numNodes),
+         "HartmannOrlin" = HartmannOrlinMmcRunner(arcSources, arcTargets,
+                                                  arcDistances, numNodes),
+         stop("Invalid algorithm.")
+         )
 }

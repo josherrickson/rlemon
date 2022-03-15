@@ -19,7 +19,7 @@
 ##'   flows of arcs in the graph, 2) A list of potentials of the graph's nodes,
 ##'   3) the total cost of the flows in the graph, i.e. the mincostflow
 ##'   value, and 4) LEMON's feasibility type, demonstrating how feasible the
-##'   graph problem is. Choices include "INFEASIBLE", "OPTIMAL", and "UNBOUNDED" 
+##'   graph problem is. Choices include "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
 ##' @export
 MinCostFlow <- function(arcSources,
                         arcTargets,
@@ -28,6 +28,7 @@ MinCostFlow <- function(arcSources,
                         nodeSupplies,
                         numNodes,
                         algorithm = "NetworkSimplex") {
+
   check_graph(
     arcSources, arcTargets, arcCapacities, arcCosts, nodeSupplies,
     numNodes
@@ -39,26 +40,18 @@ MinCostFlow <- function(arcSources,
   check_node_map(nodeSupplies, numNodes)
 
   switch(algorithm,
-    "NetworkSimplex" =
-      .Call(
-        `_rlemon_NetworkSimplexRunner`, arcSources, arcTargets,
-        arcCapacities, arcCosts, nodeSupplies, numNodes
-      ),
-    "CostScaling" =
-      .Call(
-        `_rlemon_CostScalingRunner`, arcSources, arcTargets,
-        arcCapacities, arcCosts, nodeSupplies, numNodes
-      ),
-    "CapacityScaling" =
-      .Call(
-        `_rlemon_CapacityScalingRunner`, arcSources, arcTargets,
-        arcCapacities, arcCosts, nodeSupplies, numNodes
-      ),
-    "CycleCancelling" =
-      .Call(
-        `_rlemon_CycleCancellingRunner`, arcSources, arcTargets,
-        arcCapacities, arcCosts, nodeSupplies, numNodes
-      ),
-    stop("Invalid algorithm.")
-  )
+         "NetworkSimplex" = NetworkSimplexRunner(arcSources, arcTargets,
+                                                 arcCapacities, arcCosts,
+                                                 nodeSupplies, numNodes),
+         "CostScaling" = CostScalingRunner(arcSources, arcTargets,
+                                           arcCapacities, arcCosts,
+                                           nodeSupplies, numNodes),
+         "CapacityScaling" = CapacityScalingRunner(arcSources, arcTargets,
+                                                   arcCapacities, arcCosts,
+                                                   nodeSupplies, numNodes),
+         "CycleCancelling" = CycleCancellingRunner(arcSources, arcTargets,
+                                                   arcCapacities, arcCosts,
+                                                   nodeSupplies, numNodes),
+         stop("Invalid algorithm.")
+         )
 }

@@ -25,24 +25,19 @@ MinCut <- function(arcSources,
                    arcWeights,
                    numNodes,
                    algorithm = "NagamochiIbaraki") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
 
   ## add a undirected/directed boolean?
 
   switch(algorithm,
-    "NagamochiIbaraki" =
-      .Call(
-        `_rlemon_NagamochiIbarakiRunner`, arcSources, arcTargets,
-        arcWeights, numNodes
-      ),
-    "HaoOrlin" =
-      .Call(
-        `_rlemon_HaoOrlinRunner`, arcSources, arcTargets, arcWeights,
-        numNodes
-      ),
-    stop("Invalid algorithm.")
-  )
+         "NagamochiIbaraki" = NagamochiIbarakiRunner(arcSources, arcTargets,
+                                                     arcWeights, numNodes),
+         "HaoOrlin" = HaoOrlinRunner(arcSources, arcTargets, arcWeights,
+                                     numNodes),
+         stop("Invalid algorithm.")
+         )
 }
 
 
@@ -67,15 +62,13 @@ AllPairsMinCut <- function(arcSources,
                            arcWeights,
                            numNodes,
                            algorithm = "GomoryHu") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
 
-switch(algorithm,
-    "GomoryHu" =
-  .Call(
-    `_rlemon_GomoryHuTreeRunner`, arcSources, arcTargets, arcWeights,
-    numNodes
-  ),
-    stop("Invalid algorithm.")
-)
+  switch(algorithm,
+         "GomoryHu" = GomoryHuTreeRunner(arcSources, arcTargets, arcWeights,
+                                         numNodes),
+         stop("Invalid algorithm.")
+         )
 }

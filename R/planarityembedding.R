@@ -13,8 +13,10 @@
 PlanarChecking <- function(arcSources,
                            arcTargets,
                            numNodes) {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_PlanarCheckingRunner`, arcSources, arcTargets, numNodes)
+
+  PlanarCheckingRunner(arcSources, arcTargets, numNodes)
 }
 
 ##' Checks if an undirected graph is planar and returns a list of outputs
@@ -36,8 +38,10 @@ PlanarChecking <- function(arcSources,
 PlanarEmbedding <- function(arcSources,
                             arcTargets,
                             numNodes) {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_PlanarEmbeddingRunner`, arcSources, arcTargets, numNodes)
+
+  PlanarEmbeddingRunner(arcSources, arcTargets, numNodes)
 }
 
 ##' Checks if a graph is planar and returns the coloring of the graph
@@ -59,18 +63,15 @@ PlanarColoring <- function(arcSources,
                            arcTargets,
                            numNodes,
                            algorithm = "fiveColoring") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   switch(algorithm,
-    "fiveColoring" = .Call(
-      `_rlemon_PlanarColoringRunner`, arcSources,
-      arcTargets, numNodes, TRUE
-    ),
-    "sixColoring" = .Call(
-      `_rlemon_PlanarColoringRunner`, arcSources,
-      arcTargets, numNodes, FALSE
-    ),
-    stop("Invalid algorithm.")
-  )
+         "fiveColoring" = PlanarColoringRunner(arcSources, arcTargets, numNodes,
+                                               useFiveAlg = TRUE),
+         "sixColoring" = PlanarColoringRunner(arcSources, arcTargets, numNodes,
+                                              useFiveAlg = FALSE),
+         stop("Invalid algorithm.")
+         )
 }
 
 ##' Checks if a graph is planar and returns the coloring of the graph
@@ -90,6 +91,8 @@ PlanarColoring <- function(arcSources,
 PlanarDrawing <- function(arcSources,
                           arcTargets,
                           numNodes) {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  .Call(`_rlemon_PlanarDrawingRunner`, arcSources, arcTargets, numNodes)
+
+  PlanarDrawingRunner(arcSources, arcTargets, numNodes)
 }

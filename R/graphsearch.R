@@ -24,7 +24,9 @@ GraphSearch <- function(arcSources,
                         startNode = -1,
                         endNode = -1,
                         algorithm = "Bfs") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
+
   if (startNode != -1) {
     check_node(startNode, numNodes)
   }
@@ -33,16 +35,10 @@ GraphSearch <- function(arcSources,
   }
 
   switch(algorithm,
-    "Bfs" = .Call(
-      `_rlemon_BfsRunner`, arcSources, arcTargets, numNodes,
-      startNode, endNode
-    ),
-    "Dfs" = .Call(
-      `_rlemon_DfsRunner`, arcSources, arcTargets, numNodes,
-      startNode, endNode
-    ),
-    stop("Invalid algorithm.")
-  )
+         "Bfs" = BfsRunner(arcSources, arcTargets, numNodes, startNode, endNode),
+         "Dfs" = DfsRunner(arcSources, arcTargets, numNodes, startNode, endNode),
+         stop("Invalid algorithm.")
+        )
 }
 
 ##' Runs the maximum cardinality search algorithm on a directed graph. The
@@ -73,18 +69,21 @@ MaxCardinalitySearch <- function(arcSources,
                                  numNodes,
                                  startNode = -1,
                                  algorithm = "maxcardinalitysearch") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
+
   if (startNode != -1) {
     check_node(startNode, numNodes)
   }
+
   check_arc_map(arcSources, arcTargets, arcCapacities, numNodes)
 
   switch(algorithm,
-    "maxcardinalitysearch" = .Call(
-      `_rlemon_MaxCardinalitySearchRunner`,
-      arcSources, arcTargets, arcCapacities,
-      numNodes, startNode
-    ),
-    stop("Invalid algorithm.")
-  )
+         "maxcardinalitysearch" = MaxCardinalitySearchRunner(arcSources,
+                                                             arcTargets,
+                                                             arcCapacities,
+                                                             numNodes,
+                                                             startNode),
+         stop("Invalid algorithm.")
+         )
 }

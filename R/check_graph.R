@@ -16,22 +16,23 @@ check_graph <- function(arcSources,
                         arcCosts,
                         nodeSupplies,
                         numNodes) {
+
   # Checking that arc number is consistent
   if (length(arcSources) != length(arcTargets) |
-    length(arcSources) != length(arcCapacities) |
-    length(arcSources) != length(arcCosts) |
-    length(arcSources) != length(arcCapacities)) {
+      length(arcSources) != length(arcCapacities) |
+      length(arcSources) != length(arcCosts) |
+      length(arcSources) != length(arcCapacities)) {
     stop("Inconsistent number of arcs across Sources/Targets/Capacities/Costs")
   }
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
-    !all(arcTargets == floor(arcTargets))) {
+      !all(arcTargets == floor(arcTargets))) {
     stop("Nodes must be integers")
   }
 
   invisible(TRUE) # if it passes all checks. `invisible` instead of `return`
-  # avoids printing anything out
+                  # avoids printing anything out
 }
 
 ##' Check sources and target arrays for common errors. Specifically checks that graphs
@@ -46,10 +47,12 @@ check_graph <- function(arcSources,
 check_graph_vertices <- function(arcSources,
                                  arcTargets,
                                  numNodes) {
+
   # Check that the arc number is consistent
   if (length(arcSources) != length(arcTargets)) {
     stop("Inconsistent number of arcs across Sources and Targets.")
   }
+
   # Check that no node is above the maximum
   if (!all(arcSources <= numNodes)) {
     stop(paste(
@@ -88,7 +91,7 @@ check_graph_vertices <- function(arcSources,
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
-    !all(arcTargets == floor(arcTargets))) {
+      !all(arcTargets == floor(arcTargets))) {
     stop("Nodes must be integers")
   }
 
@@ -109,6 +112,7 @@ check_arc_map <- function(arcSources,
                           arcTargets,
                           mapTest,
                           numNodes) {
+
   # Check that the arc number is consistent
   if (length(arcSources) != length(mapTest)) {
     stop(paste(
@@ -116,12 +120,14 @@ check_arc_map <- function(arcSources,
       "(ArcWeights/ArcCapacities/ArcCosts)"
     ))
   }
+
   if (length(arcTargets) != length(mapTest)) {
     stop(paste(
       "Inconsistent number of arcs across Targets and Arc Map",
       "(ArcWeights/ArcCapacities/ArcCosts)"
     ))
   }
+
   invisible(TRUE)
 }
 
@@ -136,10 +142,12 @@ check_arc_map <- function(arcSources,
 ##' export
 check_node_map <- function(mapTest,
                            numNodes) {
+
   # Check that the arc number is consistent
   if (length(mapTest) != numNodes) {
     stop("Inconsistent number of nodes in Node Map (NodeSupplies)")
   }
+
   invisible(TRUE)
 }
 
@@ -153,16 +161,20 @@ check_node_map <- function(mapTest,
 ##' export
 check_node <- function(testNode,
                        numNodes) {
+
   # Check that the arc number is consistent
   if (testNode != floor(testNode)) {
     stop("Node index given ( sourceNode/destNode ) not integral.")
   }
+
   if (testNode > numNodes) {
     stop("Node index given is out of range for graph instance. ")
   }
+
   if (testNode <= 0) {
     stop("Node index given is out of range for graph instance. ")
   }
+
   invisible(TRUE)
 }
 
@@ -177,6 +189,7 @@ check_node <- function(testNode,
 ##' export
 check_graph_arcs <- function(arcSources,
                              arcTargets) {
+
   # Check that the arc number is consistent
   if (length(arcSources) != length(arcTargets)) {
     stop("Inconsistent number of arcs across Sources and Targets.")
@@ -184,7 +197,7 @@ check_graph_arcs <- function(arcSources,
 
   # Checking that node identifiers are integers
   if (!all(arcSources == floor(arcSources)) |
-    !all(arcTargets == floor(arcTargets))) {
+      !all(arcTargets == floor(arcTargets))) {
     stop("Nodes must be integers")
   }
 

@@ -23,21 +23,18 @@ ShortestPathFromSource <- function(arcSources,
                                    numNodes,
                                    sourceNode,
                                    algorithm = "Dijkstra") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
   check_node(sourceNode, numNodes)
 
   switch(algorithm,
-    "Dijkstra" = .Call(
-      `_rlemon_DijkstraRunner`, arcSources, arcTargets,
-      arcDistances, numNodes, sourceNode
-    ),
-    "BellmanFord" = .Call(
-      `_rlemon_BellmanFordRunner`, arcSources, arcTargets,
-      arcDistances, numNodes, sourceNode
-    ),
-    stop("Invalid algorithm.")
-  )
+         "Dijkstra" = DijkstraRunner(arcSources, arcTargets, arcDistances, numNodes,
+                                     sourceNode),
+         "BellmanFord" = BellmanFordRunner(arcSources, arcTargets, arcDistances,
+                                           numNodes, sourceNode),
+         stop("Invalid algorithm.")
+         )
 }
 
 ##' Finds the shortest arc disjoint paths between two nodes in a directed graph.
@@ -65,16 +62,15 @@ ShortestPath <- function(arcSources,
                          sourceNode,
                          destNode,
                          algorithm = "Suurballe") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
   check_node(sourceNode, numNodes)
   check_node(destNode, numNodes)
 
   switch(algorithm,
-    "Suurballe" = .Call(
-      `_rlemon_SuurballeRunner`, arcSources, arcTargets,
-      arcDistances, numNodes, sourceNode, destNode
-    ),
-    stop("Invalid algorithm.")
-  )
+         "Suurballe" = SuurballeRunner(arcSources, arcTargets, arcDistances,
+                                       numNodes, sourceNode, destNode),
+         stop("Invalid algorithm.")
+         )
 }

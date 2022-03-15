@@ -25,22 +25,20 @@ MaxFlow <- function(arcSources,
                     destNode,
                     numNodes,
                     algorithm = "Preflow") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcCapacities, numNodes)
   check_node(sourceNode, numNodes)
   check_node(destNode, numNodes)
 
   switch(algorithm,
-    "Preflow" = .Call(
-      `_rlemon_PreflowRunner`, arcSources, arcTargets,
-      arcCapacities, sourceNode, destNode, numNodes
-    ),
-    "EdmondsKarp" = .Call(
-      `_rlemon_EdmondsKarpRunner`, arcSources, arcTargets,
-      arcCapacities, sourceNode, destNode, numNodes
-    ),
-    stop("Invalid algorithm.")
-  )
+         "Preflow" = PreflowRunner(arcSources, arcTargets, arcCapacities, sourceNode,
+                                   destNode, numNodes),
+         "EdmondsKarp" = EdmondsKarpRunner(arcSources, arcTargets,
+                                           arcCapacities, sourceNode, destNode,
+                                           numNodes),
+         stop("Invalid algorithm.")
+         )
 }
 
 ##' Finds the solution to the network circulation problem via the push-relabel circulation algorithm.
@@ -71,17 +69,16 @@ NetworkCirculation <- function(arcSources,
                                nodeSupplies,
                                numNodes,
                                algorithm = "Circulation") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcLowerBound, numNodes)
   check_arc_map(arcSources, arcTargets, arcUpperBound, numNodes)
   check_node_map(nodeSupplies, numNodes)
 
   switch(algorithm,
-    "Circulation" = .Call(
-      `_rlemon_CirculationRunner`, arcSources, arcTargets,
-      arcLowerBound, arcUpperBound, nodeSupplies,
-      numNodes
-    ),
-    stop("Invalid algorithm.")
-  )
+         "Circulation" = CirculationRunner(arcSources, arcTargets,
+                                           arcLowerBound, arcUpperBound,
+                                           nodeSupplies, numNodes),
+         stop("Invalid algorithm.")
+         )
 }

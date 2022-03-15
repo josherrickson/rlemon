@@ -17,15 +17,13 @@ MaxClique <- function(arcSources,
                       arcTargets,
                       numNodes,
                       algorithm = "GrossoLocatelliPullanMc") {
+
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
   switch(algorithm,
-    "GrossoLocatelliPullanMc" =
-      .Call(
-        `_rlemon_GrossoLocatelliPullanMcRunner`,
-        arcSources, arcTargets,
-        numNodes
-      ),
-    stop("Invalid algorithm.")
-  )
+         "GrossoLocatelliPullanMc" = GrossoLocatelliPullanMcRunner(arcSources,
+                                                                   arcTargets,
+                                                                   numNodes),
+         stop("Invalid algorithm.")
+         )
 }
