@@ -26,6 +26,7 @@ GraphSearch <- function(arcSources,
                         algorithm = "Bfs") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_algorithm(algorithm)
 
   if (startNode != -1) {
     check_node(startNode, numNodes)
@@ -72,6 +73,7 @@ MaxCardinalitySearch <- function(arcSources,
                                  algorithm = "maxcardinalitysearch") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_algorithm(algorithm)
 
   if (startNode != -1) {
     check_node(startNode, numNodes)

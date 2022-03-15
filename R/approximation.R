@@ -20,7 +20,6 @@ MaxClique <- function(arcSources,
                       algorithm = "GrossoLocatelliPullanMc") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
   check_algorithm(algorithm)
 
   switch(algorithm,

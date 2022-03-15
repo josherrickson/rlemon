@@ -27,6 +27,7 @@ ShortestPathFromSource <- function(arcSources,
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
   check_node(sourceNode, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "Dijkstra" = DijkstraRunner(arcSources, arcTargets, arcDistances, numNodes,
@@ -68,6 +69,7 @@ ShortestPath <- function(arcSources,
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
   check_node(sourceNode, numNodes)
   check_node(destNode, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "Suurballe" = SuurballeRunner(arcSources, arcTargets, arcDistances,

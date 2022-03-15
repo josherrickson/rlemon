@@ -27,6 +27,7 @@ TravelingSalesperson <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "Christofides" = ChristofidesRunner(arcSources, arcTargets,

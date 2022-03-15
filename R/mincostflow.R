@@ -39,6 +39,7 @@ MinCostFlow <- function(arcSources,
   check_arc_map(arcSources, arcTargets, arcCosts, numNodes)
   check_arc_map(arcSources, arcTargets, arcCosts, numNodes)
   check_node_map(nodeSupplies, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "NetworkSimplex" = NetworkSimplexRunner(arcSources, arcTargets,

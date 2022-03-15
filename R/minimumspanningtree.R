@@ -27,6 +27,7 @@ MinSpanningTree <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "Kruskal" = KruskalRunner(arcSources, arcTargets, arcDistances,
@@ -67,6 +68,7 @@ MinCostArborescence <- function(arcSources,
   check_node(sourceNode, numNodes)
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "MinCostArborescence" = MinCostArborescenceRunner(arcSources,

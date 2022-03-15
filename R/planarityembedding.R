@@ -68,6 +68,8 @@ PlanarColoring <- function(arcSources,
                            algorithm = "fiveColoring") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_algorithm(algorithm)
+
   switch(algorithm,
          "fiveColoring" = PlanarColoringRunner(arcSources, arcTargets, numNodes,
                                                useFiveAlg = TRUE),

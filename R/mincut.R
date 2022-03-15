@@ -28,6 +28,7 @@ MinCut <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
+  check_algorithm(algorithm)
 
   ## add a undirected/directed boolean?
 
@@ -66,6 +67,7 @@ AllPairsMinCut <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "GomoryHu" = GomoryHuTreeRunner(arcSources, arcTargets, arcWeights,

@@ -25,7 +25,7 @@ MaxMatching <- function(arcSources,
                         algorithm = "MaxWeightedMatching") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
-
+  check_algorithm(algorithm)
   if (!is.null(arcWeights)) {
     check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
   }
@@ -69,6 +69,7 @@ MaxCardinalityMatching <- function(arcSources,
                                    algorithm = "MaxMatching") {
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
+  check_algorithm(algorithm)
 
   switch(algorithm,
          "MaxMatching" = MaximumCardinalityMatchingRunner(arcSources,
