@@ -22,6 +22,6 @@ A list containing the arc id of each cut arc.
 Finds the bi-node-connected components of an undirected graph.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga9d70526ab54e10b4b6fe3762af8675dd>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga9d70526ab54e10b4b6fe3762af8675dd}
 for more information.
 }

@@ -3,7 +3,7 @@
 ##' situations, like PerfectMatching or PerfectFractionalMathing.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html}.
 ##' @title MaxMatching
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -51,7 +51,7 @@ MaxMatching <- function(arcSources,
 ##' Finds the maximum cardinality matching in graphs and bipartite graphs.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html}.
 ##' @title MaxCardinalityMatching
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges

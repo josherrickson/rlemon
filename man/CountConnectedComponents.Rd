@@ -22,6 +22,6 @@ An integer defining the number of connected components
 Counts the number of connected components in an undirected graph.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga33a9d9d4803cb15e83568b2526e978a5>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga33a9d9d4803cb15e83568b2526e978a5}
 for more information.
 }

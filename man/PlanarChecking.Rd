@@ -22,6 +22,6 @@ A boolean stating if the graph is planar or not.
 Checks if an undirected graph is planar.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00617.html#ga230242aa2ee36f9b1b5a58f2c53016eb>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00617.html#ga230242aa2ee36f9b1b5a58f2c53016eb}
 for more information.
 }

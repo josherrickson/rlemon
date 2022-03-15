@@ -26,6 +26,6 @@ Checks if an undirected graph is planar and returns a list of outputs
 related to the planar embedding
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00308.html>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00308.html}
 for more information.
 }

@@ -22,6 +22,6 @@ A list containing the cut nodes.
 Finds the bi-node-connected cut nodes in an undirected graph.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga31461f33a748327ea3ef2a3199ffb6c7>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga31461f33a748327ea3ef2a3199ffb6c7}
 for more information.
 }

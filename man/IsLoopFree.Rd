@@ -23,6 +23,6 @@ Checks if a graph is loop free. Works for both undirected and directed
 graphs.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga127f3963003cd532c79c226885fe1c8c>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga127f3963003cd532c79c226885fe1c8c}
 for more information.
 }

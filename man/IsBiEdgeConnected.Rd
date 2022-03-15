@@ -22,6 +22,6 @@ A boolean stating if the graph is bi-edge connected
 Checks if an undirected graph is bi-edge connected.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga37d22a2ddd5a064a9203720f2b93518e>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga37d22a2ddd5a064a9203720f2b93518e}
 for more information.
 }

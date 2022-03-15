@@ -22,6 +22,6 @@ An integer defining the number of strongly connected components
 Counts the number of strongly connected components in a directed graph.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad30bc47dfffb78234eeee903cb3766f4>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad30bc47dfffb78234eeee903cb3766f4}
 for more information.
 }

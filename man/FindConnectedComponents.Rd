@@ -22,6 +22,6 @@ A list containing the node id of each connected component.
 Finds the connected components in an undirected graph.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaa467a3e0a8c2e9e762650fd01fadff89>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaa467a3e0a8c2e9e762650fd01fadff89}
 for more information.
 }

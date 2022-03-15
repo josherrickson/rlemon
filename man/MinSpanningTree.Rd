@@ -40,5 +40,5 @@ assuming the graph is undirected.
 \details{
 For details on LEMON's implementation, including differences between the
 algorithms, see
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
+\url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af}
 }

@@ -22,6 +22,6 @@ A boolean stating if the graph is strongly connected
 Checks if a directed graph is strongly connected.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gacd21b34d7b42b9835a204a57fcf15964>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gacd21b34d7b42b9835a204a57fcf15964}
 for more information.
 }

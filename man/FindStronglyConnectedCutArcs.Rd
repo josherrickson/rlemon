@@ -23,6 +23,6 @@ A list containing 1) A list of cut arc sources, and 2) A list of cut
 Finds the cut arcs of strongly connected components in a directed graph.
 }
 \details{
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad7af5c3a97453e37f251f0e86dbb83db>
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad7af5c3a97453e37f251f0e86dbb83db}
 for more information.
 }

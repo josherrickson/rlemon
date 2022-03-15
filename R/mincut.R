@@ -3,7 +3,7 @@
 ##' and edges in directed graphs.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html}.
 ##' @title MinCut
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -44,7 +44,7 @@ MinCut <- function(arcSources,
 ##' Finds the all-pairs minimum cut tree, using the Gomory-Hu algorithm.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html}.
 ##' @title AllPairsMinCut
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges

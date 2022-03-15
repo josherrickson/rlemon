@@ -4,7 +4,7 @@
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see
-##' <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
+##' \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af}
 ##' @title MinSpanningTree
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -40,7 +40,7 @@ MinSpanningTree <- function(arcSources,
 ##' the pairs of nodes for the edges in the arborescence.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html}.
 ##' @title MinCostArborescence
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges

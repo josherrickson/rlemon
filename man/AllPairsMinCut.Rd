@@ -36,5 +36,5 @@ Finds the all-pairs minimum cut tree, using the Gomory-Hu algorithm.
 }
 \details{
 For details on LEMON's implementation, including differences between the
-algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html>.
+algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html}.
 }

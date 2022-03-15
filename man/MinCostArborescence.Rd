@@ -41,5 +41,5 @@ the pairs of nodes for the edges in the arborescence.
 }
 \details{
 For details on LEMON's implementation, including differences between the
-algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html>.
+algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html}.
 }

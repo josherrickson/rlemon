@@ -3,7 +3,7 @@
 ##' in the graph, as well as the number of edges.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html}.
 ##' @title ShortestPathFromSource
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -41,7 +41,7 @@ ShortestPathFromSource <- function(arcSources,
 ##' This implementation runs a variation of the successive shortest path algorithm.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html}.
 ##' @title ShortestPath
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges

@@ -3,7 +3,7 @@
 ##' not given.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html}.
 ##' @title GraphSearch
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -49,7 +49,7 @@ GraphSearch <- function(arcSources,
 ##' unprocessed node of the digraph.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html}.
 ##' @title MaxCardinalitySearch
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges

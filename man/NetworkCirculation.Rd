@@ -45,5 +45,5 @@ circulation algorithm.
 }
 \details{
 For details on LEMON's implementation, including differences between the
-algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html>.
+algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html}.
 }

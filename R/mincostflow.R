@@ -1,7 +1,7 @@
 ##' Finds the minimum cost flow of a directed graph.
 ##'
 ##' For details on LEMON's implementation, including differences between the
-##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html>.
+##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html}.
 ##' @title MinCostFlow
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
