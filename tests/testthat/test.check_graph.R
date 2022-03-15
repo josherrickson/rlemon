@@ -94,3 +94,13 @@ test_that("check_graph_arcs", {
   t <- c(1, 2, 3)
   expect_true(check_graph_arcs(s, t))
 })
+
+test_that("check_algorithm", {
+  expect_error(check_algorithm(1))
+  expect_error(check_algorithm(NULL))
+  expect_error(check_algorithm(data.frame("a")))
+  expect_error(check_algorithm(matrix("a")))
+  expect_error(check_algorithm(c("a", "b")))
+
+  expect_true(check_algorithm("abc"))
+})

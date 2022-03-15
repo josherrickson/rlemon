@@ -168,7 +168,17 @@ check_graph_arcs <- function(arcSources,
 # Internal. Ensures algorithm is a string
 check_algorithm <- function(algorithm) {
 
-  if (is.null(algorithm) | !is.character(algorithm)) {
+  # split into four redudant errors for coverage purposes
+  if (is.null(algorithm)) {
+    stop("`algorithm` must be a string")
+  }
+  if (!is.character(algorithm)) {
+    stop("`algorithm` must be a string")
+  }
+  if (!is.null(dim(algorithm))) {
+   stop("`algorithm` must be a string")
+  }
+  if( length(algorithm) > 1) {
     stop("`algorithm` must be string")
   }
 

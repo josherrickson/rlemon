@@ -39,7 +39,7 @@ test_that("Approximation functions", {
   expect_error(MaxClique(s, t, n, algorithm = "abc"),
                "Invalid")
   expect_error(MaxClique(s, t, n, algorithm = 1),
-               "must be string")
+               "must be a string")
   expect_error(MaxClique(s, t, n, algorithm = NULL),
-               "must be string")
+               "must be a string")
 })
