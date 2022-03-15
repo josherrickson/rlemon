@@ -30,10 +30,8 @@ graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include "Preflow",
-"EdmondsKarp", where "Preflow" is the default. See
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> for details on the
-differences.}
+\item{algorithm}{Choices of algorithm include "Preflow" and "EdmondsKarp".
+"Preflow" is the default.}
 }
 \value{
 A list containing three entries: 1) A list corresponding to the
@@ -42,4 +40,8 @@ A list containing three entries: 1) A list corresponding to the
 }
 \description{
 Finds the maximum flow of a directed graph, given a source and destination node.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html>.
 }

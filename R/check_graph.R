@@ -1,6 +1,6 @@
-##' Check graph inputs for common issues. Specifically checks if
-##' arc source, target, capacity, and cost arrays have the same length.
-##' Additionally, checks if all arc sources and targets are integral.
+##' Check graph inputs for common issues. Specifically checks if arc source,
+##' target, capacity, and cost arrays have the same length. Additionally, checks
+##' if all arc sources and targets are integral.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc targets
@@ -8,7 +8,7 @@
 ##' @param arcCosts Arc costs
 ##' @param nodeSupplies Node supplies
 ##' @param numNodes Number of nodes
-##' @return TRUE if no errors are found.
+##' @return Invisibly returns TRUE if no errors are found.
 ##' @export
 check_graph <- function(arcSources,
                         arcTargets,
@@ -35,14 +35,14 @@ check_graph <- function(arcSources,
                   # avoids printing anything out
 }
 
-##' Check sources and target arrays for common errors. Specifically checks that graphs
-##' follow 1-indexing conventions, that the number of source and target nodes are the same,
-##' and that all node indices are integral.
+##' Check sources and target arrays for common errors. Specifically checks that
+##' graphs follow 1-indexing conventions, that the number of source and target
+##' nodes are the same, and that all node indices are integral.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
 ##' @param numNodes Number of nodes
-##' @return TRUE if no errors are found
+##' @return Invisibly returns TRUE if no errors are found.
 ##' export
 check_graph_vertices <- function(arcSources,
                                  arcTargets,
@@ -151,13 +151,12 @@ check_node_map <- function(mapTest,
   invisible(TRUE)
 }
 
-##' Check node definitions for common errors. Specifically,
-##' checks that all nodes are integral, and that they are consistent
-##' with 1-based indexing.
+##' Check node definitions for common errors. Specifically, checks that all
+##' nodes are integral, and that they are consistent with 1-based indexing.
 ##'
 ##' @param testNode Node to test
 ##' @param numNodes Number of nodes
-##' @return TRUE if no errors are found
+##' @return Invisibly returns TRUE if no errors are found.
 ##' export
 check_node <- function(testNode,
                        numNodes) {
@@ -179,13 +178,13 @@ check_node <- function(testNode,
 }
 
 
-##' Check arcs for common errors. Specifically, check that
-##' the number of source nodes is the same as the number of target
-##' nodes, and that all arc sources and targets are integral.
+##' Check arcs for common errors. Specifically, check that the number of source
+##' nodes is the same as the number of target nodes, and that all arc sources
+##' and targets are integral.
 ##'
 ##' @param arcSources Arc sources
 ##' @param arcTargets Arc Targets
-##' @return TRUE if no errors are found
+##' @return Invisibly returns TRUE if no errors are found.
 ##' export
 check_graph_arcs <- function(arcSources,
                              arcTargets) {

@@ -26,10 +26,8 @@ edges}
 
 \item{sourceNode}{The source node}
 
-\item{algorithm}{Which algorithm to run. Choices include "Dijkstra",
-"BellmanFord" where "Dijkstra" is the default. See
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html> for details on the
-differences.}
+\item{algorithm}{Choices of algorithm include "Dijkstra" and "BellmanFord".
+"Dijkstra" is the default.}
 }
 \value{
 A list containing two entries: 1) the distances from each node to
@@ -39,4 +37,8 @@ A list containing two entries: 1) the distances from each node to
 Finds the shortest path from a source node to the rest of the nodes in a
 directed graph. These shortest path algorithms consider the distances present
 in the graph, as well as the number of edges.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html>.
 }

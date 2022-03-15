@@ -21,6 +21,8 @@ A list of length numNodes, containing the index of vertex i in the
 }
 \description{
 Gives back the topological order of a DAG.
-See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gafc2cb20cf3859f157c0e12da7f310bb3'
+}
+\details{
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gafc2cb20cf3859f157c0e12da7f310bb3>
 for more information.
 }

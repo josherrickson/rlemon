@@ -20,6 +20,8 @@ A boolean stating if the graph is a tree
 }
 \description{
 Checks if an undirected graph is a tree.
-See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad1e4de234e926958647905478415bd54'
+}
+\details{
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad1e4de234e926958647905478415bd54>
 for more information.
 }

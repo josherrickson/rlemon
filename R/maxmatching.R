@@ -1,7 +1,9 @@
-##' Finds the maximum weighted matching in graphs and
-##' bipartite graphs. Each algorithm in this set returns different outputs
-##' depending on different situations, like PerfectMatching or PerfectFractionalMathing.
+##' Finds the maximum weighted matching in graphs and bipartite graphs. Each
+##' algorithm in this set returns different outputs depending on different
+##' situations, like PerfectMatching or PerfectFractionalMathing.
 ##'
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html>.
 ##' @title MaxMatching
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -9,12 +11,10 @@
 ##'   edges
 ##' @param arcWeights Vector corresponding to the weights of a graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm What algorithm you want to run. Choices include
-##'   "MaxWeightedMatching", "MaxWeightedPerfectMatching",
-##'   "MaxWeightedFractionalMatching", "MaxWeightedPerfectFractionalMatching"
-##'   where "MaxWeightedMatching" is the default. See
-##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
-##'   differences.
+##' @param algorithm Choices of algorithm include "MaxWeightedMatching",
+##'   "MaxWeightedPerfectMatching", "MaxWeightedFractionalMatching", and
+##'   "MaxWeightedPerfectFractionalMatching". "MaxWeightedMatching" is the
+##'   default.
 ##' @return A list containing two entries: 1) The matching value, 2) The edges
 ##'   of the final graph, in a List of List of (node, node) pairs
 ##' @export
@@ -48,19 +48,18 @@ MaxMatching <- function(arcSources,
          stop("Invalid algorithm."))
 }
 
-##' Finds the maximum cardinality matching in graphs and
-##' bipartite graphs.
+##' Finds the maximum cardinality matching in graphs and bipartite graphs.
 ##'
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html>.
 ##' @title MaxCardinalityMatching
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm What algorithm you want to run. Choices include
-##'   "MaxMatching", "MaxFractionalMatching" where "MaxMatching" is the default.
-##'   See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
-##'   differences.
+##' @param algorithm Choices of algorithm include "MaxMatching" and
+##'   "MaxFractionalMatching". "MaxMatching" is the default.
 ##' @return A list containing two entries: 1) The matching value, 2) The edges
 ##'   of the final graph, in a List of List of (node, node) pairs
 ##' @export

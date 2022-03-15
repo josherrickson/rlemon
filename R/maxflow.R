@@ -1,5 +1,8 @@
 ##' Finds the maximum flow of a directed graph, given a source and destination node.
 ##'
+
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html>.
 ##' @title MaxFlow
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -10,10 +13,8 @@
 ##' @param sourceNode The source node
 ##' @param destNode The destination node
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include "Preflow",
-##'   "EdmondsKarp", where "Preflow" is the default. See
-##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html> for details on the
-##'   differences.
+##' @param algorithm Choices of algorithm include "Preflow" and "EdmondsKarp".
+##'   "Preflow" is the default.
 ##' @return A list containing three entries: 1) A list corresponding to the
 ##'   flows of arcs in the graph, 2) A list of cut-values of the graph's nodes,
 ##'   and 3) the total cost of the flows in the graph, i.e. the maxflow value.
@@ -41,8 +42,12 @@ MaxFlow <- function(arcSources,
          )
 }
 
-##' Finds the solution to the network circulation problem via the push-relabel circulation algorithm.
+##' Finds the solution to the network circulation problem via the push-relabel
+##' circulation algorithm.
 ##'
+
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html>.
 ##' @title NetworkCirculation
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -55,10 +60,8 @@ MaxFlow <- function(arcSources,
 ##' @param nodeSupplies Vector corresponding to the supplies of each node of the
 ##'   graph.
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include "Circulation" where
-##'   "Circulation" is the default. See
-##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html> for details on the
-##'   differences.
+##' @param algorithm Choices of algorithminclude "Circulation". "Circulation" is
+##'   the default.
 ##' @return A list containing two entries: 1) A list corresponding to the flows
 ##'   of arcs in the graph, and 2) A list of the graph's barrier nodes.
 ##' @export

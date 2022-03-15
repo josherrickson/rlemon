@@ -26,10 +26,8 @@ edges}
 
 \item{endNode}{Optional end node of the path}
 
-\item{algorithm}{Which algorithm to run. Choices include "Bfs", "Dfs". Bfs
-(Breadth First Search) is the default; see
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html> for details on the
-differences.}
+\item{algorithm}{Choices of algorithm include "Bfs" (Breadth First Search)
+and "Dfs" (Depth First Search). Bfs is the default.}
 }
 \value{
 A list containing three entries: 1) the predecessor of each vertex
@@ -40,4 +38,8 @@ A list containing three entries: 1) the predecessor of each vertex
 Runs a common graph search algorithm to find the minimum cardinality shortest path.
 Finds the shortest path from/to all vertices if a start/end node are
 not given.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html>.
 }

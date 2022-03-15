@@ -23,10 +23,8 @@ edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include "Howard", "Karp",
-"HartmannOrlin" where "Howard" is the default. See
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00614.html> for details on the
-differences.}
+\item{algorithm}{Choices of algorithm include "Howard", "Karp", and
+"HartmannOrlin". "Howard" is the default.}
 }
 \value{
 A list containing two entries: 1) A vector containing the costs of
@@ -34,4 +32,8 @@ A list containing two entries: 1) A vector containing the costs of
 }
 \description{
 Finds the Minimum Mean Cycle in directed graphs.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00614.html>.
 }

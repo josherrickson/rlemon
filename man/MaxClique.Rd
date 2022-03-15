@@ -20,9 +20,8 @@ edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"GrossoLocatelliPullanMc". GrossoLocatelliPullanMc is the default; see
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00194.html> for more information.}
+\item{algorithm}{Choices of algorithm include "GrossoLocatelliPullanMc".
+GrossoLocatelliPullanMc is the default.}
 }
 \value{
 A list containing two entries: 1) the clique size, and 2) the
@@ -31,4 +30,8 @@ A list containing two entries: 1) the clique size, and 2) the
 \description{
 Finds the largest complete subgraph (clique) in an undirected graph
 via approximation algorithms for the maximal clique problem.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00194.html>.
 }

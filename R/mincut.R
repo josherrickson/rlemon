@@ -2,6 +2,8 @@
 ##' value and edges in undirected graphs,while HaoOrlin calculates the min cut value
 ##' and edges in directed graphs.
 ##'
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html>.
 ##' @title MinCut
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -9,10 +11,8 @@
 ##'   edges
 ##' @param arcWeights Vector corresponding to the weights of a graph's arcs
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include "NagamochiIbaraki",
-##'   "HaoOrlin" where NagamochiIbaraki is the default; see
-##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html> for details on the
-##'   differences.
+##' @param algorithm Choices of algorithm include "NagamochiIbaraki" and
+##'   "HaoOrlin". "NagamochiIbaraki" is the default.
 ##' @return A list containing three entries: 1) The value of the minimum cut in
 ##'   the graph, and 2) A list of nodes in the first partition, and 3) A list of
 ##'   nodes in the second partition. GomoryHu calculates a Gomory-Hu Tree and
@@ -43,6 +43,8 @@ MinCut <- function(arcSources,
 
 ##' Finds the all-pairs minimum cut tree, using the Gomory-Hu algorithm.
 ##'
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html>.
 ##' @title AllPairsMinCut
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -50,9 +52,8 @@ MinCut <- function(arcSources,
 ##'   edges
 ##' @param arcWeights Vector corresponding to the weights of a graph's arcs
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include "GomoryHu"
-##'    where GomoryHu is the default; see
-##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html> for more information.
+##' @param algorithm Choices of algorithm include "GomoryHu". "GomoryHu" is the
+##'   default.
 ##' @return A list containing three entries: 1) A list of predecessor nodes of
 ##'   each node in the graph, and 2) A list of weights of the predecessor edge
 ##'   of each node, and 3) A list of distances from the root node to each node.

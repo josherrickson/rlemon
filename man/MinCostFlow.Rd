@@ -31,18 +31,21 @@ edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include "NetworkSimplex",
-"CostScaling", "CapacityScaling", "CycleCancelling". NetworkSimplex is the
-default; see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for
-details on the differences.}
+\item{algorithm}{Choices of algorithm include "NetworkSimplex",
+"CostScaling", "CapacityScaling", and "CycleCancelling". NetworkSimplex is
+the default.}
 }
 \value{
 A list containing three entries: 1) A list corresponding to the
   flows of arcs in the graph, 2) A list of potentials of the graph's nodes,
-  3) the total cost of the flows in the graph, i.e. the mincostflow
-  value, and 4) LEMON's feasibility type, demonstrating how feasible the
-  graph problem is. Choices include "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
+  3) the total cost of the flows in the graph, i.e. the mincostflow value,
+  and 4) LEMON's feasibility type, demonstrating how feasible the graph
+  problem is, one of "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
 }
 \description{
 Finds the minimum cost flow of a directed graph.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html>.
 }

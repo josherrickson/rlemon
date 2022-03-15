@@ -2,9 +2,9 @@
 % Please edit documentation in R/check_graph.R
 \name{check_graph_arcs}
 \alias{check_graph_arcs}
-\title{Check arcs for common errors. Specifically, check that
-the number of source nodes is the same as the number of target
-nodes, and that all arc sources and targets are integral.}
+\title{Check arcs for common errors. Specifically, check that the number of source
+nodes is the same as the number of target nodes, and that all arc sources
+and targets are integral.}
 \usage{
 check_graph_arcs(arcSources, arcTargets)
 }
@@ -14,11 +14,11 @@ check_graph_arcs(arcSources, arcTargets)
 \item{arcTargets}{Arc Targets}
 }
 \value{
-TRUE if no errors are found
+Invisibly returns TRUE if no errors are found.
 export
 }
 \description{
-Check arcs for common errors. Specifically, check that
-the number of source nodes is the same as the number of target
-nodes, and that all arc sources and targets are integral.
+Check arcs for common errors. Specifically, check that the number of source
+nodes is the same as the number of target nodes, and that all arc sources
+and targets are integral.
 }

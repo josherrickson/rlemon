@@ -24,10 +24,8 @@ graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include "Kruskal" where
-"Kruskal" is the default. See
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
-for more information.}
+\item{algorithm}{Choices of algorithm include "Kruskal". "Kruskal" is the
+default.}
 }
 \value{
 A list containing three entries: 1) Two vectors corresponding the
@@ -38,4 +36,9 @@ A list containing three entries: 1) Two vectors corresponding the
 Finds the minimum spanning tree of a graph.
 The minimum spanning tree is the minimal connected acyclic subgraph of a graph,
 assuming the graph is undirected.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see
+<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
 }

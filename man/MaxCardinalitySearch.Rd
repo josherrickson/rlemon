@@ -27,9 +27,8 @@ edges}
 
 \item{startNode}{Optional start node of the path}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"maxcardinalitysearch". maxcardinalitysearch is the default; see
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html> for more information.}
+\item{algorithm}{Choices of algorithm include "maxcardinalitysearch".
+maxcardinalitysearch is the default.}
 }
 \value{
 A list containing two entries: 1) the cardinality of each node , 2)
@@ -42,4 +41,8 @@ time it chooses one unprocessed node with maximum cardinality, i.e the sum
 of capacities on out arcs to the nodes which were previously processed. If
 there is a cut in the digraph the algorithm should choose again any
 unprocessed node of the digraph.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html>.
 }

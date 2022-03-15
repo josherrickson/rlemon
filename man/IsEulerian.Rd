@@ -21,6 +21,8 @@ A boolean stating if the graph is Eulerian
 \description{
 Checks if a graph is Eulerian. Works for both undirected and directed
 graphs.
-See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gafb5a4961cac4d877006869fc4cb6ea1d'
+}
+\details{
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gafb5a4961cac4d877006869fc4cb6ea1d>
 for more information.
 }

@@ -2,9 +2,9 @@
 % Please edit documentation in R/check_graph.R
 \name{check_graph_vertices}
 \alias{check_graph_vertices}
-\title{Check sources and target arrays for common errors. Specifically checks that graphs
-follow 1-indexing conventions, that the number of source and target nodes are the same,
-and that all node indices are integral.}
+\title{Check sources and target arrays for common errors. Specifically checks that
+graphs follow 1-indexing conventions, that the number of source and target
+nodes are the same, and that all node indices are integral.}
 \usage{
 check_graph_vertices(arcSources, arcTargets, numNodes)
 }
@@ -16,11 +16,11 @@ check_graph_vertices(arcSources, arcTargets, numNodes)
 \item{numNodes}{Number of nodes}
 }
 \value{
-TRUE if no errors are found
+Invisibly returns TRUE if no errors are found.
 export
 }
 \description{
-Check sources and target arrays for common errors. Specifically checks that graphs
-follow 1-indexing conventions, that the number of source and target nodes are the same,
-and that all node indices are integral.
+Check sources and target arrays for common errors. Specifically checks that
+graphs follow 1-indexing conventions, that the number of source and target
+nodes are the same, and that all node indices are integral.
 }

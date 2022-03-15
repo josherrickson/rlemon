@@ -22,6 +22,8 @@ A list containing 1) A boolean stating if the graph is bipartite,
 \description{
 Checks if an undirected graph is bipartite and finds the bipartite
 partitions.
-See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58ba1d00c569f0eb0deb42afca9f80bb'
+}
+\details{
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58ba1d00c569f0eb0deb42afca9f80bb>
 for more information.
 }

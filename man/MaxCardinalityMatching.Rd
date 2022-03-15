@@ -20,16 +20,17 @@ edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{What algorithm you want to run. Choices include
-"MaxMatching", "MaxFractionalMatching" where "MaxMatching" is the default.
-See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html> for details on the
-differences.}
+\item{algorithm}{Choices of algorithm include "MaxMatching" and
+"MaxFractionalMatching". "MaxMatching" is the default.}
 }
 \value{
 A list containing two entries: 1) The matching value, 2) The edges
   of the final graph, in a List of List of (node, node) pairs
 }
 \description{
-Finds the maximum cardinality matching in graphs and
-bipartite graphs.
+Finds the maximum cardinality matching in graphs and bipartite graphs.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html>.
 }

@@ -37,10 +37,8 @@ edges}
 \item{defaultEdgeWeight}{The default edge weight if an edge is not-specified
 (default value 999999)}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"Christofides","Greedy","Insertion","NearestNeighbor","Opt2". Christofides
-is the default; see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html>
-for details on the differences.}
+\item{algorithm}{Choices of algorithm include "Christofides", "Greedy",
+"Insertion", "NearestNeighbor", and "Opt2". "Christofides" is the default.}
 }
 \value{
 a List with 1) the list of tour vertices, and 2) the total tour cost
@@ -49,4 +47,8 @@ a List with 1) the list of tour vertices, and 2) the total tour cost
 Finds approximations for the travelling salesperson problem using
 approximation algorithms on graphs. NOTE: LEMON's TSP uses a
 complete graph in its backend, so expect less performance on sparse graphs.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html>.
 }

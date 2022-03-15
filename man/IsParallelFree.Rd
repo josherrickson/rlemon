@@ -21,6 +21,8 @@ A boolean stating if the graph is loop free
 \description{
 Checks if a graph has no parallel arcs/edges. Works for both undirected and
 directed graphs.
-See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaa05e0683f90b69f31eb29fe7d09afde4'
+}
+\details{
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaa05e0683f90b69f31eb29fe7d09afde4>
 for more information.
 }

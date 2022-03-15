@@ -22,6 +22,8 @@ A list of 1) a boolean of if the graph is planar, 2) the
 }
 \description{
 Checks if a graph is planar and returns the coloring of the graph
-See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00307.html'
+}
+\details{
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00307.html>
 for more information.
 }

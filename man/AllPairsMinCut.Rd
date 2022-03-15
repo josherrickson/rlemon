@@ -23,9 +23,8 @@ edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include "GomoryHu"
- where GomoryHu is the default; see
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html> for more information.}
+\item{algorithm}{Choices of algorithm include "GomoryHu". "GomoryHu" is the
+default.}
 }
 \value{
 A list containing three entries: 1) A list of predecessor nodes of
@@ -34,4 +33,8 @@ A list containing three entries: 1) A list of predecessor nodes of
 }
 \description{
 Finds the all-pairs minimum cut tree, using the Gomory-Hu algorithm.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00182.html>.
 }

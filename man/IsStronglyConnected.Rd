@@ -20,6 +20,8 @@ A boolean stating if the graph is strongly connected
 }
 \description{
 Checks if a directed graph is strongly connected.
-See 'https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gacd21b34d7b42b9835a204a57fcf15964'
+}
+\details{
+See <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gacd21b34d7b42b9835a204a57fcf15964>
 for more information.
 }

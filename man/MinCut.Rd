@@ -23,10 +23,8 @@ edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include "NagamochiIbaraki",
-"HaoOrlin" where NagamochiIbaraki is the default; see
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html> for details on the
-differences.}
+\item{algorithm}{Choices of algorithm include "NagamochiIbaraki" and
+"HaoOrlin". "NagamochiIbaraki" is the default.}
 }
 \value{
 A list containing three entries: 1) The value of the minimum cut in
@@ -40,4 +38,8 @@ A list containing three entries: 1) The value of the minimum cut in
 Finds the minimum cut on graphs. NagamochiIbaraki calculates the min cut
 value and edges in undirected graphs,while HaoOrlin calculates the min cut value
 and edges in directed graphs.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00613.html>.
 }

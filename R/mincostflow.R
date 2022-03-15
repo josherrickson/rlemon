@@ -1,5 +1,7 @@
 ##' Finds the minimum cost flow of a directed graph.
 ##'
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html>.
 ##' @title MinCostFlow
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -11,15 +13,14 @@
 ##'   edges
 ##' @param nodeSupplies Vector corresponding to the supplies of each node
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include "NetworkSimplex",
-##'   "CostScaling", "CapacityScaling", "CycleCancelling". NetworkSimplex is the
-##'   default; see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00612.html> for
-##'   details on the differences.
+##' @param algorithm Choices of algorithm include "NetworkSimplex",
+##'   "CostScaling", "CapacityScaling", and "CycleCancelling". NetworkSimplex is
+##'   the default.
 ##' @return A list containing three entries: 1) A list corresponding to the
 ##'   flows of arcs in the graph, 2) A list of potentials of the graph's nodes,
-##'   3) the total cost of the flows in the graph, i.e. the mincostflow
-##'   value, and 4) LEMON's feasibility type, demonstrating how feasible the
-##'   graph problem is. Choices include "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
+##'   3) the total cost of the flows in the graph, i.e. the mincostflow value,
+##'   and 4) LEMON's feasibility type, demonstrating how feasible the graph
+##'   problem is, one of "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
 ##' @export
 MinCostFlow <- function(arcSources,
                         arcTargets,

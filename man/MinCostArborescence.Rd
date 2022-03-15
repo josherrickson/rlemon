@@ -27,9 +27,8 @@ graph's edges}
 
 \item{numNodes}{The number of nodes in the graph}
 
-\item{algorithm}{Which algorithm to run. Choices include
-"MinCostArborescence" where "MinCostArborescence" is the default. See
-<https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html> for more information.}
+\item{algorithm}{Choices of algorithm include "MinCostArborescence".
+"MinCostArborescence" is the default.}
 }
 \value{
 A list containing three entries: 1) Two vectors corresponding the
@@ -39,4 +38,8 @@ A list containing three entries: 1) Two vectors corresponding the
 \description{
 Finds the minimum cost arborescence of a graph, returning both the cost and
 the pairs of nodes for the edges in the arborescence.
+}
+\details{
+For details on LEMON's implementation, including differences between the
+algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html>.
 }

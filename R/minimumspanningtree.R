@@ -2,7 +2,9 @@
 ##' The minimum spanning tree is the minimal connected acyclic subgraph of a graph,
 ##' assuming the graph is undirected.
 ##'
-##'
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see
+##' <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
 ##' @title MinSpanningTree
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -11,10 +13,8 @@
 ##' @param arcDistances Vector corresponding to the distances of nodes of a
 ##'   graph's edges
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include "Kruskal" where
-##'   "Kruskal" is the default. See
-##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00610.html#ga233792b2c44a3581b85a775703e045af>
-##'   for more information.
+##' @param algorithm Choices of algorithm include "Kruskal". "Kruskal" is the
+##'   default.
 ##' @return A list containing three entries: 1) Two vectors corresponding the
 ##'   source and target nodes of the edges in the tree, and 2) the total minimum
 ##'   spanning tree value.
@@ -39,6 +39,8 @@ MinSpanningTree <- function(arcSources,
 ##' Finds the minimum cost arborescence of a graph, returning both the cost and
 ##' the pairs of nodes for the edges in the arborescence.
 ##'
+##' For details on LEMON's implementation, including differences between the
+##' algorithms, see <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html>.
 ##' @title MinCostArborescence
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
@@ -48,9 +50,8 @@ MinSpanningTree <- function(arcSources,
 ##'   graph's edges
 ##' @param sourceNode The source node
 ##' @param numNodes The number of nodes in the graph
-##' @param algorithm Which algorithm to run. Choices include
-##'   "MinCostArborescence" where "MinCostArborescence" is the default. See
-##'   <https://lemon.cs.elte.hu/pub/doc/1.3.1/a00264.html> for more information.
+##' @param algorithm Choices of algorithm include "MinCostArborescence".
+##'   "MinCostArborescence" is the default.
 ##' @return A list containing three entries: 1) Two vectors corresponding the
 ##'   source and target nodes of the edges in the tree, and 2) the total cost of
 ##'   the arborescence.
