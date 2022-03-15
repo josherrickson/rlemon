@@ -286,47 +286,6 @@
         <dd>TravelingSalespersonProblem</dd>
       </dl><dl><dt>
           
-          <code><a href="check_arc_map.html">check_arc_map()</a></code> 
-        </dt>
-        <dd>Check arc maps for common errors. Doesn't check if the underlying graph is
-correct - see `check_graph_vertices` for that purpose. Specifically checks
-if the number of arcs in the graph is the same as the number in the map.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="check_graph.html">check_graph()</a></code> 
-        </dt>
-        <dd>Check graph inputs for common issues. Specifically checks if arc source,
-target, capacity, and cost arrays have the same length. Additionally, checks
-if all arc sources and targets are integral.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="check_graph_arcs.html">check_graph_arcs()</a></code> 
-        </dt>
-        <dd>Check arcs for common errors. Specifically, check that the number of source
-nodes is the same as the number of target nodes, and that all arc sources
-and targets are integral.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="check_graph_vertices.html">check_graph_vertices()</a></code> 
-        </dt>
-        <dd>Check sources and target arrays for common errors. Specifically checks that
-graphs follow 1-indexing conventions, that the number of source and target
-nodes are the same, and that all node indices are integral.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="check_node.html">check_node()</a></code> 
-        </dt>
-        <dd>Check node definitions for common errors. Specifically, checks that all
-nodes are integral, and that they are consistent with 1-based indexing.</dd>
-      </dl><dl><dt>
-          
-          <code><a href="check_node_map.html">check_node_map()</a></code> 
-        </dt>
-        <dd>Check node maps for common errors. Doesn't check if the underlying graph is
-correct - see `check_graph_vertices` for that purpose. Specifically checks
-if the number of nodes is inconsistent.</dd>
-      </dl><dl><dt>
-          
           <code><a href="lemon-runners.html">GrossoLocatelliPullanMcRunner()</a></code> <code><a href="lemon-runners.html">getBipartitePartitionsRunner()</a></code> <code><a href="lemon-runners.html">getAndCheckTopologicalSortRunner()</a></code> <code><a href="lemon-runners.html">getTopologicalSortRunner()</a></code> <code><a href="lemon-runners.html">IsConnectedRunner()</a></code> <code><a href="lemon-runners.html">IsAcyclicRunner()</a></code> <code><a href="lemon-runners.html">IsTreeRunner()</a></code> <code><a href="lemon-runners.html">IsBipartiteRunner()</a></code> <code><a href="lemon-runners.html">IsStronglyConnectedRunner()</a></code> <code><a href="lemon-runners.html">IsDAGRunner()</a></code> <code><a href="lemon-runners.html">IsBiNodeConnectedRunner()</a></code> <code><a href="lemon-runners.html">IsBiEdgeConnectedRunner()</a></code> <code><a href="lemon-runners.html">IsLoopFreeRunner()</a></code> <code><a href="lemon-runners.html">IsParallelFreeRunner()</a></code> <code><a href="lemon-runners.html">IsSimpleGraphRunner()</a></code> <code><a href="lemon-runners.html">IsEulerianRunner()</a></code> <code><a href="lemon-runners.html">CountBiEdgeConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">CountConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">CountBiNodeConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">CountStronglyConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">FindStronglyConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">FindStronglyConnectedCutArcsRunner()</a></code> <code><a href="lemon-runners.html">FindBiEdgeConnectedCutEdgesRunner()</a></code> <code><a href="lemon-runners.html">FindBiNodeConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">FindBiNodeConnectedCutNodesRunner()</a></code> <code><a href="lemon-runners.html">FindConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">FindBiEdgeConnectedComponentsRunner()</a></code> <code><a href="lemon-runners.html">GraphCompatabilityConverter()</a></code> <code><a href="lemon-runners.html">BfsRunner()</a></code> <code><a href="lemon-runners.html">DfsRunner()</a></code> <code><a href="lemon-runners.html">MaxCardinalitySearchRunner()</a></code> <code><a href="lemon-runners.html">CirculationRunner()</a></code> <code><a href="lemon-runners.html">PreflowRunner()</a></code> <code><a href="lemon-runners.html">EdmondsKarpRunner()</a></code> <code><a href="lemon-runners.html">MaximumWeightPerfectMatchingRunner()</a></code> <code><a href="lemon-runners.html">MaximumWeightFractionalPerfectMatchingRunner()</a></code> <code><a href="lemon-runners.html">MaximumWeightFractionalMatchingRunner()</a></code> <code><a href="lemon-runners.html">MaximumWeightMatchingRunner()</a></code> <code><a href="lemon-runners.html">MaximumCardinalityMatchingRunner()</a></code> <code><a href="lemon-runners.html">MaximumCardinalityFractionalMatchingRunner()</a></code> <code><a href="lemon-runners.html">CycleCancellingRunner()</a></code> <code><a href="lemon-runners.html">CapacityScalingRunner()</a></code> <code><a href="lemon-runners.html">CostScalingRunner()</a></code> <code><a href="lemon-runners.html">NetworkSimplexRunner()</a></code> <code><a href="lemon-runners.html">NagamochiIbarakiRunner()</a></code> <code><a href="lemon-runners.html">HaoOrlinRunner()</a></code> <code><a href="lemon-runners.html">GomoryHuTreeRunner()</a></code> <code><a href="lemon-runners.html">HowardMmcRunner()</a></code> <code><a href="lemon-runners.html">KarpMmcRunner()</a></code> <code><a href="lemon-runners.html">HartmannOrlinMmcRunner()</a></code> <code><a href="lemon-runners.html">KruskalRunner()</a></code> <code><a href="lemon-runners.html">MinCostArborescenceRunner()</a></code> <code><a href="lemon-runners.html">PlanarCheckingRunner()</a></code> <code><a href="lemon-runners.html">PlanarEmbeddingRunner()</a></code> <code><a href="lemon-runners.html">PlanarColoringRunner()</a></code> <code><a href="lemon-runners.html">PlanarDrawingRunner()</a></code> <code><a href="lemon-runners.html">SuurballeRunner()</a></code> <code><a href="lemon-runners.html">DijkstraRunner()</a></code> <code><a href="lemon-runners.html">BellmanFordRunner()</a></code> <code><a href="lemon-runners.html">ChristofidesRunner()</a></code> <code><a href="lemon-runners.html">GreedyTSPRunner()</a></code> <code><a href="lemon-runners.html">InsertionTSPRunner()</a></code> <code><a href="lemon-runners.html">NearestNeighborTSPRunner()</a></code> <code><a href="lemon-runners.html">Opt2TSPRunner()</a></code> <code><a href="lemon-runners.html">lemon_runners()</a></code> 
         </dt>
         <dd>LEMON runners</dd>
