@@ -11,7 +11,7 @@ Description: Allows easy access to the LEMON Graph Library set of algorithms, wr
 License: BSL-1.0
 Imports: Rcpp (>= 1.0.5)
 LinkingTo: Rcpp
-URL: https://github.com/josherrickson/rlemon
+URL: https://josherrickson.github.io/rlemon
 BugReports: https://github.com/josherrickson/rlemon/issues
 RoxygenNote: 7.1.2
 Encoding: UTF-8

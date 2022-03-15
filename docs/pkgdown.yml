@@ -1,0 +1,9 @@
+pandoc: 2.11.3.2
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles: {}
+last_built: 2022-03-15T14:20Z
+urls:
+  reference: https://josherrickson.github.io/rlemon/reference
+  article: https://josherrickson.github.io/rlemon/articles
+
