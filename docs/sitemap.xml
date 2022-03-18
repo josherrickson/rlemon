@@ -16,6 +16,18 @@
     <loc>https://errickson.net/rlemon/reference/AllPairsMinCut.html</loc>
   </url>
   <url>
+    <loc>https://errickson.net/rlemon/reference/Approximation-Algorithms.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Connectivity-Algorithms-1.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Connectivity-Algorithms-2.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Connectivity-Algorithms-3.html</loc>
+  </url>
+  <url>
     <loc>https://errickson.net/rlemon/reference/CountBiEdgeConnectedComponents.html</loc>
   </url>
   <url>
@@ -58,7 +70,19 @@
     <loc>https://errickson.net/rlemon/reference/GetTopologicalSort.html</loc>
   </url>
   <url>
+    <loc>https://errickson.net/rlemon/reference/Graph-Converter.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Graph-Search-Algorithms-1.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Graph-Search-Algorithms-2.html</loc>
+  </url>
+  <url>
     <loc>https://errickson.net/rlemon/reference/GraphSearch.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Input-Information.html</loc>
   </url>
   <url>
     <loc>https://errickson.net/rlemon/reference/IsAcyclic.html</loc>
@@ -112,6 +136,18 @@
     <loc>https://errickson.net/rlemon/reference/MaxMatching.html</loc>
   </url>
   <url>
+    <loc>https://errickson.net/rlemon/reference/Maximum-Flow-Algorithms-1.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Maximum-Flow-Algorithms-2.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Maximum-Matching-Algorithms.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Maximum-Mean-Cycle-Algorithms.html</loc>
+  </url>
+  <url>
     <loc>https://errickson.net/rlemon/reference/MinCostArborescence.html</loc>
   </url>
   <url>
@@ -127,7 +163,28 @@
     <loc>https://errickson.net/rlemon/reference/MinSpanningTree.html</loc>
   </url>
   <url>
+    <loc>https://errickson.net/rlemon/reference/Minimum-Cost-Arborescence-Algorithms.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Minimum-Cost-Flow-Algorithms.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Minimum-Cut-Algorithms-1.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Minimum-Cut-Algorithms-2.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Minimum-Spanning-Tree-Algorithms.html</loc>
+  </url>
+  <url>
     <loc>https://errickson.net/rlemon/reference/NetworkCirculation.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Planar-Embedding-Algorithms-2.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Planar-Embedding-Algorithms.html</loc>
   </url>
   <url>
     <loc>https://errickson.net/rlemon/reference/PlanarChecking.html</loc>
@@ -142,10 +199,19 @@
     <loc>https://errickson.net/rlemon/reference/PlanarEmbedding.html</loc>
   </url>
   <url>
+    <loc>https://errickson.net/rlemon/reference/Shortest-Path-Algorithms-1.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/Shortest-Path-Algorithms-2.html</loc>
+  </url>
+  <url>
     <loc>https://errickson.net/rlemon/reference/ShortestPath.html</loc>
   </url>
   <url>
     <loc>https://errickson.net/rlemon/reference/ShortestPathFromSource.html</loc>
+  </url>
+  <url>
+    <loc>https://errickson.net/rlemon/reference/TSP-Algorithms.html</loc>
   </url>
   <url>
     <loc>https://errickson.net/rlemon/reference/TravelingSalesperson.html</loc>
@@ -170,9 +236,6 @@
   </url>
   <url>
     <loc>https://errickson.net/rlemon/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://errickson.net/rlemon/reference/lemon-runners.html</loc>
   </url>
   <url>
     <loc>https://errickson.net/rlemon/reference/small_graph_example.html</loc>
