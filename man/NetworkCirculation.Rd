@@ -2,7 +2,7 @@
 % Please edit documentation in R/maxflow.R
 \name{NetworkCirculation}
 \alias{NetworkCirculation}
-\title{NetworkCirculation}
+\title{Solver for Network Circulation}
 \usage{
 NetworkCirculation(
   arcSources,

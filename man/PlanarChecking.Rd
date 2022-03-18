@@ -2,7 +2,7 @@
 % Please edit documentation in R/planarityembedding.R
 \name{PlanarChecking}
 \alias{PlanarChecking}
-\title{PlanarChecking}
+\title{Check if Graph is Planar}
 \usage{
 PlanarChecking(arcSources, arcTargets, numNodes)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{CountStronglyConnectedComponents}
 \alias{CountStronglyConnectedComponents}
-\title{CountStronglyConnectedComponents}
+\title{Count the Number of Strongly Connected Components}
 \usage{
 CountStronglyConnectedComponents(arcSources, arcTargets, numNodes)
 }
@@ -19,7 +19,9 @@ edges}
 An integer defining the number of strongly connected components
 }
 \description{
-Counts the number of strongly connected components in a directed graph.
+The strongly connected components are the classes of an equivalence relation
+on the nodes of a directed graph. Two nodes are in the same class if they
+are connected with directed paths in both direction.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad30bc47dfffb78234eeee903cb3766f4}

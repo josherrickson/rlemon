@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{FindBiNodeConnectedComponents}
 \alias{FindBiNodeConnectedComponents}
-\title{FindBiNodeConnectedComponents}
+\title{Find Bi-Node-Connected Components}
 \usage{
 FindBiNodeConnectedComponents(arcSources, arcTargets, numNodes)
 }
@@ -16,10 +16,12 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing the arc id of each cut arc.
+A list containing the arc id of each bi-node-connected component
 }
 \description{
-Finds the bi-node-connected components of an undirected graph.
+The bi-node-connected components are the classes of an equivalence relation
+on the edges of a undirected graph. Two edges are in the same class if they
+are on same circle.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga9d70526ab54e10b4b6fe3762af8675dd}

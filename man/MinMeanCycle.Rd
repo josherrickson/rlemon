@@ -2,7 +2,7 @@
 % Please edit documentation in R/minimummeancycle.R
 \name{MinMeanCycle}
 \alias{MinMeanCycle}
-\title{MinimumMeanCycle}
+\title{Solver for Minimum Mean Cycle}
 \usage{
 MinMeanCycle(
   arcSources,

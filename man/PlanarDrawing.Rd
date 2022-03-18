@@ -2,7 +2,7 @@
 % Please edit documentation in R/planarityembedding.R
 \name{PlanarDrawing}
 \alias{PlanarDrawing}
-\title{PlanarDrawing}
+\title{Solver for Planar Drawing}
 \usage{
 PlanarDrawing(arcSources, arcTargets, numNodes)
 }
@@ -21,7 +21,9 @@ A list of 1) a boolean of if the graph is planar, 2) the
   embedding
 }
 \description{
-Checks if a graph is planar and returns the coloring of the graph
+The planar drawing algorithm calculates positions for the nodes in the
+plane. These coordinates satisfy that if the edges are represented with
+straight lines, then they will not intersect each other.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00307.html}

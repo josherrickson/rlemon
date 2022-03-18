@@ -2,7 +2,7 @@
 % Please edit documentation in R/graphsearch.R
 \name{MaxCardinalitySearch}
 \alias{MaxCardinalitySearch}
-\title{MaxCardinalitySearch}
+\title{Solver for Max Cardinality Search}
 \usage{
 MaxCardinalitySearch(
   arcSources,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/minimumspanningtree.R
 \name{MinCostArborescence}
 \alias{MinCostArborescence}
-\title{MinCostArborescence}
+\title{Solver for Minimum Cost Arborescence}
 \usage{
 MinCostArborescence(
   arcSources,

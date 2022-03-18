@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{IsBipartite}
 \alias{IsBipartite}
-\title{IsBipartite}
+\title{Checks if Graph is Bipartite}
 \usage{
 IsBipartite(arcSources, arcTargets, numNodes)
 }
@@ -19,7 +19,9 @@ edges}
 A boolean stating if the graph is bipartite
 }
 \description{
-Checks if an undirected graph is bipartite.
+A bipartite graph is one whose nodes can be divided into two disjoint and
+independent sets such that edges only connecte between those two sets and
+not within a set.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga577db110d33bd487aaad5bfffb31c6f5}

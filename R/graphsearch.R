@@ -1,10 +1,10 @@
-##' Runs a common graph search algorithm to find the minimum cardinality shortest path.
-##' Finds the shortest path from/to all vertices if a start/end node are
-##' not given.
+##' Runs a common graph search algorithm to find the minimum cardinality
+##' shortest path. Finds the shortest path from/to all vertices if a start/end
+##' node are not given.
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00608.html}.
-##' @title GraphSearch
+##' @title Solver for Graph Search
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -51,7 +51,7 @@ GraphSearch <- function(arcSources,
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00255.html}.
-##' @title MaxCardinalitySearch
+##' @title Solver for Max Cardinality Search
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's

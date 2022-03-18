@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{CountBiEdgeConnectedComponents}
 \alias{CountBiEdgeConnectedComponents}
-\title{CountBiEdgeConnectedComponents}
+\title{Count Number of Bi-Edge-Connected Components}
 \usage{
 CountBiEdgeConnectedComponents(arcSources, arcTargets, numNodes)
 }
@@ -16,12 +16,12 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-An integer defining the number of bi-node connected components
+An integer defining the number of bi-edge-connected components
 }
 \description{
-Counts the number of bi-edge connected components in an undirected graph.
+Counts the number of bi-edge-connected components in an undirected graph.
 }
 \details{
-See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaf7c5744b2175210b8ea67897aaa27885}
+See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga4d5db78dc21099d075c3967484990954}
 for more information.
 }

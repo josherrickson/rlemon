@@ -2,7 +2,7 @@
 % Please edit documentation in R/shortestpath.R
 \name{ShortestPath}
 \alias{ShortestPath}
-\title{ShortestPath}
+\title{Solver for Shortest Path Between Two Nodes}
 \usage{
 ShortestPath(
   arcSources,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{IsTree}
 \alias{IsTree}
-\title{IsTree}
+\title{Check if Graph is a Tree}
 \usage{
 IsTree(arcSources, arcTargets, numNodes)
 }
@@ -19,7 +19,8 @@ edges}
 A boolean stating if the graph is a tree
 }
 \description{
-Checks if an undirected graph is a tree.
+A tree is an undirected graph in which any two nodes are connected by
+exactly one path, or equivalently is both connected and acyclic.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad1e4de234e926958647905478415bd54}

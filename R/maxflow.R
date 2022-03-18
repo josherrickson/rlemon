@@ -1,9 +1,9 @@
-##' Finds the maximum flow of a directed graph, given a source and destination node.
+##' Finds the maximum flow of a directed graph, given a source and destination
+##' node.
 ##'
-
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00611.html}.
-##' @title MaxFlow
+##' @title Solver for MaxFlow
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -48,7 +48,7 @@ MaxFlow <- function(arcSources,
 
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00078.html}.
-##' @title NetworkCirculation
+##' @title Solver for Network Circulation
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's

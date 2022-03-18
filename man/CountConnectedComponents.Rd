@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{CountConnectedComponents}
 \alias{CountConnectedComponents}
-\title{CountConnectedComponents}
+\title{Count the Number of Connected Components}
 \usage{
 CountConnectedComponents(arcSources, arcTargets, numNodes)
 }
@@ -19,7 +19,9 @@ edges}
 An integer defining the number of connected components
 }
 \description{
-Counts the number of connected components in an undirected graph.
+The connected components are the classes of an equivalence relation on the
+nodes of an undirected graph. Two nodes are in the same class if they are
+connected with a path.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga33a9d9d4803cb15e83568b2526e978a5}

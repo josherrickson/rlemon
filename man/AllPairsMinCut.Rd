@@ -2,7 +2,7 @@
 % Please edit documentation in R/mincut.R
 \name{AllPairsMinCut}
 \alias{AllPairsMinCut}
-\title{AllPairsMinCut}
+\title{Solver for All-Pairs MinCut}
 \usage{
 AllPairsMinCut(
   arcSources,

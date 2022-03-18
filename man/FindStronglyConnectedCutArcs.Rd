@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{FindStronglyConnectedCutArcs}
 \alias{FindStronglyConnectedCutArcs}
-\title{FindStronglyConnectedCutArcs}
+\title{Find Strongly Connected Cut Arcs}
 \usage{
 FindStronglyConnectedCutArcs(arcSources, arcTargets, numNodes)
 }
@@ -20,7 +20,10 @@ A list containing 1) A list of cut arc sources, and 2) A list of cut
   arc destinations.
 }
 \description{
-Finds the cut arcs of strongly connected components in a directed graph.
+The strongly connected components are the classes of an equivalence relation
+on the nodes of a directed graph. Two nodes are in the same class if they
+are connected with directed paths in both direction. The strongly connected
+components are separated by the cut arcs.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad7af5c3a97453e37f251f0e86dbb83db}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/planarityembedding.R
 \name{PlanarColoring}
 \alias{PlanarColoring}
-\title{PlanarColoring}
+\title{Solver for Planar Coloring}
 \usage{
 PlanarColoring(arcSources, arcTargets, numNodes, algorithm = "fiveColoring")
 }

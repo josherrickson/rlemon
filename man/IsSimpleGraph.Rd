@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{IsSimpleGraph}
 \alias{IsSimpleGraph}
-\title{IsSimpleGraph}
+\title{Check if Graph is Simple}
 \usage{
 IsSimpleGraph(arcSources, arcTargets, numNodes)
 }
@@ -16,11 +16,11 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is simple
+TRUE if graph is simple, FALSE otherwise.
 }
 \description{
-Checks if a graph is simple, i.e. it contains no loop arcs/edges and no
-parallel arcs/edges. Works for both undirected and directed graphs.
+A graph is simple if it is both loop free, and parallel free. See also
+\code{IsLoopFree} and \code{IsParallelFree}.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gae4c7ae734e2509ab78dc747d602c9236}

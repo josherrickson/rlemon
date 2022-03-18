@@ -4,7 +4,7 @@
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00618.html}.
-##' @title TravelingSalespersonProblem
+##' @title Solver for Traveling Salesperson Problem
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's

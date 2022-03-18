@@ -3,7 +3,7 @@
 ##' See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00617.html#ga230242aa2ee36f9b1b5a58f2c53016eb}
 ##' for more information.
 ##'
-##' @title PlanarChecking
+##' @title Check if Graph is Planar
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -26,7 +26,7 @@ PlanarChecking <- function(arcSources,
 ##' See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00308.html}
 ##' for more information.
 ##'
-##' @title PlanarEmbedding
+##' @title Solver for Planar Embedding
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -51,7 +51,7 @@ PlanarEmbedding <- function(arcSources,
 ##' See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00306.html}
 ##' for more information.
 ##'
-##' @title PlanarColoring
+##' @title Solver for Planar Coloring
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -79,12 +79,14 @@ PlanarColoring <- function(arcSources,
          )
 }
 
-##' Checks if a graph is planar and returns the coloring of the graph
+##' The planar drawing algorithm calculates positions for the nodes in the
+##' plane. These coordinates satisfy that if the edges are represented with
+##' straight lines, then they will not intersect each other.
 ##'
 ##' See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00307.html}
 ##' for more information.
 ##'
-##' @title PlanarDrawing
+##' @title Solver for Planar Drawing
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's

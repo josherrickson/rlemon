@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{IsLoopFree}
 \alias{IsLoopFree}
-\title{IsLoopFree}
+\title{Checks if Graph is Loop Free}
 \usage{
 IsLoopFree(arcSources, arcTargets, numNodes)
 }
@@ -16,11 +16,11 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is loop free
+TRUE if the graph is loop free, FALSE otherwise
 }
 \description{
-Checks if a graph is loop free. Works for both undirected and directed
-graphs.
+A loop is an edge that starts and ends at the same node and passes through
+no other nodes.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga127f3963003cd532c79c226885fe1c8c}

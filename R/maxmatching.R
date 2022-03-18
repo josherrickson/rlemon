@@ -4,7 +4,7 @@
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html}.
-##' @title MaxMatching
+##' @title Solver for Maximum Weighted Matching
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -52,7 +52,7 @@ MaxMatching <- function(arcSources,
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00615.html}.
-##' @title MaxCardinalityMatching
+##' @title Solve for Maximum Cardinality Matching
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's

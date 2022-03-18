@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{IsStronglyConnected}
 \alias{IsStronglyConnected}
-\title{IsStronglyConnected}
+\title{Check if Graph is Strongly Connected}
 \usage{
 IsStronglyConnected(arcSources, arcTargets, numNodes)
 }
@@ -19,7 +19,8 @@ edges}
 A boolean stating if the graph is strongly connected
 }
 \description{
-Checks if a directed graph is strongly connected.
+A directed graph is strongly connected if any two nodes are connected via
+paths in both directions.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gacd21b34d7b42b9835a204a57fcf15964}

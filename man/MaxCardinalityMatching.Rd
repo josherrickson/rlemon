@@ -2,7 +2,7 @@
 % Please edit documentation in R/maxmatching.R
 \name{MaxCardinalityMatching}
 \alias{MaxCardinalityMatching}
-\title{MaxCardinalityMatching}
+\title{Solve for Maximum Cardinality Matching}
 \usage{
 MaxCardinalityMatching(
   arcSources,

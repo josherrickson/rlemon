@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{FindBiEdgeConnectedCutEdges}
 \alias{FindBiEdgeConnectedCutEdges}
-\title{FindBiEdgeConnectedCutEdges}
+\title{Find Bi-Edge-Connected Cut Edges}
 \usage{
 FindBiEdgeConnectedCutEdges(arcSources, arcTargets, numNodes)
 }
@@ -16,11 +16,14 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A list of cut arc sources, and 2) A list of cut
-  arc destinations.
+A list containing 1) A list of cut edge sources, and 2) A list of cut
+  edge destinations.
 }
 \description{
-Finds the bi-edge-connected cut edges in an undirected graph.
+The bi-edge-connected components are the classes of an equivalence relation
+on the nodes of an undirected graph. Two nodes are in the same class if they
+are connected with at least two edge-disjoint paths. The bi-edge-connected
+components are separted by the cut edges of the components.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58d444eba448c5f1a53539bd1b69636e}

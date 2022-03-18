@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{GetTopologicalSort}
 \alias{GetTopologicalSort}
-\title{GetTopologicalSort}
+\title{Sorts Nodes into Topological Order}
 \usage{
 GetTopologicalSort(arcSources, arcTargets, numNodes)
 }

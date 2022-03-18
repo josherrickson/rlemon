@@ -2,7 +2,7 @@
 % Please edit documentation in R/approximation.R
 \name{MaxClique}
 \alias{MaxClique}
-\title{MaxClique}
+\title{Solver for Largest Complete Subgroup (All Nodes Connected)}
 \usage{
 MaxClique(
   arcSources,

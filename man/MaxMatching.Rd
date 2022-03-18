@@ -2,7 +2,7 @@
 % Please edit documentation in R/maxmatching.R
 \name{MaxMatching}
 \alias{MaxMatching}
-\title{MaxMatching}
+\title{Solver for Maximum Weighted Matching}
 \usage{
 MaxMatching(
   arcSources,

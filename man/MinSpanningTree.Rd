@@ -2,7 +2,7 @@
 % Please edit documentation in R/minimumspanningtree.R
 \name{MinSpanningTree}
 \alias{MinSpanningTree}
-\title{MinSpanningTree}
+\title{Solver for Minimum Spanning Tree}
 \usage{
 MinSpanningTree(
   arcSources,

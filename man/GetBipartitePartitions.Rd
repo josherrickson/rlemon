@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{GetBipartitePartitions}
 \alias{GetBipartitePartitions}
-\title{GetBipartitePartitions}
+\title{Obtains (if possible) Bipartite Split}
 \usage{
 GetBipartitePartitions(arcSources, arcTargets, numNodes)
 }

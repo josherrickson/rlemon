@@ -2,7 +2,7 @@
 % Please edit documentation in R/planarityembedding.R
 \name{PlanarEmbedding}
 \alias{PlanarEmbedding}
-\title{PlanarEmbedding}
+\title{Solver for Planar Embedding}
 \usage{
 PlanarEmbedding(arcSources, arcTargets, numNodes)
 }

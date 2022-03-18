@@ -2,7 +2,7 @@
 % Please edit documentation in R/mincostflow.R
 \name{MinCostFlow}
 \alias{MinCostFlow}
-\title{MinCostFlow}
+\title{Solver for MinCostFlow}
 \usage{
 MinCostFlow(
   arcSources,

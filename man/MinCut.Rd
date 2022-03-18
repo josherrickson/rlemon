@@ -2,7 +2,7 @@
 % Please edit documentation in R/mincut.R
 \name{MinCut}
 \alias{MinCut}
-\title{MinCut}
+\title{Solver for MinCut}
 \usage{
 MinCut(
   arcSources,

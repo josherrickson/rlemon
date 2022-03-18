@@ -2,7 +2,7 @@
 % Please edit documentation in R/connectivity.R
 \name{IsDAG}
 \alias{IsDAG}
-\title{IsDAG}
+\title{Check if Graph is a DAG.}
 \usage{
 IsDAG(arcSources, arcTargets, numNodes)
 }
@@ -19,7 +19,7 @@ edges}
 A boolean stating if the graph is DAG
 }
 \description{
-Checks if a directed graph is a DAG.
+A graph is a DAG if it is Directed and Acyclic.
 }
 \details{
 See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaef2b43c8cd1d74e15fa5c7607bc5e396}

@@ -3,7 +3,7 @@
 \name{TravelingSalesperson}
 \alias{TravelingSalesperson}
 \alias{TravellingSalesperson}
-\title{TravelingSalespersonProblem}
+\title{Solver for Traveling Salesperson Problem}
 \usage{
 TravelingSalesperson(
   arcSources,

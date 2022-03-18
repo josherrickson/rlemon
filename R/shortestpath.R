@@ -4,7 +4,7 @@
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html}.
-##' @title ShortestPathFromSource
+##' @title Solve for Shortest Path from Source Node to All Other Nodes
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
@@ -43,7 +43,7 @@ ShortestPathFromSource <- function(arcSources,
 ##'
 ##' For details on LEMON's implementation, including differences between the
 ##' algorithms, see \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00609.html}.
-##' @title ShortestPath
+##' @title Solver for Shortest Path Between Two Nodes
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's

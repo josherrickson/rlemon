@@ -2,7 +2,7 @@
 % Please edit documentation in R/shortestpath.R
 \name{ShortestPathFromSource}
 \alias{ShortestPathFromSource}
-\title{ShortestPathFromSource}
+\title{Solve for Shortest Path from Source Node to All Other Nodes}
 \usage{
 ShortestPathFromSource(
   arcSources,

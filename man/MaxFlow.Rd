@@ -2,7 +2,7 @@
 % Please edit documentation in R/maxflow.R
 \name{MaxFlow}
 \alias{MaxFlow}
-\title{MaxFlow}
+\title{Solver for MaxFlow}
 \usage{
 MaxFlow(
   arcSources,
@@ -39,7 +39,8 @@ A list containing three entries: 1) A list corresponding to the
   and 3) the total cost of the flows in the graph, i.e. the maxflow value.
 }
 \description{
-Finds the maximum flow of a directed graph, given a source and destination node.
+Finds the maximum flow of a directed graph, given a source and destination
+node.
 }
 \details{
 For details on LEMON's implementation, including differences between the
