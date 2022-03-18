@@ -3,3 +3,65 @@ template:
   bootstrap: 5
 development:
   mode: auto
+reference:
+- title: Algorithm Solvers
+- contents:
+    - AllPairsMinCut
+    - GraphSearch
+    - MaxCardinalityMatching
+    - MaxCardinalitySearch
+    - MaxClique
+    - MaxFlow
+    - MaxMatching
+    - MinCostArborescence
+    - MinCostFlow
+    - MinCut
+    - MinMeanCycle
+    - MinSpanningTree
+    - NetworkCirculation
+    - ShortestPath
+    - ShortestPathFromSource
+    - TravelingSalesperson
+- title: Graph Attributes Checks
+- contents:
+    - IsAcyclic
+    - IsBiEdgeConnected
+    - IsBiNodeConnected
+    - IsBipartite
+    - IsConnected
+    - IsDAG
+    - IsEulerian
+    - IsLoopFree
+    - IsParallelFree
+    - IsSimpleGraph
+    - IsStronglyConnected
+    - IsTree
+- title: Graph Attribute Extractors
+- contents:
+    - CountBiEdgeConnectedComponents
+    - CountBiNodeConnectedComponents
+    - CountConnectedComponents
+    - CountStronglyConnectedComponents
+    - FindBiEdgeConnectedComponents
+    - FindBiEdgeConnectedCutEdges
+    - FindBiNodeConnectedComponents
+    - FindBiNodeConnectedCutNodes
+    - FindConnectedComponents
+    - FindStronglyConnectedComponents
+    - FindStronglyConnectedCutArcs
+    - GetAndCheckTopologicalSort
+    - GetBipartitePartitions
+    - GetTopologicalSort
+- title: Planar Graph Functions
+- contents:
+    - PlanarChecking
+    - PlanarColoring
+    - PlanarDrawing
+    - PlanarEmbedding
+- title: Internal Runners
+- contents:
+    - ends_with("Runner")
+    - lemon_runners
+- title: Data
+- contents:
+    - small_graph_example
