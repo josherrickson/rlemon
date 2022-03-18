@@ -1,180 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://josherrickson.github.io/rlemon/404.html</loc>
+    <loc>https://errickson.net/rlemon/404.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/authors.html</loc>
+    <loc>https://errickson.net/rlemon/authors.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/index.html</loc>
+    <loc>https://errickson.net/rlemon/index.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/news/index.html</loc>
+    <loc>https://errickson.net/rlemon/news/index.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/AllPairsMinCut.html</loc>
+    <loc>https://errickson.net/rlemon/reference/AllPairsMinCut.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/CountBiEdgeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountBiEdgeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/CountBiNodeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountBiNodeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/CountConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/CountStronglyConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountStronglyConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/FindBiEdgeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiEdgeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/FindBiEdgeConnectedCutEdges.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiEdgeConnectedCutEdges.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/FindBiNodeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiNodeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/FindBiNodeConnectedCutNodes.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiNodeConnectedCutNodes.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/FindConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/FindStronglyConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindStronglyConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/FindStronglyConnectedCutArcs.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindStronglyConnectedCutArcs.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/GetAndCheckTopologicalSort.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GetAndCheckTopologicalSort.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/GetBipartitePartitions.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GetBipartitePartitions.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/GetTopologicalSort.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GetTopologicalSort.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/GraphSearch.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GraphSearch.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsAcyclic.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsAcyclic.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsBiEdgeConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsBiEdgeConnected.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsBiNodeConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsBiNodeConnected.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsBipartite.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsBipartite.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsConnected.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsDAG.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsDAG.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsEulerian.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsEulerian.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsLoopFree.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsLoopFree.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsParallelFree.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsParallelFree.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsSimpleGraph.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsSimpleGraph.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsStronglyConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsStronglyConnected.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/IsTree.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsTree.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MaxCardinalityMatching.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxCardinalityMatching.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MaxCardinalitySearch.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxCardinalitySearch.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MaxClique.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxClique.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MaxFlow.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxFlow.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MaxMatching.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxMatching.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MinCostArborescence.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinCostArborescence.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MinCostFlow.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinCostFlow.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MinCut.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinCut.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MinMeanCycle.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinMeanCycle.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/MinSpanningTree.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinSpanningTree.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/NetworkCirculation.html</loc>
+    <loc>https://errickson.net/rlemon/reference/NetworkCirculation.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/PlanarChecking.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarChecking.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/PlanarColoring.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarColoring.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/PlanarDrawing.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarDrawing.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/PlanarEmbedding.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarEmbedding.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/ShortestPath.html</loc>
+    <loc>https://errickson.net/rlemon/reference/ShortestPath.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/ShortestPathFromSource.html</loc>
+    <loc>https://errickson.net/rlemon/reference/ShortestPathFromSource.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/TravelingSalesperson.html</loc>
+    <loc>https://errickson.net/rlemon/reference/TravelingSalesperson.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/check_arc_map.html</loc>
+    <loc>https://errickson.net/rlemon/reference/check_arc_map.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/check_graph.html</loc>
+    <loc>https://errickson.net/rlemon/reference/check_graph.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/check_graph_arcs.html</loc>
+    <loc>https://errickson.net/rlemon/reference/check_graph_arcs.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/check_graph_vertices.html</loc>
+    <loc>https://errickson.net/rlemon/reference/check_graph_vertices.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/check_node.html</loc>
+    <loc>https://errickson.net/rlemon/reference/check_node.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/check_node_map.html</loc>
+    <loc>https://errickson.net/rlemon/reference/check_node_map.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/index.html</loc>
+    <loc>https://errickson.net/rlemon/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/lemon-runners.html</loc>
+    <loc>https://errickson.net/rlemon/reference/lemon-runners.html</loc>
   </url>
   <url>
-    <loc>https://josherrickson.github.io/rlemon/reference/small_graph_example.html</loc>
+    <loc>https://errickson.net/rlemon/reference/small_graph_example.html</loc>
   </url>
 </urlset>

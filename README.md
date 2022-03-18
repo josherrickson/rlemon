@@ -1,7 +1,11 @@
 # rlemon: R interface to LEMON solver
 
+Package website: [release](https://errickson.net/rlemon) | [development](https://errickson.net/rlemon/dev)
+
+<!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/rlemon)](https://cran.r-project.org/package=rlemon)
 [![R-CMD-check](https://github.com/atewari7/rlemon/workflows/R-CMD-check/badge.svg)](https://github.com/atewari7/rlemon/actions)
+<!-- badges: end -->
 
 rlemon provides convenient access to the
 [LEMON](https://lemon.cs.elte.hu/trac/lemon) C++ graph library. Built with the
