@@ -178,7 +178,7 @@ check_algorithm <- function(algorithm) {
   if (!is.null(dim(algorithm))) {
    stop("`algorithm` must be a string")
   }
-  if( length(algorithm) > 1) {
+  if (length(algorithm) > 1) {
     stop("`algorithm` must be string")
   }
 
