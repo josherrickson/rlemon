@@ -4,7 +4,7 @@ Package website: [release](https://errickson.net/rlemon) | [development](https:/
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/rlemon)](https://cran.r-project.org/package=rlemon)
-[![R-CMD-check](https://github.com/atewari7/rlemon/workflows/R-CMD-check/badge.svg)](https://github.com/atewari7/rlemon/actions)
+[![R-CMD-check](https://github.com/josherrickson/rlemon/workflows/R-CMD-check/badge.svg)](https://github.com/josherrickson/rlemon/actions)
 <!-- badges: end -->
 
 rlemon provides convenient access to the
