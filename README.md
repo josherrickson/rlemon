@@ -1,4 +1,4 @@
-# rlemon: R interface to LEMON solver
+# rlemon: R interface to LEMON solver <a href="https://errickson.net/rlemon"><img src="man/figures/logo.png" align="right" height="139" /></a>
 
 Package website: [release](https://errickson.net/rlemon) | [development](https://errickson.net/rlemon/dev)
 
