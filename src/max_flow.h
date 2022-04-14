@@ -7,7 +7,7 @@
 
 using namespace lemon;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List CirculationRunner(std::vector<int> arcSources,
                              std::vector<int> arcTargets,
@@ -59,7 +59,7 @@ Rcpp::List CirculationRunner(std::vector<int> arcSources,
   return Rcpp::List::create(arcFlows, barrierNodes);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List PreflowRunner(std::vector<int> arcSources,
                          std::vector<int> arcTargets,
@@ -103,7 +103,7 @@ Rcpp::List PreflowRunner(std::vector<int> arcSources,
   return Rcpp::List::create(arcFlows, nodeCuts, outVal);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List EdmondsKarpRunner(std::vector<int> arcSources,
                              std::vector<int> arcTargets,

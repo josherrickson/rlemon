@@ -9,7 +9,7 @@
 
 using namespace lemon;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
                                  std::vector<int> arcTargets,
@@ -71,7 +71,7 @@ Rcpp::List CycleCancellingRunner(std::vector<int> arcSources,
                             feasibility_type);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
                                  std::vector<int> arcTargets,
@@ -135,7 +135,7 @@ Rcpp::List CapacityScalingRunner(std::vector<int> arcSources,
                             feasibility_type);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List CostScalingRunner(std::vector<int> arcSources,
                              std::vector<int> arcTargets,
@@ -198,7 +198,7 @@ Rcpp::List CostScalingRunner(std::vector<int> arcSources,
                             feasibility_type);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List NetworkSimplexRunner(std::vector<int> arcSources,
                                 std::vector<int> arcTargets,

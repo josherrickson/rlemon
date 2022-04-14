@@ -11,7 +11,7 @@ using namespace lemon;
 using namespace std;
 
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List ChristofidesRunner(std::vector<int> arcSources,
                               std::vector<int> arcTargets,
@@ -43,7 +43,7 @@ Rcpp::List ChristofidesRunner(std::vector<int> arcSources,
   return Rcpp::List::create(tour, runner.tourCost());
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List GreedyTSPRunner(std::vector<int> arcSources,
                            std::vector<int> arcTargets,
@@ -75,7 +75,7 @@ Rcpp::List GreedyTSPRunner(std::vector<int> arcSources,
   return Rcpp::List::create(tour, runner.tourCost());
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List InsertionTSPRunner(std::vector<int> arcSources,
                               std::vector<int> arcTargets,
@@ -107,7 +107,7 @@ Rcpp::List InsertionTSPRunner(std::vector<int> arcSources,
   return Rcpp::List::create(tour, runner.tourCost());
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources,
                                     std::vector<int> arcTargets,
@@ -139,7 +139,7 @@ Rcpp::List NearestNeighborTSPRunner(std::vector<int> arcSources,
   return Rcpp::List::create(tour, runner.tourCost());
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List Opt2TSPRunner(std::vector<int> arcSources,
                          std::vector<int> arcTargets,

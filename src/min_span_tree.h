@@ -6,7 +6,7 @@
 
 using namespace lemon;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List KruskalRunner(std::vector<int> arcSources,
                          std::vector<int> arcTargets,
@@ -40,7 +40,7 @@ Rcpp::List KruskalRunner(std::vector<int> arcSources,
   return Rcpp::List::create(treeSources, treeTargets, treeVal);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MinCostArborescenceRunner(std::vector<int> arcSources,
                                      std::vector<int> arcTargets,

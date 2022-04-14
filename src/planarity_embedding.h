@@ -8,7 +8,7 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 bool PlanarCheckingRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets, int numNodes) {
@@ -36,7 +36,7 @@ bool PlanarCheckingRunner(std::vector<int> arcSources,
   return alg.run();
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
                                  std::vector<int> arcTargets, int numNodes) {
@@ -99,7 +99,7 @@ Rcpp::List PlanarEmbeddingRunner(std::vector<int> arcSources,
                             kuratowskiSubInit, kuratowskiSubFin);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List PlanarColoringRunner(std::vector<int> arcSources,
                                 std::vector<int> arcTargets, int numNodes,
@@ -146,7 +146,7 @@ Rcpp::List PlanarColoringRunner(std::vector<int> arcSources,
   return Rcpp::List::create(isPlanar, colors);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List PlanarDrawingRunner(std::vector<int> arcSources,
                                std::vector<int> arcTargets, int numNodes) {

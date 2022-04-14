@@ -8,7 +8,7 @@
 using namespace lemon;
 using namespace std;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List HowardMmcRunner(std::vector<int> arcSources,
                            std::vector<int> arcTargets,
@@ -49,7 +49,7 @@ Rcpp::List HowardMmcRunner(std::vector<int> arcSources,
   return Rcpp::List::create(distances, path_nodes);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List KarpMmcRunner(std::vector<int> arcSources,
                          std::vector<int> arcTargets,
@@ -90,7 +90,7 @@ Rcpp::List KarpMmcRunner(std::vector<int> arcSources,
   return Rcpp::List::create(distances, path_nodes);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List HartmannOrlinMmcRunner(std::vector<int> arcSources,
                                   std::vector<int> arcTargets,

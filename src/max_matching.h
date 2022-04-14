@@ -19,7 +19,7 @@ template <typename ValueType> using EdgeMap = ListGraph::EdgeMap<ValueType>;
 
 template <typename ValueType> using NodeMap = ListGraph::NodeMap<ValueType>;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources,
                                               std::vector<int> arcTargets,
@@ -55,7 +55,7 @@ Rcpp::List MaximumWeightPerfectMatchingRunner(std::vector<int> arcSources,
   return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(
     std::vector<int> arcSources, std::vector<int> arcTargets,
@@ -91,7 +91,7 @@ Rcpp::List MaximumWeightFractionalPerfectMatchingRunner(
   return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources,
                                                  std::vector<int> arcTargets,
@@ -128,7 +128,7 @@ Rcpp::List MaximumWeightFractionalMatchingRunner(std::vector<int> arcSources,
   return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources,
                                        std::vector<int> arcTargets,
@@ -165,7 +165,7 @@ Rcpp::List MaximumWeightMatchingRunner(std::vector<int> arcSources,
   return Rcpp::List::create(test.matchingWeight(), arcs_out);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources,
                                             std::vector<int> arcTargets,
@@ -205,7 +205,7 @@ Rcpp::List MaximumCardinalityMatchingRunner(std::vector<int> arcSources,
   return Rcpp::List::create(test.matchingSize(), arcs_out);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MaximumCardinalityFractionalMatchingRunner(
     std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {

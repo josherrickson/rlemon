@@ -371,5 +371,5 @@ In almost all cases, users will want to stick with the exported functions.
 The only current scenario in which a user might want to use the runners
 would be to bypass rlemon's input checks. In this very particular case, a
 user can access the appropriate runner by the triple-colon notation, e.g. in
-the MaxFlow example, they would use \code{rlemon:::PreFlowRunner(...)}.##'
+the MaxFlow example, they would use \code{rlemon:::PreFlowRunner(...)}.
 }

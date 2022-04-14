@@ -7,7 +7,7 @@
 #include <vector>
 using namespace lemon;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List getBipartitePartitionsRunner(std::vector<int> arcSources,
                                         std::vector<int> arcTargets,
@@ -33,7 +33,7 @@ Rcpp::List getBipartitePartitionsRunner(std::vector<int> arcSources,
   return Rcpp::List::create(isBipartite, out_partitions);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List getAndCheckTopologicalSortRunner(std::vector<int> arcSources,
                                             std::vector<int> arcTargets,
@@ -59,7 +59,7 @@ Rcpp::List getAndCheckTopologicalSortRunner(std::vector<int> arcSources,
   return Rcpp::List::create(isDAG, order);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 std::vector<int> getTopologicalSortRunner(std::vector<int> arcSources,
                                           std::vector<int> arcTargets,
@@ -83,7 +83,7 @@ std::vector<int> getTopologicalSortRunner(std::vector<int> arcSources,
   return order;
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                       int numNodes) {
@@ -100,7 +100,7 @@ int IsConnectedRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return connected(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsAcyclicRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                     int numNodes) {
@@ -117,7 +117,7 @@ int IsAcyclicRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return acyclic(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                  int numNodes) {
@@ -134,7 +134,7 @@ int IsTreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return tree(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsBipartiteRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                       int numNodes) {
@@ -151,7 +151,7 @@ int IsBipartiteRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return bipartite(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsStronglyConnectedRunner(std::vector<int> arcSources,
                               std::vector<int> arcTargets, int numNodes) {
@@ -168,7 +168,7 @@ int IsStronglyConnectedRunner(std::vector<int> arcSources,
   return stronglyConnected(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsDAGRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                 int numNodes) {
@@ -185,7 +185,7 @@ int IsDAGRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return dag(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsBiNodeConnectedRunner(std::vector<int> arcSources,
                             std::vector<int> arcTargets, int numNodes) {
@@ -202,7 +202,7 @@ int IsBiNodeConnectedRunner(std::vector<int> arcSources,
   return biNodeConnected(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsBiEdgeConnectedRunner(std::vector<int> arcSources,
                             std::vector<int> arcTargets, int numNodes) {
@@ -223,7 +223,7 @@ int IsBiEdgeConnectedRunner(std::vector<int> arcSources,
   return biEdgeConnected(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsLoopFreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                      int numNodes) {
@@ -244,7 +244,7 @@ int IsLoopFreeRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return loopFree(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsParallelFreeRunner(std::vector<int> arcSources,
                          std::vector<int> arcTargets, int numNodes) {
@@ -265,7 +265,7 @@ int IsParallelFreeRunner(std::vector<int> arcSources,
   return parallelFree(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsSimpleGraphRunner(std::vector<int> arcSources,
                         std::vector<int> arcTargets, int numNodes) {
@@ -286,7 +286,7 @@ int IsSimpleGraphRunner(std::vector<int> arcSources,
   return simpleGraph(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int IsEulerianRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                      int numNodes) {
@@ -307,7 +307,7 @@ int IsEulerianRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return eulerian(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int CountBiEdgeConnectedComponentsRunner(std::vector<int> arcSources,
                                          std::vector<int> arcTargets,
@@ -329,7 +329,7 @@ int CountBiEdgeConnectedComponentsRunner(std::vector<int> arcSources,
   return countBiEdgeConnectedComponents(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int CountConnectedComponentsRunner(std::vector<int> arcSources,
                                    std::vector<int> arcTargets, int numNodes) {
@@ -350,7 +350,7 @@ int CountConnectedComponentsRunner(std::vector<int> arcSources,
   return countConnectedComponents(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int CountBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
                                          std::vector<int> arcTargets,
@@ -372,7 +372,7 @@ int CountBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
   return countBiNodeConnectedComponents(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 int CountStronglyConnectedComponentsRunner(std::vector<int> arcSources,
                                            std::vector<int> arcTargets,
@@ -390,7 +390,7 @@ int CountStronglyConnectedComponentsRunner(std::vector<int> arcSources,
   return countStronglyConnectedComponents(g);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 std::vector<int> FindStronglyConnectedComponentsRunner(
     std::vector<int> arcSources, std::vector<int> arcTargets, int numNodes) {
@@ -414,7 +414,7 @@ std::vector<int> FindStronglyConnectedComponentsRunner(
   return components;
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List FindStronglyConnectedCutArcsRunner(std::vector<int> arcSources,
                                               std::vector<int> arcTargets,
@@ -447,7 +447,7 @@ Rcpp::List FindStronglyConnectedCutArcsRunner(std::vector<int> arcSources,
   return Rcpp::List::create(arc_sources, arc_destinations);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List FindBiEdgeConnectedCutEdgesRunner(std::vector<int> arcSources,
                                              std::vector<int> arcTargets,
@@ -479,7 +479,7 @@ Rcpp::List FindBiEdgeConnectedCutEdgesRunner(std::vector<int> arcSources,
   return Rcpp::List::create(arc_sources, arc_destinations);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 std::vector<int>
 FindBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
@@ -505,7 +505,7 @@ FindBiNodeConnectedComponentsRunner(std::vector<int> arcSources,
   return component_number;
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 std::vector<int> FindBiNodeConnectedCutNodesRunner(std::vector<int> arcSources,
                                                    std::vector<int> arcTargets,
@@ -533,7 +533,7 @@ std::vector<int> FindBiNodeConnectedCutNodesRunner(std::vector<int> arcSources,
   return CutNodes;
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 std::vector<int> FindConnectedComponentsRunner(std::vector<int> arcSources,
                                                std::vector<int> arcTargets,
@@ -559,7 +559,7 @@ std::vector<int> FindConnectedComponentsRunner(std::vector<int> arcSources,
   return components;
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 std::vector<int>
 FindBiEdgeConnectedComponentsRunner(std::vector<int> arcSources,

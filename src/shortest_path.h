@@ -11,7 +11,7 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List SuurballeRunner(std::vector<int> arcSources,
                            std::vector<int> arcTargets,
@@ -60,7 +60,7 @@ Rcpp::List SuurballeRunner(std::vector<int> arcSources,
   return Rcpp::List::create(NUM_PATHS, paths);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List DijkstraRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets,
@@ -98,7 +98,7 @@ Rcpp::List DijkstraRunner(std::vector<int> arcSources,
   return Rcpp::List::create(distances, predecessors);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List BellmanFordRunner(std::vector<int> arcSources,
                              std::vector<int> arcTargets,

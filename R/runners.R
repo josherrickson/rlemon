@@ -9,7 +9,7 @@
 ##' The only current scenario in which a user might want to use the runners
 ##' would be to bypass rlemon's input checks. In this very particular case, a
 ##' user can access the appropriate runner by the triple-colon notation, e.g. in
-##' the MaxFlow example, they would use \code{rlemon:::PreFlowRunner(...)}.##'
+##' the MaxFlow example, they would use \code{rlemon:::PreFlowRunner(...)}.
 ##' @title LEMON runners
 ##' @param arcSources a vector corresponding to the source nodes of a graph’s
 ##'   edges
@@ -38,7 +38,7 @@
 ##' @param defaultEdgeWeight The default edge weight if an edge is not-specified
 ##'   (default value 999999)
 ##' @return Algorithm results
-##' @rdname lemon-runners
+##' @rdname lemon_runners
 lemon_runners <- function() {
-  stop("See `help(lemon-runners)` for details on these lower level functions")
+  stop("See `help(lemon_runners)` for details on these lower level functions")
 }

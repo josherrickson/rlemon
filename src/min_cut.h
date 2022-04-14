@@ -8,7 +8,7 @@
 using namespace lemon;
 using namespace std;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
                                   std::vector<int> arcTargets,
@@ -50,7 +50,7 @@ Rcpp::List NagamochiIbarakiRunner(std::vector<int> arcSources,
   return Rcpp::List::create(mincutvalue, partition1, partition2);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
                           std::vector<int> arcTargets,
@@ -92,7 +92,7 @@ Rcpp::List HaoOrlinRunner(std::vector<int> arcSources,
   return Rcpp::List::create(mincutvalue, partition1, partition2);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List GomoryHuTreeRunner(std::vector<int> arcSources,
                               std::vector<int> arcTargets,

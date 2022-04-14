@@ -13,7 +13,7 @@ typedef int Value;
 using namespace lemon;
 using namespace std;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                      int numNodes, int startNode = -1, int endNode = -1) {
@@ -61,7 +61,7 @@ Rcpp::List BfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return Rcpp::List::create(nodePreds, nodeDistances, nodeReached);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
                      int numNodes, int startNode = -1, int endNode = -1) {
@@ -109,7 +109,7 @@ Rcpp::List DfsRunner(std::vector<int> arcSources, std::vector<int> arcTargets,
   return Rcpp::List::create(nodePreds, nodeDistances, nodeReached);
 }
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List MaxCardinalitySearchRunner(std::vector<int> arcSources,
                                       std::vector<int> arcTargets,

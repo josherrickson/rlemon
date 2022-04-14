@@ -8,7 +8,7 @@
 using namespace lemon;
 using namespace std;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List GraphCompatabilityConverter(std::vector<int> nodesList,
                                        std::vector<int> arcSources,

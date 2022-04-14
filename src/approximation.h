@@ -7,7 +7,7 @@
 using namespace lemon;
 using namespace std;
 
-//' @rdname lemon-runners
+//' @rdname lemon_runners
 // [[Rcpp::export]]
 Rcpp::List GrossoLocatelliPullanMcRunner(std::vector<int> arcSources,
                                          std::vector<int> arcTargets,
