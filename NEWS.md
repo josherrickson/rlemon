@@ -9,7 +9,7 @@
   - `MaxFlow()` and `NetworkCirulation()` properly error on invalid `algorithm`
     argument.
 
-# Minor changes
+## Minor changes
 
 - Various fixed, orgaization, and cleanups of documentation (#34, #30, #27, #28,
   #31, and other cleanups)
