@@ -45,10 +45,10 @@ test_that("min cut function", {
   # No alternative algorithms
 
   # 5) Ensure exported functions fail if passed an invalid algorithm.
-  expect_error(MinCut(s, t, weights, numNodes, algorithm = "abc"),
+  expect_error(AllPairsMinCut(s, t, weights, numNodes, algorithm = "abc"),
                "Invalid")
-  expect_error(MinCut(s, t, weights, numNodes, algorithm = 1),
+  expect_error(AllPairsMinCut(s, t, weights, numNodes, algorithm = 1),
                "must be a string")
-  expect_error(MinCut(s, t, weights, numNodes, algorithm = NULL),
+  expect_error(AllPairsMinCut(s, t, weights, numNodes, algorithm = NULL),
                "must be a string")
 })
