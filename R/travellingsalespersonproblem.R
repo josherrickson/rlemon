@@ -15,7 +15,8 @@
 ##'   (default value 999999)
 ##' @param algorithm Choices of algorithm include "Christofides", "Greedy",
 ##'   "Insertion", "NearestNeighbor", and "Opt2". "Christofides" is the default.
-##' @return a List with 1) the list of tour vertices, and 2) the total tour cost
+##' @return a List with 1) the vector of visited nodes in order, and 2) the
+##'   total tour cost
 ##' @rdname TravelingSalesperson
 ##' @export
 TravelingSalesperson <- function(arcSources,

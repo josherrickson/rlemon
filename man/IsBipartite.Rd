@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is bipartite
+A \code{logical} stating if the graph is bipartite
 }
 \description{
 A bipartite graph is one whose nodes can be divided into two disjoint and

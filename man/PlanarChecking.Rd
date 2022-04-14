@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is planar or not.
+A \code{logical} stating if the graph is planar or not.
 }
 \description{
 Checks if an undirected graph is planar.

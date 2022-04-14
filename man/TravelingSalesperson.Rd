@@ -41,7 +41,8 @@ edges}
 "Insertion", "NearestNeighbor", and "Opt2". "Christofides" is the default.}
 }
 \value{
-a List with 1) the list of tour vertices, and 2) the total tour cost
+a List with 1) the vector of visited nodes in order, and 2) the
+  total tour cost
 }
 \description{
 Finds approximations for the travelling salesperson problem using

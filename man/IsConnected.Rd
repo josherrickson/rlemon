@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is connected
+A \code{logical} stating if the graph is connected
 }
 \description{
 A connected graph has a path between any two nodes in the graph.

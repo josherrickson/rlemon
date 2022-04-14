@@ -16,13 +16,14 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is bi-edge connected
+A \code{logical} stating if the graph is bi-edge connected
 }
 \description{
 Checks if an undirected graph is bi-edge-connected, that is if there are no
 edges that, if removed, would split the graph into two unconnected graphs.
 }
 \details{
-See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga37d22a2ddd5a064a9203720f2b93518e}
+See
+\url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga37d22a2ddd5a064a9203720f2b93518e}
 for more information.
 }

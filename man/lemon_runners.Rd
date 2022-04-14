@@ -342,15 +342,16 @@ graph}
 
 \item{sourceNode}{in flow-based algorithms, the source node of the flow}
 
-\item{destinationNode}{in flow-based algorithms, the destination node of the flow}
+\item{destinationNode}{in flow-based algorithms, the destination node of the
+flow}
 
 \item{arcWeights}{vector corresponding to the weights of a graph’s arcs}
 
 \item{arcCosts}{vector corresponding to the costs of nodes of a graph’s
 edges}
 
-\item{useFiveAlg}{a boolean that asks if you want to 5-color a graph. If
-false, runs a faster 6-coloring algorithm instead.}
+\item{useFiveAlg}{if \code{TRUE} (default), run a 5-color algorithm. If
+\code{FALSE}, runs a faster 6-coloring algorithm instead.}
 
 \item{defaultEdgeWeight}{The default edge weight if an edge is not-specified
 (default value 999999)}

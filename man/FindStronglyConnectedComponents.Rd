@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing the node id of each strongly connected component.
+A vector containing the node id of each strongly connected component.
 }
 \description{
 The strongly connected components are the classes of an equivalence relation

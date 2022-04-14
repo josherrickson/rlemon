@@ -63,7 +63,7 @@ GraphSearch <- function(arcSources,
 ##' @param algorithm Choices of algorithm include "maxcardinalitysearch".
 ##'   maxcardinalitysearch is the default.
 ##' @return A list containing two entries: 1) the cardinality of each node , 2)
-##'   a list containing if a node was reached or not
+##'   a vector containing if a node was reached or not
 ##' @export
 MaxCardinalitySearch <- function(arcSources,
                                  arcTargets,

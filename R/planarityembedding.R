@@ -9,7 +9,7 @@
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is planar or not.
+##' @return A \code{logical} stating if the graph is planar or not.
 ##' @export
 PlanarChecking <- function(arcSources,
                            arcTargets,
@@ -32,10 +32,11 @@ PlanarChecking <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A boolean if the graph is planar, 2) the start
-##'   nodes of the arcs of the embedding, 3) the end nodes of the arcs of the
-##'   planar embedding, 4) the start nodes of the edges of the kuratowski
-##'   subdivision, 5) the end nodes of the edges of the kuratowski subdivision.
+##' @return A list containing 1) A 0/1 numeric indicating if the graph is
+##'   planar, 2) the start nodes of the arcs of the embedding, 3) the end nodes
+##'   of the arcs of the planar embedding, 4) the start nodes of the edges of
+##'   the kuratowski subdivision, 5) the end nodes of the edges of the
+##'   kuratowski subdivision.
 ##' @export
 PlanarEmbedding <- function(arcSources,
                             arcTargets,
@@ -59,8 +60,8 @@ PlanarEmbedding <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm, the algorithm to use. "sixColoring" generates a 6-coloring
 ##'   of the graph, while "fiveColoring" generates a 5-coloring.
-##' @return A list containing 1) A boolean if the graph is planar, 2) the color
-##'   of each vertex of the graph
+##' @return A list containing 1) A \code{logical} if the graph is planar, 2) the
+##'   color of each vertex of the graph
 ##' @export
 PlanarColoring <- function(arcSources,
                            arcTargets,
@@ -92,7 +93,7 @@ PlanarColoring <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list of 1) a boolean of if the graph is planar, 2) the
+##' @return A list of 1) a \code{logical} of if the graph is planar, 2) the
 ##'   x-coordinate of the planar embedding, 3) the y-coordinate of the planar
 ##'   embedding
 ##' @export

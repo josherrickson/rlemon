@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing the cut nodes.
+A vector containing the cut nodes.
 }
 \description{
 The bi-node-connected components are the classes of an equivalence relation

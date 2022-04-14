@@ -55,7 +55,8 @@ ShortestPathFromSource <- function(arcSources,
 ##' @param algorithm Choices of algorithm include "Suurballe". "Suurballe" is
 ##'   the default.
 ##' @return A list containing two entries: 1) the number of paths from the start
-##'   node to the end node and 2) a list of paths found.
+##'   node to the end node and 2) a list of paths found. If there are multiple
+##'   paths, then the second entry will have multiple paths.
 ##' @export
 ShortestPath <- function(arcSources,
                          arcTargets,

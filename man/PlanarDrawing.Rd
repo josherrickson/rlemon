@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list of 1) a boolean of if the graph is planar, 2) the
+A list of 1) a \code{logical} of if the graph is planar, 2) the
   x-coordinate of the planar embedding, 3) the y-coordinate of the planar
   embedding
 }

@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is strongly connected
+A \code{logical} stating if the graph is strongly connected
 }
 \description{
 A directed graph is strongly connected if any two nodes are connected via

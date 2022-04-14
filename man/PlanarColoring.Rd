@@ -19,8 +19,8 @@ edges}
 of the graph, while "fiveColoring" generates a 5-coloring.}
 }
 \value{
-A list containing 1) A boolean if the graph is planar, 2) the color
-  of each vertex of the graph
+A list containing 1) A \code{logical} if the graph is planar, 2) the
+  color of each vertex of the graph
 }
 \description{
 Checks if a graph is planar and returns the coloring of the graph

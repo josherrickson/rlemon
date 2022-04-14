@@ -36,11 +36,11 @@ edges}
 the default.}
 }
 \value{
-A list containing three entries: 1) A list corresponding to the
-  flows of arcs in the graph, 2) A list of potentials of the graph's nodes,
-  3) the total cost of the flows in the graph, i.e. the mincostflow value,
-  and 4) LEMON's feasibility type, demonstrating how feasible the graph
-  problem is, one of "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
+A list containing three entries: 1) A vector corresponding to the
+  flows of arcs in the graph, 2) A vector of potentials of the graph's
+  nodes, 3) the total cost of the flows in the graph, i.e. the mincostflow
+  value, and 4) LEMON's feasibility type, demonstrating how feasible the
+  graph problem is, one of "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
 }
 \description{
 Finds the minimum cost flow of a directed graph.

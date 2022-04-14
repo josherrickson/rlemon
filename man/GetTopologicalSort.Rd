@@ -16,8 +16,8 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list of length numNodes, containing the index of vertex i in the
-  ordering at location i.
+A vector of length \code{numNodes}, containing the index of vertex i
+  in the ordering at location i.
 }
 \description{
 Gives back the topological order of a DAG.

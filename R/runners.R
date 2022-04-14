@@ -30,11 +30,12 @@
 ##' @param startNode in path-based algorithms, the start node of the path
 ##' @param endNode in path-based algorithms, the end node of the path
 ##' @param sourceNode in flow-based algorithms, the source node of the flow
-##' @param destinationNode in flow-based algorithms, the destination node of the flow
+##' @param destinationNode in flow-based algorithms, the destination node of the
+##'   flow
 ##' @param nodeSupplies vector corresponding to the supplies of each node of the
 ##'   graph
-##' @param useFiveAlg a boolean that asks if you want to 5-color a graph. If
-##'   false, runs a faster 6-coloring algorithm instead.
+##' @param useFiveAlg if \code{TRUE} (default), run a 5-color algorithm. If
+##'   \code{FALSE}, runs a faster 6-coloring algorithm instead.
 ##' @param defaultEdgeWeight The default edge weight if an edge is not-specified
 ##'   (default value 999999)
 ##' @return Algorithm results

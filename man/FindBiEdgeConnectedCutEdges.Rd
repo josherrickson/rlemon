@@ -16,8 +16,8 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A list of cut edge sources, and 2) A list of cut
-  edge destinations.
+A list containing 1) A vector of cut edge sources, and 2) A vector
+  of cut edge destinations.
 }
 \description{
 The bi-edge-connected components are the classes of an equivalence relation
@@ -26,6 +26,7 @@ are connected with at least two edge-disjoint paths. The bi-edge-connected
 components are separted by the cut edges of the components.
 }
 \details{
-See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58d444eba448c5f1a53539bd1b69636e}
+See
+\url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58d444eba448c5f1a53539bd1b69636e}
 for more information.
 }

@@ -34,7 +34,8 @@ the default.}
 }
 \value{
 A list containing two entries: 1) the number of paths from the start
-  node to the end node and 2) a list of paths found.
+  node to the end node and 2) a list of paths found. If there are multiple
+  paths, then the second entry will have multiple paths.
 }
 \description{
 Finds the shortest arc disjoint paths between two nodes in a directed graph.

@@ -16,8 +16,9 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A boolean stating if the graph is bipartite,
-  and 2) A list of length numNodes, containing the partition for each node
+A list containing 1) A \code{logical} stating if the graph is bipartite,
+  and 2) A vector of length \code{numNodes}, containing the partition for
+  each node
 }
 \description{
 Checks if an undirected graph is bipartite and finds the bipartite

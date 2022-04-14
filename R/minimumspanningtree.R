@@ -15,9 +15,10 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "Kruskal". "Kruskal" is the
 ##'   default.
-##' @return A list containing three entries: 1) Two vectors corresponding the
-##'   source and target nodes of the edges in the tree, and 2) the total minimum
-##'   spanning tree value.
+##' @return A list containing three entries: 1) A vector corresponding the
+##'   source nodes of the edges in the tree, 2) a vector corresponding the
+##'   target nodes of the edges in the tree, and 3) the total minimum spanning
+##'   tree value.
 ##' @export
 MinSpanningTree <- function(arcSources,
                             arcTargets,
@@ -53,9 +54,10 @@ MinSpanningTree <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "MinCostArborescence".
 ##'   "MinCostArborescence" is the default.
-##' @return A list containing three entries: 1) Two vectors corresponding the
-##'   source and target nodes of the edges in the tree, and 2) the total cost of
-##'   the arborescence.
+##' @return A list containing three entries: 1) A vector corresponding the
+##'   source nodes of the edges in the tree, 2) a vector corresponding the
+##'   target nodes of the edges in the tree, and 3) the total cost of the
+##'   arborescence.
 ##' @export
 MinCostArborescence <- function(arcSources,
                                 arcTargets,

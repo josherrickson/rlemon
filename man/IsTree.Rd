@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A boolean stating if the graph is a tree
+A \code{logical} stating if the graph is a tree
 }
 \description{
 A tree is an undirected graph in which any two nodes are connected by

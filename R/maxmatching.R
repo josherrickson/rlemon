@@ -16,7 +16,7 @@
 ##'   "MaxWeightedPerfectFractionalMatching". "MaxWeightedMatching" is the
 ##'   default.
 ##' @return A list containing two entries: 1) The matching value, 2) The edges
-##'   of the final graph, in a List of List of (node, node) pairs
+##'   of the final graph, in a list of (node, node) pairs
 ##' @export
 MaxMatching <- function(arcSources,
                         arcTargets,
@@ -61,7 +61,7 @@ MaxMatching <- function(arcSources,
 ##' @param algorithm Choices of algorithm include "MaxMatching" and
 ##'   "MaxFractionalMatching". "MaxMatching" is the default.
 ##' @return A list containing two entries: 1) The matching value, 2) The edges
-##'   of the final graph, in a List of List of (node, node) pairs
+##'   of the final graph, in a List of (node, node) pairs
 ##' @export
 MaxCardinalityMatching <- function(arcSources,
                                    arcTargets,

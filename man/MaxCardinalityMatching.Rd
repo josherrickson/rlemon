@@ -25,7 +25,7 @@ edges}
 }
 \value{
 A list containing two entries: 1) The matching value, 2) The edges
-  of the final graph, in a List of List of (node, node) pairs
+  of the final graph, in a List of (node, node) pairs
 }
 \description{
 Finds the maximum cardinality matching in graphs and bipartite graphs.

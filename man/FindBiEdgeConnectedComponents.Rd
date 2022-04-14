@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing the node id of each bi-edge-connected component.
+A vector containing the node id of each bi-edge-connected component.
 }
 \description{
 The bi-edge-connected components are the classes of an equivalence relation

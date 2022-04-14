@@ -32,7 +32,7 @@ maxcardinalitysearch is the default.}
 }
 \value{
 A list containing two entries: 1) the cardinality of each node , 2)
-  a list containing if a node was reached or not
+  a vector containing if a node was reached or not
 }
 \description{
 Runs the maximum cardinality search algorithm on a directed graph. The

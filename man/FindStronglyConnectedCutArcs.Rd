@@ -16,8 +16,8 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A list of cut arc sources, and 2) A list of cut
-  arc destinations.
+A list containing 1) A vector of cut arc sources, and 2) A vector of
+  cut arc destinations.
 }
 \description{
 The strongly connected components are the classes of an equivalence relation
@@ -26,6 +26,7 @@ are connected with directed paths in both direction. The strongly connected
 components are separated by the cut arcs.
 }
 \details{
-See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad7af5c3a97453e37f251f0e86dbb83db}
+See
+\url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad7af5c3a97453e37f251f0e86dbb83db}
 for more information.
 }

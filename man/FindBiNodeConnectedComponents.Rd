@@ -16,7 +16,7 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing the arc id of each bi-node-connected component
+A vector containing the arc id of each bi-node-connected component
 }
 \description{
 The bi-node-connected components are the classes of an equivalence relation

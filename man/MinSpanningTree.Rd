@@ -28,9 +28,10 @@ graph's edges}
 default.}
 }
 \value{
-A list containing three entries: 1) Two vectors corresponding the
-  source and target nodes of the edges in the tree, and 2) the total minimum
-  spanning tree value.
+A list containing three entries: 1) A vector corresponding the
+  source nodes of the edges in the tree, 2) a vector corresponding the
+  target nodes of the edges in the tree, and 3) the total minimum spanning
+  tree value.
 }
 \description{
 Finds the minimum spanning tree of a graph.

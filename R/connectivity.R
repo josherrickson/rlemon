@@ -10,8 +10,9 @@
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A boolean stating if the graph is bipartite,
-##'   and 2) A list of length numNodes, containing the partition for each node
+##' @return A list containing 1) A \code{logical} stating if the graph is bipartite,
+##'   and 2) A vector of length \code{numNodes}, containing the partition for
+##'   each node
 ##' @export
 GetBipartitePartitions <- function(arcSources,
                                    arcTargets,
@@ -33,9 +34,9 @@ GetBipartitePartitions <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A boolean stating if the graph is a dag, and 2)
-##'   A vector of length numNodes, containing the index of vertex i in the
-##'   ordering at location i
+##' @return A list containing 1) A \code{logical} stating if the graph is a dag, and 2)
+##'   A vector of length \code{numNodes}, containing the index of vertex i in
+##'   the ordering at location i
 ##' @export
 GetAndCheckTopologicalSort <- function(arcSources,
                                        arcTargets,
@@ -57,8 +58,8 @@ GetAndCheckTopologicalSort <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list of length numNodes, containing the index of vertex i in the
-##'   ordering at location i.
+##' @return A vector of length \code{numNodes}, containing the index of vertex i
+##'   in the ordering at location i.
 ##' @export
 GetTopologicalSort <- function(arcSources,
                                arcTargets,
@@ -79,7 +80,7 @@ GetTopologicalSort <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is connected
+##' @return A \code{logical} stating if the graph is connected
 ##' @export
 IsConnected <- function(arcSources,
                         arcTargets,
@@ -101,7 +102,7 @@ IsConnected <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is acyclic
+##' @return A \code{logical} stating if the graph is acyclic
 ##' @export
 IsAcyclic <- function(arcSources,
                       arcTargets,
@@ -123,7 +124,7 @@ IsAcyclic <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is a tree
+##' @return A \code{logical} stating if the graph is a tree
 ##' @export
 IsTree <- function(arcSources,
                    arcTargets,
@@ -146,7 +147,7 @@ IsTree <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is bipartite
+##' @return A \code{logical} stating if the graph is bipartite
 ##' @export
 IsBipartite <- function(arcSources,
                         arcTargets,
@@ -168,7 +169,7 @@ IsBipartite <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is strongly connected
+##' @return A \code{logical} stating if the graph is strongly connected
 ##' @export
 IsStronglyConnected <- function(arcSources,
                                 arcTargets,
@@ -189,7 +190,7 @@ IsStronglyConnected <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is DAG
+##' @return A \code{logical} stating if the graph is DAG
 ##' @export
 IsDAG <- function(arcSources,
                   arcTargets,
@@ -209,7 +210,7 @@ IsDAG <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is bi-node connected
+##' @return A \code{logical} stating if the graph is bi-node connected
 ##' @export
 IsBiNodeConnected <- function(arcSources,
                               arcTargets,
@@ -223,7 +224,8 @@ IsBiNodeConnected <- function(arcSources,
 ##' Checks if an undirected graph is bi-edge-connected, that is if there are no
 ##' edges that, if removed, would split the graph into two unconnected graphs.
 ##'
-##' See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga37d22a2ddd5a064a9203720f2b93518e}
+##' See
+##' \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga37d22a2ddd5a064a9203720f2b93518e}
 ##' for more information.
 ##' @title Chcek if Graph is Bi-Edge-Connected
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -231,7 +233,7 @@ IsBiNodeConnected <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A boolean stating if the graph is bi-edge connected
+##' @return A \code{logical} stating if the graph is bi-edge connected
 ##' @export
 IsBiEdgeConnected <- function(arcSources,
                               arcTargets,
@@ -433,7 +435,7 @@ CountStronglyConnectedComponents <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing the node id of each strongly connected component.
+##' @return A vector containing the node id of each strongly connected component.
 ##' @export
 FindStronglyConnectedComponents <- function(arcSources,
                                             arcTargets,
@@ -449,7 +451,8 @@ FindStronglyConnectedComponents <- function(arcSources,
 ##' are connected with directed paths in both direction. The strongly connected
 ##' components are separated by the cut arcs.
 ##'
-##' See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad7af5c3a97453e37f251f0e86dbb83db}
+##' See
+##' \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gad7af5c3a97453e37f251f0e86dbb83db}
 ##' for more information.
 ##' @title Find Strongly Connected Cut Arcs
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -457,8 +460,8 @@ FindStronglyConnectedComponents <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A list of cut arc sources, and 2) A list of cut
-##'   arc destinations.
+##' @return A list containing 1) A vector of cut arc sources, and 2) A vector of
+##'   cut arc destinations.
 ##' @export
 FindStronglyConnectedCutArcs <- function(arcSources,
                                          arcTargets,
@@ -474,7 +477,8 @@ FindStronglyConnectedCutArcs <- function(arcSources,
 ##' are connected with at least two edge-disjoint paths. The bi-edge-connected
 ##' components are separted by the cut edges of the components.
 ##'
-##' See \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58d444eba448c5f1a53539bd1b69636e}
+##' See
+##' \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#ga58d444eba448c5f1a53539bd1b69636e}
 ##' for more information.
 ##' @title Find Bi-Edge-Connected Cut Edges
 ##' @param arcSources Vector corresponding to the source nodes of a graph's
@@ -482,8 +486,8 @@ FindStronglyConnectedCutArcs <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A list of cut edge sources, and 2) A list of cut
-##'   edge destinations.
+##' @return A list containing 1) A vector of cut edge sources, and 2) A vector
+##'   of cut edge destinations.
 ##' @export
 FindBiEdgeConnectedCutEdges <- function(arcSources,
                                         arcTargets,
@@ -506,7 +510,7 @@ FindBiEdgeConnectedCutEdges <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing the arc id of each bi-node-connected component
+##' @return A vector containing the arc id of each bi-node-connected component
 ##' @export
 FindBiNodeConnectedComponents <- function(arcSources,
                                           arcTargets,
@@ -529,7 +533,7 @@ FindBiNodeConnectedComponents <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing the cut nodes.
+##' @return A vector containing the cut nodes.
 ##' @export
 FindBiNodeConnectedCutNodes <- function(arcSources,
                                         arcTargets,
@@ -552,7 +556,7 @@ FindBiNodeConnectedCutNodes <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing the node id of each connected component.
+##' @return A vector containing the node id of each connected component.
 ##' @export
 FindConnectedComponents <- function(arcSources,
                                     arcTargets,
@@ -575,7 +579,7 @@ FindConnectedComponents <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing the node id of each bi-edge-connected component.
+##' @return A vector containing the node id of each bi-edge-connected component.
 ##' @export
 FindBiEdgeConnectedComponents <- function(arcSources,
                                           arcTargets,
