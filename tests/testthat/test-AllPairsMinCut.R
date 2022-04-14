@@ -1,10 +1,10 @@
-# Title            : Min Cut
+# Title            : All Pairs Min Cut
 # File             : R/mincut.R
-# Exported         : MinCut
-# Valid Algorithms : "NagamochiIbaraki" (default), "HaoOrlin"
-# Runners          : NagamochiIbarakiRunner, HaoOrlinRunner
+# Exported         : AllPairsMinCut
+# Valid Algorithms : "GomoryHu" (default)
+# Runners          : GomoryHuTreeRunner
 
-test_mincut <- function(o) {
+test_allpairsmincut <- function(o) {
   expect_true(is.list(o))
   expect_length(o, 3)
   expect_true(all(vapply(o[1:3], is.numeric, TRUE)))
@@ -19,11 +19,8 @@ test_that("min cut runners", {
   weights <- c(16, 13, 12, 10, 9, 20, 4, 14, 7, 4)
   numNodes <- 6
 
-  out <- NagamochiIbarakiRunner(s, t, weights, numNodes)
-  test_mincut(out)
-
-  out <- HaoOrlinRunner(s, t, weights, numNodes)
-  test_mincut(out)
+  out <- GomoryHuTreeRunner(s, t, weights, numNodes)
+  test_allpairsmincut(out)
 
 })
 
@@ -36,17 +33,16 @@ test_that("min cut function", {
 
   # 2) Ensure exported functions run without error and return the "expected
   # objects".
-  out <- MinCut(s, t, weights, numNodes)
-  test_mincut(out)
+  out <- AllPairsMinCut(s, t, weights, numNodes)
+  test_allpairsmincut(out)
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument
-  out2 <- MinCut(s, t, weights, numNodes, algorithm = "NagamochiIbaraki")
+  out2 <- AllPairsMinCut(s, t, weights, numNodes, algorithm = "GomoryHu")
   expect_identical(out, out2)
 
   # 4) Ensure exported functions work with all valid algorithms.
-  out <- MinCut(s, t, weights, numNodes, algorithm = "HaoOrlin")
-  test_mincut(out)
+  # No alternative algorithms
 
   # 5) Ensure exported functions fail if passed an invalid algorithm.
   expect_error(MinCut(s, t, weights, numNodes, algorithm = "abc"),

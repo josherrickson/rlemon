@@ -1,64 +1,80 @@
-test_that("BFS works", {
+# Title            : Graph Search
+# FIle             : R/graphsearch.R
+# Exported         : GraphSearch
+# Valid Algorithms : "Bfs" (default), "Dfs"
+# Runners          : BfsRunner, DfsRunner
+
+# 1) Ensure runner functions run without error and return the "expected
+# objects".
+test_that("graph search runners", {
   s <- c(1, 1, 2, 2, 2, 3, 4)
   t <- c(2, 4, 3, 4, 5, 5, 5)
   n <- 5
   sn <- 1
   en <- 5
+
+  # default startNode and endNode
+  out <- BfsRunner(s, t, n)
+  expect_true(is.list(out))
+  expect_length(out, 3)
+  expect_length(unique(vapply(out, length, 1)), 1)
+
   out <- BfsRunner(s, t, n, sn, en)
-  expect_equal(out[[1]], c(0, 1, 0, 1, 4))
-  expect_equal(out[[2]], c(0, 1, 0, 1, 2))
-  expect_equal(out[[3]], c(1, 1, 0, 1, 1))
-  out1 <- BfsRunner(s, t, n, sn, -1)
-  expect_equal(out1[[1]], c(0, 1, 2, 1, 4))
-  expect_equal(out1[[2]], c(0, 1, 2, 1, 2))
-  expect_equal(out1[[3]], c(1, 1, 1, 1, 1))
-  out <- GraphSearch(s, t, n, sn, en, "Bfs")
-  expect_equal(out[[1]], c(0, 1, 0, 1, 4))
-  expect_equal(out[[2]], c(0, 1, 0, 1, 2))
-  expect_equal(out[[3]], c(1, 1, 0, 1, 1))
-  out1 <- GraphSearch(s, t, n, sn, -1, "Bfs")
-  expect_equal(out1[[1]], c(0, 1, 2, 1, 4))
-  expect_equal(out1[[2]], c(0, 1, 2, 1, 2))
-  expect_equal(out1[[3]], c(1, 1, 1, 1, 1))
-  expect_error(GraphSearch(s, t, n, sn, en, "abc"), "Invalid")
+  expect_true(is.list(out))
+  expect_length(out, 3)
+  expect_length(unique(vapply(out, length, 1)), 1)
+
+  # default startNode and endNode
+  out <- DfsRunner(s, t, n)
+  expect_true(is.list(out))
+  expect_length(out, 3)
+  expect_length(unique(vapply(out, length, 1)), 1)
+
+  out <- DfsRunner(s, t, n, sn, en)
+  expect_true(is.list(out))
+  expect_length(out, 3)
+  expect_length(unique(vapply(out, length, 1)), 1)
+
 })
 
-test_that("DFS works", {
+test_that("graph search function", {
   s <- c(1, 1, 2, 2, 2, 3, 4)
   t <- c(2, 4, 3, 4, 5, 5, 5)
   n <- 5
   sn <- 1
   en <- 5
-  out <- DfsRunner(s, t, n, sn, en)
-  expect_equal(out[[1]], c(0, 0, 0, 1, 4))
-  expect_equal(out[[2]], c(0, 0, 0, 1, 2))
-  expect_equal(out[[3]], c(1, 0, 0, 1, 1))
-  out1 <- DfsRunner(s, t, n, sn, -1)
-  expect_equal(out1[[1]], c(0, 1, 2, 1, 4))
-  expect_equal(out1[[2]], c(0, 1, 2, 1, 2))
-  expect_equal(out1[[3]], c(1, 1, 1, 1, 1))
-  out <- GraphSearch(s, t, n, sn, en, "Dfs")
-  expect_equal(out[[1]], c(0, 0, 0, 1, 4))
-  expect_equal(out[[2]], c(0, 0, 0, 1, 2))
-  expect_equal(out[[3]], c(1, 0, 0, 1, 1))
-  out1 <- GraphSearch(s, t, n, sn, -1, "Dfs")
-  expect_equal(out1[[1]], c(0, 1, 2, 1, 4))
-  expect_equal(out1[[2]], c(0, 1, 2, 1, 2))
-  expect_equal(out1[[3]], c(1, 1, 1, 1, 1))
-  expect_error(GraphSearch(s, t, n, sn, en, "abc"), "Invalid")
-})
 
-test_that("MaxCardinality works", {
-  s <- c(1, 1, 2, 2, 2, 3, 4)
-  t <- c(2, 4, 3, 4, 5, 5, 5)
-  c <- c(6, 1, 5, 2, 2, 5, 1)
-  n <- 5
-  sn <- 5
-  out <- MaxCardinalitySearchRunner(s, t, c, n, sn)
-  expect_equal(out[[1]], c(6, 7, 5, 1, 0))
-  expect_equal(out[[2]], c(1, 1, 1, 1, 1))
-  out <- MaxCardinalitySearch(s, t, c, n, sn)
-  expect_equal(out[[1]], c(6, 7, 5, 1, 0))
-  expect_equal(out[[2]], c(1, 1, 1, 1, 1))
-  expect_error(MaxCardinalitySearch(s, t, c, n, sn, "abc"), "Invalid")
+  # 2) Ensure exported functions run without error and return the "expected
+  # objects".
+
+  # default startNode and endNode
+  out <- GraphSearch(s, t, n, sn, en)
+  expect_true(is.list(out))
+  expect_length(out, 3)
+  expect_length(unique(vapply(out, length, 1)), 1)
+
+  out <- GraphSearch(s, t, n, sn, en)
+  expect_true(is.list(out))
+  expect_length(out, 3)
+  expect_length(unique(vapply(out, length, 1)), 1)
+
+  # 3) Ensure exported functions with `algorithm=`default runs without error, and
+  # returns the same if passed no argument
+  out2 <- GraphSearch(s, t, n, sn, en, algorithm = "Bfs")
+  expect_identical(out, out2)
+
+  # 4) Ensure exported functions work with all valid algorithms.
+  out <- GraphSearch(s, t, n, sn, en, algorithm = "Dfs")
+  expect_true(is.list(out))
+  expect_length(out, 3)
+  expect_length(unique(vapply(out, length, 1)), 1)
+
+  # 5) Ensure exported functions fail if passed an invalid algorithm.
+  expect_error(GraphSearch(s, t, n, sn, en, algorithm = "abc"),
+               "Invalid")
+  expect_error(GraphSearch(s, t, n, sn, en, algorithm = 1),
+               "must be a string")
+  expect_error(GraphSearch(s, t, n, sn, en, algorithm = NULL),
+               "must be a string")
+
 })
