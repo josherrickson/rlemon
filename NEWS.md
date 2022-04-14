@@ -11,7 +11,7 @@
 
 ## Minor changes
 
-- Various fixed, orgaization, and cleanups of documentation (#34, #30, #27, #28,
+- Various fixed, organization, and cleanups of documentation (#34, #30, #27, #28,
   #31, and other cleanups)
   - Specifically, more precise use of the term "list", and remove usage of
     "boolean"
