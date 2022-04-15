@@ -83,9 +83,10 @@ check_graph_vertices <- function(arcSources,
   invisible(TRUE)
 }
 
-# Internal. Check arc maps for common errors. Doesn't check if the underlying graph is
-# correct - see `check_graph_vertices` for that purpose. Specifically checks
-# if the number of arcs in the graph is the same as the number in the map.
+# Internal. Check arc maps for common errors. Doesn't check if the underlying
+# graph is correct - see `check_graph_vertices` for that purpose. Specifically
+# checks if the number of arcs in the graph is the same as the number in the
+# map.
 check_arc_map <- function(arcSources,
                           arcTargets,
                           mapTest,

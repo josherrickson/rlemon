@@ -31,8 +31,8 @@ and "Dfs" (Depth First Search). Bfs is the default.}
 }
 \value{
 A list containing three entries: 1) the predecessor of each vertex
-  in its shortest path, 2) the distances from each node to the startNode ,
-  3) a vector containing if a node was reached (1) or not (0)
+  in its shortest path, 2) the distances from each node to the startNode, 3)
+  a vector of logicals indicating whether a node was reached.
 }
 \description{
 Runs a common graph search algorithm to find the minimum cardinality

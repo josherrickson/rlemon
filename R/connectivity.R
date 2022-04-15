@@ -10,9 +10,9 @@
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A \code{logical} stating if the graph is bipartite,
-##'   and 2) A vector of length \code{numNodes}, containing the partition for
-##'   each node
+##' @return A list containing 1) A \code{logical} stating if the graph is
+##'   bipartite, and 2) A vector of length \code{numNodes}, containing the
+##'   partition for each node
 ##' @export
 GetBipartitePartitions <- function(arcSources,
                                    arcTargets,
@@ -34,9 +34,9 @@ GetBipartitePartitions <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A \code{logical} stating if the graph is a dag, and 2)
-##'   A vector of length \code{numNodes}, containing the index of vertex i in
-##'   the ordering at location i
+##' @return A list containing 1) A \code{logical} stating if the graph is a dag,
+##'   and 2) A vector of length \code{numNodes}, containing the index of vertex
+##'   i in the ordering at location i
 ##' @export
 GetAndCheckTopologicalSort <- function(arcSources,
                                        arcTargets,
@@ -88,7 +88,7 @@ IsConnected <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsConnectedRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsConnectedRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A cycle is a path starting and ending in the same node and containing at
@@ -110,7 +110,7 @@ IsAcyclic <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsAcyclicRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsAcyclicRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A tree is an undirected graph in which any two nodes are connected by
@@ -132,7 +132,7 @@ IsTree <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsTreeRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsTreeRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A bipartite graph is one whose nodes can be divided into two disjoint and
@@ -155,7 +155,7 @@ IsBipartite <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsBipartiteRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsBipartiteRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A directed graph is strongly connected if any two nodes are connected via
@@ -177,7 +177,7 @@ IsStronglyConnected <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsStronglyConnectedRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsStronglyConnectedRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A graph is a DAG if it is Directed and Acyclic.
@@ -196,7 +196,7 @@ IsDAG <- function(arcSources,
                   arcTargets,
                   numNodes) {
   check_graph_vertices(arcSources, arcTargets, numNodes)
-  IsDAGRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsDAGRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' Checks if an undirected graph is bi-node-connected, that is if there is are no
@@ -218,7 +218,7 @@ IsBiNodeConnected <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsBiNodeConnectedRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsBiNodeConnectedRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' Checks if an undirected graph is bi-edge-connected, that is if there are no
@@ -241,7 +241,7 @@ IsBiEdgeConnected <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsBiEdgeConnectedRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsBiEdgeConnectedRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A loop is an edge that starts and ends at the same node and passes through
@@ -263,7 +263,7 @@ IsLoopFree <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsLoopFreeRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsLoopFreeRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' Parallel edges occur when there are two edges between a single pair of nodes.
@@ -285,7 +285,7 @@ IsParallelFree <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsParallelFreeRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsParallelFreeRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A graph is simple if it is both loop free, and parallel free. See also
@@ -307,7 +307,7 @@ IsSimpleGraph <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsSimpleGraphRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsSimpleGraphRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' A directed graph is Eulerian if and only if it is connected and the number
@@ -331,7 +331,7 @@ IsEulerian <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  IsEulerianRunner(arcSources, arcTargets, numNodes)
+  as.logical(IsEulerianRunner(arcSources, arcTargets, numNodes))
 }
 
 ##' Counts the number of bi-edge-connected components in an undirected graph.

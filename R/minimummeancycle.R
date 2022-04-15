@@ -25,8 +25,10 @@ MinMeanCycle <- function(arcSources,
   check_algorithm(algorithm)
 
   switch(algorithm,
-         "Howard" = HowardMmcRunner(arcSources, arcTargets, arcDistances, numNodes),
-         "Karp" = KarpMmcRunner(arcSources, arcTargets, arcDistances, numNodes),
+         "Howard" = HowardMmcRunner(arcSources, arcTargets,
+                                    arcDistances, numNodes),
+         "Karp" = KarpMmcRunner(arcSources, arcTargets,
+                                arcDistances, numNodes),
          "HartmannOrlin" = HartmannOrlinMmcRunner(arcSources, arcTargets,
                                                   arcDistances, numNodes),
          stop("Invalid algorithm.")

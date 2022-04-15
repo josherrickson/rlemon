@@ -41,11 +41,15 @@ test_that("Planarity Checking", {
 
 ######### Planar Embedding
 
-test_embedding <- function(o) {
+test_embedding <- function(o, isrunner) {
   expect_is(o, "list")
   expect_length(o, 5)
-  expect_true(o[[1]] %in% 0:1)
-  expect_true(all(vapply(o, is.numeric, TRUE)))
+  if (isrunner) {
+    expect_true(all(vapply(o, is.numeric, TRUE)))
+  } else {
+    expect_true(all(vapply(o[2:5], is.numeric, TRUE)))
+    expect_true(is.logical(o[[1]]))
+  }
   expect_equal(length(o[[2]]), length(o[[3]]))
   expect_equal(length(o[[4]]), length(o[[5]]))
 }
@@ -59,12 +63,12 @@ test_that("Planarity Embedding", {
   # 1) Ensure runner functions run without error and return the "expected
   # objects".
   out <- PlanarEmbeddingRunner(s, t, 6)
-  test_embedding(out)
+  test_embedding(out, TRUE)
 
   # 2) Ensure exported functions run without error and return the "expected
   # objects".
   out <- PlanarEmbedding(s, t, 6)
-  test_embedding(out)
+  test_embedding(out, FALSE)
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument
@@ -83,12 +87,12 @@ test_that("Planarity Embedding", {
   # 1) Ensure runner functions run without error and return the "expected
   # objects".
   out <- PlanarEmbeddingRunner(s, t, 6)
-  test_embedding(out)
+  test_embedding(out, TRUE)
 
   # 2) Ensure exported functions run without error and return the "expected
   # objects".
   out <- PlanarEmbedding(s, t, 6)
-  test_embedding(out)
+  test_embedding(out, FALSE)
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument

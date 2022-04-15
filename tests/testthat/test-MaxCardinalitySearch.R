@@ -4,10 +4,16 @@
 # Valid Algorithms : "maxcardinalitysearch" (default)
 # Runners          : MaxCardinalitySearchRunner
 
-test_search <- function(o, n) {
+test_search <- function(o, n, fromRunner) {
   expect_true(is.list(o))
   expect_length(o, 2)
   expect_equal(unique(vapply(o, length, 1)), n)
+  expect_true(is.numeric(o[[1]]))
+  if (fromRunner) {
+    expect_true(is.numeric(o[[2]]))
+  } else {
+    expect_true(is.logical(o[[2]]))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -21,10 +27,10 @@ test_that("max cardinality search runners", {
 
   # Default startNode
   out <- MaxCardinalitySearchRunner(s, t, c, n)
-  test_search(out, n)
+  test_search(out, n, TRUE)
 
   out <- MaxCardinalitySearchRunner(s, t, c, n, sn)
-  test_search(out, n)
+  test_search(out, n, TRUE)
 })
 
 test_that("max cardinality search function", {
@@ -39,11 +45,11 @@ test_that("max cardinality search function", {
 
   # default startNode
   out <- MaxCardinalitySearch(s, t, c, n)
-  test_search(out, n)
+  test_search(out, n, FALSE)
 
   # default startNode
   out <- MaxCardinalitySearch(s, t, c, n, sn)
-  test_search(out, n)
+  test_search(out, n, FALSE)
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument

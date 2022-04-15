@@ -183,52 +183,40 @@ test_that("is___ functions", {
   n <- 4
 
   out <- IsConnected(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsAcyclic(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsTree(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsBipartite(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsStronglyConnected(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsDAG(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsBiNodeConnected(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsBiEdgeConnected(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsLoopFree(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsParallelFree(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsSimpleGraph(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
   out <- IsEulerian(s, t, n)
-  expect_is(out, "integer")
-  expect_true(out %in% 0:1)
+  expect_is(out, "logical")
 
 })
 

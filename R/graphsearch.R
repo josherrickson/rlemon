@@ -15,8 +15,8 @@
 ##' @param algorithm Choices of algorithm include "Bfs" (Breadth First Search)
 ##'   and "Dfs" (Depth First Search). Bfs is the default.
 ##' @return A list containing three entries: 1) the predecessor of each vertex
-##'   in its shortest path, 2) the distances from each node to the startNode ,
-##'   3) a vector containing if a node was reached (1) or not (0)
+##'   in its shortest path, 2) the distances from each node to the startNode, 3)
+##'   a vector of logicals indicating whether a node was reached.
 ##' @export
 GraphSearch <- function(arcSources,
                         arcTargets,
@@ -35,11 +35,15 @@ GraphSearch <- function(arcSources,
     check_node(endNode, numNodes)
   }
 
-  switch(algorithm,
-         "Bfs" = BfsRunner(arcSources, arcTargets, numNodes, startNode, endNode),
-         "Dfs" = DfsRunner(arcSources, arcTargets, numNodes, startNode, endNode),
-         stop("Invalid algorithm.")
-        )
+  out <- switch(algorithm,
+                "Bfs" = BfsRunner(arcSources, arcTargets, numNodes,
+                                  startNode, endNode),
+                "Dfs" = DfsRunner(arcSources, arcTargets, numNodes,
+                                  startNode, endNode),
+                stop("Invalid algorithm."))
+
+  out[[3]] <- as.logical(out[[3]])
+  out
 }
 
 ##' Runs the maximum cardinality search algorithm on a directed graph. The
@@ -63,7 +67,7 @@ GraphSearch <- function(arcSources,
 ##' @param algorithm Choices of algorithm include "maxcardinalitysearch".
 ##'   maxcardinalitysearch is the default.
 ##' @return A list containing two entries: 1) the cardinality of each node , 2)
-##'   a vector containing if a node was reached or not
+##'   a logical vector indicating whether a node was reached or not
 ##' @export
 MaxCardinalitySearch <- function(arcSources,
                                  arcTargets,
@@ -81,12 +85,15 @@ MaxCardinalitySearch <- function(arcSources,
 
   check_arc_map(arcSources, arcTargets, arcCapacities, numNodes)
 
-  switch(algorithm,
-         "maxcardinalitysearch" = MaxCardinalitySearchRunner(arcSources,
-                                                             arcTargets,
-                                                             arcCapacities,
-                                                             numNodes,
-                                                             startNode),
-         stop("Invalid algorithm.")
-         )
+  out <- switch(algorithm,
+                "maxcardinalitysearch" =
+                  MaxCardinalitySearchRunner(arcSources,
+                                             arcTargets,
+                                             arcCapacities,
+                                             numNodes,
+                                             startNode),
+                stop("Invalid algorithm."))
+
+  out[[2]] <- as.logical(out[[2]])
+  out
 }

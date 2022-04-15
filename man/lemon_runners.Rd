@@ -369,8 +369,14 @@ interface with the C++, for example, \code{MaxFlow(..., algorithm =
 
 In almost all cases, users will want to stick with the exported functions.
 
-The only current scenario in which a user might want to use the runners
-would be to bypass rlemon's input checks. In this very particular case, a
-user can access the appropriate runner by the triple-colon notation, e.g. in
-the MaxFlow example, they would use \code{rlemon:::PreFlowRunner(...)}.
+Runners differ from exported functions in two significant way and one
+minor way:
+\enumerate{
+ \item Exported functions provide input checking.
+ \item Exported functions provide slightly cleaner output, such as
+       converting 0/1 boolean into \code{logical}.
+ \item The \code{arcWeights} argument is optional to \code{MaxMatching()},
+       automatically generating a constant weight if it is excluded.
+       \code{arcWeights} is not optional in \code{MaxMatchingRunner()}.
+}
 }
