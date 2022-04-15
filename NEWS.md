@@ -3,6 +3,7 @@
 ## Major changes
 
 - `MinCostFlow()` now returns feasibility status (#25)
+- Functions which returned 0/1 booleans now return logical instead. (#36)
 - `algorithm=` argument has received fixes and cleanups
   - Ensure all `algorithm=` arguments have a default (#29)
   - Intelligent error if `algorithm=` argument isn't string (#32)
