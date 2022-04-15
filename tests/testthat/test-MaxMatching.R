@@ -49,8 +49,8 @@ test_that("MaxMatching function", {
   # objects".
 
   # This currently errors, see #35
-  # out <- MaxMatching(s, t, numNodes = 6)
-  # test_matching(out)
+  out <- MaxMatching(s, t, numNodes = 6)
+  test_matching(out)
 
   out <- MaxMatching(s, t, d, 6)
   test_matching(out)
@@ -63,17 +63,23 @@ test_that("MaxMatching function", {
   # 4) Ensure exported functions work with all valid algorithms.
 
   # Tests below erroring, see #35
-  #out <- MaxMatching(s, t, numNodes = 6, algorithm = "MaxWeightedPerfectMatching")
-  #test_matching(out)
-  out <- MaxMatching(s, t, d, 6, algorithm = "MaxWeightedPerfectMatching")
+  out <- MaxMatching(s, t, numNodes = 6,
+                     algorithm = "MaxWeightedPerfectMatching")
   test_matching(out)
-  #out <- MaxMatching(s, t, numNodes = 6, algorithm = "MaxWeightedFractionalMatching")
-  #test_matching(out)
-  out <- MaxMatching(s, t, d, 6, algorithm = "MaxWeightedFractionalMatching")
+  out <- MaxMatching(s, t, d, 6,
+                     algorithm = "MaxWeightedPerfectMatching")
   test_matching(out)
-  #out <- MaxMatching(s, t, numNodes = 6, algorithm = "MaxWeightedPerfectFractionalMatching")
-  #test_matching(out)
-  out <- MaxMatching(s, t, d, 6, algorithm = "MaxWeightedPerfectFractionalMatching")
+  out <- MaxMatching(s, t, numNodes = 6,
+                     algorithm = "MaxWeightedFractionalMatching")
+  test_matching(out)
+  out <- MaxMatching(s, t, d, 6,
+                     algorithm = "MaxWeightedFractionalMatching")
+  test_matching(out)
+  out <- MaxMatching(s, t, numNodes = 6,
+                     algorithm = "MaxWeightedPerfectFractionalMatching")
+  test_matching(out)
+  out <- MaxMatching(s, t, d, 6,
+                     algorithm = "MaxWeightedPerfectFractionalMatching")
   test_matching(out)
 
 

@@ -19,7 +19,8 @@ edges}
 \item{arcTargets}{Vector corresponding to the destination nodes of a graph's
 edges}
 
-\item{arcWeights}{Vector corresponding to the weights of a graph's edges}
+\item{arcWeights}{Vector corresponding to the weights of a graph's edges.
+Default is \code{NULL} for unweight matching.}
 
 \item{numNodes}{The number of nodes in the graph}
 

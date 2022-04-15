@@ -9,7 +9,8 @@
 ##'   edges
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
-##' @param arcWeights Vector corresponding to the weights of a graph's edges
+##' @param arcWeights Vector corresponding to the weights of a graph's edges.
+##'   Default is \code{NULL} for unweight matching.
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "MaxWeightedMatching",
 ##'   "MaxWeightedPerfectMatching", "MaxWeightedFractionalMatching", and
@@ -26,25 +27,32 @@ MaxMatching <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_algorithm(algorithm)
-  if (!is.null(arcWeights)) {
-    check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
+  if (is.null(arcWeights)) {
+    arcWeights <- rep(1, length(arcSources))
   }
+  check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
 
   switch(algorithm,
-         "MaxWeightedMatching" = MaximumWeightMatchingRunner(arcSources,
-                                                             arcTargets,
-                                                             arcWeights,
-                                                             numNodes),
-         "MaxWeightedPerfectMatching" = MaximumWeightPerfectMatchingRunner(arcSources,
-                                                                           arcTargets,
-                                                                           arcWeights,
-                                                                           numNodes),
+         "MaxWeightedMatching" =
+           MaximumWeightMatchingRunner(arcSources,
+                                       arcTargets,
+                                       arcWeights,
+                                       numNodes),
+         "MaxWeightedPerfectMatching" =
+           MaximumWeightPerfectMatchingRunner(arcSources,
+                                              arcTargets,
+                                              arcWeights,
+                                              numNodes),
          "MaxWeightedFractionalMatching" =
-           MaximumWeightFractionalMatchingRunner(arcSources, arcTargets,
-                                                 arcWeights, numNodes),
+           MaximumWeightFractionalMatchingRunner(arcSources,
+                                                 arcTargets,
+                                                 arcWeights,
+                                                 numNodes),
          "MaxWeightedPerfectFractionalMatching" =
-           MaximumWeightFractionalPerfectMatchingRunner(arcSources, arcTargets,
-                                                        arcWeights, numNodes),
+           MaximumWeightFractionalPerfectMatchingRunner(arcSources,
+                                                        arcTargets,
+                                                        arcWeights,
+                                                        numNodes),
          stop("Invalid algorithm."))
 }
 
@@ -72,10 +80,13 @@ MaxCardinalityMatching <- function(arcSources,
   check_algorithm(algorithm)
 
   switch(algorithm,
-         "MaxMatching" = MaximumCardinalityMatchingRunner(arcSources,
-                                                          arcTargets, numNodes),
+         "MaxMatching" =
+           MaximumCardinalityMatchingRunner(arcSources,
+                                            arcTargets,
+                                            numNodes),
          "MaxFractionalMatching" =
-           MaximumCardinalityFractionalMatchingRunner(arcSources, arcTargets,
+           MaximumCardinalityFractionalMatchingRunner(arcSources,
+                                                      arcTargets,
                                                       numNodes),
          stop("Invalid algorithm."))
 }

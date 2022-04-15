@@ -8,6 +8,8 @@
   - Intelligent error if `algorithm=` argument isn't string (#32)
   - `MaxFlow()` and `NetworkCirulation()` properly error on invalid `algorithm`
     argument.
+- `MaxMatching()` crashed if given `NULL` weights; fix such that `NULL` weights
+  now yields unweighted Max Matching. (#35)
 
 ## Minor changes
 
