@@ -1,243 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://errickson.net/rlemon/404.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://errickson.net/rlemon/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://errickson.net/rlemon/index.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://errickson.net/rlemon/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/AllPairsMinCut.html</loc>
+    <loc>https://errickson.net/rlemon/reference/AllPairsMinCut.html</loc>
   </url>
   <url>
-    <loc>/reference/Approximation-Algorithms.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountBiEdgeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/Connectivity-Algorithms-1.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountBiNodeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/Connectivity-Algorithms-2.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/Connectivity-Algorithms-3.html</loc>
+    <loc>https://errickson.net/rlemon/reference/CountStronglyConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/CountBiEdgeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiEdgeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/CountBiNodeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiEdgeConnectedCutEdges.html</loc>
   </url>
   <url>
-    <loc>/reference/CountConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiNodeConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/CountStronglyConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindBiNodeConnectedCutNodes.html</loc>
   </url>
   <url>
-    <loc>/reference/FindBiEdgeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/FindBiEdgeConnectedCutEdges.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindStronglyConnectedComponents.html</loc>
   </url>
   <url>
-    <loc>/reference/FindBiNodeConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/FindStronglyConnectedCutArcs.html</loc>
   </url>
   <url>
-    <loc>/reference/FindBiNodeConnectedCutNodes.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GetAndCheckTopologicalSort.html</loc>
   </url>
   <url>
-    <loc>/reference/FindConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GetBipartitePartitions.html</loc>
   </url>
   <url>
-    <loc>/reference/FindStronglyConnectedComponents.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GetTopologicalSort.html</loc>
   </url>
   <url>
-    <loc>/reference/FindStronglyConnectedCutArcs.html</loc>
+    <loc>https://errickson.net/rlemon/reference/GraphSearch.html</loc>
   </url>
   <url>
-    <loc>/reference/GetAndCheckTopologicalSort.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsAcyclic.html</loc>
   </url>
   <url>
-    <loc>/reference/GetBipartitePartitions.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsBiEdgeConnected.html</loc>
   </url>
   <url>
-    <loc>/reference/GetTopologicalSort.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsBiNodeConnected.html</loc>
   </url>
   <url>
-    <loc>/reference/Graph-Converter.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsBipartite.html</loc>
   </url>
   <url>
-    <loc>/reference/Graph-Search-Algorithms-1.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsConnected.html</loc>
   </url>
   <url>
-    <loc>/reference/Graph-Search-Algorithms-2.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsDAG.html</loc>
   </url>
   <url>
-    <loc>/reference/GraphSearch.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsEulerian.html</loc>
   </url>
   <url>
-    <loc>/reference/Input-Information.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsLoopFree.html</loc>
   </url>
   <url>
-    <loc>/reference/IsAcyclic.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsParallelFree.html</loc>
   </url>
   <url>
-    <loc>/reference/IsBiEdgeConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsSimpleGraph.html</loc>
   </url>
   <url>
-    <loc>/reference/IsBiNodeConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsStronglyConnected.html</loc>
   </url>
   <url>
-    <loc>/reference/IsBipartite.html</loc>
+    <loc>https://errickson.net/rlemon/reference/IsTree.html</loc>
   </url>
   <url>
-    <loc>/reference/IsConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxCardinalityMatching.html</loc>
   </url>
   <url>
-    <loc>/reference/IsDAG.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxCardinalitySearch.html</loc>
   </url>
   <url>
-    <loc>/reference/IsEulerian.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxClique.html</loc>
   </url>
   <url>
-    <loc>/reference/IsLoopFree.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxFlow.html</loc>
   </url>
   <url>
-    <loc>/reference/IsParallelFree.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MaxMatching.html</loc>
   </url>
   <url>
-    <loc>/reference/IsSimpleGraph.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinCostArborescence.html</loc>
   </url>
   <url>
-    <loc>/reference/IsStronglyConnected.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinCostFlow.html</loc>
   </url>
   <url>
-    <loc>/reference/IsTree.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinCut.html</loc>
   </url>
   <url>
-    <loc>/reference/MaxCardinalityMatching.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinMeanCycle.html</loc>
   </url>
   <url>
-    <loc>/reference/MaxCardinalitySearch.html</loc>
+    <loc>https://errickson.net/rlemon/reference/MinSpanningTree.html</loc>
   </url>
   <url>
-    <loc>/reference/MaxClique.html</loc>
+    <loc>https://errickson.net/rlemon/reference/NetworkCirculation.html</loc>
   </url>
   <url>
-    <loc>/reference/MaxFlow.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarChecking.html</loc>
   </url>
   <url>
-    <loc>/reference/MaxMatching.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarColoring.html</loc>
   </url>
   <url>
-    <loc>/reference/Maximum-Flow-Algorithms-1.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarDrawing.html</loc>
   </url>
   <url>
-    <loc>/reference/Maximum-Flow-Algorithms-2.html</loc>
+    <loc>https://errickson.net/rlemon/reference/PlanarEmbedding.html</loc>
   </url>
   <url>
-    <loc>/reference/Maximum-Matching-Algorithms.html</loc>
+    <loc>https://errickson.net/rlemon/reference/ShortestPath.html</loc>
   </url>
   <url>
-    <loc>/reference/Maximum-Mean-Cycle-Algorithms.html</loc>
+    <loc>https://errickson.net/rlemon/reference/ShortestPathFromSource.html</loc>
   </url>
   <url>
-    <loc>/reference/MinCostArborescence.html</loc>
+    <loc>https://errickson.net/rlemon/reference/TravelingSalesperson.html</loc>
   </url>
   <url>
-    <loc>/reference/MinCostFlow.html</loc>
+    <loc>https://errickson.net/rlemon/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/MinCut.html</loc>
+    <loc>https://errickson.net/rlemon/reference/lemon_runners.html</loc>
   </url>
   <url>
-    <loc>/reference/MinMeanCycle.html</loc>
-  </url>
-  <url>
-    <loc>/reference/MinSpanningTree.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Minimum-Cost-Arborescence-Algorithms.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Minimum-Cost-Flow-Algorithms.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Minimum-Cut-Algorithms-1.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Minimum-Cut-Algorithms-2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Minimum-Spanning-Tree-Algorithms.html</loc>
-  </url>
-  <url>
-    <loc>/reference/NetworkCirculation.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Planar-Embedding-Algorithms-2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Planar-Embedding-Algorithms.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PlanarChecking.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PlanarColoring.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PlanarDrawing.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PlanarEmbedding.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Shortest-Path-Algorithms-1.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Shortest-Path-Algorithms-2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ShortestPath.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ShortestPathFromSource.html</loc>
-  </url>
-  <url>
-    <loc>/reference/TSP-Algorithms.html</loc>
-  </url>
-  <url>
-    <loc>/reference/TravelingSalesperson.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_arc_map.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_graph.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_graph_arcs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_graph_vertices.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_node.html</loc>
-  </url>
-  <url>
-    <loc>/reference/check_node_map.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/small_graph_example.html</loc>
+    <loc>https://errickson.net/rlemon/reference/small_graph_example.html</loc>
   </url>
 </urlset>
