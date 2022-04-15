@@ -1,7 +1,6 @@
 ## Test environments
-* local OS X install, R 4.1.2
+* local OS X install, R 4.1.3
 * win-builder (old, devel and release)
-* rhub
 
 ## R CMD check results
 There were no ERRORs or WARNINGs.
@@ -10,10 +9,6 @@ There was 2 NOTEs:
 
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Josh Errickson <jerrick@umich.edu>’
-
-New submission
-
-This is in fact a new submission
 
 * checking installed package size ... NOTE
   installed size is 29.3Mb
