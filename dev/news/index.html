@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">rlemon</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.0.9000</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.2.0.9001</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,27 +45,33 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="0.2.0.9000" id="rlemon-0209000">rlemon 0.2.0.9000<a class="anchor" aria-label="anchor" href="#rlemon-0209000"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.2.0.9001" id="rlemon-0209001">rlemon 0.2.0.9001<a class="anchor" aria-label="anchor" href="#rlemon-0209001"></a></h2>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.2.0" id="rlemon-020">rlemon 0.2.0<a class="anchor" aria-label="anchor" href="#rlemon-020"></a></h2>
 <div class="section level3">
-<h3 id="major-changes-0-2-0-9000">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-0-2-0-9000"></a></h3>
+<h3 id="major-changes-0-2-0">Major changes<a class="anchor" aria-label="anchor" href="#major-changes-0-2-0"></a></h3>
 <ul><li>
 <code><a href="../reference/MinCostFlow.html">MinCostFlow()</a></code> now returns feasibility status (<a href="https://github.com/josherrickson/rlemon/issues/25" class="external-link">#25</a>)</li>
 <li>Functions which returned 0/1 booleans now return logical instead. (<a href="https://github.com/josherrickson/rlemon/issues/36" class="external-link">#36</a>)</li>
 <li>
-<code>algorithm=</code> argument has received fixes and cleanups
+<code>algorithm=</code> argument to various functions has received fixes and cleanups
 <ul><li>Ensure all <code>algorithm=</code> arguments have a default (<a href="https://github.com/josherrickson/rlemon/issues/29" class="external-link">#29</a>)</li>
-<li>Intelligent error if <code>algorithm=</code> argument isn’t string (<a href="https://github.com/josherrickson/rlemon/issues/32" class="external-link">#32</a>)</li>
+<li>Informative error if <code>algorithm=</code> argument isn’t string (<a href="https://github.com/josherrickson/rlemon/issues/32" class="external-link">#32</a>)</li>
 <li>
-<code><a href="../reference/MaxFlow.html">MaxFlow()</a></code> and <code>NetworkCirulation()</code> properly error on invalid <code>algorithm</code> argument.</li>
+<code><a href="../reference/MaxFlow.html">MaxFlow()</a></code> and <code><a href="../reference/NetworkCirculation.html">NetworkCirculation()</a></code> properly error on invalid <code>algorithm</code> argument.</li>
 </ul></li>
 <li>
 <code><a href="../reference/MaxMatching.html">MaxMatching()</a></code> crashed if given <code>NULL</code> weights; fix such that <code>NULL</code> weights now yields unweighted Max Matching. (<a href="https://github.com/josherrickson/rlemon/issues/35" class="external-link">#35</a>)</li>
+<li>Exported functions now interface with the LEMON library through runners. These runners aren’t exported, but may be useful for users who want access to LEMON with no pre- or post-processing. See <code><a href="../reference/lemon_runners.html">help(lemon_runners)</a></code> for details. (<a href="https://github.com/josherrickson/rlemon/issues/30" class="external-link">#30</a>)</li>
 </ul></div>
 <div class="section level3">
-<h3 id="minor-changes-0-2-0-9000">Minor changes<a class="anchor" aria-label="anchor" href="#minor-changes-0-2-0-9000"></a></h3>
-<ul><li>Various fixed, organization, and cleanups of documentation (<a href="https://github.com/josherrickson/rlemon/issues/34" class="external-link">#34</a>, <a href="https://github.com/josherrickson/rlemon/issues/30" class="external-link">#30</a>, <a href="https://github.com/josherrickson/rlemon/issues/27" class="external-link">#27</a>, <a href="https://github.com/josherrickson/rlemon/issues/28" class="external-link">#28</a>, <a href="https://github.com/josherrickson/rlemon/issues/31" class="external-link">#31</a>, and other cleanups)
-<ul><li>Specifically, more precise use of the term “list”, and remove usage of “boolean”</li>
+<h3 id="minor-changes-0-2-0">Minor changes<a class="anchor" aria-label="anchor" href="#minor-changes-0-2-0"></a></h3>
+<ul><li>Various corrections and cleanups of documentation (<a href="https://github.com/josherrickson/rlemon/issues/34" class="external-link">#34</a>, <a href="https://github.com/josherrickson/rlemon/issues/27" class="external-link">#27</a>, <a href="https://github.com/josherrickson/rlemon/issues/28" class="external-link">#28</a>, etc)
+<ul><li>More precise use of the term “list”, and remove usage of “boolean”</li>
+<li>Fixed some links to LEMON documentation.</li>
 </ul></li>
+<li>Testing has been standardized to hopefully get ahead of problems in the future. (<a href="https://github.com/josherrickson/rlemon/issues/31" class="external-link">#31</a>)</li>
 </ul></div>
 </div>
     <div class="section level2">
