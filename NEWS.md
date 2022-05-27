@@ -1,5 +1,10 @@
 # rlemon 0.2.0.9001
 
+## Interface changes
+
+- Any function which returns a `list` now returns a named `list`. The order of
+  elements in that list have not changed so no existing code should be affected.
+
 # rlemon 0.2.0
 
 ## Major changes
