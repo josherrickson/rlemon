@@ -4,10 +4,13 @@
 # Valid Algorithms : "NagamochiIbaraki" (default), "HaoOrlin"
 # Runners          : NagamochiIbarakiRunner, HaoOrlinRunner
 
-test_mincut <- function(o) {
+test_mincut <- function(o, named = TRUE) {
   expect_true(is.list(o))
   expect_length(o, 3)
   expect_true(all(vapply(o[1:3], is.numeric, TRUE)))
+  if (named) {
+    expect_named(o, c("mincut", "first_partition", "second_partition"))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -20,10 +23,10 @@ test_that("min cut runners", {
   numNodes <- 6
 
   out <- NagamochiIbarakiRunner(s, t, weights, numNodes)
-  test_mincut(out)
+  test_mincut(out, named = FALSE)
 
   out <- HaoOrlinRunner(s, t, weights, numNodes)
-  test_mincut(out)
+  test_mincut(out, named = FALSE)
 
 })
 

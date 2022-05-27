@@ -4,10 +4,13 @@
 # Valid Algorithms : "GomoryHu" (default)
 # Runners          : GomoryHuTreeRunner
 
-test_allpairsmincut <- function(o) {
+test_allpairsmincut <- function(o, named = TRUE) {
   expect_true(is.list(o))
   expect_length(o, 3)
   expect_true(all(vapply(o[1:3], is.numeric, TRUE)))
+  if (named) {
+    c("predecessors", "weights", "distances")
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -20,7 +23,7 @@ test_that("min cut runners", {
   numNodes <- 6
 
   out <- GomoryHuTreeRunner(s, t, weights, numNodes)
-  test_allpairsmincut(out)
+  test_allpairsmincut(out, named = FALSE)
 
 })
 

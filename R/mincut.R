@@ -13,13 +13,13 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "NagamochiIbaraki" and
 ##'   "HaoOrlin". "NagamochiIbaraki" is the default.
-##' @return A list containing three entries: 1) The value of the minimum cut in
-##'   the graph, and 2) A vector of nodes in the first partition, and 3) A
-##'   vector of nodes in the second partition. GomoryHu calculates a Gomory-Hu
-##'   Tree and returns a list containing three entries: 1) A vector of
-##'   predecessor nodes of each node in the graph, and 2) A vector of weights of
-##'   the predecessor edge of each node, and 3) A vector of distances from the
-##'   root node to each node.
+##' @return A named list containing three entries: 1) "mincut": the value of the
+##'   minimum cut in the graph, 2) "first_partition": a vector of nodes in the
+##'   first partition, and 3) "second_partition": a vector of nodes in the
+##'   second partition. GomoryHu calculates a Gomory-Hu Tree and returns a list
+##'   containing three entries: 1) A vector of predecessor nodes of each node in
+##'   the graph, and 2) A vector of weights of the predecessor edge of each
+##'   node, and 3) A vector of distances from the root node to each node.
 ##' @export
 MinCut <- function(arcSources,
                    arcTargets,
@@ -33,13 +33,14 @@ MinCut <- function(arcSources,
 
   ## add a undirected/directed boolean?
 
-  switch(algorithm,
-         "NagamochiIbaraki" = NagamochiIbarakiRunner(arcSources, arcTargets,
-                                                     arcWeights, numNodes),
-         "HaoOrlin" = HaoOrlinRunner(arcSources, arcTargets, arcWeights,
-                                     numNodes),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "NagamochiIbaraki" = NagamochiIbarakiRunner,
+                  "HaoOrlin" = HaoOrlinRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcWeights, numNodes)
+  names(result) <- c("mincut", "first_partition", "second_partition")
+  return(result)
 }
 
 
@@ -56,10 +57,10 @@ MinCut <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "GomoryHu". "GomoryHu" is the
 ##'   default.
-##' @return A list containing three entries: 1) A vector of predecessor nodes of
-##'   each node in the graph, and 2) A vector of weights of the predecessor edge
-##'   of each node, and 3) A vector of distances from the root node to each
-##'   node.
+##' @return A namedlist containing three entries: 1) "predecessors": a vector of
+##'   predecessor nodes of each node in the graph, and 2) "weights": a vector of
+##'   weights of the predecessor edge of each node, and 3) "distances": vector
+##'   of distances from the root node to each node.
 ##' @export
 AllPairsMinCut <- function(arcSources,
                            arcTargets,
@@ -71,9 +72,11 @@ AllPairsMinCut <- function(arcSources,
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "GomoryHu" = GomoryHuTreeRunner(arcSources, arcTargets, arcWeights,
-                                         numNodes),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "GomoryHu" = GomoryHuTreeRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcWeights, numNodes)
+  names(result) <- c("predecessors", "weights", "distances")
+  return(result)
 }

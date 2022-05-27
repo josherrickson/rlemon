@@ -27,10 +27,10 @@ edges}
 default.}
 }
 \value{
-A list containing three entries: 1) A vector of predecessor nodes of
-  each node in the graph, and 2) A vector of weights of the predecessor edge
-  of each node, and 3) A vector of distances from the root node to each
-  node.
+A namedlist containing three entries: 1) "predecessors": a vector of
+  predecessor nodes of each node in the graph, and 2) "weights": a vector of
+  weights of the predecessor edge of each node, and 3) "distances": vector
+  of distances from the root node to each node.
 }
 \description{
 Finds the all-pairs minimum cut tree, using the Gomory-Hu algorithm.

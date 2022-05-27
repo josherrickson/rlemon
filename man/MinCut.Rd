@@ -27,13 +27,13 @@ edges}
 "HaoOrlin". "NagamochiIbaraki" is the default.}
 }
 \value{
-A list containing three entries: 1) The value of the minimum cut in
-  the graph, and 2) A vector of nodes in the first partition, and 3) A
-  vector of nodes in the second partition. GomoryHu calculates a Gomory-Hu
-  Tree and returns a list containing three entries: 1) A vector of
-  predecessor nodes of each node in the graph, and 2) A vector of weights of
-  the predecessor edge of each node, and 3) A vector of distances from the
-  root node to each node.
+A named list containing three entries: 1) "mincut": the value of the
+  minimum cut in the graph, 2) "first_partition": a vector of nodes in the
+  first partition, and 3) "second_partition": a vector of nodes in the
+  second partition. GomoryHu calculates a Gomory-Hu Tree and returns a list
+  containing three entries: 1) A vector of predecessor nodes of each node in
+  the graph, and 2) A vector of weights of the predecessor edge of each
+  node, and 3) A vector of distances from the root node to each node.
 }
 \description{
 Finds the minimum cut on graphs. NagamochiIbaraki calculates the min cut
