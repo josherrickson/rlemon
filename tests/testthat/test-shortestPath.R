@@ -4,13 +4,16 @@
 # Valid Algorithms : "Suurballe" (default),
 # Runners          : SuurballeRunner
 
-test_shortestpath <- function(o) {
+test_shortestpath <- function(o, named = TRUE) {
   expect_true(is.list(o))
   expect_length(o, 2)
   expect_length(o[[1]], 1)
   expect_true(is.list(o[[2]]))
   expect_true(all(vapply(o[[2]], is.numeric, TRUE)))
   expect_length(o[[2]], o[[1]])
+  if (named) {
+    expect_named(o, c("num_paths", "list_paths"))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -25,7 +28,7 @@ test_that("shortest path runners", {
   en <- 5
 
   out <- SuurballeRunner(s, t, d, n, sn, en)
-  test_shortestpath(out)
+  test_shortestpath(out, named = FALSE)
 
 })
 

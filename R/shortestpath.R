@@ -14,8 +14,9 @@
 ##' @param sourceNode The source node
 ##' @param algorithm Choices of algorithm include "Dijkstra" and "BellmanFord".
 ##'   "Dijkstra" is the default.
-##' @return A list containing two entries: 1) the distances from each node to
-##'   the startNode and 2) the predecessor of each vertex in its shortest path.
+##' @return A named list containing two entries: 1) "distances": the distances
+##'   from each node to the startNode and 2) "predecessors": the predecessor of
+##'   each vertex in its shortest path.
 ##' @export
 ShortestPathFromSource <- function(arcSources,
                                    arcTargets,
@@ -29,16 +30,17 @@ ShortestPathFromSource <- function(arcSources,
   check_node(sourceNode, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "Dijkstra" = DijkstraRunner(arcSources, arcTargets, arcDistances, numNodes,
-                                     sourceNode),
-         "BellmanFord" = BellmanFordRunner(arcSources, arcTargets, arcDistances,
-                                           numNodes, sourceNode),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "Dijkstra" = DijkstraRunner,
+                  "BellmanFord" = BellmanFordRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcDistances, numNodes, sourceNode)
+  names(result) <- c("distances", "predecessors")
+  return(result)
 }
 
-##' Finds the shortest arc disjoint paths between two nodes in a directed graph.
+##' FINDS the shortest arc disjoint paths between two nodes in a directed graph.
 ##' This implementation runs a variation of the successive shortest path algorithm.
 ##'
 ##' For details on LEMON's implementation, including differences between the
@@ -54,9 +56,10 @@ ShortestPathFromSource <- function(arcSources,
 ##' @param destNode The end node of the path
 ##' @param algorithm Choices of algorithm include "Suurballe". "Suurballe" is
 ##'   the default.
-##' @return A list containing two entries: 1) the number of paths from the start
-##'   node to the end node and 2) a list of paths found. If there are multiple
-##'   paths, then the second entry will have multiple paths.
+##' @return A named list containing two entries: 1) "num_paths": the number of
+##'   paths from the start node to the end node and 2) "list_paths": a list of
+##'   paths found. If there are multiple paths, then the second entry will have
+##'   multiple paths.
 ##' @export
 ShortestPath <- function(arcSources,
                          arcTargets,
@@ -72,9 +75,12 @@ ShortestPath <- function(arcSources,
   check_node(destNode, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "Suurballe" = SuurballeRunner(arcSources, arcTargets, arcDistances,
-                                       numNodes, sourceNode, destNode),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "Suurballe" = SuurballeRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcDistances,
+                                       numNodes, sourceNode, destNode)
+  names(result) <- c("num_paths", "list_paths")
+  return(result)
 }

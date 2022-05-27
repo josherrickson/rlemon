@@ -4,10 +4,13 @@
 # Valid Algorithms : "Dijkstra" (default), "BellmanFord"
 # Runners          : DijkstraRunner, BellmanFordRunner
 
-test_shortestpath <- function(o) {
+test_shortestpath <- function(o, named = TRUE) {
   expect_true(is.list(o))
   expect_length(o, 2)
   expect_true(all(vapply(o, is.numeric, TRUE)))
+  if (named) {
+    expect_named(o, c("distances", "predecessors"))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -21,10 +24,10 @@ test_that("shortest path from source runners", {
   sn <- 1
 
   out <- DijkstraRunner(s, t, d, n, sn)
-  test_shortestpath(out)
+  test_shortestpath(out, named = FALSE)
 
   out <- BellmanFordRunner(s, t, d, n, sn)
-  test_shortestpath(out)
+  test_shortestpath(out, named = FALSE)
 
 })
 

@@ -30,8 +30,9 @@ edges}
 "Dijkstra" is the default.}
 }
 \value{
-A list containing two entries: 1) the distances from each node to
-  the startNode and 2) the predecessor of each vertex in its shortest path.
+A named list containing two entries: 1) "distances": the distances
+  from each node to the startNode and 2) "predecessors": the predecessor of
+  each vertex in its shortest path.
 }
 \description{
 Finds the shortest path from a source node to the rest of the nodes in a
