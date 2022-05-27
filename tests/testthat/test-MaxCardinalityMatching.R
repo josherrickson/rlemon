@@ -9,12 +9,15 @@
 #                    MaximumWeightFractionalMatchingRunner,
 #                    MaximumWeightFractionalPerfectMatchingRunner
 
-test_matching <- function(o) {
+test_matching <- function(o, named = TRUE) {
   expect_true(is.list(o))
   expect_true(is.numeric(o[[1]]))
   expect_length(o[[1]], 1)
   expect_true(is.list(o[[2]]))
   expect_true(all(vapply(o[[2]], length, 1) == 2))
+  if (named) {
+    expect_named(o, c("value", "edges"))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -24,9 +27,9 @@ test_that("Matching runners",  {
   t <- c(4, 5, 6, 4, 5, 6, 4, 5, 6)
 
   out <- MaximumCardinalityMatchingRunner(s, t, 6)
-  test_matching(out)
+  test_matching(out, named = FALSE)
   out <- MaximumCardinalityFractionalMatchingRunner(s, t, 6)
-  test_matching(out)
+  test_matching(out, named = FALSE)
 
 })
 

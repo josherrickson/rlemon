@@ -16,8 +16,8 @@
 ##'   "MaxWeightedPerfectMatching", "MaxWeightedFractionalMatching", and
 ##'   "MaxWeightedPerfectFractionalMatching". "MaxWeightedMatching" is the
 ##'   default.
-##' @return A list containing two entries: 1) The matching value, 2) The edges
-##'   of the final graph, in a list of (node, node) pairs
+##' @return A named list containing two entries: 1) "value": the matching value,
+##'   2) "edges": the edges of the final graph, in a list of (node, node) pairs
 ##' @export
 MaxMatching <- function(arcSources,
                         arcTargets,
@@ -32,28 +32,20 @@ MaxMatching <- function(arcSources,
   }
   check_arc_map(arcSources, arcTargets, arcWeights, numNodes)
 
-  switch(algorithm,
-         "MaxWeightedMatching" =
-           MaximumWeightMatchingRunner(arcSources,
-                                       arcTargets,
-                                       arcWeights,
-                                       numNodes),
-         "MaxWeightedPerfectMatching" =
-           MaximumWeightPerfectMatchingRunner(arcSources,
-                                              arcTargets,
-                                              arcWeights,
-                                              numNodes),
-         "MaxWeightedFractionalMatching" =
-           MaximumWeightFractionalMatchingRunner(arcSources,
-                                                 arcTargets,
-                                                 arcWeights,
-                                                 numNodes),
-         "MaxWeightedPerfectFractionalMatching" =
-           MaximumWeightFractionalPerfectMatchingRunner(arcSources,
-                                                        arcTargets,
-                                                        arcWeights,
-                                                        numNodes),
-         stop("Invalid algorithm."))
+  algfn <- switch(algorithm,
+                  "MaxWeightedMatching" =
+                    MaximumWeightMatchingRunner,
+                  "MaxWeightedPerfectMatching" =
+                    MaximumWeightPerfectMatchingRunner,
+                  "MaxWeightedFractionalMatching" =
+                    MaximumWeightFractionalMatchingRunner,
+                  "MaxWeightedPerfectFractionalMatching" =
+                    MaximumWeightFractionalPerfectMatchingRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcWeights, numNodes)
+  names(result) <- c("value", "edges")
+  return(result)
 }
 
 ##' Finds the maximum cardinality matching in graphs and bipartite graphs.
@@ -68,8 +60,8 @@ MaxMatching <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "MaxMatching" and
 ##'   "MaxFractionalMatching". "MaxMatching" is the default.
-##' @return A list containing two entries: 1) The matching value, 2) The edges
-##'   of the final graph, in a List of (node, node) pairs
+##' @return A named list containing two entries: 1) "value": the matching value,
+##'   2) "edges": the edges of the final graph, in a List of (node, node) pairs
 ##' @export
 MaxCardinalityMatching <- function(arcSources,
                                    arcTargets,
@@ -79,14 +71,14 @@ MaxCardinalityMatching <- function(arcSources,
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "MaxMatching" =
-           MaximumCardinalityMatchingRunner(arcSources,
-                                            arcTargets,
-                                            numNodes),
-         "MaxFractionalMatching" =
-           MaximumCardinalityFractionalMatchingRunner(arcSources,
-                                                      arcTargets,
-                                                      numNodes),
-         stop("Invalid algorithm."))
+  algfn <- switch(algorithm,
+                  "MaxMatching" = MaximumCardinalityMatchingRunner,
+                  "MaxFractionalMatching" =
+                    MaximumCardinalityFractionalMatchingRunner,
+                  stop("Invalid algorithm.")
+                  )
+
+  result <- algfn(arcSources, arcTargets, numNodes)
+  names(result) <- c("value", "edges")
+  return(result)
 }
