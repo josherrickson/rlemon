@@ -16,8 +16,8 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A vector of cut edge sources, and 2) A vector
-  of cut edge destinations.
+A named list containing 1) "sources": a vector of cut edge sources,
+  and 2) "destinations": a vector of cut edge destinations.
 }
 \description{
 The bi-edge-connected components are the classes of an equivalence relation

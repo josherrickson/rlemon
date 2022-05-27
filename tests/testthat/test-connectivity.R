@@ -155,6 +155,7 @@ test_that("GetBipartitePartitions function", {
   expect_length(out[[1]], 1)
   expect_true(is.logical(out[[1]]))
   expect_true(all(out[[2]] %in% 0:1))
+  expect_named(out, c("is_bipartite", "partitions"))
 
 })
 
@@ -169,6 +170,7 @@ test_that("topologicalSort functions", {
   expect_true(is.logical(out[[1]]))
   expect_length(out[[2]] , n)
   expect_true(is.numeric(out[[2]]))
+  expect_named(out, c("is_DAG", "indices"))
 
   out <- GetTopologicalSort(s, t, n)
   expect_length(out, n)
@@ -256,6 +258,7 @@ test_that("find functions", {
   expect_length(out, 2)
   expect_true(is.numeric(out[[1]]))
   expect_true(is.numeric(out[[2]]))
+  expect_named(out, c("sources", "destinations"))
 
   out <- FindConnectedComponents(s, t, n)
   expect_true(is.numeric(out))
@@ -271,6 +274,7 @@ test_that("find functions", {
   expect_length(out, 2)
   expect_true(is.numeric(out[[1]]))
   expect_true(is.numeric(out[[2]]))
+  expect_named(out, c("sources", "destinations"))
 
   out <- FindBiNodeConnectedComponents(s, t, n)
   expect_true(is.numeric(out))

@@ -16,8 +16,8 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A vector of cut arc sources, and 2) A vector of
-  cut arc destinations.
+A named list containing 1) "sources": a vector of cut arc sources,
+  and 2) "destinations": a vector of cut arc destinations.
 }
 \description{
 The strongly connected components are the classes of an equivalence relation

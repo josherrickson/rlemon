@@ -10,9 +10,9 @@
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A \code{logical} stating if the graph is
-##'   bipartite, and 2) A vector of length \code{numNodes}, containing the
-##'   partition for each node
+##' @return A named list containing 1) "is_bipartite": a \code{logical} stating
+##'   if the graph is bipartite, and 2) "partitions": A vector of length
+##'   \code{numNodes}, containing the partition for each node
 ##' @export
 GetBipartitePartitions <- function(arcSources,
                                    arcTargets,
@@ -20,10 +20,13 @@ GetBipartitePartitions <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  getBipartitePartitionsRunner(arcSources, arcTargets, numNodes)
+  result <- getBipartitePartitionsRunner(arcSources, arcTargets, numNodes)
+  names(result) <- c("is_bipartite", "partitions")
+  return(result)
 }
 
-##' Checks if a directed graph is a DAG and returns the topological order.
+##' Checks if a directed graph is a Direct Acyclic Graph (DAG) and returns the
+##' topological order.
 ##'
 ##' See
 ##' \url{https://lemon.cs.elte.hu/pub/doc/1.3.1/a00616.html#gaf10c5e1630e5720c20d83cfb77dbf024}
@@ -34,9 +37,9 @@ GetBipartitePartitions <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A \code{logical} stating if the graph is a dag,
-##'   and 2) A vector of length \code{numNodes}, containing the index of vertex
-##'   i in the ordering at location i
+##' @return A named list containing 1) "is_DAG": a \code{logical} stating if the
+##'   graph is a DAG, and 2) "indices": a vector of length \code{numNodes},
+##'   containing the index of vertex i in the ordering at location i
 ##' @export
 GetAndCheckTopologicalSort <- function(arcSources,
                                        arcTargets,
@@ -44,7 +47,9 @@ GetAndCheckTopologicalSort <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  getAndCheckTopologicalSortRunner(arcSources, arcTargets, numNodes)
+  result <- getAndCheckTopologicalSortRunner(arcSources, arcTargets, numNodes)
+  names(result) <- c("is_DAG", "indices")
+  return(result)
 }
 
 ##' Gives back the topological order of a DAG.
@@ -460,8 +465,8 @@ FindStronglyConnectedComponents <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A vector of cut arc sources, and 2) A vector of
-##'   cut arc destinations.
+##' @return A named list containing 1) "sources": a vector of cut arc sources,
+##'   and 2) "destinations": a vector of cut arc destinations.
 ##' @export
 FindStronglyConnectedCutArcs <- function(arcSources,
                                          arcTargets,
@@ -469,7 +474,9 @@ FindStronglyConnectedCutArcs <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  FindStronglyConnectedCutArcsRunner(arcSources, arcTargets, numNodes)
+  result <- FindStronglyConnectedCutArcsRunner(arcSources, arcTargets, numNodes)
+  names(result) <- c("sources", "destinations")
+  return(result)
 }
 
 ##' The bi-edge-connected components are the classes of an equivalence relation
@@ -486,8 +493,8 @@ FindStronglyConnectedCutArcs <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A vector of cut edge sources, and 2) A vector
-##'   of cut edge destinations.
+##' @return A named list containing 1) "sources": a vector of cut edge sources,
+##'   and 2) "destinations": a vector of cut edge destinations.
 ##' @export
 FindBiEdgeConnectedCutEdges <- function(arcSources,
                                         arcTargets,
@@ -495,7 +502,9 @@ FindBiEdgeConnectedCutEdges <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  FindBiEdgeConnectedCutEdgesRunner(arcSources, arcTargets, numNodes)
+  result <- FindBiEdgeConnectedCutEdgesRunner(arcSources, arcTargets, numNodes)
+  names(result) <- c("sources", "destinations")
+  return(result)
 }
 
 ##' The bi-node-connected components are the classes of an equivalence relation
