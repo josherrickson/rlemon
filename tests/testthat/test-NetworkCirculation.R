@@ -36,6 +36,7 @@ test_that("circulation function", {
   expect_true(is.list(out))
   expect_length(out, 2)
   expect_true(all(vapply(out, is.numeric, TRUE)))
+  expect_named(out, c("flows", "barriers"))
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument

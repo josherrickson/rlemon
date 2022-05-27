@@ -36,8 +36,9 @@ graph.}
 the default.}
 }
 \value{
-A list containing two entries: 1) A vector corresponding to the flows
-  of arcs in the graph, and 2) A vector of the graph's barrier nodes.
+A named list containing two entries: 1) "flows": a vector
+  corresponding to the flows of arcs in the graph, and 2) "barriers": a
+  vector of the graph's barrier nodes.
 }
 \description{
 Finds the solution to the network circulation problem via the push-relabel

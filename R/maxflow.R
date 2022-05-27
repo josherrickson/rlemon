@@ -15,9 +15,10 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "Preflow" and "EdmondsKarp".
 ##'   "Preflow" is the default.
-##' @return A list containing three entries: 1) A vector corresponding to the
-##'   flows of arcs in the graph, 2) A vector of cut-values of the graph's nodes,
-##'   and 3) the total cost of the flows in the graph, i.e. the maxflow value.
+##' @return A named list containing three entries: 1) "flows": a vector
+##'   corresponding to the flows of arcs in the graph, 2) "cut_values": a vector
+##'   of cut-values of the graph's nodes, and 3) "cost": the total cost of the
+##'   flows in the graph, i.e. the maxflow value.
 ##' @export
 MaxFlow <- function(arcSources,
                     arcTargets,
@@ -33,14 +34,15 @@ MaxFlow <- function(arcSources,
   check_node(destNode, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "Preflow" = PreflowRunner(arcSources, arcTargets, arcCapacities, sourceNode,
-                                   destNode, numNodes),
-         "EdmondsKarp" = EdmondsKarpRunner(arcSources, arcTargets,
-                                           arcCapacities, sourceNode, destNode,
-                                           numNodes),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "Preflow" = PreflowRunner,
+                  "EdmondsKarp" = EdmondsKarpRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcCapacities,
+                  sourceNode, destNode, numNodes)
+  names(result) <- c("flows", "cut_values", "cost")
+  return(result)
 }
 
 ##' Finds the solution to the network circulation problem via the push-relabel
@@ -63,8 +65,9 @@ MaxFlow <- function(arcSources,
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithminclude "Circulation". "Circulation" is
 ##'   the default.
-##' @return A list containing two entries: 1) A vector corresponding to the flows
-##'   of arcs in the graph, and 2) A vector of the graph's barrier nodes.
+##' @return A named list containing two entries: 1) "flows": a vector
+##'   corresponding to the flows of arcs in the graph, and 2) "barriers": a
+##'   vector of the graph's barrier nodes.
 ##' @export
 NetworkCirculation <- function(arcSources,
                                arcTargets,
@@ -80,10 +83,12 @@ NetworkCirculation <- function(arcSources,
   check_node_map(nodeSupplies, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "Circulation" = CirculationRunner(arcSources, arcTargets,
-                                           arcLowerBound, arcUpperBound,
-                                           nodeSupplies, numNodes),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "Circulation" = CirculationRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcLowerBound,
+                  arcUpperBound, nodeSupplies, numNodes)
+  names(result) <- c("flows", "barriers")
+  return(result)
 }

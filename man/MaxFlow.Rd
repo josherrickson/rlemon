@@ -34,9 +34,10 @@ graph's edges}
 "Preflow" is the default.}
 }
 \value{
-A list containing three entries: 1) A vector corresponding to the
-  flows of arcs in the graph, 2) A vector of cut-values of the graph's nodes,
-  and 3) the total cost of the flows in the graph, i.e. the maxflow value.
+A named list containing three entries: 1) "flows": a vector
+  corresponding to the flows of arcs in the graph, 2) "cut_values": a vector
+  of cut-values of the graph's nodes, and 3) "cost": the total cost of the
+  flows in the graph, i.e. the maxflow value.
 }
 \description{
 Finds the maximum flow of a directed graph, given a source and destination
