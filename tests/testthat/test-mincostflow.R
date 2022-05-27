@@ -6,7 +6,7 @@
 # Runners          : NetworkSimplexRunner, CostScalingRunner,
 #                    CapacityScalingRunner, CycleCancellingRunner
 
-test_mincostflow <- function(o, s, n) {
+test_mincostflow <- function(o, s, n, names = TRUE) {
   expect_true(is.list(o))
   expect_length(o, 4)
   expect_true(all(vapply(o[1:3], is.numeric, TRUE)))
@@ -15,6 +15,9 @@ test_mincostflow <- function(o, s, n) {
   expect_length(o[[3]], 1)
   expect_true(o[[3]] > 0)
   expect_true(o[[4]] %in% c("INFEASIBLE", "OPTIMAL", "UNBOUNDED"))
+  if (names) {
+    expect_named(o, c("flows", "potentials", "cost", "feasibility"))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -29,16 +32,16 @@ test_that("min cost flow runners", {
   numNodes <- 34
 
   out <- NetworkSimplexRunner(s, t, cap, costs, n, numNodes)
-  test_mincostflow(out, s, numNodes)
+  test_mincostflow(out, s, numNodes, names = FALSE)
 
   out <- CostScalingRunner(s, t, cap, costs, n, numNodes)
-  test_mincostflow(out, s, numNodes)
+  test_mincostflow(out, s, numNodes, names = FALSE)
 
   out <- CapacityScalingRunner(s, t, cap, costs, n, numNodes)
-  test_mincostflow(out, s, numNodes)
+  test_mincostflow(out, s, numNodes, names = FALSE)
 
   out <- CycleCancellingRunner(s, t, cap, costs, n, numNodes)
-  test_mincostflow(out, s, numNodes)
+  test_mincostflow(out, s, numNodes, names = FALSE)
 
 })
 

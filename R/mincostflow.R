@@ -16,11 +16,12 @@
 ##' @param algorithm Choices of algorithm include "NetworkSimplex",
 ##'   "CostScaling", "CapacityScaling", and "CycleCancelling". NetworkSimplex is
 ##'   the default.
-##' @return A list containing three entries: 1) A vector corresponding to the
-##'   flows of arcs in the graph, 2) A vector of potentials of the graph's
-##'   nodes, 3) the total cost of the flows in the graph, i.e. the mincostflow
-##'   value, and 4) LEMON's feasibility type, demonstrating how feasible the
-##'   graph problem is, one of "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
+##' @return A named list containing four entries: 1) "flows": A vector
+##'   corresponding to the flows of arcs in the graph, 2) "potentials": A vector
+##'   of potentials of the graph's nodes, 3) "cost": the total cost of the flows
+##'   in the graph, i.e. the mincostflow value, and 4) "feasibility": LEMON's
+##'   feasibility type, demonstrating how feasible the graph problem is, one of
+##'   "INFEASIBLE", "OPTIMAL", and "UNBOUNDED"
 ##' @export
 MinCostFlow <- function(arcSources,
                         arcTargets,
@@ -41,19 +42,15 @@ MinCostFlow <- function(arcSources,
   check_node_map(nodeSupplies, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "NetworkSimplex" = NetworkSimplexRunner(arcSources, arcTargets,
-                                                 arcCapacities, arcCosts,
-                                                 nodeSupplies, numNodes),
-         "CostScaling" = CostScalingRunner(arcSources, arcTargets,
-                                           arcCapacities, arcCosts,
-                                           nodeSupplies, numNodes),
-         "CapacityScaling" = CapacityScalingRunner(arcSources, arcTargets,
-                                                   arcCapacities, arcCosts,
-                                                   nodeSupplies, numNodes),
-         "CycleCancelling" = CycleCancellingRunner(arcSources, arcTargets,
-                                                   arcCapacities, arcCosts,
-                                                   nodeSupplies, numNodes),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "NetworkSimplex" = NetworkSimplexRunner,
+                  "CostScaling" = CostScalingRunner,
+                  "CapacityScaling" = CapacityScalingRunner,
+                  "CycleCancelling" = CycleCancellingRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcCapacities,
+                  arcCosts, nodeSupplies, numNodes)
+  names(result) <- c("flows", "potentials", "cost", "feasibility")
+  return(result)
 }
