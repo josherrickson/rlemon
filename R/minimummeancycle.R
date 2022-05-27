@@ -11,8 +11,9 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "Howard", "Karp", and
 ##'   "HartmannOrlin". "Howard" is the default.
-##' @return A list containing two entries: 1) A vector containing the costs of
-##'   each edge in the MMC, and 2) the nodes in the MMC.
+##' @return A named list containing two entries: 1) "cost": a vector containing
+##'   the costs of each edge in the Minimum Mean Cyckle, and 2) "nodes": the
+##'   nodes in the Minimum Mean Cycle.
 ##' @export
 MinMeanCycle <- function(arcSources,
                          arcTargets,
@@ -24,13 +25,13 @@ MinMeanCycle <- function(arcSources,
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "Howard" = HowardMmcRunner(arcSources, arcTargets,
-                                    arcDistances, numNodes),
-         "Karp" = KarpMmcRunner(arcSources, arcTargets,
-                                arcDistances, numNodes),
-         "HartmannOrlin" = HartmannOrlinMmcRunner(arcSources, arcTargets,
-                                                  arcDistances, numNodes),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "Howard" = HowardMmcRunner,
+                  "Karp" = KarpMmcRunner,
+                  "HartmannOrlin" = HartmannOrlinMmcRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcDistances, numNodes)
+  names(result) <- c("costs", "nodes")
+  return(result)
 }

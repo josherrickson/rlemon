@@ -27,8 +27,9 @@ edges}
 "HartmannOrlin". "Howard" is the default.}
 }
 \value{
-A list containing two entries: 1) A vector containing the costs of
-  each edge in the MMC, and 2) the nodes in the MMC.
+A named list containing two entries: 1) "cost": a vector containing
+  the costs of each edge in the Minimum Mean Cyckle, and 2) "nodes": the
+  nodes in the Minimum Mean Cycle.
 }
 \description{
 Finds the Minimum Mean Cycle in directed graphs.

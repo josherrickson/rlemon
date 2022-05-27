@@ -4,10 +4,13 @@
 # Valid Algorithms : "Howard" (default), "Karp", "HartmannOrlin
 # Runners          : HowardMmcRunner, KarpMmcRunner, HartmannOrlinMmcRunner
 
-test_minmeancycle <- function(o) {
+test_minmeancycle <- function(o, named = TRUE) {
   expect_true(is.list(o))
   expect_length(o, 2)
   expect_true(all(vapply(o, is.numeric, TRUE)))
+  if (named) {
+    expect_named(o, c("costs", "nodes"))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -19,13 +22,13 @@ test_that("min mean cycle runners", {
   d <- c(1, 10, 3, 2, 0, 8)
 
   out <- HowardMmcRunner(s, t, d, 4)
-  test_minmeancycle(out)
+  test_minmeancycle(out, named = FALSE)
 
   out <- KarpMmcRunner(s, t, d, 4)
-  test_minmeancycle(out)
+  test_minmeancycle(out, named = FALSE)
 
   out <- HartmannOrlinMmcRunner(s, t, d, 4)
-  test_minmeancycle(out)
+  test_minmeancycle(out, named = FALSE)
 
 })
 
