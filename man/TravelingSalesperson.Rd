@@ -41,8 +41,8 @@ edges}
 "Insertion", "NearestNeighbor", and "Opt2". "Christofides" is the default.}
 }
 \value{
-a List with 1) the vector of visited nodes in order, and 2) the
-  total tour cost
+A named list with 1) "node_order": the vector of visited nodes in
+  order, and 2) "cost": the total tour cost.
 }
 \description{
 Finds approximations for the travelling salesperson problem using

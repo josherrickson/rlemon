@@ -15,8 +15,8 @@
 ##'   (default value 999999)
 ##' @param algorithm Choices of algorithm include "Christofides", "Greedy",
 ##'   "Insertion", "NearestNeighbor", and "Opt2". "Christofides" is the default.
-##' @return a List with 1) the vector of visited nodes in order, and 2) the
-##'   total tour cost
+##' @return A named list with 1) "node_order": the vector of visited nodes in
+##'   order, and 2) "cost": the total tour cost.
 ##' @rdname TravelingSalesperson
 ##' @export
 TravelingSalesperson <- function(arcSources,
@@ -30,21 +30,18 @@ TravelingSalesperson <- function(arcSources,
   check_arc_map(arcSources, arcTargets, arcDistances, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "Christofides" = ChristofidesRunner(arcSources, arcTargets,
-                                             arcDistances, numNodes,
-                                             defaultEdgeWeight = 999999),
-         "Greedy" = GreedyTSPRunner(arcSources, arcTargets, arcDistances,
-                                    numNodes, defaultEdgeWeight = 999999),
-         "Insertion" = InsertionTSPRunner(arcSources, arcTargets, arcDistances,
-                                          numNodes, defaultEdgeWeight = 999999),
-         "NearestNeighbor" = NearestNeighborTSPRunner(arcSources, arcTargets,
-                                                      arcDistances, numNodes,
-                                                      defaultEdgeWeight = 999999),
-         "Opt2" = Opt2TSPRunner(arcSources, arcTargets, arcDistances, numNodes,
-                                defaultEdgeWeight = 999999),
-         stop("Invalid algorithm.")
-         )
+  algfn <- switch(algorithm,
+                  "Christofides" = ChristofidesRunner,
+                  "Greedy" = GreedyTSPRunner,
+                  "Insertion" = InsertionTSPRunner,
+                  "NearestNeighbor" = NearestNeighborTSPRunner,
+                  "Opt2" = Opt2TSPRunner,
+                  stop("Invalid algorithm.")
+                  )
+  result <- algfn(arcSources, arcTargets, arcDistances,
+                  numNodes, defaultEdgeWeight = 999999)
+  names(result) <- c("node_order", "cost")
+  return(result)
 }
 
 ##' @rdname TravelingSalesperson

@@ -6,7 +6,7 @@
 # Runners          : ChristofidesRunner, GreedyTSPRunner, InsertionTSPRunner,
 #                    NearestNeighborTSPRunner, Opt2TSPRunner
 
-test_tsp <- function(o, addEdges, weight) {
+test_tsp <- function(o, addEdges, weight, named = TRUE) {
   expect_true(is.list(o))
   expect_length(o, 2)
   expect_true(all(o[[1]] %in% seq_along(o[[1]])))
@@ -19,6 +19,10 @@ test_tsp <- function(o, addEdges, weight) {
   # higher than weights
   if (addEdges == TRUE) {
     expect_true(o[[2]] > weight)
+  }
+
+  if (named) {
+    expect_named(o, c("node_order", "cost"))
   }
 }
 
@@ -33,35 +37,35 @@ test_that("traveling salesperson runners", {
 
   # default defaultEdgeWeight
   out <- ChristofidesRunner(s, t, d, 4)
-  test_tsp(out, FALSE, 999999)
+  test_tsp(out, FALSE, 999999, named = FALSE)
 
   out <- GreedyTSPRunner(s, t, d, 4)
-  test_tsp(out, FALSE, 999999)
+  test_tsp(out, FALSE, 999999, named = FALSE)
 
   out <- InsertionTSPRunner(s, t, d, 4)
-  test_tsp(out, FALSE, 999999)
+  test_tsp(out, FALSE, 999999, named = FALSE)
 
   out <- NearestNeighborTSPRunner(s, t, d, 4)
-  test_tsp(out, FALSE, 999999)
+  test_tsp(out, FALSE, 999999, named = FALSE)
 
   out <- Opt2TSPRunner(s, t, d, 4)
-  test_tsp(out, FALSE, 999999)
+  test_tsp(out, FALSE, 999999, named = FALSE)
 
   # Set defaultEdgeWeight
   out <- ChristofidesRunner(s, t, d, 4, 123456)
-  test_tsp(out, FALSE, 123456)
+  test_tsp(out, FALSE, 123456, named = FALSE)
 
   out <- GreedyTSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, FALSE, 123456)
+  test_tsp(out, FALSE, 123456, named = FALSE)
 
   out <- InsertionTSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, FALSE, 123456)
+  test_tsp(out, FALSE, 123456, named = FALSE)
 
   out <- NearestNeighborTSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, FALSE, 123456)
+  test_tsp(out, FALSE, 123456, named = FALSE)
 
   out <- Opt2TSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, FALSE, 123456)
+  test_tsp(out, FALSE, 123456, named = FALSE)
 
   # New edges needed
   s <- c(1, 1, 2)
@@ -71,35 +75,35 @@ test_that("traveling salesperson runners", {
 
   # default defaultEdgeWeight
   out <- ChristofidesRunner(s, t, d, 4)
-  test_tsp(out, TRUE, 999999)
+  test_tsp(out, TRUE, 999999, named = FALSE)
 
   out <- GreedyTSPRunner(s, t, d, 4)
-  test_tsp(out, TRUE, 999999)
+  test_tsp(out, TRUE, 999999, named = FALSE)
 
   out <- InsertionTSPRunner(s, t, d, 4)
-  test_tsp(out, TRUE, 999999)
+  test_tsp(out, TRUE, 999999, named = FALSE)
 
   out <- NearestNeighborTSPRunner(s, t, d, 4)
-  test_tsp(out, TRUE, 999999)
+  test_tsp(out, TRUE, 999999, named = FALSE)
 
   out <- Opt2TSPRunner(s, t, d, 4)
-  test_tsp(out, TRUE, 999999)
+  test_tsp(out, TRUE, 999999, named = FALSE)
 
   # Set defaultEdgeWeight
   out <- ChristofidesRunner(s, t, d, 4, 123456)
-  test_tsp(out, TRUE, 123456)
+  test_tsp(out, TRUE, 123456, named = FALSE)
 
   out <- GreedyTSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, TRUE, 123456)
+  test_tsp(out, TRUE, 123456, named = FALSE)
 
   out <- InsertionTSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, TRUE, 123456)
+  test_tsp(out, TRUE, 123456, named = FALSE)
 
   out <- NearestNeighborTSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, TRUE, 123456)
+  test_tsp(out, TRUE, 123456, named = FALSE)
 
   out <- Opt2TSPRunner(s, t, d, 4, 123456)
-  test_tsp(out, TRUE, 123456)
+  test_tsp(out, TRUE, 123456, named = FALSE)
 
 })
 
