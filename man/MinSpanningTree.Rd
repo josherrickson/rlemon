@@ -28,15 +28,14 @@ graph's edges}
 default.}
 }
 \value{
-A list containing three entries: 1) A vector corresponding the
-  source nodes of the edges in the tree, 2) a vector corresponding the
-  target nodes of the edges in the tree, and 3) the total minimum spanning
-  tree value.
+A named list containing three entries: 1) "sources": a vector
+  corresponding the source nodes of the edges in the tree, 2) "targets": a
+  vector corresponding the target nodes of the edges in the tree, and 3)
+  "value": the total minimum spanning tree value.
 }
 \description{
-Finds the minimum spanning tree of a graph.
-The minimum spanning tree is the minimal connected acyclic subgraph of a graph,
-assuming the graph is undirected.
+The minimum spanning tree is the minimal connected acyclic subgraph of a
+graph, assuming the graph is undirected.
 }
 \details{
 For details on LEMON's implementation, including differences between the

@@ -31,10 +31,10 @@ graph's edges}
 "MinCostArborescence" is the default.}
 }
 \value{
-A list containing three entries: 1) A vector corresponding the
-  source nodes of the edges in the tree, 2) a vector corresponding the
-  target nodes of the edges in the tree, and 3) the total cost of the
-  arborescence.
+A named list containing three entries: 1) "sources": a vector
+  corresponding the source nodes of the edges in the tree, 2) "targets": a
+  vector corresponding the target nodes of the edges in the tree, and 3)
+  "cost": the total cost of the arborescence.
 }
 \description{
 Finds the minimum cost arborescence of a graph, returning both the cost and

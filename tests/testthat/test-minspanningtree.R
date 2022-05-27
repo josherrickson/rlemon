@@ -31,6 +31,7 @@ test_that("min spanning tree functions", {
   expect_length(out, 3)
   expect_equal(length(out[[1]]), length(out[[2]]))
   expect_length(out[[3]], 1)
+  expect_named(out, c("sources", "targets", "value"))
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument
@@ -47,15 +48,4 @@ test_that("min spanning tree functions", {
                "must be a string")
   expect_error(MinSpanningTree(s, t, d, 4, algorithm = NULL),
                "must be a string")
-})
-
-test_that("mincostarborescence works", {
-  s <- c(1, 2, 3, 4, 5, 6)
-  t <- c(2, 3, 4, 5, 6, 1)
-  d <- c(1, 10, 3, 2, 0, 8)
-  out <- MinCostArborescence(s, t, d, 1, 6)
-  expect_equal(out[[1]], c(1, 2, 3, 4, 5))
-  expect_equal(out[[2]], c(2, 3, 4, 5, 6))
-  expect_equal(out[[3]], 16)
-  expect_error(MinCostArborescence(s, t, d, 1, 6, "abc"), "Invalid")
 })
