@@ -13,6 +13,7 @@ test_search <- function(o, n, fromRunner) {
     expect_true(is.numeric(o[[2]]))
   } else {
     expect_true(is.logical(o[[2]]))
+    expect_named(o, c("cardinalities", "node_reached"))
   }
 }
 

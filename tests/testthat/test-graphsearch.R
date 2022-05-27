@@ -55,6 +55,7 @@ test_that("graph search function", {
   expect_true(is.numeric(out[[1]]))
   expect_true(is.numeric(out[[2]]))
   expect_true(is.logical(out[[3]]))
+  expect_named(out, c("predecessors", "distances", "node_reached"))
 
   out <- GraphSearch(s, t, n, sn, en)
   expect_true(is.list(out))
@@ -63,6 +64,7 @@ test_that("graph search function", {
   expect_true(is.numeric(out[[1]]))
   expect_true(is.numeric(out[[2]]))
   expect_true(is.logical(out[[3]]))
+  expect_named(out, c("predecessors", "distances", "node_reached"))
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument
@@ -77,6 +79,7 @@ test_that("graph search function", {
   expect_true(is.numeric(out[[1]]))
   expect_true(is.numeric(out[[2]]))
   expect_true(is.logical(out[[3]]))
+  expect_named(out, c("predecessors", "distances", "node_reached"))
 
   # 5) Ensure exported functions fail if passed an invalid algorithm.
   expect_error(GraphSearch(s, t, n, sn, en, algorithm = "abc"),

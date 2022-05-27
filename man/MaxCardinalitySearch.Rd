@@ -31,8 +31,9 @@ edges}
 maxcardinalitysearch is the default.}
 }
 \value{
-A list containing two entries: 1) the cardinality of each node , 2)
-  a logical vector indicating whether a node was reached or not
+A named list containing two entries: 1) "cardinalities": the
+  cardinality of each node , 2) "node_reached": a logical vector indicating
+  whether a node was reached or not
 }
 \description{
 Runs the maximum cardinality search algorithm on a directed graph. The
