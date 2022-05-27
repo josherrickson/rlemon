@@ -49,6 +49,9 @@ test_embedding <- function(o, isrunner) {
   } else {
     expect_true(all(vapply(o[2:5], is.numeric, TRUE)))
     expect_true(is.logical(o[[1]]))
+    expect_named(o, c("is_planar", "start_nodes_embedding",
+                      "end_nodes_embedding", "start_nodes_kuratowski",
+                      "end_nodes_kuratowski"))
   }
   expect_equal(length(o[[2]]), length(o[[3]]))
   expect_equal(length(o[[4]]), length(o[[5]]))
@@ -108,7 +111,7 @@ test_that("Planarity Embedding", {
 
 ######### Planar Coloring
 
-test_coloring <- function(o, n, ncolor) {
+test_coloring <- function(o, n, ncolor, named = TRUE) {
   expect_is(o, "list")
   expect_length(o, 2)
   expect_is(o[[1]], "logical")
@@ -116,6 +119,9 @@ test_coloring <- function(o, n, ncolor) {
   expect_true(is.numeric(o[[2]]))
   expect_length(o[[2]], n)
   expect_true(all(o[[2]] < ncolor))
+  if (named) {
+    expect_named(o, c("is_planar", "colors"))
+  }
 }
 
 # 1) Ensure runner functions run without error and return the "expected
@@ -125,9 +131,9 @@ test_that("Planar Coloring runner", {
   t <- c(4, 5, 6, 4, 5, 6, 1)
 
   out <- PlanarColoringRunner(s, t, 6, TRUE) # TRUE is 5-coloring
-  test_coloring(out, 6, 5)
+  test_coloring(out, 6, 5, named = FALSE)
   out <- PlanarColoringRunner(s, t, 6, FALSE) # FALSE is 6-coloring
-  test_coloring(out, 6, 6)
+  test_coloring(out, 6, 6, named = FALSE)
 })
 
 test_that("Planar Coloring functions", {
@@ -161,13 +167,16 @@ test_that("Planar Coloring functions", {
 
 ######### Planar Drawing
 
-test_drawing <- function(o) {
+test_drawing <- function(o, named = TRUE) {
   expect_is(o, "list")
   expect_length(o, 3)
   expect_is(o[[1]], "logical")
   expect_length(o[[1]], 1)
   expect_true(all(vapply(o[2:3], is.numeric, TRUE)))
   expect_equal(length(o[[2]]), length(o[[3]]))
+  if (named) {
+    expect_named(o, c("is_planar", "x_coords", "y_coords"))
+  }
 }
 
 test_that("Planarity Drawing", {
@@ -179,7 +188,7 @@ test_that("Planarity Drawing", {
   # 1) Ensure runner functions run without error and return the "expected
   # objects".
   out <- PlanarDrawingRunner(s, t, 6)
-  test_drawing(out)
+  test_drawing(out, named = FALSE)
 
   # 2) Ensure exported functions run without error and return the "expected
   # objects".

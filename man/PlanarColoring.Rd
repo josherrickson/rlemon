@@ -16,11 +16,12 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 
 \item{algorithm, }{the algorithm to use. "sixColoring" generates a 6-coloring
-of the graph, while "fiveColoring" generates a 5-coloring.}
+of the graph, while "fiveColoring" generates a 5-coloring. Default is
+"fiveColoring".}
 }
 \value{
-A list containing 1) A \code{logical} if the graph is planar, 2) the
-  color of each vertex of the graph
+A named list containing 1) "is_planar": a \code{logical} if the
+  graph is planar, 2) "colors": the color of each vertex of the graph
 }
 \description{
 Checks if a graph is planar and returns the coloring of the graph

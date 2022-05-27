@@ -32,10 +32,12 @@ PlanarChecking <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list containing 1) A logical indicating if the graph is planar, 2)
-##'   the start nodes of the arcs of the embedding, 3) the end nodes of the arcs
-##'   of the planar embedding, 4) the start nodes of the edges of the kuratowski
-##'   subdivision, 5) the end nodes of the edges of the kuratowski subdivision.
+##' @return A named list containing 1) "is_planar": a logical indicating if the
+##'   graph is planar, 2) "start_nodes_embedding": the start nodes of the arcs
+##'   of the embedding, 3) "end_nodes_embedding": the end nodes of the arcs of
+##'   the planar embedding, 4) "start_nodes_kuratowski": the start nodes of the
+##'   edges of the kuratowski subdivision, 5) "end_nodes_kuratowski": the end
+##'   nodes of the edges of the kuratowski subdivision.
 ##' @export
 PlanarEmbedding <- function(arcSources,
                             arcTargets,
@@ -43,9 +45,12 @@ PlanarEmbedding <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  out <- PlanarEmbeddingRunner(arcSources, arcTargets, numNodes)
-  out[[1]] <- as.logical(out[[1]])
-  out
+  result <- PlanarEmbeddingRunner(arcSources, arcTargets, numNodes)
+  result[[1]] <- as.logical(result[[1]])
+  names(result) <- c("is_planar", "start_nodes_embedding",
+                     "end_nodes_embedding", "start_nodes_kuratowski",
+                     "end_nodes_kuratowski")
+  return(result)
 }
 
 ##' Checks if a graph is planar and returns the coloring of the graph
@@ -60,9 +65,10 @@ PlanarEmbedding <- function(arcSources,
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm, the algorithm to use. "sixColoring" generates a 6-coloring
-##'   of the graph, while "fiveColoring" generates a 5-coloring.
-##' @return A list containing 1) A \code{logical} if the graph is planar, 2) the
-##'   color of each vertex of the graph
+##'   of the graph, while "fiveColoring" generates a 5-coloring. Default is
+##'   "fiveColoring".
+##' @return A named list containing 1) "is_planar": a \code{logical} if the
+##'   graph is planar, 2) "colors": the color of each vertex of the graph
 ##' @export
 PlanarColoring <- function(arcSources,
                            arcTargets,
@@ -71,14 +77,14 @@ PlanarColoring <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_algorithm(algorithm)
+  if (!algorithm %in% c("fiveColoring", "sixColoring")) {
+    stop("Invalid algorithm.")
+  }
 
-  switch(algorithm,
-         "fiveColoring" = PlanarColoringRunner(arcSources, arcTargets, numNodes,
-                                               useFiveAlg = TRUE),
-         "sixColoring" = PlanarColoringRunner(arcSources, arcTargets, numNodes,
-                                              useFiveAlg = FALSE),
-         stop("Invalid algorithm.")
-         )
+  result <- PlanarColoringRunner(arcSources, arcTargets, numNodes,
+                                 useFiveAlg = algorithm == "fiveColoring")
+  names(result) <- c("is_planar", "colors")
+  return(result)
 }
 
 ##' The planar drawing algorithm calculates positions for the nodes in the
@@ -94,9 +100,9 @@ PlanarColoring <- function(arcSources,
 ##' @param arcTargets Vector corresponding to the destination nodes of a graph's
 ##'   edges
 ##' @param numNodes The number of nodes in the graph
-##' @return A list of 1) a \code{logical} of if the graph is planar, 2) the
-##'   x-coordinate of the planar embedding, 3) the y-coordinate of the planar
-##'   embedding
+##' @return A named list of 1) "is_planar": a \code{logical} of if the graph is
+##'   planar, 2) "x_coords": the x-coordinate of the planar embedding, 3)
+##'   "y_coords": the y-coordinate of the planar embedding
 ##' @export
 PlanarDrawing <- function(arcSources,
                           arcTargets,
@@ -104,5 +110,7 @@ PlanarDrawing <- function(arcSources,
 
   check_graph_vertices(arcSources, arcTargets, numNodes)
 
-  PlanarDrawingRunner(arcSources, arcTargets, numNodes)
+  result <- PlanarDrawingRunner(arcSources, arcTargets, numNodes)
+  names(result) <- c("is_planar", "x_coords", "y_coords")
+  return(result)
 }

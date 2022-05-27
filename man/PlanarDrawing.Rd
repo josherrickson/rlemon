@@ -16,9 +16,9 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list of 1) a \code{logical} of if the graph is planar, 2) the
-  x-coordinate of the planar embedding, 3) the y-coordinate of the planar
-  embedding
+A named list of 1) "is_planar": a \code{logical} of if the graph is
+  planar, 2) "x_coords": the x-coordinate of the planar embedding, 3)
+  "y_coords": the y-coordinate of the planar embedding
 }
 \description{
 The planar drawing algorithm calculates positions for the nodes in the

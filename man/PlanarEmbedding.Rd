@@ -16,10 +16,12 @@ edges}
 \item{numNodes}{The number of nodes in the graph}
 }
 \value{
-A list containing 1) A logical indicating if the graph is planar, 2)
-  the start nodes of the arcs of the embedding, 3) the end nodes of the arcs
-  of the planar embedding, 4) the start nodes of the edges of the kuratowski
-  subdivision, 5) the end nodes of the edges of the kuratowski subdivision.
+A named list containing 1) "is_planar": a logical indicating if the
+  graph is planar, 2) "start_nodes_embedding": the start nodes of the arcs
+  of the embedding, 3) "end_nodes_embedding": the end nodes of the arcs of
+  the planar embedding, 4) "start_nodes_kuratowski": the start nodes of the
+  edges of the kuratowski subdivision, 5) "end_nodes_kuratowski": the end
+  nodes of the edges of the kuratowski subdivision.
 }
 \description{
 Checks if an undirected graph is planar and returns a list of outputs
