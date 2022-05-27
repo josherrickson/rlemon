@@ -1,4 +1,5 @@
-##' These "runner" functions provide a slightly lower-level access to LEMON.
+##' These "runner" functions provide a slightly lower-level access to LEMON. See
+##' "Details".
 ##'
 ##' Internally, all exported rlemon functions call a "runner" function to
 ##' interface with the C++, for example, \code{MaxFlow(..., algorithm =
