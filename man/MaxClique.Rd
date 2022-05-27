@@ -24,8 +24,8 @@ edges}
 GrossoLocatelliPullanMc is the default.}
 }
 \value{
-A list containing two entries: 1) the clique size, and 2) the
-  members of the clique.
+A named list containing two entries: 1) "size": the clique size, and
+  2) "members": the members of the clique.
 }
 \description{
 Finds the largest complete subgraph (clique) in an undirected graph

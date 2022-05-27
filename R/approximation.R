@@ -11,8 +11,8 @@
 ##' @param numNodes The number of nodes in the graph
 ##' @param algorithm Choices of algorithm include "GrossoLocatelliPullanMc".
 ##'   GrossoLocatelliPullanMc is the default.
-##' @return A list containing two entries: 1) the clique size, and 2) the
-##'   members of the clique.
+##' @return A named list containing two entries: 1) "size": the clique size, and
+##'   2) "members": the members of the clique.
 ##' @export
 MaxClique <- function(arcSources,
                       arcTargets,
@@ -22,10 +22,11 @@ MaxClique <- function(arcSources,
   check_graph_vertices(arcSources, arcTargets, numNodes)
   check_algorithm(algorithm)
 
-  switch(algorithm,
-         "GrossoLocatelliPullanMc" = GrossoLocatelliPullanMcRunner(arcSources,
-                                                                   arcTargets,
-                                                                   numNodes),
+  algfn <- switch(algorithm,
+         "GrossoLocatelliPullanMc" = GrossoLocatelliPullanMcRunner,
          stop("Invalid algorithm.")
          )
+  result <- algfn(arcSources, arcTargets, numNodes)
+  names(result) <- c("size", "members")
+  return(result)
 }

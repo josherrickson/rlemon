@@ -29,6 +29,7 @@ test_that("Approximation functions", {
   expect_length(out, 2)
   expect_length(out[[1]], 1)
   expect_true(all(out[[2]] %in% s))
+  expect_named(out, c("size", "members"))
 
   # 3) Ensure exported functions with `algorithm=`default runs without error, and
   # returns the same if passed no argument
