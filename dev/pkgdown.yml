@@ -1,8 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 2.0.3
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-05-27T18:58Z
+last_built: 2022-09-06T10:23Z
 urls:
   reference: https://errickson.net/rlemon/reference
   article: https://errickson.net/rlemon/articles
