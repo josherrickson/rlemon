@@ -360,7 +360,8 @@ edges}
 Algorithm results
 }
 \description{
-These "runner" functions provide a slightly lower-level access to LEMON.
+These "runner" functions provide a slightly lower-level access to LEMON. See
+"Details".
 }
 \details{
 Internally, all exported rlemon functions call a "runner" function to
