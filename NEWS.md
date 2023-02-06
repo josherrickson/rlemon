@@ -1,9 +1,13 @@
-# rlemon 0.2.0.9001
+# rlemon 0.2.1
 
 ## Interface changes
 
 - Any function which returns a `list` now returns a named `list`. The order of
   elements in that list have not changed so no existing code should be affected.
+
+## Backend changes
+
+- C++ 17 deprecations are fixed in the LEMON code.
 
 # rlemon 0.2.0
 
