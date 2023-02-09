@@ -1,7 +1,7 @@
 Package: rlemon
 Type: Package
 Title: R Access to LEMON Graph Algorithms
-Version: 0.2.1
+Version: 0.2.1.9001
 Authors@R: c(person("Arav", "Agarwal", role = "aut", email = "arava@andrew.cmu.edu"),
              person("Aditya", "Tewari", role = "aut", email = "atewari@palantir.com"),
              person("Josh", "Errickson", role = c("cre","aut"), email = "jerrick@umich.edu"))
