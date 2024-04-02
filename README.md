@@ -35,3 +35,14 @@ the same graph of 5 nodes will be labeled 1 through 5.
 
 For consistency in R, all function in R expect 1-indexing, and convert to
 0-indexing before passing to C++.
+
+## Rebuilding website
+
+Run `make build_site` (or, directly, `devtools::build_site(quiet = FALSE)`) to
+build the site. Assuming the package is currently on a [development
+version](https://r-pkgs.org/lifecycle.html#sec-lifecycle-version-number-tidyverse),
+this will build the dev site to docs/dev. To build the release site, checkout
+the most recent [tagged
+release](https://github.com/josherrickson/rlemon/tags), e.g. `git
+checkout v0.2.1`. Build the site in that commit, which should populate docs/.
+Checkout back to main, and both pkgdown sites should be build.
