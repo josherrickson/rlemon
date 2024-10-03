@@ -16,9 +16,10 @@
 ##' @param algorithm Choices of algorithm include "Preflow" and "EdmondsKarp".
 ##'   "Preflow" is the default.
 ##' @return A named list containing three entries: 1) "flows": a vector
-##'   corresponding to the flows of arcs in the graph, 2) "cut_values": a vector
-##'   of cut-values of the graph's nodes, and 3) "cost": the total cost of the
-##'   flows in the graph, i.e. the maxflow value.
+##'   corresponding to the flows of arcs in the graph, 2) "cut_values": 0/1 vector
+##'   in which 1s identify nodes belonging to a minimum-capacity cut separating the
+##'   source from the destination node, and 3) "cost": the total flow from source to
+##'   destination, i.e. the maxflow value.
 ##' @export
 MaxFlow <- function(arcSources,
                     arcTargets,
